@@ -14,12 +14,12 @@ module.exports = {
     module: {
         //加载器配置
         loaders: [{
-        	test: /\.vue$/,loader: 'vue'
+        		test: /\.vue$/,loader: 'vue'
         },{
-        	test: /\.css$/,loader: 'style-loader!css-loader'
+       	 	test: /\.css$/,loader: 'style-loader!css-loader'
         },{
-        	test: /\.js$/,loader: ['babel-loader'],
-        	exclude: /node_modules/,
+       	 	test: /\.js$/,loader: ['babel-loader'],
+        		exclude: /node_modules/,
       		loader: 'babel'
       	},{ 
       		test: /\.(png|jpg)$/,loader: 'url-loader'
@@ -34,7 +34,7 @@ module.exports = {
     },
     //其它解决方案配置
     resolve: {
-    	root:[path.join(__dirname)],
+    		root:[path.join(__dirname)],
         extensions: ['', '.js', '.json','.css','.vue']
     }
 };
