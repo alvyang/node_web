@@ -24,7 +24,6 @@
 	    left: 0px;
 	    right: 0px;
 	    z-index: 100;
-	    opacity: 1;
 	    background-color: rgba(0, 0, 0, 0.7);
 	}
 </style>

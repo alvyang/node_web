@@ -46,15 +46,15 @@
 <style>
 	.qrcode_div{
 		position: absolute;
-		width: 10rem;
-		top: 0rem;
+		width: 6.4rem;
+		left: 1.8rem;
+		top: 3rem;
 		text-align: center;
 		z-index: 101;
 	}
 	.qrcode_div img{
 		width: 6rem;
 		height: 6rem;
-		margin-top: 3rem;
 	}
 	.qrcode_div > div{
 		color: #ffffff;
