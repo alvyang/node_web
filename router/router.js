@@ -7,7 +7,7 @@ import Main from "views/main.vue";
 //二级页面
 import Home from "views/home.vue";
 import Category from "views/category.vue";
-import ShoppingCard from "views/shopping_card.vue";
+import ShoppingCart from "views/shopping_cart.vue";
 import PersonalCenter from "views/personal_center.vue";
 import Selected from "views/selected.vue";
 const router = new VueRouter({
@@ -27,8 +27,8 @@ const router = new VueRouter({
 			path:"category",
 			component:Category
 		},{
-			path:"shoppingcard",
-			component:ShoppingCard
+			path:"shoppingcart",
+			component:ShoppingCart
 		},{
 			path:"personalcenter",
 			component:PersonalCenter

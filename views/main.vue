@@ -1,12 +1,12 @@
 <template>
 	<div>
-		<jf-top></jf-top>
-		<keep-alive><router-view></router-view></keep-alive>
+		<div class="main_content">
+			<keep-alive><router-view></router-view></keep-alive>
+		</div>
 		<jf-nav></jf-nav>
 	</div>
 </template>
 <script>
-	import Top from "components/top.vue";
 	import Nav from "components/navigation.vue";
 	export default({
 		data(){
@@ -14,8 +14,11 @@
 				
 			}
 		},
+		mounted(){
+			var t = $(".navigation").height();
+			$(".main_content").height($(window).height()-t);
+		},
 		components:{
-			"jf-top":Top	,
 			"jf-nav":Nav
 		}
 	})

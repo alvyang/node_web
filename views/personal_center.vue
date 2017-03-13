@@ -1,11 +1,192 @@
 <template>
-	<div>
-		个人小心	
+	<div class="personal_cart">
+		<div class="personal_message">
+			<div class="personal_head">
+				<img src="../img/default_head.png"/>
+			</div>
+			<div class="personal_detail">
+				<a class="integer">1000 积分</a>
+				<a class="rmb">¥0.00</a>
+			</div>
+		</div>
+		<div class="personal_01">
+			<div>
+				<div class="num">2</div>
+				<div class="name">商品收藏</div>
+			</div>
+			<div>
+				<div class="num">3</div>
+				<div class="name">优惠券</div>
+			</div>
+			<div>
+				<div class="num">2</div>
+				<div class="name">站内消息</div>
+			</div>
+			<div>
+				<div class="num">0</div>
+				<div class="name">我的咨询</div>
+			</div>
+		</div>
+		<div class="order">
+			<a>我的订单</a>
+			<router-link to="/orders">查看全部订单</router-link>
+		</div>
+		<div class="order_detail">
+			<router-link to="/payment">待付款<span>1</span></router-link>
+			<router-link to="/deliver">待发货<span>1</span></router-link>
+			<router-link to="/receive">待收货<span>1</span></router-link>
+			<router-link to="/evaluate">待评价<span>1</span></router-link>
+		</div>
 	</div>
 </template>
 <script>
-	
+	export default({
+		data(){
+			return {
+				
+			}
+		}
+	})
 </script>
 <style>
-	
+	.personal_message{
+		background: -webkit-gradient(linear,left top, right bottom, from(#2b9bd3), to(#2acbf6));
+		height: 4rem;
+		box-sizing: border-box;
+		padding-top: 0.6rem;
+	}
+	.personal_message .personal_detail{
+		text-align: center;
+		color: #ffffff;
+		margin-top: 0.3rem;
+		font-size: 0.4rem;
+	}
+	.personal_detail .integer{
+		background: url(../img/integral.png) left center no-repeat;
+		background-size: 0.4rem auto;
+		padding-left: 0.45rem;
+		padding-right: 0.3rem;
+	}
+	.personal_detail .rmb{
+		background: url(../img/rmb.png) left center no-repeat;
+		background-size: 0.35rem auto;
+		padding-left: 0.45rem;
+		padding-right: 0.2rem;
+	}
+	.personal_message .personal_head{
+		background:#ffffff;
+		border-radius: 50%;
+		width: 2.1rem;
+		height: 2.1rem;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.personal_message .personal_head img{
+		border-radius: 50%;
+		margin-left: 0.1rem;
+		margin-top: 0.1rem;
+		width: 1.9rem;
+		height: 1.9rem;
+	}
+	.order_detail{
+		background: #ffffff;
+		font-size: 0;
+		border-bottom: solid 1px #dddddd;
+	}
+	.order_detail a{
+		position: relative;
+		width: 25%;
+		height: 2.2rem;
+		line-height: 3.2rem;
+		font-size: 0.36rem;
+		color: #666666;
+		text-align: center;
+		display: inline-block;
+		text-decoration: none;
+	}
+	.order_detail a:nth-child(1){
+		background: url(../img/payment.png) center 0.2rem no-repeat;
+		background-size: 1.1rem auto;
+	}
+	.order_detail a:nth-child(2){
+		background: url(../img/deliver.png) center 0.3rem no-repeat;
+		background-size: 0.9rem auto;
+	}
+	.order_detail a:nth-child(3){
+		background: url(../img/receive.png) center 0.3rem no-repeat;
+		background-size: 1rem auto;
+	}
+	.order_detail a:nth-child(4){
+		background: url(../img/evaluate.png) center 0.3rem no-repeat;
+		background-size: 1rem auto;
+	}
+	.order_detail a span{
+		background-color: #d81e06;
+		display: inline-block;
+		position: absolute;
+		top: 0.3rem;
+		right: 0.7rem;
+		width: 0.35rem;
+		height: 0.35rem;
+		line-height: 0.35rem;
+		text-align: center;
+		font-size: 0.2rem;
+		border-radius: 50%;
+		color: #ffffff;
+	}
+	.order{
+		position: relative;
+		background: #ffffff;
+		margin-top: 0.2rem;
+		height: 1.2rem;
+		line-height: 1.2rem;
+		border-bottom: solid 1px #dddddd;
+	}
+	.order a:nth-child(1){
+		background: url(../img/order.png) 0.25rem center no-repeat;
+		background-size: 0.5rem auto;
+		padding-left: 1rem;
+	}
+	.order a:nth-child(2){
+		background: url(../img/arrow_right.png) right center no-repeat;
+		background-size: 0.5rem auto;
+		position: absolute;
+		right: 0.25rem;
+		height: 100%;
+		color: #bfbfbf;
+		padding-right: 0.5rem;		
+	}
+	.order a{
+		display: inline-block;
+		text-decoration: none;
+		font-size: 0.34rem;
+		color: #333333;
+	}
+	.personal_cart{
+		box-sizing: border-box;
+		border: solid 1px #f4f4f4;
+		background-color: #f4f4f4;
+		height: 100%;
+	}
+	.personal_01{
+		background-color: #ffffff;
+		box-sizing: border-box;
+		font-size: 0;
+		margin-top: 0.2rem;
+	}
+	.personal_01 .num{
+		margin-top: 0.4rem;
+	}
+	.personal_01 .name{
+		padding-top: 0.1rem;
+	}
+	.personal_01 > div{
+		display: inline-block;
+		width: 25%;
+		height: 1.7rem;
+		font-size: 0.34rem;
+		color: #666666;
+		box-sizing: border-box;
+		text-align: center;
+	}
 </style>
