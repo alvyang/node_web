@@ -9,6 +9,7 @@ module.exports = {
     //入口文件输出配置
     output: {
         path: './build',
+        publicPath:'./build/',
         filename: '[name].js'
     },
     module: {

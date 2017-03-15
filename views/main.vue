@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="main_content">
-			<keep-alive><router-view></router-view></keep-alive>
+			<keep-alive><router-view class="view"></router-view></keep-alive>
 		</div>
 		<jf-nav></jf-nav>
 	</div>
@@ -24,5 +24,7 @@
 	})
 </script>
 <style>
-	
+	.view{
+		background-color: #f4f4f4;
+	}
 </style>

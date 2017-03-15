@@ -62,7 +62,7 @@
 						priceNumTemp+= this.commodityList[i].commodityNum * this.commodityList[i].commodityPrice;
 					}
 				}
-				if(noSelectNum == l){
+				if(noSelectNum <= l && selectNum != l){
 					$("#selectAll").removeClass("select_img_all_select").addClass("select_img_all");
 				}else if(selectNum == l){
 					$("#selectAll").removeClass("select_img_all").addClass("select_img_all_select");
@@ -121,7 +121,10 @@
 					setTimeout(function(){
 						_self.message = "";
 					},2000);
+					return ;
 				}
+				
+				this.$router.replace({path:"/order"});
 			}
 		},
 		components:{
@@ -228,37 +231,37 @@
 		background-color: #ffffff;
 		position: fixed;
 		bottom: 1.35rem;
-		height: 1.1rem;
+		height: 1.35rem;
 		font-size: 0;
 	}
 	.select_img_all_select{
 		background: url(../img/select.png) 0.4rem center no-repeat;
-		background-size: 0.5rem 0.5rem;
+		background-size: 0.6rem 0.6rem;
 		display: inline-block;
-		width: 1.7rem;
-		height: 1.1rem;
-		line-height: 1.1rem;
+		width: 1.9rem;
+		height: 1.35rem;
+		line-height: 1.35rem;
 		text-align: right;
-		font-size: 0.35rem;
+		font-size: 0.4rem;
 		color: #333333;
 	}
 	.select_img_all{
 		background: url(../img/no_select.png) 0.4rem center no-repeat;
-		background-size: 0.5rem 0.5rem;
+		background-size: 0.6rem 0.6rem;
 		display: inline-block;
-		width: 1.7rem;
-		height: 1.1rem;
-		line-height: 1.1rem;
+		width: 1.9rem;
+		height: 1.35rem;
+		line-height: 1.35rem;
 		text-align: right;
-		font-size: 0.35rem;
+		font-size: 0.4rem;
 		color: #333333;
 	}
 	.total{
 		display: inline-block;
 		height: 1.1rem;
 		line-height: 1.1rem;
-		width: 5.8rem;
-		font-size: 0.35rem;
+		width: 5.6rem;
+		font-size: 0.4rem;
 		box-sizing: border-box;
 		padding-left: 0.2rem;
 	}
@@ -266,9 +269,9 @@
 		display: inline-block;
 		background-color: #d81e06;
 		width: 2.5rem;
-		height: 1.1rem;
-		font-size: 0.35rem;
-		line-height: 1.1rem;
+		height: 1.35rem;
+		font-size: 0.4rem;
+		line-height: 1.35rem;
 		color: #ffffff;
 		text-align: center;
 	}

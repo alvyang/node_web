@@ -4,7 +4,18 @@
 <script>
 	export default({
 		data(){
-			return {};
+			return {
+				initTop:0
+			};
+		},
+		mounted(){
+			var mTop = $(".error_message").css("margin-top");
+			this.initTop = parseFloat(mTop.substring(0,mTop.length-2));
+			var _self = this;
+			$(window).scroll(function(){
+				var scrollTop = $(this).scrollTop();
+				$(".error_message").css("margin-top",(_self.initTop+scrollTop)+"px");
+			})
 		},
 		props:['message']
 	});
