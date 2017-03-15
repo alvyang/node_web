@@ -14,9 +14,9 @@
 				<span>配送区域</span>
 				<input type="text" id="address" v-model="address.areaAddress" placeholder="请选择配送区域" readonly="readonly"/>
 			</div>
-			<div class="address_input">
+			<div class="address_input" style="height: 1.8rem;">
 				<span>详细地址</span>
-				<input type="text" v-model="address.detailAddress" placeholder="请输入详情地址"/>
+				<textarea v-model="address.detailAddress" placeholder="请输入详情地址"></textarea>
 			</div>
 		</div>
 		<div class="address_button" @click="saveAddress">保存地址</div>
@@ -73,7 +73,10 @@
 				if (this.address.phone.match(/^(13[0-9]|14[0-9]|15[0-9]|18[0-9]|17[0-9])\d{8}$/g)) {
 					this.message = "";
 					return true;
-				} else {
+				} else if(this.address.phone.indexOf("*") > -1){
+					this.message = "";
+					return true;
+				}else{
 					var _self = this;
 					this.message = "请输入正确的手机号码！";
 					setTimeout(function(){
@@ -89,12 +92,12 @@
 				   !this.verNull(this.address.detailAddress,"请输入详细地址")){
 					return;
 				}
-				this.$router.push({path:"/address"});  
+				this.$router.replace({path:"/address"});  
 			}
 		}
 	})
 </script>
-<style>
+<style scoped="scoped">
 	.address_content{
 		box-sizing: border-box;
 		margin-top: 0.5rem;
@@ -116,12 +119,17 @@
 		font-size: 0.407rem;
 		vertical-align: middle;
 	}
-	.address_input input{
+	.address_input input,.address_input textarea{
 		border: none;
 		font-size: 0.407rem;
 		height: 0.7rem;
 		width: 6rem;
 		vertical-align: middle;
+	}
+	.address_input textarea{
+		height: 1.5rem;
+		resize: none;
+		padding-left: 0.2rem;
 	}
 	.address_button{
 		background-color:#2b9bd3 ;

@@ -7,7 +7,7 @@
 	<div>
 		<jf-no-content v-show="addressList.length == 0" message="您还没有收货地址"></jf-no-content>
 		<div v-for="(a,index) in addressList" class="address_item">
-			<div class="address_content">
+			<div class="address_content" @click="selectAddress(index)">
 				<div class="name"><a>{{a.name}}</a><a>{{a.phone}}</a></div>
 				<div class="address">{{a.areaAddress}}{{a.detailAddress}}</div>
 			</div>
@@ -31,6 +31,9 @@
 			}
 		},
 		methods:{
+			selectAddress(index){
+				this.$router.push({path:"/order",query:this.addressList[index]});
+			},
 			addressEdit(index){
 				this.$router.push({path:"/address_edit",query:this.addressList[index]});
 			}
@@ -48,7 +51,6 @@
 	}
 	.address_item > div{
 		display: inline-block;
-		vertical-align: middle;
 	}
 	.address_content{
 		width: 9rem;
@@ -69,6 +71,12 @@
 		padding-left: 0.4rem;
 		color: #999999;
 		padding-right: 0.4rem;
+		
+		overflow:hidden; 
+		text-overflow:ellipsis;
+		display:-webkit-box; 
+		-webkit-box-orient:vertical;
+		-webkit-line-clamp:2;
 	}
 	.address_edit{
 		background: url(../img/edit.png) left center no-repeat;
