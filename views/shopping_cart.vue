@@ -178,7 +178,8 @@
 	}
 	.commodity_message .commodity_detail{
 		position: absolute;
-		left: 3rem;
+		left: 2.8rem;
+		top:0.2rem;
 		padding-right: 0.5rem;
 		box-sizing: border-box;
 		font-size: 0.4rem;
@@ -191,13 +192,14 @@
 	}
 	.commodity_message .commodity_operation{
 		position: absolute;
-		left: 3rem;
-		bottom: 0rem;
+		left: 2.8rem;
+		bottom: 0.1rem;
 		width: 5.6rem;
 	}
 	.commodity_operation .price{
 		font-size: 0.4rem;
 		color: #d81e06;
+		line-height: 0.73rem;
 	} 
 	.commodity_operation .price span{
 		font-size: 0.3rem;

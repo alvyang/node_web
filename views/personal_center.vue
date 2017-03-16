@@ -96,9 +96,9 @@
 	.order_detail a{
 		position: relative;
 		width: 25%;
-		height: 2.2rem;
-		line-height: 3.2rem;
-		font-size: 0.36rem;
+		height: 2.5rem;
+		line-height: 3.6rem;
+		font-size: 0.35rem;
 		color: #666666;
 		text-align: center;
 		display: inline-block;
@@ -106,26 +106,26 @@
 	}
 	.order_detail a:nth-child(1){
 		background: url(../img/payment.png) center 0.2rem no-repeat;
-		background-size: 1.1rem auto;
+		background-size: 1.3rem auto;
 	}
 	.order_detail a:nth-child(2){
 		background: url(../img/deliver.png) center 0.3rem no-repeat;
-		background-size: 0.9rem auto;
+		background-size: 1.1rem auto;
 	}
 	.order_detail a:nth-child(3){
 		background: url(../img/receive.png) center 0.3rem no-repeat;
-		background-size: 1rem auto;
+		background-size: 1.2rem auto;
 	}
 	.order_detail a:nth-child(4){
 		background: url(../img/evaluate.png) center 0.3rem no-repeat;
-		background-size: 1rem auto;
+		background-size: 1.2rem auto;
 	}
 	.order_detail a span{
 		background-color: #d81e06;
 		display: inline-block;
 		position: absolute;
 		top: 0.3rem;
-		right: 0.7rem;
+		right: 0.6rem;
 		width: 0.35rem;
 		height: 0.35rem;
 		line-height: 0.35rem;
@@ -181,13 +181,13 @@
 		margin-top: 0.4rem;
 	}
 	.personal_01 .name{
-		padding-top: 0.1rem;
+		padding-top: 0.3rem;
 	}
 	.personal_01 > div{
 		display: inline-block;
 		width: 25%;
-		height: 1.7rem;
-		font-size: 0.34rem;
+		height: 2rem;
+		font-size: 0.35rem;
 		color: #666666;
 		box-sizing: border-box;
 		text-align: center;

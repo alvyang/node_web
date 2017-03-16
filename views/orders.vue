@@ -79,7 +79,7 @@
 <style>
 	.orders_content{
 		background-color: #ffffff;
-		height: 4rem;
+		height: 4.3rem;
 		box-sizing: border-box;
 		padding-left: 0.2rem;
 		padding-right: 0.2rem;
@@ -87,12 +87,13 @@
 	}
 	.orders_content .orders_code{
 		background: url(../img/order.png) 0.2rem center no-repeat;
-		background-size: 0.35rem auto;
-		height: 0.8rem;
-		line-height: 0.8rem;
+		background-size: 0.4rem auto;
+		height: 1rem;
+		line-height: 1rem;
 		box-sizing: border-box;
 		padding-left: 0.7rem;
 		color: #333333;
+		font-size: 0.35rem;
 		border-bottom: 1px solid #dddddd;
 	}
 	.orders_content .order_state{

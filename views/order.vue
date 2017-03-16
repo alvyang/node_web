@@ -117,26 +117,27 @@
 	}
 	/*订单商品信息样式*/
 	.order_commodity_title{
-		background: url(../img/order.png) 0.2rem center no-repeat;
-		background-size: 0.35rem auto;
+		background: url(../img/order.png) 0.4rem center no-repeat;
+		background-size: 0.4rem auto;
 		margin-top: 0.2rem;
+		font-size: 0.4rem;
 		box-sizing: border-box;
-		padding-left: 0.7rem;
+		padding-left: 1rem;
 		background-color: #ffffff;
-		height: 0.8rem;
-		line-height: 0.8rem;
+		height: 1rem;
+		line-height: 1rem;
 		color: #1296db;
 		border-bottom: solid 1px #dddddd;
 	}
 	.order_commodity{
 		background-color: #ffffff;
 		border-bottom: solid 1px #dddddd;
-		height: 1.6rem;
+		height: 2rem;
 		color: #333333;
 	}
 	.order_commodity img{
-		width: 1.4rem;
-		height: 1.4rem;
+		width: 1.8rem;
+		height: 1.8rem;
 		margin-top: 0.1rem;
 		vertical-align: middle;
 	}
@@ -146,15 +147,17 @@
 		text-overflow:ellipsis;
 		-webkit-box-orient:vertical;
 		-webkit-line-clamp:2;
-		width: 7rem;
+		width: 6.6rem;
 		vertical-align: middle;
 		box-sizing: border-box;
 		padding-left: 0.2rem;
+		font-size: 0.35rem;
 	}
 	.order_commodity .commodity_num{
 		display: inline-block;
 		width: 1rem;
 		text-align: right;
+		font-size: 0.35rem;
 		vertical-align: middle;
 	}
 	/*收获地址样式*/

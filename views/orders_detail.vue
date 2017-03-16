@@ -84,8 +84,7 @@
 		background-color: #ffffff;
 		margin-top: 0.2rem;
 		box-sizing: border-box;
-		padding-left: 0.4rem;
-		padding-right: 0.4rem;
+		padding:0.2rem 0.4rem;
 		color: #333333;
 	}
 	.orders_num_detail .commodity_num_price{
@@ -124,17 +123,18 @@
 	.order_commodity{
 		background-color: #ffffff;
 		border-bottom: solid 1px #dddddd;
-		height: 2rem;
+		height: 2.5rem;
 		color: #333333;
+		font-size: 0.35rem;
 	}
 	.order_commodity img{
-		width: 1.8rem;
-		height: 1.8rem;
+		width: 2.3rem;
+		height: 2.3rem;
 		margin-top: 0.1rem;
 		vertical-align: middle;
 	}
 	.order_commodity .commodity_name{
-		width: 8rem;
+		width: 7.5rem;
 		display: inline-block;
 		box-sizing: border-box;
 		padding-left: 0.2rem;
@@ -191,11 +191,12 @@
 	
 	.orders_detail{
 		background-color: #ffffff;
-		height: 0.8rem;
-		line-height: 0.8rem;
+		height: 1rem;
+		line-height: 1rem;
 		box-sizing: border-box;
-		padding-left: 0.2rem;
+		padding-left: 0.4rem;
 		padding-right: 0.4rem;
+		font-size: 0.35rem;
 		border-bottom: solid 1px #dddddd;
 	}
 	.orders_detail .order_state{
