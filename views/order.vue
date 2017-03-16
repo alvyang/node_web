@@ -1,18 +1,37 @@
 <template>
-	<div class="order_page">
+	<div>
+		<jf-prompt :message="message"></jf-prompt>
 		<div class="receipt_address_div">
 			<router-link tag="div" to="/address" v-show="!receiptAddress" class="no_receipt_address">您还没有设置收货地址，请设置</router-link>
 			<router-link tag="div" to="/address" v-show="receiptAddress" class="receipt_address">
 				<div class="name"><span>{{receiptAddress.name}}</span><span>{{receiptAddress.phone}}</span></div>
 				<div class="address">{{receiptAddress.areaAddress}}{{receiptAddress.detailAddress}}</div>
 			</router-link>
+			<img src="../img/address_bar.png" v-show="receiptAddress" style="width:10rem"/>
+		</div>
+		<div class="order_commodity_title">订单商品信息</div>
+		<div v-for="c in commodity" class="order_commodity">
+			<img :src="c.commodityUrl" />
+			<div class="commodity_name">{{c.commodityName}}</div>
+			<div class="commodity_num">× {{c.commodityNum}}</div>
+		</div>
+		<div class="order_submit_div">
+			<div class="order_price">
+				<span>共<a style="color: #d81e06;">{{orderNum}}</a>件，</span>
+				<span>合计：<a style="color: #d81e06;">¥{{orderPrice}}</a></span>
+			</div>
+			<div class="order_submit" @click="submitOrder">提交订单</div>
 		</div>
 	</div>
 </template>
 <script>
+	import Prompt from "components/prompt.vue";
 	export default({
 		data(){
 			return {
+				orderNum:"",
+				orderPrice:"",
+				message:"",
 				receiptAddress:{
 					id:"123",
 					name:"吕扬",
@@ -20,18 +39,131 @@
 					areaAddress:"北京市海淀区",
 					detailAddress:"14号楼7单元702室14号楼7单元702室14号楼7单元702室",
 				},
+				commodity:[{
+					commodityName:"山西特产宁化府益源庆名醋山西特产宁化府益源庆名醋2400ml（31.8元）",
+					commodityUrl:"img/logo.jpg",
+					commodityNum:1,
+					commodityPrice:52.48,
+				},{
+					commodityName:"山西特产宁化府益源庆名醋山西特产宁化府益源庆名醋2400ml（31.8元）",
+					commodityUrl:"img/logo.jpg",
+					commodityNum:1,
+					commodityPrice:52.48,
+				}]
 			}
 		},
+		mounted(){
+			var num = 0,price=0,l=this.commodity.length;
+			for(var i = 0 ; i < l ;i++){
+				num += this.commodity[i].commodityNum;
+				price += this.commodity[i].commodityNum * this.commodity[i].commodityPrice;
+			}
+			this.orderNum = num;
+			this.orderPrice = this.keepTwoDecimal(price);
+		},
 		methods:{
-			
+			submitOrder(){
+				this.message = "微信支付";
+			},
+			keepTwoDecimal(num) {
+				var result = parseFloat(num);
+				if (isNaN(result)) {
+					console.log('传递参数错误，请检查！');
+					return false;
+				}
+			  	result = Math.round(num * 100) / 100;
+			  	return result;
+			}
+		},
+		components:{
+			"jf-prompt":Prompt,
 		}
 	})
 </script>
 <style scoped="scoped">
+	/*提交*/
+	.order_submit_div{
+		position: fixed;
+		bottom: 0;
+		background-color: #FFFFFF;
+		height: 1.35rem;
+		font-size: 0;
+		line-height: 1.35rem;
+	}
+	.order_submit_div .order_price{
+		box-sizing: border-box;
+		width: 7.5rem;
+		height: 100%;
+		color: #333333;
+		text-align: right;
+		padding-right: 0.4rem;
+	}
+	.order_submit_div .order_price span:nth-child(1){
+		font-size: 0.35rem;
+	}
+	.order_submit_div .order_price span:nth-child(2){
+		font-size: 0.4rem;
+	}
+	.order_submit_div .order_submit{
+		width: 2.5rem;
+		height: 100%;
+		text-align: center;
+		color: #ffffff;
+		font-size: 0.4rem;
+		background-color: #d81e06;
+	}
+	.order_submit_div > div{
+		display: inline-block;
+	}
+	/*订单商品信息样式*/
+	.order_commodity_title{
+		background: url(../img/order.png) 0.2rem center no-repeat;
+		background-size: 0.35rem auto;
+		margin-top: 0.2rem;
+		box-sizing: border-box;
+		padding-left: 0.7rem;
+		background-color: #ffffff;
+		height: 0.8rem;
+		line-height: 0.8rem;
+		color: #1296db;
+		border-bottom: solid 1px #dddddd;
+	}
+	.order_commodity{
+		background-color: #ffffff;
+		border-bottom: solid 1px #dddddd;
+		height: 1.6rem;
+		color: #333333;
+	}
+	.order_commodity img{
+		width: 1.4rem;
+		height: 1.4rem;
+		margin-top: 0.1rem;
+		vertical-align: middle;
+	}
+	.order_commodity .commodity_name{
+		display: inline-block;
+		overflow:hidden; 
+		text-overflow:ellipsis;
+		-webkit-box-orient:vertical;
+		-webkit-line-clamp:2;
+		width: 7rem;
+		vertical-align: middle;
+		box-sizing: border-box;
+		padding-left: 0.2rem;
+	}
+	.order_commodity .commodity_num{
+		display: inline-block;
+		width: 1rem;
+		text-align: right;
+		vertical-align: middle;
+	}
+	/*收获地址样式*/
+	.receipt_address_div{
+		font-size: 0;
+	}
 	.receipt_address{
 		background:#ffffff url(../img/arrow_right.png) 9.2rem center no-repeat;
 		background-size: 0.5rem auto;
-		border-bottom: solid 1px #dddddd;
 		padding-bottom: 0.35rem;
 		width: 10rem;
 		font-size: 0.35rem;
@@ -68,9 +200,5 @@
 		height: 1rem;
 		line-height: 1rem;
 		color: #333333;
-	}
-	.order_page{
-		background-color: #f4f4f4;
-		height: 10rem;
 	}
 </style>

@@ -14,12 +14,12 @@
 				</div>
 			</div>
 		</div>
-		<div class="shopping_cart_num">
+		<div :class="['shopping_cart_num',{'bottom_135':bottomFlag,'bottom_0':!bottomFlag}]">
 			<div class="select_img_all" id="selectAll" @click="selectAll">全选</div>
 			<div class="total">合计：¥ {{numPrice}}</div>
 			<div class="settlement" @click="settlement">去结算</div>
 		</div>
-		<jf-prompt :message="message" v-show="message"></jf-prompt>
+		<jf-prompt :message="message"></jf-prompt>
 	</div>
 </template>
 <script>
@@ -43,9 +43,21 @@
 				}],
 				numPrice:0.00,
 				message:"",
+				bottomFlag:true,
 			}
 		},
+		mounted(){
+			this.setCartNumdiv();
+		},
 		methods:{
+			setCartNumdiv(){//用户设置shopping_cart_num  div显示位置
+				var type = this.$route.params.type;
+				if(type == 1){//
+					this.bottomFlag = true;
+				}else{
+					this.bottomFlag = false;//
+				}
+			},
 			selectCommodity(index){
 				if($("#select"+index).attr("class") == "select_img"){
 					$("#select"+index).removeClass("select_img").addClass("select_img_select");
@@ -118,13 +130,10 @@
 				var _self = this;
 				if(this.numPrice == 0){
 					this.message = "请选择结算商品";
-					setTimeout(function(){
-						_self.message = "";
-					},2000);
 					return ;
 				}
 				
-				this.$router.replace({path:"/order"});
+				this.$router.push({path:"/order"});
 			}
 		},
 		components:{
@@ -230,9 +239,15 @@
 	.shopping_cart_num{
 		background-color: #ffffff;
 		position: fixed;
-		bottom: 1.35rem;
 		height: 1.35rem;
 		font-size: 0;
+	    z-index: 2;
+	}
+	.bottom_135{
+		bottom: 1.35rem;
+	}
+	.bottom_0{
+		bottom: 0rem;
 	}
 	.select_img_all_select{
 		background: url(../img/select.png) 0.4rem center no-repeat;

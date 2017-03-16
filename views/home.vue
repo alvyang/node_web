@@ -12,16 +12,16 @@
 		  	</div>
 		</div>
 		<div class="commodity_list">
-			<div v-for="c in commodityList" class="commodity_item">
+			<router-link to="/commodity" tag="div" v-for="c in commodityList" class="commodity_item">
 				<img :src="c.commodityUrl" />
 				<div class="commodity_name">{{c.commodityName}}</div>
 				<div class="commodity_cart">
-					<a class="commodity_price">¥{{c.commodityPrice}}</a>
-					<img src="../img/shopping_cart.png" @click="addToCart"/>
+					<span class="commodity_price">¥{{c.commodityPrice}}</span>
+					<img src="../img/shopping_cart.png" @click.prevent="addToCart"/>
 				</div>
-			</div>
+			</router-link>
 		</div>
-		<jf-prompt :message="message" v-show="message"></jf-prompt>
+		<jf-prompt :message="message"></jf-prompt>
 		<div style="height: 1.35rem;"></div>
 	</div>
 </template>
@@ -64,9 +64,6 @@
 			addToCart(){
 				var _self = this;
 				this.message = "该商品已添加到购物车";
-				setTimeout(function(){
-					_self.message = "";
-				},1000);
 			}
 		},
 		mounted(){

@@ -73,7 +73,7 @@
 /******/ 			script.charset = 'utf-8';
 /******/ 			script.async = true;
 
-/******/ 			script.src = __webpack_require__.p + "" + chunkId + "." + ({"1":"group-order","2":"group-main","3":"group-address"}[chunkId]||chunkId) + ".js";
+/******/ 			script.src = __webpack_require__.p + "" + chunkId + "." + ({"1":"group-order","2":"group-main","3":"group-address","4":"group-orders","5":"group-commodity"}[chunkId]||chunkId) + ".js";
 /******/ 			head.appendChild(script);
 /******/ 		}
 /******/ 	};
@@ -9334,41 +9334,59 @@
 	//首页五个页面
 	var Home = function Home(resolve) {
 		return __webpack_require__.e/* nsure */(2, function () {
-			return resolve(__webpack_require__(33));
+			return resolve(__webpack_require__(41));
 		});
 	};
 	var Category = function Category(resolve) {
 		return __webpack_require__.e/* nsure */(2, function () {
-			return resolve(__webpack_require__(68));
+			return resolve(__webpack_require__(71));
 		});
 	};
 	var ShoppingCart = function ShoppingCart(resolve) {
 		return __webpack_require__.e/* nsure */(2, function () {
-			return resolve(__webpack_require__(73));
+			return resolve(__webpack_require__(76));
 		});
 	};
 	var PersonalCenter = function PersonalCenter(resolve) {
 		return __webpack_require__.e/* nsure */(2, function () {
-			return resolve(__webpack_require__(86));
+			return resolve(__webpack_require__(89));
 		});
 	};
 	var Selected = function Selected(resolve) {
 		return __webpack_require__.e/* nsure */(2, function () {
-			return resolve(__webpack_require__(99));
+			return resolve(__webpack_require__(101));
 		});
 	};
 	//添加地址页面
 	var Address = function Address(resolve) {
 		return __webpack_require__.e/* nsure */(3, function () {
-			return resolve(__webpack_require__(104));
+			return resolve(__webpack_require__(106));
 		});
 	};
 	var AddressEdit = function AddressEdit(resolve) {
 		return __webpack_require__.e/* nsure */(3, function () {
-			return resolve(__webpack_require__(110));
+			return resolve(__webpack_require__(112));
 		});
 	};
 
+	//订单列表页面
+	var Orders = function Orders(resolve) {
+		return __webpack_require__.e/* nsure */(4, function () {
+			return resolve(__webpack_require__(193));
+		});
+	};
+	var OrdersDetail = function OrdersDetail(resolve) {
+		return __webpack_require__.e/* nsure */(4, function () {
+			return resolve(__webpack_require__(198));
+		});
+	};
+
+	//商品页面
+	var Commodity = function Commodity(resolve) {
+		return __webpack_require__.e/* nsure */(5, function () {
+			return resolve(__webpack_require__(203));
+		});
+	};
 	var router = new _vueRouter2.default({
 		routes: [{
 			path: "/",
@@ -9386,7 +9404,7 @@
 				path: "category",
 				component: Category
 			}, {
-				path: "shoppingcart",
+				path: "shoppingcart/:type",
 				component: ShoppingCart
 			}, {
 				path: "personalcenter",
@@ -9401,6 +9419,15 @@
 		}, {
 			path: "/address_edit",
 			component: AddressEdit
+		}, {
+			path: "/orders/:type",
+			component: Orders
+		}, {
+			path: "/orders_detail",
+			component: OrdersDetail
+		}, {
+			path: "/commodity",
+			component: Commodity
 		}]
 	});
 
@@ -11903,7 +11930,7 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/lvyang/repositories/node_web/views/main.vue"
+	__vue_options__.__file = "D:\\lvyang\\repositories\\node_web\\views\\main.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -11914,9 +11941,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-d369f632", __vue_options__)
+	    hotAPI.createRecord("data-v-1197021e", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-d369f632", __vue_options__)
+	    hotAPI.reload("data-v-1197021e", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] main.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -11940,8 +11967,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-d369f632!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./main.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-d369f632!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./main.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-1197021e!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./main.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-1197021e!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./main.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -12305,7 +12332,7 @@
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/lvyang/repositories/node_web/components/navigation.vue"
+	__vue_options__.__file = "D:\\lvyang\\repositories\\node_web\\components\\navigation.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -12316,9 +12343,9 @@
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-09841510", __vue_options__)
+	    hotAPI.createRecord("data-v-36d9cf80", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-09841510", __vue_options__)
+	    hotAPI.reload("data-v-36d9cf80", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] navigation.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -12342,8 +12369,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-09841510!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./navigation.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-09841510!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./navigation.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-36d9cf80!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./navigation.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-36d9cf80!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./navigation.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -12450,27 +12477,27 @@
 	    staticClass: "navigation"
 	  }, [_c('router-link', {
 	    attrs: {
-	      "to": "home",
+	      "to": "/home",
 	      "active-class": "nav_current_1"
 	    }
 	  }, [_vm._v("首页")]), _vm._v(" "), _c('router-link', {
 	    attrs: {
-	      "to": "category",
+	      "to": "/category",
 	      "active-class": "nav_current_2"
 	    }
 	  }, [_vm._v("分类")]), _vm._v(" "), _c('router-link', {
 	    attrs: {
-	      "to": "selected",
+	      "to": "/selected",
 	      "active-class": "nav_current_3"
 	    }
 	  }, [_vm._v("精选")]), _vm._v(" "), _c('router-link', {
 	    attrs: {
-	      "to": "shoppingcart",
+	      "to": "/shoppingcart/1",
 	      "active-class": "nav_current_4"
 	    }
 	  }, [_vm._v("购物车")]), _vm._v(" "), _c('router-link', {
 	    attrs: {
-	      "to": "personalcenter",
+	      "to": "/personalcenter",
 	      "active-class": "nav_current_5"
 	    }
 	  }, [_vm._v("个人中心")])], 1)
@@ -12478,7 +12505,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-09841510", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-36d9cf80", module.exports)
 	  }
 	}
 
@@ -12496,7 +12523,7 @@
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-d369f632", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-1197021e", module.exports)
 	  }
 	}
 

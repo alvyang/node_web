@@ -15,15 +15,15 @@ module.exports = {
     module: {
         //加载器配置
         loaders: [{
-        		test: /\.vue$/,loader: 'vue'
+    		test: /\.vue$/,loader: 'vue'
         },{
        	 	test: /\.css$/,loader: 'style-loader!css-loader'
         },{
        	 	test: /\.js$/,loader: ['babel-loader'],
-        		exclude: /node_modules/,
+    		exclude: /node_modules/,
       		loader: 'babel'
       	},{ 
-      		test: /\.(png|jpg)$/,loader: 'url-loader'
+      		test: /\.(png|jpg)$/,loader: 'url-loader?limit=10000'
       	}]
     },
     vue: {

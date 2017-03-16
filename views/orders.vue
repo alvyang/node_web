@@ -1,0 +1,156 @@
+<template>
+	<div>
+		<div class="orders_bar">
+			<router-link to="/orders/1" replace active-class="orders_type">全部</router-link>
+			<router-link to="/orders/2" replace active-class="orders_type">待付款</router-link>
+			<router-link to="/orders/3" replace active-class="orders_type">待发货</router-link>
+			<router-link to="/orders/4" replace active-class="orders_type">待收货</router-link>
+			<router-link to="/orders/5" replace active-class="orders_type">待评价</router-link>
+		</div>
+		<jf-no-content v-show="orders.length == 0" message="您还没有相关订单"></jf-no-content>
+		<div v-for="o in orders" class="orders_content">
+			<router-link to="/orders_detail" tag="div" class="orders_code">
+				<span>订单号：{{o.orderCode}}</span>
+				<span v-if="o.orderState == 1" class="order_state">已完成</span>
+				<span v-if="o.orderState == 2" class="order_state">待付款</span>
+				<span v-if="o.orderState == 3" class="order_state">待发货</span>
+				<span v-if="o.orderState == 4" class="order_state">待收货</span>
+				<span v-if="o.orderState == 5" class="order_state">待评价</span>
+			</router-link>
+			<router-link to="/orders_detail" tag="div" class="orders_commodity">
+				<img v-for="i in o.commodityList" :src="i.commodityUrl" />
+			</router-link>
+			<div class="orders_operation">
+				<a>取消订单</a>
+				<a>支付订单</a>
+			</div>
+		</div>
+	</div>
+</template>
+<script>
+	import NoContent from "components/no_content.vue";
+	export default({
+		data(){
+			return {
+				orders:[]
+			}
+		},
+		methods:{
+			getOrders(){
+				var type = this.$route.params.type;
+				if(type == 1){
+					this.orders = [{
+						orderId:"",
+						orderCode:"123456798",
+						orderState:"2",
+						orderNum:"2",
+						orderPrice:"23.45",
+						commodityList:[{
+							commodityUrl:"img/logo.jpg"
+						}]
+					},{
+						orderId:"",
+						orderCode:"123456798",
+						orderState:"2",
+						orderNum:"2",
+						orderPrice:"23.45",
+						commodityList:[{
+							commodityUrl:"img/logo.jpg"
+						}]
+					}];
+				}else{
+					this.orders=[];
+				}
+			}
+		},
+		watch:{
+			'$route' (to, from) {
+				this.getOrders();
+			}
+		},
+		mounted(){
+			this.getOrders();
+		},
+		components:{
+			"jf-no-content":NoContent
+		}
+	})
+</script>
+<style>
+	.orders_content{
+		background-color: #ffffff;
+		height: 4rem;
+		box-sizing: border-box;
+		padding-left: 0.2rem;
+		padding-right: 0.2rem;
+		margin-top: 0.2rem;
+	}
+	.orders_content .orders_code{
+		background: url(../img/order.png) 0.2rem center no-repeat;
+		background-size: 0.35rem auto;
+		height: 0.8rem;
+		line-height: 0.8rem;
+		box-sizing: border-box;
+		padding-left: 0.7rem;
+		color: #333333;
+		border-bottom: 1px solid #dddddd;
+	}
+	.orders_content .order_state{
+		display: inline-block;
+		color: #d81e06;
+		float: right;
+		box-sizing: border-box;
+		padding-right: 0.3rem;
+	}
+	.orders_content .orders_commodity{
+		height: 2rem;
+		box-sizing: border-box;
+		padding-left: 0.2rem;
+		padding-right: 0.2rem;
+		border-bottom: solid 1px #dddddd;
+	}
+	.orders_commodity img{
+		width: 1.6rem;
+		margin-top: 0.2rem;
+	}
+	.orders_operation a{
+		display: inline-block;
+		width: 2rem;
+		height: 0.7rem;
+		text-align: center;
+		line-height: 0.7rem;
+		float: right;
+		margin-right: 0.2rem;
+		text-decoration: none;
+		margin-top: 0.3rem;
+		border-radius: 5px;
+		color: #333333;
+		border: solid 1px #333333;
+	}
+	.orders_operation a:nth-child(1){
+		color: #d81e06;
+		border: solid 1px #d81e06;
+	}
+	.orders_bar{
+		background-color: #ffffff;
+		font-size: 0px;
+		height: 1.1rem;
+		line-height: 1.1rem;
+		border-bottom: solid 1px #dddddd;
+		box-sizing: border-box;
+	}
+	.orders_bar a{
+		box-sizing: border-box;
+		display: inline-block;
+		width: 20%;
+		height: 100%;
+		text-align: center;
+		color: #333333;
+		font-size: 0.35rem;
+		text-decoration: none;
+	}
+	.orders_type{
+		border-bottom: solid 2px #1296db;
+		color: #1296db !important;
+	}
+</style>

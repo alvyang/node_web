@@ -18,6 +18,12 @@ const Selected= resolve => require.ensure([], () => resolve(require('views/selec
 const Address= resolve => require.ensure([], () => resolve(require('views/address.vue')), 'group-address');
 const AddressEdit= resolve => require.ensure([], () => resolve(require('views/address_edit.vue')), 'group-address');
 
+//订单列表页面
+const Orders= resolve => require.ensure([], () => resolve(require('views/orders.vue')), 'group-orders');
+const OrdersDetail= resolve => require.ensure([], () => resolve(require('views/orders_detail.vue')), 'group-orders');
+
+//商品页面
+const Commodity= resolve => require.ensure([], () => resolve(require('views/commodity.vue')), 'group-commodity');
 const router = new VueRouter({
 	routes:[{
 		path:"/",
@@ -35,7 +41,7 @@ const router = new VueRouter({
 			path:"category",
 			component:Category
 		},{
-			path:"shoppingcart",
+			path:"shoppingcart/:type",
 			component:ShoppingCart
 		},{
 			path:"personalcenter",
@@ -50,6 +56,15 @@ const router = new VueRouter({
 	},{
 		path:"/address_edit",
 		component:AddressEdit,
+	},{
+		path:"/orders/:type",
+		component:Orders,
+	},{
+		path:"/orders_detail",
+		component:OrdersDetail,
+	},{
+		path:"/commodity",
+		component:Commodity,
 	}]
 });
 

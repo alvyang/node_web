@@ -1,12 +1,24 @@
 <template>
-	<div class="error_message"><div class="error">{{message}}</div></div>
+	<div class="error_message" v-show="message"><div class="error">{{message}}</div></div>
 </template>
 <script>
 	export default({
 		data(){
 			return {
-				initTop:0
+				initTop:0,
 			};
+		},
+		watch:{
+			message:{
+				handler(val, oldVal){
+					if(val){
+						var _self = this;
+						setTimeout(function(){
+							_self.$parent.$data.message = "";
+						},1500);
+					}
+				}
+			}
 		},
 		mounted(){
 			var mTop = $(".error_message").css("margin-top");

@@ -29,13 +29,13 @@
 		</div>
 		<div class="order">
 			<a>我的订单</a>
-			<router-link to="/orders">查看全部订单</router-link>
+			<router-link to="/orders/1">查看全部订单</router-link>
 		</div>
 		<div class="order_detail">
-			<router-link to="/payment">待付款<span>1</span></router-link>
-			<router-link to="/deliver">待发货<span>1</span></router-link>
-			<router-link to="/receive">待收货<span>1</span></router-link>
-			<router-link to="/evaluate">待评价<span>1</span></router-link>
+			<router-link to="/orders/2">待付款<span>1</span></router-link>
+			<router-link to="/orders/3">待发货<span>1</span></router-link>
+			<router-link to="/orders/4">待收货<span>1</span></router-link>
+			<router-link to="/orders/5">待评价<span>1</span></router-link>
 		</div>
 	</div>
 </template>
@@ -154,7 +154,10 @@
 		right: 0.25rem;
 		height: 100%;
 		color: #bfbfbf;
-		padding-right: 0.5rem;		
+		padding-right: 0.5rem;	
+		display: inline-block;
+		width: 6rem;
+		text-align: right;	
 	}
 	.order a{
 		display: inline-block;

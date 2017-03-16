@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<jf-prompt :message="message" v-show="message"></jf-prompt>
+		<jf-prompt :message="message"></jf-prompt>
 		<div class="address_content">
 			<div class="address_input">
 				<span>收货人姓名</span>
@@ -60,28 +60,19 @@
 				var _self = this;
 				if(!arg){
 					this.message = arg1;
-					setTimeout(function(){
-						_self.message = "";
-					},1500);
 					return false
 				}else{
-					this.message = "";
 					return true;
 				}
 			},
 			verPhoneNumber() {//校验手机号
 				if (this.address.phone.match(/^(13[0-9]|14[0-9]|15[0-9]|18[0-9]|17[0-9])\d{8}$/g)) {
-					this.message = "";
 					return true;
 				} else if(this.address.phone.indexOf("*") > -1){
-					this.message = "";
 					return true;
 				}else{
 					var _self = this;
 					this.message = "请输入正确的手机号码！";
-					setTimeout(function(){
-						_self.message = "";
-					},1500);
 					return false
 				}
 			},
@@ -120,6 +111,7 @@
 		vertical-align: middle;
 	}
 	.address_input input,.address_input textarea{
+		background-color: #f4f4f4;
 		border: none;
 		font-size: 0.407rem;
 		height: 0.7rem;

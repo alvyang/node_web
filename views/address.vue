@@ -32,7 +32,7 @@
 		},
 		methods:{
 			selectAddress(index){
-				this.$router.push({path:"/order",query:this.addressList[index]});
+				this.$router.replace({path:"/order",query:this.addressList[index]});
 			},
 			addressEdit(index){
 				this.$router.push({path:"/address_edit",query:this.addressList[index]});
