@@ -1,12 +1,10 @@
 import Vue from "vue/dist/vue.js";
 import VueRouter from "vue-router";
 Vue.use(VueRouter);
-
 //一级页面
 import Main from "views/main.vue";
 //异步按需加载
 const Order= resolve => require.ensure([], () => resolve(require('views/order.vue')), 'group-order');
-
 //二级页面
 //首页五个页面
 const Home= resolve => require.ensure([], () => resolve(require('views/home.vue')), 'group-main');
@@ -67,5 +65,29 @@ const router = new VueRouter({
 		component:Commodity,
 	}]
 });
+router.beforeEach((to, from, next) => {
+	var args = {};
+	var search = decodeURIComponent(location.search.substring(1));
+    var reg = /(?:([^&]+)=([^&]+))/g;
+    var match = search.match(reg);
+    if(match){
+	   	for(var i = 0 ; i < match.length;i++){
+			var temp = match[i].split("=");   		
+	    	args[temp[0]]  = temp[1];
+	   	}
+    }
+    console.log(args.code);
+    $.ajax({
+		type: "post",
+		url: "http://172.16.87.95:3000/inter/wechat/getOpenId",
+		async:false,
+		dataType: 'JSON',
+		data:{code:args.code},
+		success: function(res) {
+			console.log(res);
+		}
+	});
+  	next();
+})
 
 export default router;
