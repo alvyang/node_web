@@ -2,21 +2,18 @@
 	<div>
 		<div class="swiper-container">
 		  	<div class="swiper-wrapper">
-		    	<div class="swiper-slide">
-		    		<img src="../img/swiper01.jpg" />
-		    	</div>
-		    	<div class="swiper-slide">
-		    		<img src="../img/swiper02.jpg" />
-		    	</div>
+  				<div class="swiper-slide" v-for="c in commodityImage">
+			    		<img :src="c.source" />
+		  		</div>
 		  	</div>
 		</div>
 		<div class="commodity_message">
-			<div class="name">{{commodityName}}</div>
-			<div class="description">{{commodityDesc}}</div>
-			<div class="price">¥ {{commodityPrice}} 元</div>
+			<div class="name">{{commodity.full_name}}</div>
+			<div class="description">{{commodity.memo}}</div>
+			<div class="price">¥ {{commodity.price}} 元</div>
 		</div>
 		<div class="commodity_description">
-			{{commodity_description}}
+			{{commodity.introduction}}
 		</div>
 		<div style="height: 1.4rem;"></div>
 		<div class="commodity_operation">
@@ -27,23 +24,40 @@
 	</div>
 </template>
 <script>
-	import swiper from "swiper";
+	import Swiper from "swiper";
 	import Prompt from "components/prompt.vue";
 	require("swiper/dist/css/swiper.min.css");
 	export default({
 		data(){
 			return {
-				commodityName:"山西特产宁化府益源庆名醋山西特产宁化府益源庆名醋2400ml（31.8元）",
-				commodityDesc:"宁化府益源庆名醋纯粮酿造，甜、绵、酸、香浓、高质量，誉满全国，经久不衰。",
-				commodityUrl:"img/logo.jpg",
-				commodityPrice:52.48,
-				commodity_description:"宁化府益源庆名醋纯粮酿造，甜、绵、酸、香浓、高质量，誉满全国，经久不衰。宁化府益源庆名醋纯粮酿造，甜、绵、酸、香浓、高质量，誉满全国，经久不衰。宁化府益源庆名醋纯粮酿造，甜、绵、酸、香浓、高质量，誉满全国，经久不衰。宁化府益源庆名醋纯粮酿造，甜、绵、酸、香浓、高质量，誉满全国，经久不衰。宁化府益源庆名醋纯粮酿造，甜、绵、酸、香浓、高质量，誉满全国，经久不衰。宁化府益源庆名醋纯粮酿造，甜、绵、酸、香浓、高质量，誉满全国，经久不衰。",
+				commodity:{},
+				commodityImage:[],
+			}
+		},
+		methods:{
+			getCommodityMessage(){
+				var _self = this;
+				$.ajax({
+					type: "post",
+					url: "/inter/products/getProductMessage",
+					data:{id:_self.$route.params.id},
+					success: function(res) {
+						if(res.code == "000000"){
+							_self.commodity = res.data[0];
+							_self.commodityImage = res.data;
+						}
+					}
+				});
 			}
 		},
 		mounted(){
-			var mySwiper = new Swiper('.swiper-container', {
-				autoplay: 2000,//可选选项，自动滑动
-			})
+			this.getCommodityMessage();
+			setTimeout(function(){
+				var mySwiper = new Swiper('.swiper-container', {
+					autoplay: 0,//可选选项，自动滑动
+				})	
+			},1000);
+			
 		},
 		components:{
 			"jf-prompt":Prompt,
@@ -58,6 +72,7 @@
 		padding: 0.4rem;
 		max-height: 9999px;
 		font-size: 0.4rem;
+		line-height: 0.6rem;
 	}
 	.commodity_operation{
 		position: fixed;
@@ -100,6 +115,7 @@
 		background-color: #ffffff;
 		padding-left: 0.3rem;
 		padding-right: 0.2rem;
+		font-size: 0.45rem;
 	}
 	.commodity_message .name{
 		overflow:hidden; 

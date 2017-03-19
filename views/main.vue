@@ -15,6 +15,30 @@
 			}
 		},
 		mounted(){
+			if(!this.$store.state.openid){
+				var _self = this;
+				var args = {};
+				var search = decodeURIComponent(location.search.substring(1));
+			    var reg = /(?:([^&]+)=([^&]+))/g;
+			    var match = search.match(reg);
+			    if(match){
+				   	for(var i = 0 ; i < match.length;i++){
+						var temp = match[i].split("=");   		
+				    		args[temp[0]]  = temp[1];
+				   	}
+			    }
+			    $.ajax({
+					type: "post",
+					url: "/inter/wechat/getOpenId",
+					async:false,
+					data:{code:args.code},
+					success: function(res) {
+						if(res.code == "000000"){
+							_self.$store.state.openid = res.openid
+						}
+					}
+				});
+			}
 			var t = $(".navigation").height();
 			$(".main_content").height($(window).height()-t);
 		},

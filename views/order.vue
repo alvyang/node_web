@@ -63,6 +63,7 @@
 		},
 		methods:{
 			submitOrder(){
+				console.log(this.$store.state.openid);
 				this.message = "微信支付";
 			},
 			keepTwoDecimal(num) {

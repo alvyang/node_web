@@ -2,7 +2,7 @@
 	<div class="navigation">
 		<router-link to="/home" active-class="nav_current_1">首页</router-link>
 		<router-link to="/category"  active-class="nav_current_2">分类</router-link>
-		<router-link to="/selected" active-class="nav_current_3">精选</router-link>
+		<!--<router-link to="/selected" active-class="nav_current_3">精选</router-link>-->
 		<router-link to="/shoppingcart/1" active-class="nav_current_4">购物车</router-link>
 		<router-link to="/personalcenter" active-class="nav_current_5">个人中心</router-link>
 	</div>
@@ -59,7 +59,7 @@
 	.navigation a{
 		display: inline-block;
 		position: relative;
-		width: 20%;
+		width: 25%;
 		font-size: 0.3rem;
 		color: #8a8a8a;
 		text-align: center;

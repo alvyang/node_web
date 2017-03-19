@@ -12,12 +12,12 @@
 		  	</div>
 		</div>
 		<div class="commodity_list">
-			<router-link to="/commodity" tag="div" v-for="c in commodityList" class="commodity_item">
-				<img :src="c.commodityUrl" />
-				<div class="commodity_name">{{c.commodityName}}</div>
+			<router-link :to="{path:'/commodity',name:'commodity',params:{id:c.id}}" v-show="c.is_list.data[0] == 1" tag="div" v-for="c in commodityList" class="commodity_item">
+				<img :src="c.image" />
+				<div class="commodity_name">{{c.full_name}}</div>
 				<div class="commodity_cart">
-					<span class="commodity_price">¥{{c.commodityPrice}}</span>
-					<img src="../img/shopping_cart.png" @click.prevent="addToCart"/>
+					<span class="commodity_price">¥{{c.price}}</span>
+					<img src="../img/shopping_cart.png" @click.prevent="addToCart(c.id)"/>
 				</div>
 			</router-link>
 		</div>
@@ -35,38 +35,29 @@
 		data(){
 			return {
 				message:"",
-				commodityList:[{
-					commodityName:"山西特产宁化府益源庆名醋山西特产宁化府益源庆名醋2400ml（31.8元）",
-					commodityPrice:52.48,
-					commodityUrl:"img/logo.jpg",
-					commodityDesc:"宁化府益源庆名醋纯粮酿造，甜、绵、酸、香浓、高质量，誉满全国，经久不衰。",
-				},{
-					commodityName:"山西特产宁化府益源庆名醋山西特产宁化府益源庆名醋2400ml（31.8元）",
-					commodityPrice:52.48,
-					commodityUrl:"img/logo.jpg",
-					commodityDesc:"宁化府益源庆名醋纯粮酿造，甜、绵、酸、香浓、高质量，誉满全国，经久不衰。",
-				},{
-					commodityName:"山西特产宁化府益源庆名醋山西特产宁化府益源庆名醋2400ml（31.8元）",
-					commodityPrice:52.48,
-					commodityNum:1,
-					commodityUrl:"img/logo.jpg",
-					commodityDesc:"宁化府益源庆名醋纯粮酿造，甜、绵、酸、香浓、高质量，誉满全国，经久不衰。",
-				},{
-					commodityName:"山西特产宁化府益源庆名醋山西特产宁化府益源庆名醋2400ml（31.8元）",
-					commodityPrice:52.48,
-					commodityNum:1,
-					commodityUrl:"img/logo.jpg",
-					commodityDesc:"宁化府益源庆名醋纯粮酿造，甜、绵、酸、香浓、高质量，誉满全国，经久不衰。",
-				}]
+				commodityList:[]
 			}
 		},
 		methods:{
-			addToCart(){
+			addToCart(index){
+				
+				console.log(this.$store.state.openid);
 				var _self = this;
 				this.message = "该商品已添加到购物车";
 			}
 		},
 		mounted(){
+			var _self = this;
+			$.ajax({
+				type: "post",
+				url: "/inter/products/getProductsList",
+				success: function(res) {
+					console.log(res);
+					if(res.code == "000000"){
+						_self.commodityList = res.data;
+					}
+				}
+			});
 			var mySwiper = new Swiper('.swiper-container', {
 				autoplay: 2000,//可选选项，自动滑动
 			})

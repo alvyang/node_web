@@ -61,33 +61,10 @@ const router = new VueRouter({
 		path:"/orders_detail",
 		component:OrdersDetail,
 	},{
-		path:"/commodity",
+		path:"/commodity/:id",
+		name:'commodity',
 		component:Commodity,
 	}]
 });
-router.beforeEach((to, from, next) => {
-	var args = {};
-	var search = decodeURIComponent(location.search.substring(1));
-    var reg = /(?:([^&]+)=([^&]+))/g;
-    var match = search.match(reg);
-    if(match){
-	   	for(var i = 0 ; i < match.length;i++){
-			var temp = match[i].split("=");   		
-	    	args[temp[0]]  = temp[1];
-	   	}
-    }
-    console.log(args.code);
-    $.ajax({
-		type: "post",
-		url: "http://172.16.87.95:3000/inter/wechat/getOpenId",
-		async:false,
-		dataType: 'JSON',
-		data:{code:args.code},
-		success: function(res) {
-			console.log(res);
-		}
-	});
-  	next();
-})
 
-export default router;
+export default router

@@ -25,7 +25,7 @@ webpackJsonp([5],{
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "D:\\lvyang\\repositories\\node_web\\components\\prompt.vue"
+	__vue_options__.__file = "/Users/lvyang/repositories/node_web/components/prompt.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -36,9 +36,9 @@ webpackJsonp([5],{
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-8186fe60", __vue_options__)
+	    hotAPI.createRecord("data-v-64880e60", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-8186fe60", __vue_options__)
+	    hotAPI.reload("data-v-64880e60", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] prompt.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -63,8 +63,8 @@ webpackJsonp([5],{
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-8186fe60!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./prompt.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-8186fe60!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./prompt.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-64880e60!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./prompt.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-64880e60!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./prompt.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -155,7 +155,7 @@ webpackJsonp([5],{
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-8186fe60", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-64880e60", module.exports)
 	  }
 	}
 
@@ -5817,20 +5817,6 @@ webpackJsonp([5],{
 
 /***/ },
 
-/***/ 69:
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "5d2a98685c9868cdf71cc03ec5143e7f.jpg";
-
-/***/ },
-
-/***/ 70:
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__.p + "97eafdd4eac0fcec35c0221c7fab49e6.jpg";
-
-/***/ },
-
 /***/ 203:
 /***/ function(module, exports, __webpack_require__) {
 
@@ -5856,10 +5842,10 @@ webpackJsonp([5],{
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "D:\\lvyang\\repositories\\node_web\\views\\commodity.vue"
+	__vue_options__.__file = "/Users/lvyang/repositories/node_web/views/commodity.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-7e251425"
+	__vue_options__._scopeId = "data-v-7521d7ef"
 
 	/* hot reload */
 	if (false) {(function () {
@@ -5868,9 +5854,9 @@ webpackJsonp([5],{
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-7e251425", __vue_options__)
+	    hotAPI.createRecord("data-v-7521d7ef", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-7e251425", __vue_options__)
+	    hotAPI.reload("data-v-7521d7ef", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] commodity.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -5895,8 +5881,8 @@ webpackJsonp([5],{
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7e251425&scoped=true!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./commodity.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7e251425&scoped=true!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./commodity.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7521d7ef&scoped=true!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./commodity.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7521d7ef&scoped=true!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./commodity.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -5915,7 +5901,7 @@ webpackJsonp([5],{
 
 
 	// module
-	exports.push([module.id, "\n.commodity_description[data-v-7e251425]{\n\tbackground-color: #ffffff;\n\tmargin-top: 0.2rem;\n\tbox-sizing: border-box;\n\tpadding: 0.4rem;\n\tmax-height: 9999px;\n\tfont-size: 0.4rem;\n}\n.commodity_operation[data-v-7e251425]{\n\tposition: fixed;\n\tbackground-color: #ffffff;\n\tbottom: 0;\n\twidth: 10rem;\n\theight: 1.35rem;\n}\n.commodity_operation .attend[data-v-7e251425],.commodity_operation .shopping_cart[data-v-7e251425]{\n\tdisplay: inline-block;\n\twidth: 20%;\n\theight: 100%;\n\tline-height: 2.1rem;\n\tfont-size: 0.3rem;\n\ttext-align: center;\n\tcolor: #8a8a8a;\n\ttext-decoration: none;\n}\n.commodity_operation .attend[data-v-7e251425]{\n\tbackground: url(" + __webpack_require__(206) + ") center 0.2rem no-repeat;\n\tbackground-size: 0.55rem auto;\n}\n.commodity_operation .shopping_cart[data-v-7e251425]{\n\tbackground: url(" + __webpack_require__(20) + ") center 0.25rem no-repeat;\n\tbackground-size: 0.5rem auto;\n}\n.commodity_operation .add_cart[data-v-7e251425]{\n\tdisplay: inline-block;\n\twidth: 5rem;\n\theight: 100%;\n\tfloat: right;\n\tline-height: 1.35rem;\n\tfont-size: 0.45rem;\n\tcolor: #ffffff;\n\tbackground-color: #d81e06;\n\ttext-align: center;\n}\n.commodity_message[data-v-7e251425]{\n\tbox-sizing: border-box;\n\tbackground-color: #ffffff;\n\tpadding-left: 0.3rem;\n\tpadding-right: 0.2rem;\n}\n.commodity_message .name[data-v-7e251425]{\n\toverflow:hidden; \n\ttext-overflow:ellipsis;\n\tdisplay:-webkit-box; \n\t-webkit-box-orient:vertical;\n\t-webkit-line-clamp:2;\n\tpadding-top: 0.2rem;\n\tpadding-bottom: 0.2rem;\n\tcolor: #333333;\n}\n.commodity_message .description[data-v-7e251425]{\n\tcolor: #d81e06;\n}\n.commodity_message  .price[data-v-7e251425]{\n\tcolor: #d81e06;\n\tfont-size: 0.45rem;\n\tmargin-top: 0.2rem;\n\tpadding-bottom: 0.3rem;\n}\n.swiper-container[data-v-7e251425]{\n\tmargin-top: -1px;\n\tfont-size: 0;\n}\n.swiper-slide img[data-v-7e251425]{\n\twidth: 10rem;\n}\n", ""]);
+	exports.push([module.id, "\n.commodity_description[data-v-7521d7ef]{\n\tbackground-color: #ffffff;\n\tmargin-top: 0.2rem;\n\tbox-sizing: border-box;\n\tpadding: 0.4rem;\n\tmax-height: 9999px;\n\tfont-size: 0.4rem;\n\tline-height: 0.6rem;\n}\n.commodity_operation[data-v-7521d7ef]{\n\tposition: fixed;\n\tbackground-color: #ffffff;\n\tbottom: 0;\n\twidth: 10rem;\n\theight: 1.35rem;\n}\n.commodity_operation .attend[data-v-7521d7ef],.commodity_operation .shopping_cart[data-v-7521d7ef]{\n\tdisplay: inline-block;\n\twidth: 20%;\n\theight: 100%;\n\tline-height: 2.1rem;\n\tfont-size: 0.3rem;\n\ttext-align: center;\n\tcolor: #8a8a8a;\n\ttext-decoration: none;\n}\n.commodity_operation .attend[data-v-7521d7ef]{\n\tbackground: url(" + __webpack_require__(206) + ") center 0.2rem no-repeat;\n\tbackground-size: 0.55rem auto;\n}\n.commodity_operation .shopping_cart[data-v-7521d7ef]{\n\tbackground: url(" + __webpack_require__(20) + ") center 0.25rem no-repeat;\n\tbackground-size: 0.5rem auto;\n}\n.commodity_operation .add_cart[data-v-7521d7ef]{\n\tdisplay: inline-block;\n\twidth: 5rem;\n\theight: 100%;\n\tfloat: right;\n\tline-height: 1.35rem;\n\tfont-size: 0.45rem;\n\tcolor: #ffffff;\n\tbackground-color: #d81e06;\n\ttext-align: center;\n}\n.commodity_message[data-v-7521d7ef]{\n\tbox-sizing: border-box;\n\tbackground-color: #ffffff;\n\tpadding-left: 0.3rem;\n\tpadding-right: 0.2rem;\n\tfont-size: 0.45rem;\n}\n.commodity_message .name[data-v-7521d7ef]{\n\toverflow:hidden; \n\ttext-overflow:ellipsis;\n\tdisplay:-webkit-box; \n\t-webkit-box-orient:vertical;\n\t-webkit-line-clamp:2;\n\tpadding-top: 0.2rem;\n\tpadding-bottom: 0.2rem;\n\tcolor: #333333;\n}\n.commodity_message .description[data-v-7521d7ef]{\n\tcolor: #d81e06;\n}\n.commodity_message  .price[data-v-7521d7ef]{\n\tcolor: #d81e06;\n\tfont-size: 0.45rem;\n\tmargin-top: 0.2rem;\n\tpadding-bottom: 0.3rem;\n}\n.swiper-container[data-v-7521d7ef]{\n\tmargin-top: -1px;\n\tfont-size: 0;\n}\n.swiper-slide img[data-v-7521d7ef]{\n\twidth: 10rem;\n}\n", ""]);
 
 	// exports
 
@@ -5973,24 +5959,38 @@ webpackJsonp([5],{
 	//
 	//
 	//
-	//
-	//
-	//
 
 	__webpack_require__(64);
 	exports.default = {
 		data: function data() {
 			return {
-				commodityName: "山西特产宁化府益源庆名醋山西特产宁化府益源庆名醋2400ml（31.8元）",
-				commodityDesc: "宁化府益源庆名醋纯粮酿造，甜、绵、酸、香浓、高质量，誉满全国，经久不衰。",
-				commodityUrl: "img/logo.jpg",
-				commodityPrice: 52.48,
-				commodity_description: "宁化府益源庆名醋纯粮酿造，甜、绵、酸、香浓、高质量，誉满全国，经久不衰。宁化府益源庆名醋纯粮酿造，甜、绵、酸、香浓、高质量，誉满全国，经久不衰。宁化府益源庆名醋纯粮酿造，甜、绵、酸、香浓、高质量，誉满全国，经久不衰。宁化府益源庆名醋纯粮酿造，甜、绵、酸、香浓、高质量，誉满全国，经久不衰。宁化府益源庆名醋纯粮酿造，甜、绵、酸、香浓、高质量，誉满全国，经久不衰。宁化府益源庆名醋纯粮酿造，甜、绵、酸、香浓、高质量，誉满全国，经久不衰。"
+				commodity: {},
+				commodityImage: []
 			};
 		},
+
+		methods: {
+			getCommodityMessage: function getCommodityMessage() {
+				var _self = this;
+				$.ajax({
+					type: "post",
+					url: "/inter/products/getProductMessage",
+					data: { id: _self.$route.params.id },
+					success: function success(res) {
+						if (res.code == "000000") {
+							_self.commodity = res.data[0];
+							_self.commodityImage = res.data;
+						}
+					}
+				});
+			}
+		},
 		mounted: function mounted() {
-			var mySwiper = new Swiper('.swiper-container', {
-				autoplay: 2000 });
+			this.getCommodityMessage();
+			setTimeout(function () {
+				var mySwiper = new _swiper2.default('.swiper-container', {
+					autoplay: 0 });
+			}, 1000);
 		},
 
 		components: {
@@ -6004,17 +6004,29 @@ webpackJsonp([5],{
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', [_vm._m(0), _vm._v(" "), _c('div', {
+	  return _c('div', [_c('div', {
+	    staticClass: "swiper-container"
+	  }, [_c('div', {
+	    staticClass: "swiper-wrapper"
+	  }, _vm._l((_vm.commodityImage), function(c) {
+	    return _c('div', {
+	      staticClass: "swiper-slide"
+	    }, [_c('img', {
+	      attrs: {
+	        "src": c.source
+	      }
+	    })])
+	  }))]), _vm._v(" "), _c('div', {
 	    staticClass: "commodity_message"
 	  }, [_c('div', {
 	    staticClass: "name"
-	  }, [_vm._v(_vm._s(_vm.commodityName))]), _vm._v(" "), _c('div', {
+	  }, [_vm._v(_vm._s(_vm.commodity.full_name))]), _vm._v(" "), _c('div', {
 	    staticClass: "description"
-	  }, [_vm._v(_vm._s(_vm.commodityDesc))]), _vm._v(" "), _c('div', {
+	  }, [_vm._v(_vm._s(_vm.commodity.memo))]), _vm._v(" "), _c('div', {
 	    staticClass: "price"
-	  }, [_vm._v("¥ " + _vm._s(_vm.commodityPrice) + " 元")])]), _vm._v(" "), _c('div', {
+	  }, [_vm._v("¥ " + _vm._s(_vm.commodity.price) + " 元")])]), _vm._v(" "), _c('div', {
 	    staticClass: "commodity_description"
-	  }, [_vm._v("\n\t\t" + _vm._s(_vm.commodity_description) + "\n\t")]), _vm._v(" "), _c('div', {
+	  }, [_vm._v("\n\t\t\t" + _vm._s(_vm.commodity.introduction) + "\n\t\t")]), _vm._v(" "), _c('div', {
 	    staticStyle: {
 	      "height": "1.4rem"
 	    }
@@ -6030,29 +6042,11 @@ webpackJsonp([5],{
 	  }, [_vm._v("购物车")]), _vm._v(" "), _c('a', {
 	    staticClass: "add_cart"
 	  }, [_vm._v("加入购物车")])], 1)])
-	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
-	    staticClass: "swiper-container"
-	  }, [_c('div', {
-	    staticClass: "swiper-wrapper"
-	  }, [_c('div', {
-	    staticClass: "swiper-slide"
-	  }, [_c('img', {
-	    attrs: {
-	      "src": __webpack_require__(69)
-	    }
-	  })]), _vm._v(" "), _c('div', {
-	    staticClass: "swiper-slide"
-	  }, [_c('img', {
-	    attrs: {
-	      "src": __webpack_require__(70)
-	    }
-	  })])])])
-	}]}
+	},staticRenderFns: []}
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-7e251425", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-7521d7ef", module.exports)
 	  }
 	}
 
