@@ -39,15 +39,13 @@
 			}
 		},
 		methods:{
-			addToCart(index){
+			addToCart(id){
+				var _self = this;
 				var data = {
-					openid:"28",
+					openid:_self.$store.state.openid,
 					cartItem:[{
-						quantity:"2",
-						product_id:"1"
-					},{
-						quantity:"3",
-						product_id:"2"
+						quantity:1,
+						product_id:id
 					}]
 				};
 				$.ajax({
@@ -57,13 +55,10 @@
 					success: function(res) {
 						console.log(res);
 						if(res.code == "000000"){
-							_self.commodityList = res.data;
+							_self.message = "该商品已添加到购物车";
 						}
 					}
 				});
-				console.log(this.$store.state.openid);
-				var _self = this;
-				this.message = "该商品已添加到购物车";
 			}
 		},
 		mounted(){

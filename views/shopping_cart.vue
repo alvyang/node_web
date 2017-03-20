@@ -4,17 +4,17 @@
 		<div v-for="(c,index) in commodityList" class="cart_item">
 			<div class="select_img" :id="'select'+index" @click="selectCommodity(index)"></div>
 			<div class="commodity_message">
-				<img :src="c.commodityUrl"/>
-				<div class="commodity_detail">{{c.commodityName}}</div>
+				<img :src="c.image"/>
+				<div class="commodity_detail">{{c.full_name}}</div>
 				<div class="commodity_operation">
-					<a class="price"><span>¥</span>{{c.commodityPrice}}</a>
+					<a class="price"><span>¥</span>{{c.price}}</a>
 					<div class="add_reduce">
-						<a :class="['reduce',{'color_dddddd':c.commodityNum == 1}]" @click="reduceCommodity(index)">-</a><a class="num">{{c.commodityNum}}</a><a class="add" @click="addCommodity(index)">+</a>
+						<a :class="['reduce',{'color_dddddd':c.quantity == 1}]" @click="reduceCommodity(index)">-</a><a class="num">{{c.quantity}}</a><a class="add" @click="addCommodity(index)">+</a>
 					</div>
 				</div>
 			</div>
 		</div>
-		<div :class="['shopping_cart_num',{'bottom_135':bottomFlag,'bottom_0':!bottomFlag}]">
+		<div v-show="commodityList.length > 0"  :class="['shopping_cart_num',{'bottom_135':bottomFlag,'bottom_0':!bottomFlag}]">
 			<div class="select_img_all" id="selectAll" @click="selectAll">全选</div>
 			<div class="total">合计：¥ {{numPrice}}</div>
 			<div class="settlement" @click="settlement">去结算</div>
@@ -28,25 +28,25 @@
 	export default({
 		data(){
 			return {
-				commodityList:[{
-					commodityName:"山西特产宁化府益源庆名醋山西特产宁化府益源庆名醋2400ml（31.8元）",
-					commodityPrice:52.48,
-					commodityNum:1,
-					commodityUrl:"img/logo.jpg",
-					commodityDesc:"宁化府益源庆名醋纯粮酿造，甜、绵、酸、香浓、高质量，誉满全国，经久不衰。",
-				},{
-					commodityName:"山西特产宁化府益源庆名醋山西特产宁化府益源庆名醋2400ml（31.8元）",
-					commodityPrice:31.25,
-					commodityNum:1,
-					commodityUrl:"img/logo.jpg",
-					commodityDesc:"宁化府益源庆名醋纯粮酿造，甜、绵、酸、香浓、高质量，誉满全国，经久不衰。",
-				}],
+				commodityList:[],
 				numPrice:0.00,
 				message:"",
 				bottomFlag:true,
 			}
 		},
 		mounted(){
+			var _self = this;
+			$.ajax({
+				type: "post",
+				url: "/inter/cart/getCartItem",
+				data:{open_id:_self.$store.state.openid},
+				success: function(res) {
+					console.log(res);
+					if(res.code == "000000"){
+						_self.commodityList = res.data;
+					}
+				}
+			});
 			this.setCartNumdiv();
 		},
 		methods:{
@@ -71,7 +71,7 @@
 						noSelectNum++;//没有选中的个数
 					}else{
 						selectNum++;//选中的个数 
-						priceNumTemp+= this.commodityList[i].commodityNum * this.commodityList[i].commodityPrice;
+						priceNumTemp+= this.commodityList[i].quantity * this.commodityList[i].price;
 					}
 				}
 				if(noSelectNum <= l && selectNum != l){
@@ -92,18 +92,18 @@
 			},
 			addCommodity(index){
 				var temp = this.commodityList[index];
-				temp.commodityNum++;
+				temp.quantity++;
 				if($("#select"+index).attr("class") == "select_img_select"){
-					var t = this.numPrice + temp.commodityPrice;
+					var t = this.numPrice + temp.price;
 					this.numPrice = this.keepTwoDecimal(t);
 				}
 			},
 			reduceCommodity(index){
-				if(this.commodityList[index].commodityNum > 1){
+				if(this.commodityList[index].quantity > 1){
 					var temp = this.commodityList[index];
-					temp.commodityNum--;
+					temp.quantity--;
 					if($("#select"+index).attr("class") == "select_img_select"){
-						var t = this.numPrice - temp.commodityPrice;
+						var t = this.numPrice - temp.price;
 						this.numPrice = this.keepTwoDecimal(t);
 					}
 				}
@@ -120,7 +120,7 @@
 					$("#selectAll").removeClass("select_img_all").addClass("select_img_all_select");
 					for(var i = 0 ; i < l ;i++){
 						$("#select"+i).removeClass("select_img").addClass("select_img_select");
-						priceNumTemp+= this.commodityList[i].commodityNum * this.commodityList[i].commodityPrice;
+						priceNumTemp+= this.commodityList[i].quantity * this.commodityList[i].price;
 					}
 				}
 				
