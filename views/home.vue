@@ -40,7 +40,27 @@
 		},
 		methods:{
 			addToCart(index){
-				
+				var data = {
+					openid:"28",
+					cartItem:[{
+						quantity:"2",
+						product_id:"1"
+					},{
+						quantity:"3",
+						product_id:"2"
+					}]
+				};
+				$.ajax({
+					type: "post",
+					url: "/inter/cart/addCart",
+					data:data,
+					success: function(res) {
+						console.log(res);
+						if(res.code == "000000"){
+							_self.commodityList = res.data;
+						}
+					}
+				});
 				console.log(this.$store.state.openid);
 				var _self = this;
 				this.message = "该商品已添加到购物车";

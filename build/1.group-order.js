@@ -25,10 +25,10 @@ webpackJsonp([1],{
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/lvyang/repositories/node_web/views/order.vue"
+	__vue_options__.__file = "D:\\lvyang\\repositories\\node_web\\views\\order.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-2d553490"
+	__vue_options__._scopeId = "data-v-2cca0874"
 
 	/* hot reload */
 	if (false) {(function () {
@@ -37,9 +37,9 @@ webpackJsonp([1],{
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-2d553490", __vue_options__)
+	    hotAPI.createRecord("data-v-2cca0874", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-2d553490", __vue_options__)
+	    hotAPI.reload("data-v-2cca0874", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] order.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -64,8 +64,8 @@ webpackJsonp([1],{
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-2d553490&scoped=true!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./order.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-2d553490&scoped=true!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./order.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-2cca0874&scoped=true!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./order.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-2cca0874&scoped=true!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./order.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -84,7 +84,7 @@ webpackJsonp([1],{
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*提交*/\n.order_submit_div[data-v-2d553490]{\n\tposition: fixed;\n\tbottom: 0;\n\tbackground-color: #FFFFFF;\n\theight: 1.35rem;\n\tfont-size: 0;\n\tline-height: 1.35rem;\n}\n.order_submit_div .order_price[data-v-2d553490]{\n\tbox-sizing: border-box;\n\twidth: 7.5rem;\n\theight: 100%;\n\tcolor: #333333;\n\ttext-align: right;\n\tpadding-right: 0.4rem;\n}\n.order_submit_div .order_price span[data-v-2d553490]:nth-child(1){\n\tfont-size: 0.35rem;\n}\n.order_submit_div .order_price span[data-v-2d553490]:nth-child(2){\n\tfont-size: 0.4rem;\n}\n.order_submit_div .order_submit[data-v-2d553490]{\n\twidth: 2.5rem;\n\theight: 100%;\n\ttext-align: center;\n\tcolor: #ffffff;\n\tfont-size: 0.4rem;\n\tbackground-color: #d81e06;\n}\n.order_submit_div > div[data-v-2d553490]{\n\tdisplay: inline-block;\n}\n/*订单商品信息样式*/\n.order_commodity_title[data-v-2d553490]{\n\tbackground: url(" + __webpack_require__(30) + ") 0.4rem center no-repeat;\n\tbackground-size: 0.4rem auto;\n\tmargin-top: 0.2rem;\n\tfont-size: 0.4rem;\n\tbox-sizing: border-box;\n\tpadding-left: 1rem;\n\tbackground-color: #ffffff;\n\theight: 1rem;\n\tline-height: 1rem;\n\tcolor: #1296db;\n\tborder-bottom: solid 1px #dddddd;\n}\n.order_commodity[data-v-2d553490]{\n\tbackground-color: #ffffff;\n\tborder-bottom: solid 1px #dddddd;\n\theight: 2rem;\n\tcolor: #333333;\n}\n.order_commodity img[data-v-2d553490]{\n\twidth: 1.8rem;\n\theight: 1.8rem;\n\tmargin-top: 0.1rem;\n\tvertical-align: middle;\n}\n.order_commodity .commodity_name[data-v-2d553490]{\n\tdisplay: inline-block;\n\toverflow:hidden; \n\ttext-overflow:ellipsis;\n\t-webkit-box-orient:vertical;\n\t-webkit-line-clamp:2;\n\twidth: 6.6rem;\n\tvertical-align: middle;\n\tbox-sizing: border-box;\n\tpadding-left: 0.2rem;\n\tfont-size: 0.35rem;\n}\n.order_commodity .commodity_num[data-v-2d553490]{\n\tdisplay: inline-block;\n\twidth: 1rem;\n\ttext-align: right;\n\tfont-size: 0.35rem;\n\tvertical-align: middle;\n}\n/*收获地址样式*/\n.receipt_address_div[data-v-2d553490]{\n\tfont-size: 0;\n}\n.receipt_address[data-v-2d553490]{\n\tbackground:#ffffff url(" + __webpack_require__(31) + ") 9.2rem center no-repeat;\n\tbackground-size: 0.5rem auto;\n\tpadding-bottom: 0.35rem;\n\twidth: 10rem;\n\tfont-size: 0.35rem;\n}\n.receipt_address .name[data-v-2d553490]{\n\theight: 1rem;\n\tline-height: 1rem;\n\tbox-sizing: border-box;\n\tpadding-left: 1rem;\n\tcolor: #333333;\n}\n.receipt_address .name span[data-v-2d553490]:nth-child(1){\n\tpadding-right: 1rem;\n}\n.receipt_address .address[data-v-2d553490]{\n\tbackground: url(" + __webpack_require__(32) + ") 0.4rem center no-repeat;\n\tbackground-size: 0.45rem auto;\n\tbox-sizing: border-box;\n\tpadding-left: 1rem;\n\tcolor: #999999;\n\tpadding-right: 1rem;\n\t\n\toverflow:hidden; \n\ttext-overflow:ellipsis;\n\tdisplay:-webkit-box; \n\t-webkit-box-orient:vertical;\n\t-webkit-line-clamp:2;\n}\n.no_receipt_address[data-v-2d553490]{\n\tbox-sizing: border-box;\n\tpadding-left: 0.4rem;\n\tbackground:#ffffff url(" + __webpack_require__(31) + ") 9.2rem center no-repeat;\n\tbackground-size: 0.5rem auto;\n\theight: 1rem;\n\tline-height: 1rem;\n\tcolor: #333333;\n}\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*提交*/\n.order_submit_div[data-v-2cca0874]{\n\tposition: fixed;\n\tbottom: 0;\n\tbackground-color: #FFFFFF;\n\theight: 1.35rem;\n\tfont-size: 0;\n\tline-height: 1.35rem;\n}\n.order_submit_div .order_price[data-v-2cca0874]{\n\tbox-sizing: border-box;\n\twidth: 7.5rem;\n\theight: 100%;\n\tcolor: #333333;\n\ttext-align: right;\n\tpadding-right: 0.4rem;\n}\n.order_submit_div .order_price span[data-v-2cca0874]:nth-child(1){\n\tfont-size: 0.35rem;\n}\n.order_submit_div .order_price span[data-v-2cca0874]:nth-child(2){\n\tfont-size: 0.4rem;\n}\n.order_submit_div .order_submit[data-v-2cca0874]{\n\twidth: 2.5rem;\n\theight: 100%;\n\ttext-align: center;\n\tcolor: #ffffff;\n\tfont-size: 0.4rem;\n\tbackground-color: #d81e06;\n}\n.order_submit_div > div[data-v-2cca0874]{\n\tdisplay: inline-block;\n}\n/*订单商品信息样式*/\n.order_commodity_title[data-v-2cca0874]{\n\tbackground: url(" + __webpack_require__(30) + ") 0.4rem center no-repeat;\n\tbackground-size: 0.4rem auto;\n\tmargin-top: 0.2rem;\n\tfont-size: 0.4rem;\n\tbox-sizing: border-box;\n\tpadding-left: 1rem;\n\tbackground-color: #ffffff;\n\theight: 1rem;\n\tline-height: 1rem;\n\tcolor: #1296db;\n\tborder-bottom: solid 1px #dddddd;\n}\n.order_commodity[data-v-2cca0874]{\n\tbackground-color: #ffffff;\n\tborder-bottom: solid 1px #dddddd;\n\theight: 2rem;\n\tcolor: #333333;\n}\n.order_commodity img[data-v-2cca0874]{\n\twidth: 1.8rem;\n\theight: 1.8rem;\n\tmargin-top: 0.1rem;\n\tvertical-align: middle;\n}\n.order_commodity .commodity_name[data-v-2cca0874]{\n\tdisplay: inline-block;\n\toverflow:hidden; \n\ttext-overflow:ellipsis;\n\t-webkit-box-orient:vertical;\n\t-webkit-line-clamp:2;\n\twidth: 6.6rem;\n\tvertical-align: middle;\n\tbox-sizing: border-box;\n\tpadding-left: 0.2rem;\n\tfont-size: 0.35rem;\n}\n.order_commodity .commodity_num[data-v-2cca0874]{\n\tdisplay: inline-block;\n\twidth: 1rem;\n\ttext-align: right;\n\tfont-size: 0.35rem;\n\tvertical-align: middle;\n}\n/*收获地址样式*/\n.receipt_address_div[data-v-2cca0874]{\n\tfont-size: 0;\n}\n.receipt_address[data-v-2cca0874]{\n\tbackground:#ffffff url(" + __webpack_require__(31) + ") 9.2rem center no-repeat;\n\tbackground-size: 0.5rem auto;\n\tpadding-bottom: 0.35rem;\n\twidth: 10rem;\n\tfont-size: 0.35rem;\n}\n.receipt_address .name[data-v-2cca0874]{\n\theight: 1rem;\n\tline-height: 1rem;\n\tbox-sizing: border-box;\n\tpadding-left: 1rem;\n\tcolor: #333333;\n}\n.receipt_address .name span[data-v-2cca0874]:nth-child(1){\n\tpadding-right: 1rem;\n}\n.receipt_address .address[data-v-2cca0874]{\n\tbackground: url(" + __webpack_require__(32) + ") 0.4rem center no-repeat;\n\tbackground-size: 0.45rem auto;\n\tbox-sizing: border-box;\n\tpadding-left: 1rem;\n\tcolor: #999999;\n\tpadding-right: 1rem;\n\t\n\toverflow:hidden; \n\ttext-overflow:ellipsis;\n\tdisplay:-webkit-box; \n\t-webkit-box-orient:vertical;\n\t-webkit-line-clamp:2;\n}\n.no_receipt_address[data-v-2cca0874]{\n\tbox-sizing: border-box;\n\tpadding-left: 0.4rem;\n\tbackground:#ffffff url(" + __webpack_require__(31) + ") 9.2rem center no-repeat;\n\tbackground-size: 0.5rem auto;\n\theight: 1rem;\n\tline-height: 1rem;\n\tcolor: #333333;\n}\n", ""]);
 
 	// exports
 
@@ -237,7 +237,7 @@ webpackJsonp([1],{
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/lvyang/repositories/node_web/components/prompt.vue"
+	__vue_options__.__file = "D:\\lvyang\\repositories\\node_web\\components\\prompt.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
@@ -248,9 +248,9 @@ webpackJsonp([1],{
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-64880e60", __vue_options__)
+	    hotAPI.createRecord("data-v-8186fe60", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-64880e60", __vue_options__)
+	    hotAPI.reload("data-v-8186fe60", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] prompt.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -275,8 +275,8 @@ webpackJsonp([1],{
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-64880e60!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./prompt.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-64880e60!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./prompt.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-8186fe60!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./prompt.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-8186fe60!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./prompt.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -367,7 +367,7 @@ webpackJsonp([1],{
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-64880e60", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-8186fe60", module.exports)
 	  }
 	}
 
@@ -460,7 +460,7 @@ webpackJsonp([1],{
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-2d553490", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-2cca0874", module.exports)
 	  }
 	}
 
