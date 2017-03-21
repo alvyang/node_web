@@ -43,10 +43,10 @@
 				var _self = this;
 				var data = {
 					openid:_self.$store.state.openid,
-					cartItem:[{
+					cartItem:{
 						quantity:1,
 						product_id:id
-					}]
+					}
 				};
 				$.ajax({
 					type: "post",

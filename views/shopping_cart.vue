@@ -132,7 +132,17 @@
 					this.message = "请选择结算商品";
 					return ;
 				}
-				
+				$.ajax({
+					type: "post",
+					url: "/inter/cart/addCart",
+					data:data,
+					success: function(res) {
+						console.log(res);
+						if(res.code == "000000"){
+							_self.message = "该商品已添加到购物车";
+						}
+					}
+				});
 				this.$router.push({path:"/order"});
 			}
 		},
