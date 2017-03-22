@@ -2,12 +2,12 @@
 	<div>
 		<jf-prompt :message="message"></jf-prompt>
 		<div class="receipt_address_div">
-			<router-link tag="div" to="/address" v-show="!receiptAddress" class="no_receipt_address">您还没有设置收货地址，请设置</router-link>
-			<router-link tag="div" to="/address" v-show="receiptAddress" class="receipt_address">
-				<div class="name"><span>{{receiptAddress.name}}</span><span>{{receiptAddress.phone}}</span></div>
-				<div class="address">{{receiptAddress.areaAddress}}{{receiptAddress.detailAddress}}</div>
+			<router-link tag="div" to="/address" v-show="!receivers.consignee" class="no_receipt_address">您还没有设置收货地址，请设置</router-link>
+			<router-link tag="div" to="/address" v-show="receivers.consignee" class="receipt_address">
+				<div class="name"><span>{{receivers.consignee}}</span><span>{{receivers.phone}}</span></div>
+				<div class="address">{{receivers.area_name}}{{receivers.address}}</div>
 			</router-link>
-			<img src="../img/address_bar.png" v-show="receiptAddress" style="width:10rem"/>
+			<img src="../img/address_bar.png" v-show="receivers" style="width:10rem"/>
 		</div>
 		<div class="order_commodity_title">订单商品信息</div>
 		<div v-for="c in commodity" class="order_commodity">
@@ -32,12 +32,11 @@
 				orderNum:"",
 				orderPrice:"",
 				message:"",
-				receiptAddress:{
-					id:"123",
-					name:"吕扬",
-					phone:"134****3525",
-					areaAddress:"北京市海淀区",
-					detailAddress:"14号楼7单元702室14号楼7单元702室14号楼7单元702室",
+				receivers:{
+					consignee:"",
+					area_name:"",
+					address:"",
+					phone:"",
 				},
 				commodity:[{
 					commodityName:"山西特产宁化府益源庆名醋山西特产宁化府益源庆名醋2400ml（31.8元）",
@@ -53,6 +52,19 @@
 			}
 		},
 		mounted(){
+			var _self = this;
+			$.ajax({
+				type: "post",
+				url: "/inter/receiver/getReceiverList",
+				data:{openId:_self.$store.state.openid},
+				success: function(res) {
+					console.log(res);
+					if(res.code == "000000" && res.receivers){
+						_self.receivers = res.receivers;
+					}
+				}
+			});
+			
 			var num = 0,price=0,l=this.commodity.length;
 			for(var i = 0 ; i < l ;i++){
 				num += this.commodity[i].commodityNum;
@@ -204,5 +216,6 @@
 		height: 1rem;
 		line-height: 1rem;
 		color: #333333;
+		font-size: 0.35rem;
 	}
 </style>
