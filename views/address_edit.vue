@@ -4,7 +4,7 @@
 		<div class="address_content">
 			<div class="address_input">
 				<span>收货人姓名</span>
-				<input type="text" v-model="address.name" id="receiveName" placeholder="请输入收货人姓名"/>
+				<input type="text" v-model="address.consignee" id="receiveName" placeholder="请输入收货人姓名"/>
 			</div>
 			<div class="address_input">
 				<span>手机号码</span>
@@ -12,11 +12,11 @@
 			</div>
 			<div class="address_input">
 				<span>配送区域</span>
-				<input type="text" id="address" v-model="address.areaAddress" placeholder="请选择配送区域" readonly="readonly"/>
+				<input type="text" id="address" v-model="address.area_name" placeholder="请选择配送区域" readonly="readonly"/>
 			</div>
 			<div class="address_input" style="height: 1.8rem;">
 				<span>详细地址</span>
-				<textarea v-model="address.detailAddress" placeholder="请输入详情地址"></textarea>
+				<textarea v-model="address.address" placeholder="请输入详情地址"></textarea>
 			</div>
 		</div>
 		<div class="address_button" @click="saveAddress">保存地址</div>
@@ -31,12 +31,13 @@
 		data(){
 			return {
 				message:"",
+				reqUrl:"",
 				address:{
-					id:"",
-					name:"",
+					id:null,
+					consignee:"",
 					phone:"",
-					areaAddress:"",
-					detailAddress:"",
+					area_name:"",
+					address:"",
 				}
 			}
 		},
@@ -48,8 +49,15 @@
 			});
 			
 			var editAddress = this.$route.query;
-			if(editAddress.id){
-				this.address = editAddress;
+			if(editAddress.id){//有id说明是修改
+				this.address.id = editAddress.id;
+				this.address.consignee = editAddress.consignee;
+				this.address.phone = editAddress.phone;
+				this.address.area_name = editAddress.area_name;
+				this.address.address = editAddress.address;
+				this.reqUrl = "/inter/receiver/updateReceiver";//个性接口
+			}else{
+				this.reqUrl = "/inter/receiver/addReceiver";//新增接口
 			}
 		},
 		components:{
@@ -77,13 +85,28 @@
 				}
 			},
 			saveAddress(){
-				if(!this.verNull(this.address.name,"请输入收获人姓名") ||
+				if(!this.verNull(this.address.consignee,"请输入收获人姓名") ||
 				   !this.verPhoneNumber() ||
-				   !this.verNull(this.address.areaAddress,"请选择配送区域") ||
-				   !this.verNull(this.address.detailAddress,"请输入详细地址")){
+				   !this.verNull(this.address.area_name,"请选择配送区域") ||
+				   !this.verNull(this.address.address,"请输入详细地址")){
 					return;
 				}
-				this.$router.replace({path:"/address"});  
+				
+				var _self = this;
+				var params = {
+					openId:_self.$store.state.openid,
+					receiver:_self.address,
+				}
+				$.ajax({
+					type: "post",
+					url: _self.reqUrl,
+					data:params,
+					success: function(res) {
+						if(res.code == "000000"){
+							_self.$router.replace({path:"/address"});  
+						}
+					}
+				});
 			}
 		}
 	})

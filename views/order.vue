@@ -2,8 +2,8 @@
 	<div>
 		<jf-prompt :message="message"></jf-prompt>
 		<div class="receipt_address_div">
-			<router-link tag="div" to="/address" v-show="!receivers.consignee" class="no_receipt_address">您还没有设置收货地址，请设置</router-link>
-			<router-link tag="div" to="/address" v-show="receivers.consignee" class="receipt_address">
+			<router-link tag="div" to="/address" replace v-show="!receivers.consignee" class="no_receipt_address">您还没有设置收货地址，请设置</router-link>
+			<router-link tag="div" to="/address" replace v-show="receivers.consignee" class="receipt_address">
 				<div class="name"><span>{{receivers.consignee}}</span><span>{{receivers.phone}}</span></div>
 				<div class="address">{{receivers.area_name}}{{receivers.address}}</div>
 			</router-link>
@@ -51,19 +51,29 @@
 				}]
 			}
 		},
+		destroyed(){
+			sessionStorage["select_address"] = null
+		},
 		mounted(){
-			var _self = this;
-			$.ajax({
-				type: "post",
-				url: "/inter/receiver/getReceiverList",
-				data:{openId:_self.$store.state.openid},
-				success: function(res) {
-					console.log(res);
-					if(res.code == "000000" && res.receivers){
-						_self.receivers = res.receivers;
+			var _self = this,selectAddress=null;
+			if(sessionStorage["select_address"]){
+				selectAddress = JSON.parse(sessionStorage["select_address"]);
+			}
+			if(!selectAddress){
+				$.ajax({
+					type: "post",
+					url: "/inter/receiver/getDefaultReceiver",
+					data:{openId:_self.$store.state.openid},
+					success: function(res) {
+						console.log(res);
+						if(res.code == "000000" && res.receivers){
+							_self.receivers = res.receivers;
+						}
 					}
-				}
-			});
+				});
+			}else{
+				this.receivers = selectAddress;
+			}
 			
 			var num = 0,price=0,l=this.commodity.length;
 			for(var i = 0 ; i < l ;i++){

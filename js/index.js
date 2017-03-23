@@ -4,7 +4,7 @@ import store from "store/store.js";
 
 new Vue({
 	el:"#app",
-	template:"<keep-alive><router-view></router-view></keep-alive>",
+	template:"<router-view></router-view>",
 	router,
 	store,
 });

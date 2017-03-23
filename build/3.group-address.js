@@ -707,6 +707,10 @@ webpackJsonp([3],Array(34).concat([
 		value: true
 	});
 
+	var _stringify = __webpack_require__(211);
+
+	var _stringify2 = _interopRequireDefault(_stringify);
+
 	var _no_content = __webpack_require__(82);
 
 	var _no_content2 = _interopRequireDefault(_no_content);
@@ -716,22 +720,31 @@ webpackJsonp([3],Array(34).concat([
 	exports.default = {
 		data: function data() {
 			return {
-				addressList: [{
-					id: "123",
-					name: "吕扬",
-					phone: "134****3525",
-					areaAddress: "北京市海淀区",
-					detailAddress: "14号楼7单元702室14号楼7单元702室14号楼7单元702室"
-				}]
+				receivers: []
 			};
+		},
+		mounted: function mounted() {
+			var _self = this;
+			$.ajax({
+				type: "post",
+				url: "/inter/receiver/getReceiverList",
+				data: { openId: _self.$store.state.openid },
+				success: function success(res) {
+					console.log(res);
+					if (res.code == "000000" && res.receivers) {
+						_self.receivers = res.receivers;
+					}
+				}
+			});
 		},
 
 		methods: {
 			selectAddress: function selectAddress(index) {
-				this.$router.replace({ path: "/order", query: this.addressList[index] });
+				sessionStorage["select_address"] = (0, _stringify2.default)(this.receivers[index]);
+				this.$router.replace({ path: "/order", query: this.receivers[index] });
 			},
 			addressEdit: function addressEdit(index) {
-				this.$router.push({ path: "/address_edit", query: this.addressList[index] });
+				this.$router.push({ path: "/address_edit", query: this.receivers[index] });
 			}
 		},
 		components: {
@@ -765,13 +778,13 @@ webpackJsonp([3],Array(34).concat([
 	    directives: [{
 	      name: "show",
 	      rawName: "v-show",
-	      value: (_vm.addressList.length == 0),
-	      expression: "addressList.length == 0"
+	      value: (_vm.receivers.length == 0),
+	      expression: "receivers.length == 0"
 	    }],
 	    attrs: {
 	      "message": "您还没有收货地址"
 	    }
-	  }), _vm._v(" "), _vm._l((_vm.addressList), function(a, index) {
+	  }), _vm._v(" "), _vm._l((_vm.receivers), function(a, index) {
 	    return _c('div', {
 	      staticClass: "address_item"
 	    }, [_c('div', {
@@ -783,9 +796,9 @@ webpackJsonp([3],Array(34).concat([
 	      }
 	    }, [_c('div', {
 	      staticClass: "name"
-	    }, [_c('a', [_vm._v(_vm._s(a.name))]), _c('a', [_vm._v(_vm._s(a.phone))])]), _vm._v(" "), _c('div', {
+	    }, [_c('a', [_vm._v(_vm._s(a.consignee))]), _c('a', [_vm._v(_vm._s(a.phone))])]), _vm._v(" "), _c('div', {
 	      staticClass: "address"
-	    }, [_vm._v(_vm._s(a.areaAddress) + _vm._s(a.detailAddress))])]), _vm._v(" "), _c('div', {
+	    }, [_vm._v(_vm._s(a.area_name) + _vm._s(a.address))])]), _vm._v(" "), _c('div', {
 	      staticClass: "address_edit",
 	      on: {
 	        "click": function($event) {
@@ -947,12 +960,13 @@ webpackJsonp([3],Array(34).concat([
 		data: function data() {
 			return {
 				message: "",
+				reqUrl: "",
 				address: {
-					id: "",
-					name: "",
+					id: null,
+					consignee: "",
 					phone: "",
-					areaAddress: "",
-					detailAddress: ""
+					area_name: "",
+					address: ""
 				}
 			};
 		},
@@ -965,7 +979,15 @@ webpackJsonp([3],Array(34).concat([
 
 			var editAddress = this.$route.query;
 			if (editAddress.id) {
-				this.address = editAddress;
+				//有id说明是修改
+				this.address.id = editAddress.id;
+				this.address.consignee = editAddress.consignee;
+				this.address.phone = editAddress.phone;
+				this.address.area_name = editAddress.area_name;
+				this.address.address = editAddress.address;
+				this.reqUrl = "/inter/receiver/updateReceiver"; //个性接口
+			} else {
+				this.reqUrl = "/inter/receiver/addReceiver"; //新增接口
 			}
 		},
 
@@ -995,10 +1017,25 @@ webpackJsonp([3],Array(34).concat([
 				}
 			},
 			saveAddress: function saveAddress() {
-				if (!this.verNull(this.address.name, "请输入收获人姓名") || !this.verPhoneNumber() || !this.verNull(this.address.areaAddress, "请选择配送区域") || !this.verNull(this.address.detailAddress, "请输入详细地址")) {
+				if (!this.verNull(this.address.consignee, "请输入收获人姓名") || !this.verPhoneNumber() || !this.verNull(this.address.area_name, "请选择配送区域") || !this.verNull(this.address.address, "请输入详细地址")) {
 					return;
 				}
-				this.$router.replace({ path: "/address" });
+
+				var _self = this;
+				var params = {
+					openId: _self.$store.state.openid,
+					receiver: _self.address
+				};
+				$.ajax({
+					type: "post",
+					url: _self.reqUrl,
+					data: params,
+					success: function success(res) {
+						if (res.code == "000000") {
+							_self.$router.replace({ path: "/address" });
+						}
+					}
+				});
 			}
 		}
 	};
@@ -2702,8 +2739,8 @@ webpackJsonp([3],Array(34).concat([
 	    directives: [{
 	      name: "model",
 	      rawName: "v-model",
-	      value: (_vm.address.name),
-	      expression: "address.name"
+	      value: (_vm.address.consignee),
+	      expression: "address.consignee"
 	    }],
 	    attrs: {
 	      "type": "text",
@@ -2711,12 +2748,12 @@ webpackJsonp([3],Array(34).concat([
 	      "placeholder": "请输入收货人姓名"
 	    },
 	    domProps: {
-	      "value": (_vm.address.name)
+	      "value": (_vm.address.consignee)
 	    },
 	    on: {
 	      "input": function($event) {
 	        if ($event.target.composing) { return; }
-	        _vm.address.name = $event.target.value
+	        _vm.address.consignee = $event.target.value
 	      }
 	    }
 	  })]), _vm._v(" "), _c('div', {
@@ -2748,8 +2785,8 @@ webpackJsonp([3],Array(34).concat([
 	    directives: [{
 	      name: "model",
 	      rawName: "v-model",
-	      value: (_vm.address.areaAddress),
-	      expression: "address.areaAddress"
+	      value: (_vm.address.area_name),
+	      expression: "address.area_name"
 	    }],
 	    attrs: {
 	      "type": "text",
@@ -2758,12 +2795,12 @@ webpackJsonp([3],Array(34).concat([
 	      "readonly": "readonly"
 	    },
 	    domProps: {
-	      "value": (_vm.address.areaAddress)
+	      "value": (_vm.address.area_name)
 	    },
 	    on: {
 	      "input": function($event) {
 	        if ($event.target.composing) { return; }
-	        _vm.address.areaAddress = $event.target.value
+	        _vm.address.area_name = $event.target.value
 	      }
 	    }
 	  })]), _vm._v(" "), _c('div', {
@@ -2775,19 +2812,19 @@ webpackJsonp([3],Array(34).concat([
 	    directives: [{
 	      name: "model",
 	      rawName: "v-model",
-	      value: (_vm.address.detailAddress),
-	      expression: "address.detailAddress"
+	      value: (_vm.address.address),
+	      expression: "address.address"
 	    }],
 	    attrs: {
 	      "placeholder": "请输入详情地址"
 	    },
 	    domProps: {
-	      "value": (_vm.address.detailAddress)
+	      "value": (_vm.address.address)
 	    },
 	    on: {
 	      "input": function($event) {
 	        if ($event.target.composing) { return; }
-	        _vm.address.detailAddress = $event.target.value
+	        _vm.address.address = $event.target.value
 	      }
 	    }
 	  })])]), _vm._v(" "), _c('div', {
@@ -2803,6 +2840,40 @@ webpackJsonp([3],Array(34).concat([
 	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-b015a2ba", module.exports)
 	  }
 	}
+
+/***/ },
+/* 193 */,
+/* 194 */,
+/* 195 */,
+/* 196 */,
+/* 197 */,
+/* 198 */,
+/* 199 */,
+/* 200 */,
+/* 201 */,
+/* 202 */,
+/* 203 */,
+/* 204 */,
+/* 205 */,
+/* 206 */,
+/* 207 */,
+/* 208 */,
+/* 209 */,
+/* 210 */,
+/* 211 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(212), __esModule: true };
+
+/***/ },
+/* 212 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var core  = __webpack_require__(128)
+	  , $JSON = core.JSON || (core.JSON = {stringify: JSON.stringify});
+	module.exports = function stringify(it){ // eslint-disable-line no-unused-vars
+	  return $JSON.stringify.apply($JSON, arguments);
+	};
 
 /***/ }
 ]));

@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="main_content">
-			<keep-alive><router-view class="view"></router-view></keep-alive>
+			<router-view class="view"></router-view>
 		</div>
 		<jf-nav></jf-nav>
 	</div>

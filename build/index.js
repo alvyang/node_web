@@ -114,7 +114,7 @@
 
 	new _vue2.default({
 		el: "#app",
-		template: "<keep-alive><router-view></router-view></keep-alive>",
+		template: "<router-view></router-view>",
 		router: _router2.default,
 		store: _store2.default
 	});
@@ -12566,9 +12566,9 @@
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', [_c('div', {
 	    staticClass: "main_content"
-	  }, [_c('keep-alive', [_c('router-view', {
+	  }, [_c('router-view', {
 	    staticClass: "view"
-	  })], 1)], 1), _vm._v(" "), _c('jf-nav')], 1)
+	  })], 1), _vm._v(" "), _c('jf-nav')], 1)
 	},staticRenderFns: []}
 	if (false) {
 	  module.hot.accept()

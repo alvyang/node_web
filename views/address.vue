@@ -5,11 +5,11 @@
 -->
 <template>
 	<div>
-		<jf-no-content v-show="addressList.length == 0" message="您还没有收货地址"></jf-no-content>
-		<div v-for="(a,index) in addressList" class="address_item">
+		<jf-no-content v-show="receivers.length == 0" message="您还没有收货地址"></jf-no-content>
+		<div v-for="(a,index) in receivers" class="address_item">
 			<div class="address_content" @click="selectAddress(index)">
-				<div class="name"><a>{{a.name}}</a><a>{{a.phone}}</a></div>
-				<div class="address">{{a.areaAddress}}{{a.detailAddress}}</div>
+				<div class="name"><a>{{a.consignee}}</a><a>{{a.phone}}</a></div>
+				<div class="address">{{a.area_name}}{{a.address}}</div>
 			</div>
 			<div class="address_edit" @click="addressEdit(index)"></div>
 		</div>
@@ -21,21 +21,30 @@
 	export default({
 		data(){
 			return{
-				addressList:[{
-					id:"123",
-					name:"吕扬",
-					phone:"134****3525",
-					areaAddress:"北京市海淀区",
-					detailAddress:"14号楼7单元702室14号楼7单元702室14号楼7单元702室",
-				}]
+				receivers:[]
 			}
+		},
+		mounted(){
+			var _self = this;
+			$.ajax({
+				type: "post",
+				url: "/inter/receiver/getReceiverList",
+				data:{openId:_self.$store.state.openid},
+				success: function(res) {
+					console.log(res);
+					if(res.code == "000000" && res.receivers){
+						_self.receivers = res.receivers;
+					}
+				}
+			});
 		},
 		methods:{
 			selectAddress(index){
-				this.$router.replace({path:"/order",query:this.addressList[index]});
+				sessionStorage["select_address"]=JSON.stringify(this.receivers[index]);
+				this.$router.replace({path:"/order",query:this.receivers[index]});
 			},
 			addressEdit(index){
-				this.$router.push({path:"/address_edit",query:this.addressList[index]});
+				this.$router.push({path:"/address_edit",query:this.receivers[index]});
 			}
 		},
 		components:{
