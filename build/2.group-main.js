@@ -6863,6 +6863,10 @@ webpackJsonp([2],Array(30).concat([
 		value: true
 	});
 
+	var _stringify = __webpack_require__(111);
+
+	var _stringify2 = _interopRequireDefault(_stringify);
+
 	var _no_content = __webpack_require__(82);
 
 	var _no_content2 = _interopRequireDefault(_no_content);
@@ -6904,7 +6908,8 @@ webpackJsonp([2],Array(30).concat([
 				commodityList: [],
 				numPrice: 0.00,
 				message: "",
-				bottomFlag: true
+				bottomFlag: true,
+				orderCommoditys: []
 			};
 		},
 		mounted: function mounted() {
@@ -6936,8 +6941,12 @@ webpackJsonp([2],Array(30).concat([
 			},
 			selectCommodity: function selectCommodity(index) {
 				if ($("#select" + index).attr("class") == "select_img") {
+					//未选中
+					this.orderCommoditys[index] = null;
 					$("#select" + index).removeClass("select_img").addClass("select_img_select");
 				} else {
+					//选中
+					this.orderCommoditys[index] = this.commodityList[index];
 					$("#select" + index).removeClass("select_img_select").addClass("select_img");
 				}
 				var l = this.commodityList.length;
@@ -6990,11 +6999,15 @@ webpackJsonp([2],Array(30).concat([
 				var l = this.commodityList.length;
 				var priceNumTemp = 0;
 				if ($("#selectAll").attr("class") == "select_img_all_select") {
+					//取消选中
+					this.orderCommoditys = [];
 					$("#selectAll").removeClass("select_img_all_select").addClass("select_img_all");
 					for (var i = 0; i < l; i++) {
 						$("#select" + i).removeClass("select_img_select").addClass("select_img");
 					}
 				} else {
+					//选中
+					this.orderCommoditys = this.commodityList;
 					$("#selectAll").removeClass("select_img_all").addClass("select_img_all_select");
 					for (var i = 0; i < l; i++) {
 						$("#select" + i).removeClass("select_img").addClass("select_img_select");
@@ -7010,17 +7023,14 @@ webpackJsonp([2],Array(30).concat([
 					this.message = "请选择结算商品";
 					return;
 				}
-				//				$.ajax({
-				//					type: "post",
-				//					url: "/inter/cart/addCart",
-				//					data:data,
-				//					success: function(res) {
-				//						console.log(res);
-				//						if(res.code == "000000"){
-				//							_self.message = "该商品已添加到购物车";
-				//						}
-				//					}
-				//				});
+				var ol = this.orderCommoditys.length;
+				var selectCommodity = [];
+				for (var i = 0; i < ol; i++) {
+					if (this.orderCommoditys[i]) {
+						selectCommodity.push(this.orderCommoditys[i]);
+					}
+				}
+				sessionStorage["selectCommodity"] = (0, _stringify2.default)(selectCommodity);
 				this.$router.push({ path: "/order" });
 			}
 		},
@@ -7741,6 +7751,34 @@ webpackJsonp([2],Array(30).concat([
 	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-3ac3946e", module.exports)
 	  }
 	}
+
+/***/ },
+/* 106 */,
+/* 107 */,
+/* 108 */,
+/* 109 */,
+/* 110 */,
+/* 111 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(112), __esModule: true };
+
+/***/ },
+/* 112 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var core  = __webpack_require__(113)
+	  , $JSON = core.JSON || (core.JSON = {stringify: JSON.stringify});
+	module.exports = function stringify(it){ // eslint-disable-line no-unused-vars
+	  return $JSON.stringify.apply($JSON, arguments);
+	};
+
+/***/ },
+/* 113 */
+/***/ function(module, exports) {
+
+	var core = module.exports = {version: '2.4.0'};
+	if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
 
 /***/ }
 ]));

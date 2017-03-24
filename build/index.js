@@ -106,7 +106,7 @@
 
 	var _router2 = _interopRequireDefault(_router);
 
-	var _store = __webpack_require__(209);
+	var _store = __webpack_require__(211);
 
 	var _store2 = _interopRequireDefault(_store);
 
@@ -9371,26 +9371,26 @@
 	};
 	var AddressEdit = function AddressEdit(resolve) {
 		return __webpack_require__.e/* nsure */(3, function () {
-			return resolve(__webpack_require__(112));
+			return resolve(__webpack_require__(115));
 		});
 	};
 
 	//订单列表页面
 	var Orders = function Orders(resolve) {
 		return __webpack_require__.e/* nsure */(4, function () {
-			return resolve(__webpack_require__(193));
+			return resolve(__webpack_require__(195));
 		});
 	};
 	var OrdersDetail = function OrdersDetail(resolve) {
 		return __webpack_require__.e/* nsure */(4, function () {
-			return resolve(__webpack_require__(198));
+			return resolve(__webpack_require__(200));
 		});
 	};
 
 	//商品页面
 	var Commodity = function Commodity(resolve) {
 		return __webpack_require__.e/* nsure */(5, function () {
-			return resolve(__webpack_require__(203));
+			return resolve(__webpack_require__(205));
 		});
 	};
 	var router = new _vueRouter2.default({
@@ -12579,7 +12579,7 @@
 
 /***/ },
 
-/***/ 209:
+/***/ 211:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -12592,7 +12592,7 @@
 
 	var _vue2 = _interopRequireDefault(_vue);
 
-	var _vuex = __webpack_require__(210);
+	var _vuex = __webpack_require__(212);
 
 	var _vuex2 = _interopRequireDefault(_vuex);
 
@@ -12612,7 +12612,7 @@
 
 /***/ },
 
-/***/ 210:
+/***/ 212:
 /***/ function(module, exports, __webpack_require__) {
 
 	/**

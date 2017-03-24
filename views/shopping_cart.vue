@@ -32,6 +32,7 @@
 				numPrice:0.00,
 				message:"",
 				bottomFlag:true,
+				orderCommoditys:[],
 			}
 		},
 		mounted(){
@@ -59,9 +60,11 @@
 				}
 			},
 			selectCommodity(index){
-				if($("#select"+index).attr("class") == "select_img"){
+				if($("#select"+index).attr("class") == "select_img"){//未选中
+					this.orderCommoditys[index]=null;
 					$("#select"+index).removeClass("select_img").addClass("select_img_select");
-				}else{
+				}else{//选中
+					this.orderCommoditys[index]=this.commodityList[index];
 					$("#select"+index).removeClass("select_img_select").addClass("select_img");
 				}
 				var l = this.commodityList.length;
@@ -111,12 +114,14 @@
 			selectAll(){
 				var l = this.commodityList.length;
 				var priceNumTemp = 0;
-				if($("#selectAll").attr("class") == "select_img_all_select"){
+				if($("#selectAll").attr("class") == "select_img_all_select"){//取消选中
+					this.orderCommoditys=[];
 					$("#selectAll").removeClass("select_img_all_select").addClass("select_img_all");
 					for(var i = 0 ; i < l ;i++){
 						$("#select"+i).removeClass("select_img_select").addClass("select_img");
 					}
-				}else{
+				}else{//选中
+					this.orderCommoditys=this.commodityList;
 					$("#selectAll").removeClass("select_img_all").addClass("select_img_all_select");
 					for(var i = 0 ; i < l ;i++){
 						$("#select"+i).removeClass("select_img").addClass("select_img_select");
@@ -132,17 +137,14 @@
 					this.message = "请选择结算商品";
 					return ;
 				}
-//				$.ajax({
-//					type: "post",
-//					url: "/inter/cart/addCart",
-//					data:data,
-//					success: function(res) {
-//						console.log(res);
-//						if(res.code == "000000"){
-//							_self.message = "该商品已添加到购物车";
-//						}
-//					}
-//				});
+				var ol = this.orderCommoditys.length;
+				var selectCommodity=[];
+				for(var i = 0 ; i < ol ; i++){
+					if(this.orderCommoditys[i]){
+						selectCommodity.push(this.orderCommoditys[i]);
+					}
+				}
+				sessionStorage["selectCommodity"]=JSON.stringify(selectCommodity);
 				this.$router.push({path:"/order"});
 			}
 		},

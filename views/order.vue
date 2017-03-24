@@ -11,9 +11,9 @@
 		</div>
 		<div class="order_commodity_title">订单商品信息</div>
 		<div v-for="c in commodity" class="order_commodity">
-			<img :src="c.commodityUrl" />
-			<div class="commodity_name">{{c.commodityName}}</div>
-			<div class="commodity_num">× {{c.commodityNum}}</div>
+			<img :src="c.image" />
+			<div class="commodity_name">{{c.full_name}}</div>
+			<div class="commodity_num">× {{c.quantity}}</div>
 		</div>
 		<div class="order_submit_div">
 			<div class="order_price">
@@ -38,17 +38,7 @@
 					address:"",
 					phone:"",
 				},
-				commodity:[{
-					commodityName:"山西特产宁化府益源庆名醋山西特产宁化府益源庆名醋2400ml（31.8元）",
-					commodityUrl:"img/logo.jpg",
-					commodityNum:1,
-					commodityPrice:52.48,
-				},{
-					commodityName:"山西特产宁化府益源庆名醋山西特产宁化府益源庆名醋2400ml（31.8元）",
-					commodityUrl:"img/logo.jpg",
-					commodityNum:1,
-					commodityPrice:52.48,
-				}]
+				commodity:[]
 			}
 		},
 		destroyed(){
@@ -60,7 +50,7 @@
 				selectAddress = JSON.parse(sessionStorage["select_address"]);
 			}
 			if(!selectAddress){
-				$.ajax({
+				$.ajax({//没有选择地址时，显示数据默认地址
 					type: "post",
 					url: "/inter/receiver/getDefaultReceiver",
 					data:{openId:_self.$store.state.openid},
@@ -71,17 +61,20 @@
 						}
 					}
 				});
-			}else{
+			}else{//选择后，显示选择的地址
 				this.receivers = selectAddress;
 			}
+			this.commodity = JSON.parse(sessionStorage["selectCommodity"]);
 			
 			var num = 0,price=0,l=this.commodity.length;
+			console.log(this.commodity);
 			for(var i = 0 ; i < l ;i++){
-				num += this.commodity[i].commodityNum;
-				price += this.commodity[i].commodityNum * this.commodity[i].commodityPrice;
+				var n = parseInt(this.commodity[i].quantity);
+				num += n;
+				price += this.keepTwoDecimal(n* parseFloat(this.commodity[i].price));
 			}
 			this.orderNum = num;
-			this.orderPrice = this.keepTwoDecimal(price);
+			this.orderPrice = price;
 		},
 		methods:{
 			submitOrder(){

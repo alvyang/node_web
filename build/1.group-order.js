@@ -84,7 +84,7 @@ webpackJsonp([1],{
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*提交*/\n.order_submit_div[data-v-2d553490]{\n\tposition: fixed;\n\tbottom: 0;\n\tbackground-color: #FFFFFF;\n\theight: 1.35rem;\n\tfont-size: 0;\n\tline-height: 1.35rem;\n}\n.order_submit_div .order_price[data-v-2d553490]{\n\tbox-sizing: border-box;\n\twidth: 7.5rem;\n\theight: 100%;\n\tcolor: #333333;\n\ttext-align: right;\n\tpadding-right: 0.4rem;\n}\n.order_submit_div .order_price span[data-v-2d553490]:nth-child(1){\n\tfont-size: 0.35rem;\n}\n.order_submit_div .order_price span[data-v-2d553490]:nth-child(2){\n\tfont-size: 0.4rem;\n}\n.order_submit_div .order_submit[data-v-2d553490]{\n\twidth: 2.5rem;\n\theight: 100%;\n\ttext-align: center;\n\tcolor: #ffffff;\n\tfont-size: 0.4rem;\n\tbackground-color: #d81e06;\n}\n.order_submit_div > div[data-v-2d553490]{\n\tdisplay: inline-block;\n}\n/*订单商品信息样式*/\n.order_commodity_title[data-v-2d553490]{\n\tbackground: url(" + __webpack_require__(30) + ") 0.4rem center no-repeat;\n\tbackground-size: 0.4rem auto;\n\tmargin-top: 0.2rem;\n\tfont-size: 0.4rem;\n\tbox-sizing: border-box;\n\tpadding-left: 1rem;\n\tbackground-color: #ffffff;\n\theight: 1rem;\n\tline-height: 1rem;\n\tcolor: #1296db;\n\tborder-bottom: solid 1px #dddddd;\n}\n.order_commodity[data-v-2d553490]{\n\tbackground-color: #ffffff;\n\tborder-bottom: solid 1px #dddddd;\n\theight: 2rem;\n\tcolor: #333333;\n}\n.order_commodity img[data-v-2d553490]{\n\twidth: 1.8rem;\n\theight: 1.8rem;\n\tmargin-top: 0.1rem;\n\tvertical-align: middle;\n}\n.order_commodity .commodity_name[data-v-2d553490]{\n\tdisplay: inline-block;\n\toverflow:hidden; \n\ttext-overflow:ellipsis;\n\t-webkit-box-orient:vertical;\n\t-webkit-line-clamp:2;\n\twidth: 6.6rem;\n\tvertical-align: middle;\n\tbox-sizing: border-box;\n\tpadding-left: 0.2rem;\n\tfont-size: 0.35rem;\n}\n.order_commodity .commodity_num[data-v-2d553490]{\n\tdisplay: inline-block;\n\twidth: 1rem;\n\ttext-align: right;\n\tfont-size: 0.35rem;\n\tvertical-align: middle;\n}\n/*收获地址样式*/\n.receipt_address_div[data-v-2d553490]{\n\tfont-size: 0;\n}\n.receipt_address[data-v-2d553490]{\n\tbackground:#ffffff url(" + __webpack_require__(31) + ") 9.2rem center no-repeat;\n\tbackground-size: 0.5rem auto;\n\tpadding-bottom: 0.35rem;\n\twidth: 10rem;\n\tfont-size: 0.35rem;\n}\n.receipt_address .name[data-v-2d553490]{\n\theight: 1rem;\n\tline-height: 1rem;\n\tbox-sizing: border-box;\n\tpadding-left: 1rem;\n\tcolor: #333333;\n}\n.receipt_address .name span[data-v-2d553490]:nth-child(1){\n\tpadding-right: 1rem;\n}\n.receipt_address .address[data-v-2d553490]{\n\tbackground: url(" + __webpack_require__(32) + ") 0.4rem center no-repeat;\n\tbackground-size: 0.45rem auto;\n\tbox-sizing: border-box;\n\tpadding-left: 1rem;\n\tcolor: #999999;\n\tpadding-right: 1rem;\n\t\n\toverflow:hidden; \n\ttext-overflow:ellipsis;\n\tdisplay:-webkit-box; \n\t-webkit-box-orient:vertical;\n\t-webkit-line-clamp:2;\n}\n.no_receipt_address[data-v-2d553490]{\n\tbox-sizing: border-box;\n\tpadding-left: 0.4rem;\n\tbackground:#ffffff url(" + __webpack_require__(31) + ") 9.2rem center no-repeat;\n\tbackground-size: 0.5rem auto;\n\theight: 1rem;\n\tline-height: 1rem;\n\tcolor: #333333;\n\tfont-size: 0.35rem;\n}\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*提交*/\n.order_submit_div[data-v-2d553490]{\n\tposition: fixed;\n\tbottom: 0;\n\tbackground-color: #FFFFFF;\n\theight: 1.35rem;\n\tfont-size: 0;\n\tline-height: 1.35rem;\n}\n.order_submit_div .order_price[data-v-2d553490]{\n\tbox-sizing: border-box;\n\twidth: 7.5rem;\n\theight: 100%;\n\tcolor: #333333;\n\ttext-align: right;\n\tpadding-right: 0.4rem;\n}\n.order_submit_div .order_price span[data-v-2d553490]:nth-child(1){\n\tfont-size: 0.35rem;\n}\n.order_submit_div .order_price span[data-v-2d553490]:nth-child(2){\n\tfont-size: 0.4rem;\n}\n.order_submit_div .order_submit[data-v-2d553490]{\n\twidth: 2.5rem;\n\theight: 100%;\n\ttext-align: center;\n\tcolor: #ffffff;\n\tfont-size: 0.4rem;\n\tbackground-color: #d81e06;\n}\n.order_submit_div > div[data-v-2d553490]{\n\tdisplay: inline-block;\n}\n/*订单商品信息样式*/\n.order_commodity_title[data-v-2d553490]{\n\tbackground: url(" + __webpack_require__(30) + ") 0.4rem center no-repeat;\n\tbackground-size: 0.4rem auto;\n\tmargin-top: 0.2rem;\n\tfont-size: 0.4rem;\n\tbox-sizing: border-box;\n\tpadding-left: 1rem;\n\tbackground-color: #ffffff;\n\theight: 1rem;\n\tline-height: 1rem;\n\tcolor: #1296db;\n\tborder-bottom: solid 1px #dddddd;\n}\n.order_commodity[data-v-2d553490]{\n\tbackground-color: #ffffff;\n\tborder-bottom: solid 1px #dddddd;\n\theight: 2rem;\n\tcolor: #333333;\n}\n.order_commodity img[data-v-2d553490]{\n\twidth: 1.8rem;\n\theight: 1.8rem;\n\tmargin-top: 0.1rem;\n\tvertical-align: middle;\n}\n.order_commodity .commodity_name[data-v-2d553490]{\n\tdisplay: inline-block;\n\toverflow:hidden; \n\ttext-overflow:ellipsis;\n\t-webkit-box-orient:vertical;\n\t-webkit-line-clamp:2;\n\twidth: 6.6rem;\n\tvertical-align: middle;\n\tbox-sizing: border-box;\n\tpadding-left: 0.2rem;\n\tfont-size: 0.35rem;\n}\n.order_commodity .commodity_num[data-v-2d553490]{\n\tdisplay: inline-block;\n\twidth: 1rem;\n\ttext-align: right;\n\tfont-size: 0.35rem;\n\tvertical-align: middle;\n}\n/*收获地址样式*/\n.receipt_address_div[data-v-2d553490]{\n\tfont-size: 0;\n}\n.receipt_address[data-v-2d553490]{\n\tbackground:#ffffff url(" + __webpack_require__(31) + ") 9.2rem center no-repeat;\n\tbackground-size: 0.5rem auto;\n\tpadding-bottom: 0.35rem;\n\twidth: 10rem;\n\tfont-size: 0.35rem;\n}\n.receipt_address .name[data-v-2d553490]{\n\theight: 1rem;\n\tline-height: 1rem;\n\tbox-sizing: border-box;\n\tpadding-left: 1rem;\n\tcolor: #333333;\n}\n.receipt_address .name span[data-v-2d553490]:nth-child(1){\n\tpadding-right: 1rem;\n}\n.receipt_address .address[data-v-2d553490]{\n\tbackground: url(" + __webpack_require__(32) + ") 0.4rem center no-repeat;\n\tbackground-size: 0.45rem auto;\n\tbox-sizing: border-box;\n\tpadding-left: 1rem;\n\tcolor: #999999;\n\tpadding-right: 1rem;\n\t\n\toverflow:hidden; \n\ttext-overflow:ellipsis;\n\tdisplay:-webkit-box; \n\t-webkit-box-orient:vertical;\n\t-webkit-line-clamp:2;\n}\n.no_receipt_address[data-v-2d553490]{\n\tbox-sizing: border-box;\n\tpadding-left: 0.4rem;\n\tbackground:#ffffff url(" + __webpack_require__(31) + ") 9.2rem center no-repeat;\n\tbackground-size: 0.5rem auto;\n\theight: 1rem;\n\tline-height: 1rem;\n\tcolor: #333333;\n\tfont-size: 0.35rem;\n}\n", ""]);
 
 	// exports
 
@@ -139,17 +139,7 @@ webpackJsonp([1],{
 					address: "",
 					phone: ""
 				},
-				commodity: [{
-					commodityName: "山西特产宁化府益源庆名醋山西特产宁化府益源庆名醋2400ml（31.8元）",
-					commodityUrl: "img/logo.jpg",
-					commodityNum: 1,
-					commodityPrice: 52.48
-				}, {
-					commodityName: "山西特产宁化府益源庆名醋山西特产宁化府益源庆名醋2400ml（31.8元）",
-					commodityUrl: "img/logo.jpg",
-					commodityNum: 1,
-					commodityPrice: 52.48
-				}]
+				commodity: []
 			};
 		},
 		destroyed: function destroyed() {
@@ -162,7 +152,7 @@ webpackJsonp([1],{
 				selectAddress = JSON.parse(sessionStorage["select_address"]);
 			}
 			if (!selectAddress) {
-				$.ajax({
+				$.ajax({ //没有选择地址时，显示数据默认地址
 					type: "post",
 					url: "/inter/receiver/getDefaultReceiver",
 					data: { openId: _self.$store.state.openid },
@@ -174,18 +164,22 @@ webpackJsonp([1],{
 					}
 				});
 			} else {
+				//选择后，显示选择的地址
 				this.receivers = selectAddress;
 			}
+			this.commodity = JSON.parse(sessionStorage["selectCommodity"]);
 
 			var num = 0,
 			    price = 0,
 			    l = this.commodity.length;
+			console.log(this.commodity);
 			for (var i = 0; i < l; i++) {
-				num += this.commodity[i].commodityNum;
-				price += this.commodity[i].commodityNum * this.commodity[i].commodityPrice;
+				var n = parseInt(this.commodity[i].quantity);
+				num += n;
+				price += this.keepTwoDecimal(n * parseFloat(this.commodity[i].price));
 			}
 			this.orderNum = num;
-			this.orderPrice = this.keepTwoDecimal(price);
+			this.orderPrice = price;
 		},
 
 		methods: {
@@ -456,13 +450,13 @@ webpackJsonp([1],{
 	      staticClass: "order_commodity"
 	    }, [_c('img', {
 	      attrs: {
-	        "src": c.commodityUrl
+	        "src": c.image
 	      }
 	    }), _vm._v(" "), _c('div', {
 	      staticClass: "commodity_name"
-	    }, [_vm._v(_vm._s(c.commodityName))]), _vm._v(" "), _c('div', {
+	    }, [_vm._v(_vm._s(c.full_name))]), _vm._v(" "), _c('div', {
 	      staticClass: "commodity_num"
-	    }, [_vm._v("× " + _vm._s(c.commodityNum))])])
+	    }, [_vm._v("× " + _vm._s(c.quantity))])])
 	  }), _vm._v(" "), _c('div', {
 	    staticClass: "order_submit_div"
 	  }, [_c('div', {
