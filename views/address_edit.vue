@@ -41,29 +41,39 @@
 				}
 			}
 		},
+		activated(){
+			this.showEditAddress();
+		},
+		deactivated(){
+			sessionStorage["address_edit"]=null;
+		},
 		mounted(){
 			var address = new Address();
 			address.init({
 			    'trigger':'#address',
 			    'data':"lib/address_select/db/address.json"//'数据'
 			});
-			
-			var editAddress = this.$route.query;
-			if(editAddress.id){//有id说明是修改
-				this.address.id = editAddress.id;
-				this.address.consignee = editAddress.consignee;
-				this.address.phone = editAddress.phone;
-				this.address.area_name = editAddress.area_name;
-				this.address.address = editAddress.address;
-				this.reqUrl = "/inter/receiver/updateReceiver";//个性接口
-			}else{
-				this.reqUrl = "/inter/receiver/addReceiver";//新增接口
-			}
-		},
-		components:{
-			"jf-prompt":Prompt,
+			this.showEditAddress();
 		},
 		methods:{
+			showEditAddress(){
+				var editAddress = JSON.parse(sessionStorage["address_edit"]);
+				if(editAddress && editAddress.id){//有id说明是修改
+					this.address.id = editAddress.id;
+					this.address.consignee = editAddress.consignee;
+					this.address.phone = editAddress.phone;
+					this.address.area_name = editAddress.area_name;
+					this.address.address = editAddress.address;
+					this.reqUrl = "/inter/receiver/updateReceiver";//个性接口
+				}else{
+					this.address.id = null;
+					this.address.consignee = "";
+					this.address.phone = "";
+					this.address.area_name = "";
+					this.address.address = "";
+					this.reqUrl = "/inter/receiver/addReceiver";//新增接口
+				}
+			},
 			verNull(arg,arg1){
 				var _self = this;
 				if(!arg){
@@ -108,6 +118,9 @@
 					}
 				});
 			}
+		},
+		components:{
+			"jf-prompt":Prompt,
 		}
 	})
 </script>

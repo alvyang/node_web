@@ -9,7 +9,7 @@
 				<a class="rmb">¥0.00</a>
 			</div>
 		</div>
-		<div class="personal_01">
+		<!--<div class="personal_01">
 			<div>
 				<div class="num">2</div>
 				<div class="name">商品收藏</div>
@@ -26,7 +26,7 @@
 				<div class="num">0</div>
 				<div class="name">我的咨询</div>
 			</div>
-		</div>
+		</div>-->
 		<div class="order">
 			<a>我的订单</a>
 			<router-link to="/orders/1">查看全部订单</router-link>
@@ -45,6 +45,28 @@
 			return {
 				
 			}
+		},
+		methods:{
+			getOrderNum(){
+				var _self = this;
+				$.ajax({
+					type: "post",
+					url: "/inter/order/getOrderNum",
+					data:{open_id:_self.$store.state.openid},
+					success: function(res) {
+						console.log(res);
+						if(res.code == "000000"){
+							_self.commodityList = res.data;
+						}
+					}
+				});
+			}
+		},
+		activated(){
+			this.getOrderNum();
+		},
+		mounted(){
+			this.getOrderNum();
 		}
 	})
 </script>

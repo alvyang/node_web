@@ -1,7 +1,9 @@
 <template>
 	<div>
 		<div class="main_content">
-			<router-view class="view"></router-view>
+			<keep-alive>
+				<router-view class="view"></router-view>
+			</keep-alive>
 		</div>
 		<jf-nav></jf-nav>
 	</div>

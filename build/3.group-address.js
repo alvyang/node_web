@@ -30,7 +30,7 @@ webpackJsonp([3],Array(34).concat([
 
 	/* hot reload */
 	if (false) {(function () {
-	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
@@ -150,7 +150,7 @@ webpackJsonp([3],Array(34).concat([
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-64880e60", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-64880e60", module.exports)
 	  }
 	}
 
@@ -452,17 +452,40 @@ webpackJsonp([3],Array(34).concat([
 /* 82 */
 /***/ function(module, exports, __webpack_require__) {
 
+	module.exports = { "default": __webpack_require__(83), __esModule: true };
+
+/***/ },
+/* 83 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var core  = __webpack_require__(84)
+	  , $JSON = core.JSON || (core.JSON = {stringify: JSON.stringify});
+	module.exports = function stringify(it){ // eslint-disable-line no-unused-vars
+	  return $JSON.stringify.apply($JSON, arguments);
+	};
+
+/***/ },
+/* 84 */
+/***/ function(module, exports) {
+
+	var core = module.exports = {version: '2.4.0'};
+	if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
+
+/***/ },
+/* 85 */
+/***/ function(module, exports, __webpack_require__) {
+
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 
 	/* styles */
-	__webpack_require__(83)
+	__webpack_require__(86)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(85)
+	__vue_exports__ = __webpack_require__(88)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(86)
+	var __vue_template__ = __webpack_require__(89)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -480,7 +503,7 @@ webpackJsonp([3],Array(34).concat([
 
 	/* hot reload */
 	if (false) {(function () {
-	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
@@ -496,13 +519,13 @@ webpackJsonp([3],Array(34).concat([
 
 
 /***/ },
-/* 83 */
+/* 86 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(84);
+	var content = __webpack_require__(87);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(9)(content, {});
@@ -522,7 +545,7 @@ webpackJsonp([3],Array(34).concat([
 	}
 
 /***/ },
-/* 84 */
+/* 87 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(8)();
@@ -536,7 +559,7 @@ webpackJsonp([3],Array(34).concat([
 
 
 /***/ },
-/* 85 */
+/* 88 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -560,7 +583,7 @@ webpackJsonp([3],Array(34).concat([
 	};
 
 /***/ },
-/* 86 */
+/* 89 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -568,27 +591,24 @@ webpackJsonp([3],Array(34).concat([
 	    staticClass: "no_content"
 	  }, [_c('img', {
 	    attrs: {
-	      "src": __webpack_require__(87)
+	      "src": __webpack_require__(90)
 	    }
 	  }), _vm._v(" "), _c('div', [_vm._v(_vm._s(_vm.message))])])
 	},staticRenderFns: []}
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-3b285777", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-3b285777", module.exports)
 	  }
 	}
 
 /***/ },
-/* 87 */
+/* 90 */
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "b795755fbb3c417ded3f4ac591fdcfd9.png";
 
 /***/ },
-/* 88 */,
-/* 89 */,
-/* 90 */,
 /* 91 */,
 /* 92 */,
 /* 93 */,
@@ -604,17 +624,20 @@ webpackJsonp([3],Array(34).concat([
 /* 103 */,
 /* 104 */,
 /* 105 */,
-/* 106 */
+/* 106 */,
+/* 107 */,
+/* 108 */,
+/* 109 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 
 	/* styles */
-	__webpack_require__(107)
+	__webpack_require__(110)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(110)
+	__vue_exports__ = __webpack_require__(113)
 
 	/* template */
 	var __vue_template__ = __webpack_require__(114)
@@ -636,7 +659,7 @@ webpackJsonp([3],Array(34).concat([
 
 	/* hot reload */
 	if (false) {(function () {
-	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
@@ -652,13 +675,13 @@ webpackJsonp([3],Array(34).concat([
 
 
 /***/ },
-/* 107 */
+/* 110 */
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(108);
+	var content = __webpack_require__(111);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(9)(content, {});
@@ -678,7 +701,7 @@ webpackJsonp([3],Array(34).concat([
 	}
 
 /***/ },
-/* 108 */
+/* 111 */
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(8)();
@@ -686,19 +709,19 @@ webpackJsonp([3],Array(34).concat([
 
 
 	// module
-	exports.push([module.id, "\n.address_item[data-v-8ef27894]{\n\tfont-size: 0;\n\tborder-bottom: solid 1px #dddddd;\n\tpadding-bottom: 0.35rem;\n}\n.address_item > div[data-v-8ef27894]{\n\tdisplay: inline-block;\n}\n.address_content[data-v-8ef27894]{\n\twidth: 9rem;\n\tfont-size: 0.35rem;\n}\n.address_content .name[data-v-8ef27894]{\n\theight: 1rem;\n\tline-height: 1rem;\n\tbox-sizing: border-box;\n\tpadding-left: 0.4rem;\n\tcolor: #333333;\n}\n.address_content .name a[data-v-8ef27894]:nth-child(1){\n\tpadding-right: 1rem;\n}\n.address_content .address[data-v-8ef27894]{\n\tbox-sizing: border-box;\n\tpadding-left: 0.4rem;\n\tcolor: #999999;\n\tpadding-right: 0.4rem;\n\t\n\toverflow:hidden; \n\ttext-overflow:ellipsis;\n\tdisplay:-webkit-box; \n\t-webkit-box-orient:vertical;\n\t-webkit-line-clamp:2;\n}\n.address_edit[data-v-8ef27894]{\n\tbackground: url(" + __webpack_require__(109) + ") left center no-repeat;\n\tbackground-size: 0.6rem auto;\n\twidth: 1rem;\n\theight: 1.6rem;\n}\n.add_address_button[data-v-8ef27894]{\n\tbackground-color: #2b9bd3;\n\twidth: 8rem;\n\theight: 1.1rem;\n\tline-height: 1.1rem;\n\ttext-align: center;\n\tcolor: #ffffff;\n\tborder-radius: 5px;\n\tmargin-left: 1rem;\n\tfont-size: 0.509rem;\n\tmargin-top: 1rem;\n}\n", ""]);
+	exports.push([module.id, "\n.address_item[data-v-8ef27894]{\n\tfont-size: 0;\n\tborder-bottom: solid 1px #dddddd;\n\tpadding-bottom: 0.35rem;\n}\n.address_item > div[data-v-8ef27894]{\n\tdisplay: inline-block;\n}\n.address_content[data-v-8ef27894]{\n\twidth: 9rem;\n\tfont-size: 0.35rem;\n}\n.address_content .name[data-v-8ef27894]{\n\theight: 1rem;\n\tline-height: 1rem;\n\tbox-sizing: border-box;\n\tpadding-left: 0.4rem;\n\tcolor: #333333;\n}\n.address_content .name a[data-v-8ef27894]:nth-child(1){\n\tpadding-right: 1rem;\n}\n.address_content .address[data-v-8ef27894]{\n\tbox-sizing: border-box;\n\tpadding-left: 0.4rem;\n\tcolor: #999999;\n\tpadding-right: 0.4rem;\n\t\n\toverflow:hidden; \n\ttext-overflow:ellipsis;\n\tdisplay:-webkit-box; \n\t-webkit-box-orient:vertical;\n\t-webkit-line-clamp:2;\n}\n.address_edit[data-v-8ef27894]{\n\tbackground: url(" + __webpack_require__(112) + ") left center no-repeat;\n\tbackground-size: 0.6rem auto;\n\twidth: 1rem;\n\theight: 1.6rem;\n}\n.add_address_button[data-v-8ef27894]{\n\tbackground-color: #2b9bd3;\n\twidth: 8rem;\n\theight: 1.1rem;\n\tline-height: 1.1rem;\n\ttext-align: center;\n\tcolor: #ffffff;\n\tborder-radius: 5px;\n\tmargin-left: 1rem;\n\tfont-size: 0.509rem;\n\tmargin-top: 1rem;\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
-/* 109 */
+/* 112 */
 /***/ function(module, exports) {
 
 	module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAALYUlEQVR4Xu2dzXXcNheGAenMbD+nA3cQuQLLFcSpIHEF1iwEHq+irHSGXsipwE4FcSqIUoGVCmx3IG8tWfgOdDg59mQ4BAECxM8zawDEfe995pLvDEkp+KAACvQqINEGBVCgXwEAoTpQYI8CAEJ5oACAUAMo4KYAHcRNN2ZVogCAVJJownRTAEDcdGNWJQoASCWJJkw3BQDETTdmVaIAgFSSaMJ0UwBA3HRjViUKAEgliSZMNwUAxE03ZlWiAIBUkmjCdFMAQNx0Y1YlCgBIJYkmTDcFAMRNN2ZVogCAVJJownRTAEDcdGNWJQoASCWJJkw3BQDETTdmVaIAgFSSaMJ0UwBA3HRjViUKAEgliSZMNwUAxE03Zo1U4OLi4sHNzc2FEOJpN/XtYrFYrVar65FLRR0OIFHlrvNgHRx/CSGOthS4Uko9SlkVAEk5O4Xsbb1e/yGl3HSO7aieKaXepBoqgKSamUL21bbtKyHE875wtNa/Nk1zlmq4AJJqZgrYV9u2PwshXu8LRWu9aprGQJTkB0CSTEv+m2rb1lxvvBuI5ONisThK+UIdQPKvxeQiOD8/f3h4eGjgeDCwuUdKqavkAvhqQwCScnYy3Nsexyqri/PNZgEkwyJMecsDjtVm678ppU5SjgNAcshOZnsccqy6cP5USvVZvslFTAdJLiV5bsjSsfpnuVwep3xRvq0+gORZj0nt2sax0lp/uru7O3rx4sWHpDY/sBkAySlbCe61JMdql7wAkmDR5bKl0hyrpAExYt/e3j7WWpsLuIfdZo9zKZZ9+9Ram9OKq7u7u1Vupxj74irNsUoSkK5F/yKEMH9LKP1z/eXLl0clQFKiY5UcIOv1+kJKmYUfPhW5Wuvfm6bJ+sugVMcqGUBGnLtOVZcprfO3UirbU8eSHaskAOngeG/xP52UinrKvWQLSOmO1eyAVN457vXXWv/YNM3bKYmLsdaI3CV9A9RYraLavJYXdmNjyGK8+aFMCHGW8r0PtTtWs3YQm3PXboMftdZvDg4OLrOofMtNnp6eZhuP5RdbVv+xskybiNZB2rY1N+33Xpyab1jjaKV8f7KtqCWNq8mxmq2DdBd35sJ856eD4zj1m2dKKnybWGy6fq7/sbKJ34yJ0kHW6/WJlNI8E2nnR0r5JOdTEFuxcxpXo2M1Wwdp29a4Nj/0FEi2tmdOBT9mr7U6VnMCYi5QH/ckqShbcEwhpjq2hv9Y2Wof5RSrbVvN6ZVtSuYdV7NjNWcH6QVksVh8l9MdZvOWb9ij1+5YJQmIUipKFwtbWvmvjmPVYyDFSO2+UywAiZGB/cfAserXJ8q3N4DMD0HfDnCs9ucGQNKt3Sg7w7ECkCiFluNBcKyGs0YHGdaoyBE4VnZpBRA7nYoahWNln04AsdeqiJE4VuPSCCDj9Mp6NI7V+PQByHjNsp2BYzU+dQAyXrMsZ+BYuaUNQNx0y2oWjpV7ugDEXbssZuJY+aUJQPz0S3o2jpV/egDEX8MkV8CxmiYtADKNjsmtgmM1TUoAZBodk1oFx2q6dADIdFomsRKO1bRpAJBp9Zx1NRyr6eUHkOk1nWVFHKswsgNIGF2jropjFU5uAAmnbbSVcazCSQ0g4bSNsrKlY8XTKx2zASCOwqUwDccqfBYAJLzGQY5g61hJKXlqvkcGAMRDvLmm2jpWPDXfP0MA4q9h1BVwrKLKHef9IDw4brqk2jhWJbyLfTrF/Faig/jpF3U2jlVUue8PBiDxNXc6Io6Vk2zekwDEW8LwC+BYhde47wgAMp/2VkfGsbKSKdggAAkmrf/COFb+GvquACC+Cgacj2MVUFzLpQHEUqjYw3CsYiu++3gAkkYevtkFjlU6SQGQdHJxvxMcq7QSAiAJ5QPHKqFkdFsBkERygmOVSCK2tgEgieQFxyqRRABIeonAsUovJ5sd0UFmzg2O1cwJGDg8gMyYn86x+ksI8aBvG1rrT9wVOF+SAGQm7buL8vf74DBb467AmRKEizWf8DhW82k/9sh0kLGKTTC+bdvXQoif9y1V8l2B5gtitVpdTyBl8CUAJLjE3x5gvV6fSSl/GThscc+xMlB8/vz5tZTyqYlda/3h4ODg2enp6WXkFIw6HICMkstvcM2OVdu2xow43lLQdJEnSqkrP2XDzQaQcNp+s3LNjtXA/8t+U0qdRErD6MMAyGjJxk+o3bF6+fLlsdbadJBdn6RPJwFkfL2PmoFjJQSADJRMzc/Fqt2xMqUBIACyU4FaHattMQAEQP6jQM2OFYCMOgu/v0tO901RSkW5Dhq5Za/hNTtWu4Sjg9BB/lWgdscKQBy+W2vpIDhWu4uDDkIHuVcAxwpAHPpHHdcgOFb9pUEHqbyD4FjtLwAAqRgQHKvhkwoAqRQQHKthOPgl3UKjEl0sHCuLxHdD6CAVdhAcKwCxV6AyQHCsxpUGHaQiQHCsxsHBNYiFXqVcg+BYWSR7xxA6SAUdBMfKDQ46iIVuuXcQHCuLJO8ZQgcpvIPgWAGInwIFA4Jj5V8adJBCAcGx8oeDaxALDXO8BsGxskis5RA6SGEdBMfKsvIthwFIQYDgWFlW/YhhAFIQIDhWIyrfciiAFAIIjpVlxY8cBiAFAIJjNbLqRwwHkMwBwbEaUe0OQwEkY0C6F7u8k1I+3BcG7wp0IKObAiAZA2JzaiWEeKaUeuNeInXPBJCMARm6MC/5XYGxsAWQvAF5KqX8oyeEpF/uEqvAfY8DIBkDYrbetq15keTjr8PQWv+zXC6Pc3kbq28Rh5wPIJkD0v16fiaE2LyB9XK5XJ4AxzTYAEjmgExTBqzSpwCAAAh07FEAQAAEQADEvQZyvB/EPVpmbitAB6GDQAUdxL0G6CDu2pUwkw5CBymhjoPFACAAEqy4SlgYQACkhDoOFgOAAEiw4iphYQABkBLqOFgMAAIgwYqrhIUBBEBKqONgMQAIgAQrrhIWBhAAKaGOg8UAIAASrLhKWBhAAKSEOg4WA4AASLDiKmFhAAGQEuo4WAwAAiDBiquEhQEEQEqo42AxAIgHIIvF4jueHhKsNpNYeODplUk/e0zGUHDfDVM88zZGBuY9xsDTKwFk14PZvkoZz72dt36DH71t27dCiB92HUhr/WvTNOaZZEl+YnWQXoGEEJdKqSdJqsOmvBUYet+j1nrVNM0r7wMFWiAKIOv1+kRKedEXA6dZgbKbwLJDDwcXQjxSSl0lsNWdW4gCyPn5+cPDw8P3e0S4FkI8SVmoVBOY8r4sXi3xUSm1970sc8cXBRAT5MB1iBlyrbU+aZrm97lF4fh+CpjTqtvb2+da673XFqlffxgVYgJyJIR4ZyH9lZTyrdbaPHGdT0YKSCkf3N3dHZuHgA+9sUsI8XGxWBylbvFHA6TrIuZi7HlGOWergRTQWv/YNI0xb5L+RAWkex/gpZTy+6RVYXNBFcjprV1RATGqd5B8kFL+L2gWWDxVBZL+YXBbtOiAfAUJnSTVEg60r5w6x0aCWQDZQHJzc2NcDq5JAhVkKstqrT9JKU9yfFPwbIBskmd+Izk4ODiTUv6USkLZxzQKGDCEEK+Wy+Wr1N2qvohnB2Szse7aZNsi/ObFmtOkjVVCKNB1ic0v4vdW/enpafZWfTKAhEgaa6KArwIA4qsg84tWAECKTi/B+SoAIL4KMr9oBQCk6PQSnK8CAOKrIPOLVgBAik4vwfkqACC+CjK/aAUApOj0EpyvAgDiqyDzi1YAQIpOL8H5KgAgvgoyv2gFAKTo9BKcrwIA4qsg84tWAECKTi/B+SoAIL4KMr9oBQCk6PQSnK8CAOKrIPOLVgBAik4vwfkqACC+CjK/aAUApOj0EpyvAgDiqyDzi1YAQIpOL8H5KgAgvgoyv2gFAKTo9BKcrwL/B357FUFAWPoYAAAAAElFTkSuQmCC"
 
 /***/ },
-/* 110 */
+/* 113 */
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -707,11 +730,11 @@ webpackJsonp([3],Array(34).concat([
 		value: true
 	});
 
-	var _stringify = __webpack_require__(111);
+	var _stringify = __webpack_require__(82);
 
 	var _stringify2 = _interopRequireDefault(_stringify);
 
-	var _no_content = __webpack_require__(82);
+	var _no_content = __webpack_require__(85);
 
 	var _no_content2 = _interopRequireDefault(_no_content);
 
@@ -723,28 +746,35 @@ webpackJsonp([3],Array(34).concat([
 				receivers: []
 			};
 		},
+		activated: function activated() {
+			this.getReceiverList();
+		},
 		mounted: function mounted() {
-			var _self = this;
-			$.ajax({
-				type: "post",
-				url: "/inter/receiver/getReceiverList",
-				data: { openId: _self.$store.state.openid },
-				success: function success(res) {
-					console.log(res);
-					if (res.code == "000000" && res.receivers) {
-						_self.receivers = res.receivers;
-					}
-				}
-			});
+			this.getReceiverList();
 		},
 
 		methods: {
+			getReceiverList: function getReceiverList() {
+				var _self = this;
+				$.ajax({
+					type: "post",
+					url: "/inter/receiver/getReceiverList",
+					data: { openId: _self.$store.state.openid },
+					success: function success(res) {
+						console.log(res);
+						if (res.code == "000000" && res.receivers) {
+							_self.receivers = res.receivers;
+						}
+					}
+				});
+			},
 			selectAddress: function selectAddress(index) {
 				sessionStorage["select_address"] = (0, _stringify2.default)(this.receivers[index]);
 				this.$router.replace({ path: "/order", query: this.receivers[index] });
 			},
 			addressEdit: function addressEdit(index) {
-				this.$router.push({ path: "/address_edit", query: this.receivers[index] });
+				sessionStorage["address_edit"] = (0, _stringify2.default)(this.receivers[index]);
+				this.$router.push({ path: "/address_edit" });
 			}
 		},
 		components: {
@@ -768,29 +798,6 @@ webpackJsonp([3],Array(34).concat([
 	//
 	//
 	//
-
-/***/ },
-/* 111 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = { "default": __webpack_require__(112), __esModule: true };
-
-/***/ },
-/* 112 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var core  = __webpack_require__(113)
-	  , $JSON = core.JSON || (core.JSON = {stringify: JSON.stringify});
-	module.exports = function stringify(it){ // eslint-disable-line no-unused-vars
-	  return $JSON.stringify.apply($JSON, arguments);
-	};
-
-/***/ },
-/* 113 */
-/***/ function(module, exports) {
-
-	var core = module.exports = {version: '2.4.0'};
-	if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
 
 /***/ },
 /* 114 */
@@ -840,7 +847,7 @@ webpackJsonp([3],Array(34).concat([
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-8ef27894", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-8ef27894", module.exports)
 	  }
 	}
 
@@ -877,7 +884,7 @@ webpackJsonp([3],Array(34).concat([
 
 	/* hot reload */
 	if (false) {(function () {
-	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
@@ -993,31 +1000,41 @@ webpackJsonp([3],Array(34).concat([
 				}
 			};
 		},
+		activated: function activated() {
+			this.showEditAddress();
+		},
+		deactivated: function deactivated() {
+			sessionStorage["address_edit"] = null;
+		},
 		mounted: function mounted() {
 			var address = new _address_select2.default();
 			address.init({
 				'trigger': '#address',
 				'data': "lib/address_select/db/address.json" //'数据'
 			});
-
-			var editAddress = this.$route.query;
-			if (editAddress.id) {
-				//有id说明是修改
-				this.address.id = editAddress.id;
-				this.address.consignee = editAddress.consignee;
-				this.address.phone = editAddress.phone;
-				this.address.area_name = editAddress.area_name;
-				this.address.address = editAddress.address;
-				this.reqUrl = "/inter/receiver/updateReceiver"; //个性接口
-			} else {
-				this.reqUrl = "/inter/receiver/addReceiver"; //新增接口
-			}
+			this.showEditAddress();
 		},
 
-		components: {
-			"jf-prompt": _prompt2.default
-		},
 		methods: {
+			showEditAddress: function showEditAddress() {
+				var editAddress = JSON.parse(sessionStorage["address_edit"]);
+				if (editAddress && editAddress.id) {
+					//有id说明是修改
+					this.address.id = editAddress.id;
+					this.address.consignee = editAddress.consignee;
+					this.address.phone = editAddress.phone;
+					this.address.area_name = editAddress.area_name;
+					this.address.address = editAddress.address;
+					this.reqUrl = "/inter/receiver/updateReceiver"; //个性接口
+				} else {
+					this.address.id = null;
+					this.address.consignee = "";
+					this.address.phone = "";
+					this.address.area_name = "";
+					this.address.address = "";
+					this.reqUrl = "/inter/receiver/addReceiver"; //新增接口
+				}
+			},
 			verNull: function verNull(arg, arg1) {
 				var _self = this;
 				if (!arg) {
@@ -1060,6 +1077,9 @@ webpackJsonp([3],Array(34).concat([
 					}
 				});
 			}
+		},
+		components: {
+			"jf-prompt": _prompt2.default
 		}
 	};
 
@@ -1543,7 +1563,7 @@ webpackJsonp([3],Array(34).concat([
 /***/ function(module, exports, __webpack_require__) {
 
 	var global    = __webpack_require__(130)
-	  , core      = __webpack_require__(113)
+	  , core      = __webpack_require__(84)
 	  , ctx       = __webpack_require__(131)
 	  , hide      = __webpack_require__(133)
 	  , PROTOTYPE = 'prototype';
@@ -2181,7 +2201,7 @@ webpackJsonp([3],Array(34).concat([
 	__webpack_require__(184);
 	__webpack_require__(185);
 	__webpack_require__(186);
-	module.exports = __webpack_require__(113).Symbol;
+	module.exports = __webpack_require__(84).Symbol;
 
 /***/ },
 /* 173 */
@@ -2486,7 +2506,7 @@ webpackJsonp([3],Array(34).concat([
 /***/ function(module, exports, __webpack_require__) {
 
 	var global         = __webpack_require__(130)
-	  , core           = __webpack_require__(113)
+	  , core           = __webpack_require__(84)
 	  , LIBRARY        = __webpack_require__(128)
 	  , wksExt         = __webpack_require__(170)
 	  , defineProperty = __webpack_require__(134).f;
@@ -2685,7 +2705,7 @@ webpackJsonp([3],Array(34).concat([
 /***/ function(module, exports, __webpack_require__) {
 
 	__webpack_require__(191);
-	var $Object = __webpack_require__(113).Object;
+	var $Object = __webpack_require__(84).Object;
 	module.exports = function defineProperty(it, key, desc){
 	  return $Object.defineProperty(it, key, desc);
 	};
@@ -2853,7 +2873,7 @@ webpackJsonp([3],Array(34).concat([
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-b015a2ba", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-b015a2ba", module.exports)
 	  }
 	}
 

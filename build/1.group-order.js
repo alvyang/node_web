@@ -32,7 +32,7 @@ webpackJsonp([1],{
 
 	/* hot reload */
 	if (false) {(function () {
-	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
@@ -84,7 +84,7 @@ webpackJsonp([1],{
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*提交*/\n.order_submit_div[data-v-2d553490]{\n\tposition: fixed;\n\tbottom: 0;\n\tbackground-color: #FFFFFF;\n\theight: 1.35rem;\n\tfont-size: 0;\n\tline-height: 1.35rem;\n}\n.order_submit_div .order_price[data-v-2d553490]{\n\tbox-sizing: border-box;\n\twidth: 7.5rem;\n\theight: 100%;\n\tcolor: #333333;\n\ttext-align: right;\n\tpadding-right: 0.4rem;\n}\n.order_submit_div .order_price span[data-v-2d553490]:nth-child(1){\n\tfont-size: 0.35rem;\n}\n.order_submit_div .order_price span[data-v-2d553490]:nth-child(2){\n\tfont-size: 0.4rem;\n}\n.order_submit_div .order_submit[data-v-2d553490]{\n\twidth: 2.5rem;\n\theight: 100%;\n\ttext-align: center;\n\tcolor: #ffffff;\n\tfont-size: 0.4rem;\n\tbackground-color: #d81e06;\n}\n.order_submit_div > div[data-v-2d553490]{\n\tdisplay: inline-block;\n}\n/*订单商品信息样式*/\n.order_commodity_title[data-v-2d553490]{\n\tbackground: url(" + __webpack_require__(30) + ") 0.4rem center no-repeat;\n\tbackground-size: 0.4rem auto;\n\tmargin-top: 0.2rem;\n\tfont-size: 0.4rem;\n\tbox-sizing: border-box;\n\tpadding-left: 1rem;\n\tbackground-color: #ffffff;\n\theight: 1rem;\n\tline-height: 1rem;\n\tcolor: #1296db;\n\tborder-bottom: solid 1px #dddddd;\n}\n.order_commodity[data-v-2d553490]{\n\tbackground-color: #ffffff;\n\tborder-bottom: solid 1px #dddddd;\n\theight: 2rem;\n\tcolor: #333333;\n}\n.order_commodity img[data-v-2d553490]{\n\twidth: 1.8rem;\n\theight: 1.8rem;\n\tmargin-top: 0.1rem;\n\tvertical-align: middle;\n}\n.order_commodity .commodity_name[data-v-2d553490]{\n\tdisplay: inline-block;\n\toverflow:hidden; \n\ttext-overflow:ellipsis;\n\t-webkit-box-orient:vertical;\n\t-webkit-line-clamp:2;\n\twidth: 6.6rem;\n\tvertical-align: middle;\n\tbox-sizing: border-box;\n\tpadding-left: 0.2rem;\n\tfont-size: 0.35rem;\n}\n.order_commodity .commodity_num[data-v-2d553490]{\n\tdisplay: inline-block;\n\twidth: 1rem;\n\ttext-align: right;\n\tfont-size: 0.35rem;\n\tvertical-align: middle;\n}\n/*收获地址样式*/\n.receipt_address_div[data-v-2d553490]{\n\tfont-size: 0;\n}\n.receipt_address[data-v-2d553490]{\n\tbackground:#ffffff url(" + __webpack_require__(31) + ") 9.2rem center no-repeat;\n\tbackground-size: 0.5rem auto;\n\tpadding-bottom: 0.35rem;\n\twidth: 10rem;\n\tfont-size: 0.35rem;\n}\n.receipt_address .name[data-v-2d553490]{\n\theight: 1rem;\n\tline-height: 1rem;\n\tbox-sizing: border-box;\n\tpadding-left: 1rem;\n\tcolor: #333333;\n}\n.receipt_address .name span[data-v-2d553490]:nth-child(1){\n\tpadding-right: 1rem;\n}\n.receipt_address .address[data-v-2d553490]{\n\tbackground: url(" + __webpack_require__(32) + ") 0.4rem center no-repeat;\n\tbackground-size: 0.45rem auto;\n\tbox-sizing: border-box;\n\tpadding-left: 1rem;\n\tcolor: #999999;\n\tpadding-right: 1rem;\n\t\n\toverflow:hidden; \n\ttext-overflow:ellipsis;\n\tdisplay:-webkit-box; \n\t-webkit-box-orient:vertical;\n\t-webkit-line-clamp:2;\n}\n.no_receipt_address[data-v-2d553490]{\n\tbox-sizing: border-box;\n\tpadding-left: 0.4rem;\n\tbackground:#ffffff url(" + __webpack_require__(31) + ") 9.2rem center no-repeat;\n\tbackground-size: 0.5rem auto;\n\theight: 1rem;\n\tline-height: 1rem;\n\tcolor: #333333;\n\tfont-size: 0.35rem;\n}\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n/*提交*/\n.order_submit_div[data-v-2d553490]{\n\tposition: fixed;\n\tbottom: 0;\n\tbackground-color: #FFFFFF;\n\theight: 1.35rem;\n\tfont-size: 0;\n\tline-height: 1.35rem;\n}\n.order_submit_div .order_price[data-v-2d553490]{\n\tbox-sizing: border-box;\n\twidth: 7.5rem;\n\theight: 100%;\n\tcolor: #333333;\n\ttext-align: right;\n\tpadding-right: 0.4rem;\n}\n.order_submit_div .order_price span[data-v-2d553490]:nth-child(1){\n\tfont-size: 0.35rem;\n}\n.order_submit_div .order_price span[data-v-2d553490]:nth-child(2){\n\tfont-size: 0.4rem;\n}\n.order_submit_div .order_submit[data-v-2d553490]{\n\twidth: 2.5rem;\n\theight: 100%;\n\ttext-align: center;\n\tcolor: #ffffff;\n\tfont-size: 0.4rem;\n\tbackground-color: #d81e06;\n}\n.order_submit_div > div[data-v-2d553490]{\n\tdisplay: inline-block;\n}\n/*订单商品信息样式*/\n.order_commodity_title[data-v-2d553490]{\n\tbackground: url(" + __webpack_require__(30) + ") 0.4rem center no-repeat;\n\tbackground-size: 0.4rem auto;\n\tmargin-top: 0.2rem;\n\tfont-size: 0.4rem;\n\tbox-sizing: border-box;\n\tpadding-left: 1rem;\n\tbackground-color: #ffffff;\n\theight: 1rem;\n\tline-height: 1rem;\n\tcolor: #1296db;\n\tborder-bottom: solid 1px #dddddd;\n}\n.order_commodity[data-v-2d553490]{\n\tbackground-color: #ffffff;\n\tborder-bottom: solid 1px #dddddd;\n\theight: 2rem;\n\tcolor: #333333;\n}\n.order_commodity img[data-v-2d553490]{\n\twidth: 1.8rem;\n\theight: 1.8rem;\n\tmargin-top: 0.1rem;\n\tvertical-align: middle;\n}\n.order_commodity .commodity_name[data-v-2d553490]{\n\tdisplay: inline-block;\n\toverflow:hidden; \n\ttext-overflow:ellipsis;\n\t-webkit-box-orient:vertical;\n\t-webkit-line-clamp:2;\n\twidth: 6.6rem;\n\tvertical-align: middle;\n\tbox-sizing: border-box;\n\tpadding-left: 0.2rem;\n\tfont-size: 0.35rem;\n}\n.order_commodity .commodity_num[data-v-2d553490]{\n\tdisplay: inline-block;\n\twidth: 1rem;\n\ttext-align: right;\n\tfont-size: 0.35rem;\n\tvertical-align: middle;\n}\n/*收获地址样式*/\n.receipt_address_div[data-v-2d553490]{\n\tfont-size: 0;\n}\n.receipt_address[data-v-2d553490]{\n\tbackground:#ffffff url(" + __webpack_require__(31) + ") 9.2rem center no-repeat;\n\tbackground-size: 0.5rem auto;\n\tpadding-bottom: 0.35rem;\n\twidth: 10rem;\n\tfont-size: 0.35rem;\n}\n.receipt_address .name[data-v-2d553490]{\n\theight: 1rem;\n\tline-height: 1rem;\n\tbox-sizing: border-box;\n\tpadding-left: 1rem;\n\tcolor: #333333;\n}\n.receipt_address .name span[data-v-2d553490]:nth-child(1){\n\tpadding-right: 1rem;\n}\n.receipt_address .address[data-v-2d553490]{\n\tbackground: url(" + __webpack_require__(32) + ") 0.4rem center no-repeat;\n\tbackground-size: 0.45rem auto;\n\tbox-sizing: border-box;\n\tpadding-left: 1rem;\n\tcolor: #999999;\n\tpadding-right: 1rem;\n\t\n\toverflow:hidden; \n\ttext-overflow:ellipsis;\n\tdisplay:-webkit-box; \n\t-webkit-box-orient:vertical;\n\t-webkit-line-clamp:2;\n}\n.no_receipt_address[data-v-2d553490]{\n\tbox-sizing: border-box;\n\tpadding-left: 0.4rem;\n\tbackground:#ffffff url(" + __webpack_require__(31) + ") 9.2rem center no-repeat;\n\tbackground-size: 0.5rem auto;\n\theight: 1rem;\n\tline-height: 1rem;\n\tcolor: #333333;\n\tfont-size: 0.35rem;\n}\n", ""]);
 
 	// exports
 
@@ -142,49 +142,30 @@ webpackJsonp([1],{
 				commodity: []
 			};
 		},
-		destroyed: function destroyed() {
-			sessionStorage["select_address"] = null;
-		},
-		mounted: function mounted() {
-			var _self = this,
-			    selectAddress = null;
-			if (sessionStorage["select_address"]) {
-				selectAddress = JSON.parse(sessionStorage["select_address"]);
-			}
-			if (!selectAddress) {
-				$.ajax({ //没有选择地址时，显示数据默认地址
-					type: "post",
-					url: "/inter/receiver/getDefaultReceiver",
-					data: { openId: _self.$store.state.openid },
-					success: function success(res) {
-						console.log(res);
-						if (res.code == "000000" && res.receivers) {
-							_self.receivers = res.receivers;
-						}
-					}
-				});
-			} else {
-				//选择后，显示选择的地址
-				this.receivers = selectAddress;
-			}
-			this.commodity = JSON.parse(sessionStorage["selectCommodity"]);
-
-			var num = 0,
-			    price = 0,
-			    l = this.commodity.length;
-			console.log(this.commodity);
-			for (var i = 0; i < l; i++) {
-				var n = parseInt(this.commodity[i].quantity);
-				num += n;
-				price += this.keepTwoDecimal(n * parseFloat(this.commodity[i].price));
-			}
-			this.orderNum = num;
-			this.orderPrice = price;
-		},
 
 		methods: {
 			submitOrder: function submitOrder() {
 				console.log(this.$store.state.openid);
+				var reqData = {
+					price: this.orderPrice,
+					order: {
+						area_name: this.receivers.area_name,
+						consignee: this.receivers.consignee,
+						phone: this.receivers.phone,
+						address: this.receivers.address,
+						open_id: this.$store.state.openid
+					},
+					orderItem: this.commodity
+				};
+				$.ajax({ //没有选择地址时，显示数据默认地址
+					type: "post",
+					url: "/inter/order/addOrders",
+					data: reqData,
+					success: function success(res) {
+						console.log(res);
+						if (res.code == "000000") {}
+					}
+				});
 				this.message = "微信支付";
 			},
 			keepTwoDecimal: function keepTwoDecimal(num) {
@@ -195,8 +176,54 @@ webpackJsonp([1],{
 				}
 				result = Math.round(num * 100) / 100;
 				return result;
+			},
+			getOrderMessage: function getOrderMessage() {
+				var _self = this,
+				    selectAddress = null;
+				if (sessionStorage["select_address"]) {
+					selectAddress = JSON.parse(sessionStorage["select_address"]);
+				}
+				if (!selectAddress) {
+					$.ajax({ //没有选择地址时，显示数据默认地址
+						type: "post",
+						url: "/inter/receiver/getDefaultReceiver",
+						data: { openId: _self.$store.state.openid },
+						success: function success(res) {
+							console.log(res);
+							if (res.code == "000000" && res.receivers) {
+								_self.receivers = res.receivers;
+							}
+						}
+					});
+				} else {
+					//选择后，显示选择的地址
+					this.receivers = selectAddress;
+				}
+				this.commodity = JSON.parse(sessionStorage["selectCommodity"]);
+
+				var num = 0,
+				    price = 0,
+				    l = this.commodity.length;
+				console.log(this.commodity);
+				for (var i = 0; i < l; i++) {
+					var n = parseInt(this.commodity[i].quantity);
+					num += n;
+					price += this.keepTwoDecimal(n * parseFloat(this.commodity[i].price));
+				}
+				this.orderNum = num;
+				this.orderPrice = price;
 			}
 		},
+		destroyed: function destroyed() {
+			sessionStorage["select_address"] = null;
+		},
+		activated: function activated() {
+			this.getOrderMessage();
+		},
+		mounted: function mounted() {
+			this.getOrderMessage();
+		},
+
 		components: {
 			"jf-prompt": _prompt2.default
 		}
@@ -260,7 +287,7 @@ webpackJsonp([1],{
 
 	/* hot reload */
 	if (false) {(function () {
-	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+	  var hotAPI = require("vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
@@ -384,7 +411,7 @@ webpackJsonp([1],{
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-64880e60", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-64880e60", module.exports)
 	  }
 	}
 
@@ -479,7 +506,7 @@ webpackJsonp([1],{
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-2d553490", module.exports)
+	     require("vue-hot-reload-api").rerender("data-v-2d553490", module.exports)
 	  }
 	}
 

@@ -36,21 +36,27 @@
 			}
 		},
 		mounted(){
-			var _self = this;
-			$.ajax({
-				type: "post",
-				url: "/inter/cart/getCartItem",
-				data:{open_id:_self.$store.state.openid},
-				success: function(res) {
-					console.log(res);
-					if(res.code == "000000"){
-						_self.commodityList = res.data;
-					}
-				}
-			});
-			this.setCartNumdiv();
+			this.getCartItem();
+		},
+		activated(){
+			this.getCartItem();
 		},
 		methods:{
+			getCartItem(){
+				var _self = this;
+				$.ajax({
+					type: "post",
+					url: "/inter/cart/getCartItem",
+					data:{open_id:_self.$store.state.openid},
+					success: function(res) {
+						console.log(res);
+						if(res.code == "000000"){
+							_self.commodityList = res.data;
+						}
+					}
+				});
+				this.setCartNumdiv();
+			},
 			setCartNumdiv(){//用户设置shopping_cart_num  div显示位置
 				var type = this.$route.params.type;
 				if(type == 1){//
@@ -93,9 +99,20 @@
 			  	result = Math.round(num * 100) / 100;
 			  	return result;
 			},
+			updateQuantity(id,quantity){
+				$.ajax({
+					type: "post",
+					url: "/inter/cart/updateQuantity",
+					data:{id:id,quantity:quantity},
+					success: function(res) {
+						console.log(res);
+					}
+				});
+			},
 			addCommodity(index){
 				var temp = this.commodityList[index];
 				temp.quantity++;
+				this.updateQuantity(temp.item_id,temp.quantity);
 				if($("#select"+index).attr("class") == "select_img_select"){
 					var t = this.numPrice + temp.price;
 					this.numPrice = this.keepTwoDecimal(t);
@@ -105,6 +122,7 @@
 				if(this.commodityList[index].quantity > 1){
 					var temp = this.commodityList[index];
 					temp.quantity--;
+					this.updateQuantity(temp.item_id,temp.quantity);
 					if($("#select"+index).attr("class") == "select_img_select"){
 						var t = this.numPrice - temp.price;
 						this.numPrice = this.keepTwoDecimal(t);

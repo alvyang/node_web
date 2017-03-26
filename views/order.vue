@@ -41,44 +41,31 @@
 				commodity:[]
 			}
 		},
-		destroyed(){
-			sessionStorage["select_address"] = null
-		},
-		mounted(){
-			var _self = this,selectAddress=null;
-			if(sessionStorage["select_address"]){
-				selectAddress = JSON.parse(sessionStorage["select_address"]);
-			}
-			if(!selectAddress){
-				$.ajax({//没有选择地址时，显示数据默认地址
-					type: "post",
-					url: "/inter/receiver/getDefaultReceiver",
-					data:{openId:_self.$store.state.openid},
-					success: function(res) {
-						console.log(res);
-						if(res.code == "000000" && res.receivers){
-							_self.receivers = res.receivers;
-						}
-					}
-				});
-			}else{//选择后，显示选择的地址
-				this.receivers = selectAddress;
-			}
-			this.commodity = JSON.parse(sessionStorage["selectCommodity"]);
-			
-			var num = 0,price=0,l=this.commodity.length;
-			console.log(this.commodity);
-			for(var i = 0 ; i < l ;i++){
-				var n = parseInt(this.commodity[i].quantity);
-				num += n;
-				price += this.keepTwoDecimal(n* parseFloat(this.commodity[i].price));
-			}
-			this.orderNum = num;
-			this.orderPrice = price;
-		},
 		methods:{
 			submitOrder(){
 				console.log(this.$store.state.openid);
+				var reqData = {
+					price:this.orderPrice,
+					order:{
+						area_name:this.receivers.area_name,
+						consignee:this.receivers.consignee,
+						phone:this.receivers.phone,
+						address:this.receivers.address,
+						open_id:this.$store.state.openid,
+					},
+					orderItem:this.commodity,
+				};
+				$.ajax({//没有选择地址时，显示数据默认地址
+					type: "post",
+					url: "/inter/order/addOrders",
+					data:reqData,
+					success: function(res) {
+						console.log(res);
+						if(res.code == "000000"){
+							
+						}
+					}
+				});
 				this.message = "微信支付";
 			},
 			keepTwoDecimal(num) {
@@ -89,7 +76,48 @@
 				}
 			  	result = Math.round(num * 100) / 100;
 			  	return result;
-			}
+			},
+			getOrderMessage(){
+				var _self = this,selectAddress=null;
+				if(sessionStorage["select_address"]){
+					selectAddress = JSON.parse(sessionStorage["select_address"]);
+				}
+				if(!selectAddress){
+					$.ajax({//没有选择地址时，显示数据默认地址
+						type: "post",
+						url: "/inter/receiver/getDefaultReceiver",
+						data:{openId:_self.$store.state.openid},
+						success: function(res) {
+							console.log(res);
+							if(res.code == "000000" && res.receivers){
+								_self.receivers = res.receivers;
+							}
+						}
+					});
+				}else{//选择后，显示选择的地址
+					this.receivers = selectAddress;
+				}
+				this.commodity = JSON.parse(sessionStorage["selectCommodity"]);
+				
+				var num = 0,price=0,l=this.commodity.length;
+				console.log(this.commodity);
+				for(var i = 0 ; i < l ;i++){
+					var n = parseInt(this.commodity[i].quantity);
+					num += n;
+					price += this.keepTwoDecimal(n* parseFloat(this.commodity[i].price));
+				}
+				this.orderNum = num;
+				this.orderPrice = price;
+			},
+		},
+		destroyed(){
+			sessionStorage["select_address"] = null
+		},
+		activated(){
+			this.getOrderMessage();
+		},
+		mounted(){
+			this.getOrderMessage();
 		},
 		components:{
 			"jf-prompt":Prompt,

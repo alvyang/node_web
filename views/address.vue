@@ -24,27 +24,34 @@
 				receivers:[]
 			}
 		},
+		activated(){
+			this.getReceiverList();
+		},
 		mounted(){
-			var _self = this;
-			$.ajax({
-				type: "post",
-				url: "/inter/receiver/getReceiverList",
-				data:{openId:_self.$store.state.openid},
-				success: function(res) {
-					console.log(res);
-					if(res.code == "000000" && res.receivers){
-						_self.receivers = res.receivers;
-					}
-				}
-			});
+			this.getReceiverList();
 		},
 		methods:{
+			getReceiverList(){
+				var _self = this;
+				$.ajax({
+					type: "post",
+					url: "/inter/receiver/getReceiverList",
+					data:{openId:_self.$store.state.openid},
+					success: function(res) {
+						console.log(res);
+						if(res.code == "000000" && res.receivers){
+							_self.receivers = res.receivers;
+						}
+					}
+				});
+			},
 			selectAddress(index){
 				sessionStorage["select_address"]=JSON.stringify(this.receivers[index]);
 				this.$router.replace({path:"/order",query:this.receivers[index]});
 			},
 			addressEdit(index){
-				this.$router.push({path:"/address_edit",query:this.receivers[index]});
+				sessionStorage["address_edit"] = JSON.stringify(this.receivers[index]);
+				this.$router.push({path:"/address_edit"});
 			}
 		},
 		components:{
