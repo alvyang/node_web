@@ -6685,7 +6685,7 @@ webpackJsonp([2],Array(30).concat([
 
 
 	// module
-	exports.push([module.id, "\n.category_content{\n\tbackground-color: #ffffff;\n}\n.category_content table{\n\ttext-align: center;\n\tborder-collapse: collapse;\n\twidth: 100%;\n}\n.category_content table td{\n\twidth: 20%;\n\theight: 1rem;\n\tborder: solid 1px #dddddd;\n}\n.category_title{\n\tbox-sizing: border-box;\n\tpadding-left: 0.35rem;\n\tcolor: #2b9bd3;\n\tfont-size: 0.4rem;\n\theight: 1.2rem;\n\tline-height: 1.2rem;\n}\n", ""]);
+	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 	// exports
 
@@ -6704,28 +6704,12 @@ webpackJsonp([2],Array(30).concat([
 	//
 	//
 	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
 
 	exports.default = {
 		data: function data() {
-			return {};
+			return {
+				category: []
+			};
 		},
 		mounted: function mounted() {
 			$(".category_div").height($(window).height());
@@ -6737,16 +6721,10 @@ webpackJsonp([2],Array(30).concat([
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _vm._m(0)
-	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
 	    staticClass: "category_div"
-	  }, [_c('div', [_c('div', {
-	    staticClass: "category_title"
-	  }, [_vm._v("手机数码")]), _vm._v(" "), _c('div', {
-	    staticClass: "category_content"
-	  }, [_c('table', [_c('tr', [_c('td', [_c('a', [_vm._v("全部")])]), _vm._v(" "), _c('td', [_c('a', [_vm._v("手机通讯")])]), _vm._v(" "), _c('td', [_c('a', [_vm._v("手机配件")])]), _vm._v(" "), _c('td', [_c('a', [_vm._v("电子教育")])])]), _vm._v(" "), _c('tr', [_c('td', [_c('a', [_vm._v("智能设备")])]), _vm._v(" "), _c('td', [_c('a', [_vm._v("时尚影音")])]), _vm._v(" "), _c('td', [_c('a', [_vm._v("时尚影音")])]), _vm._v(" "), _c('td', [_c('a', [_vm._v("时尚影音")])])])])])])])
-	}]}
+	  })
+	},staticRenderFns: []}
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
@@ -6836,7 +6814,7 @@ webpackJsonp([2],Array(30).concat([
 
 
 	// module
-	exports.push([module.id, "\n.shopping_cart_list{\n\theight: 100%;\n\tbackground-color: #f4f4f4;\n}\n.cart_item{\n\tbox-sizing: border-box;\n\tbackground-color: #ffffff;\n\tpadding-top: 0.3rem;\n\tpadding-bottom: 0.3rem;\n\tfont-size: 0;\n\tmargin-bottom: 0.2rem;\n}\n.cart_item > div{\n\tdisplay: inline-block;\n}\n.cart_item .select_img_select{\n\tbackground: url(" + __webpack_require__(79) + ") center center no-repeat;\n\tbackground-size: 0.6rem 0.6rem;\n\twidth: 1.1rem;\n\theight: 2.5rem;\n}\n.cart_item .select_img{\n\tbackground: url(" + __webpack_require__(80) + ") center center no-repeat;\n\tbackground-size: 0.6rem 0.6rem;\n\twidth: 1.1rem;\n\theight: 2.5rem;\n}\n.cart_item .commodity_message{\n\tposition: relative;\n\tbox-sizing: border-box;\n\twidth: 8.9rem;\n\tpadding-right: 0.2rem;\n}\n.commodity_message .commodity_detail{\n\tposition: absolute;\n\tleft: 2.8rem;\n\ttop:0.2rem;\n\tpadding-right: 0.5rem;\n\tbox-sizing: border-box;\n\tfont-size: 0.4rem;\n\t\n\toverflow:hidden; \n\ttext-overflow:ellipsis;\n\tdisplay:-webkit-box; \n\t-webkit-box-orient:vertical;\n\t-webkit-line-clamp:2;\n}\n.commodity_message .commodity_operation{\n\tposition: absolute;\n\tleft: 2.8rem;\n\tbottom: 0.1rem;\n\twidth: 5.6rem;\n}\n.commodity_operation .price{\n\tfont-size: 0.4rem;\n\tcolor: #d81e06;\n\tline-height: 0.73rem;\n}\n.commodity_operation .price span{\n\tfont-size: 0.3rem;\n\tpadding-right: 0.1rem;\n}\n.commodity_operation .add_reduce{\n\tfloat: right;\n}\n.color_dddddd{\n\tcolor:#dddddd !important;\n}\n.add_reduce .num{\n\tdisplay: inline-block;\n\twidth: 1rem;\n\theight: 0.7rem;\n\tline-height: 0.7rem;\n\tvertical-align: middle;\n\tborder-top: solid 1px #dddddd;\n\tborder-bottom: solid 1px #dddddd;\n\ttext-align: center;\n\tfont-size: 0.35rem;\n}\n.add_reduce .add,.add_reduce .reduce{\n\tdisplay: inline-block;\n\twidth:0.7rem;\n\theight: 0.7rem;\n\ttext-align: center;\n\tline-height: 0.7rem;\n\tfont-size: 0.4rem;\n\tborder: solid 1px #dddddd;\n\tvertical-align: middle;\n}\n.commodity_message img{\n\tfloat: left;\n\twidth: 2.5rem;\n\theight: 2.5rem;\n\tborder: solid 1px #dddddd;\n}\n.shopping_cart_num{\n\tbackground-color: #ffffff;\n\tposition: fixed;\n\theight: 1.35rem;\n\tfont-size: 0;\n    z-index: 2;\n}\n.bottom_135{\n\tbottom: 1.35rem;\n}\n.bottom_0{\n\tbottom: 0rem;\n}\n.select_img_all_select{\n\tbackground: url(" + __webpack_require__(79) + ") 0.4rem center no-repeat;\n\tbackground-size: 0.6rem 0.6rem;\n\tdisplay: inline-block;\n\twidth: 1.9rem;\n\theight: 1.35rem;\n\tline-height: 1.35rem;\n\ttext-align: right;\n\tfont-size: 0.4rem;\n\tcolor: #333333;\n}\n.select_img_all{\n\tbackground: url(" + __webpack_require__(80) + ") 0.4rem center no-repeat;\n\tbackground-size: 0.6rem 0.6rem;\n\tdisplay: inline-block;\n\twidth: 1.9rem;\n\theight: 1.35rem;\n\tline-height: 1.35rem;\n\ttext-align: right;\n\tfont-size: 0.4rem;\n\tcolor: #333333;\n}\n.total{\n\tdisplay: inline-block;\n\theight: 1.1rem;\n\tline-height: 1.1rem;\n\twidth: 5.6rem;\n\tfont-size: 0.4rem;\n\tbox-sizing: border-box;\n\tpadding-left: 0.2rem;\n}\n.settlement{\n\tdisplay: inline-block;\n\tbackground-color: #d81e06;\n\twidth: 2.5rem;\n\theight: 1.35rem;\n\tfont-size: 0.4rem;\n\tline-height: 1.35rem;\n\tcolor: #ffffff;\n\ttext-align: center;\n}\n", ""]);
+	exports.push([module.id, "\n.cart_item_div{\n\tposition: relative;\n\theight: 3.2rem;\n\tleft: 0;\n\toverflow: hidden;\n}\n.delete_button{\n\tposition: absolute;\n\tright: 0px;\n\theight: 3.1rem;\n\twidth: 1.4rem;\n\tbackground-color: #d81e06;\n\tz-index: 99;\n}\n.shopping_cart_list{\n\theight: 100%;\n\tbackground-color: #f4f4f4;\n}\n.cart_item{\n\tbox-sizing: border-box;\n\tbackground-color: #ffffff;\n\tpadding-top: 0.3rem;\n\tpadding-bottom: 0.3rem;\n\tfont-size: 0;\n\tmargin-bottom: 0.2rem;\n}\n.cart_item > div{\n\tdisplay: inline-block;\n}\n.cart_item .select_img_select{\n\tbackground: url(" + __webpack_require__(79) + ") center center no-repeat;\n\tbackground-size: 0.6rem 0.6rem;\n\twidth: 1.1rem;\n\theight: 2.5rem;\n}\n.cart_item .select_img{\n\tbackground: url(" + __webpack_require__(80) + ") center center no-repeat;\n\tbackground-size: 0.6rem 0.6rem;\n\twidth: 1.1rem;\n\theight: 2.5rem;\n}\n.cart_item .commodity_message{\n\tposition: relative;\n\tbox-sizing: border-box;\n\twidth: 8.9rem;\n\tpadding-right: 0.2rem;\n}\n.commodity_message .commodity_detail{\n\tposition: absolute;\n\tleft: 2.8rem;\n\ttop:0.2rem;\n\tpadding-right: 0.5rem;\n\tbox-sizing: border-box;\n\tfont-size: 0.4rem;\n\toverflow:hidden; \n\ttext-overflow:ellipsis;\n\tdisplay:-webkit-box; \n\t-webkit-box-orient:vertical;\n\t-webkit-line-clamp:2;\n}\n.commodity_message .commodity_operation{\n\tposition: absolute;\n\tleft: 2.8rem;\n\tbottom: 0.1rem;\n\twidth: 5.6rem;\n}\n.commodity_operation .price{\n\tfont-size: 0.4rem;\n\tcolor: #d81e06;\n\tline-height: 0.73rem;\n}\n.commodity_operation .price span{\n\tfont-size: 0.3rem;\n\tpadding-right: 0.1rem;\n}\n.commodity_operation .add_reduce{\n\tfloat: right;\n}\n.color_dddddd{\n\tcolor:#dddddd !important;\n}\n.add_reduce .num{\n\tdisplay: inline-block;\n\twidth: 1rem;\n\theight: 0.7rem;\n\tline-height: 0.7rem;\n\tvertical-align: middle;\n\tborder-top: solid 1px #dddddd;\n\tborder-bottom: solid 1px #dddddd;\n\ttext-align: center;\n\tfont-size: 0.35rem;\n}\n.add_reduce .add,.add_reduce .reduce{\n\tdisplay: inline-block;\n\twidth:0.7rem;\n\theight: 0.7rem;\n\ttext-align: center;\n\tline-height: 0.7rem;\n\tfont-size: 0.4rem;\n\tborder: solid 1px #dddddd;\n\tvertical-align: middle;\n}\n.commodity_message img{\n\tfloat: left;\n\twidth: 2.5rem;\n\theight: 2.5rem;\n\tborder: solid 1px #dddddd;\n}\n.shopping_cart_num{\n\tbackground-color: #ffffff;\n\tposition: fixed;\n\theight: 1.35rem;\n\tfont-size: 0;\n    z-index: 2;\n}\n.bottom_135{\n\tbottom: 1.35rem;\n}\n.bottom_0{\n\tbottom: 0rem;\n}\n.select_img_all_select{\n\tbackground: url(" + __webpack_require__(79) + ") 0.4rem center no-repeat;\n\tbackground-size: 0.6rem 0.6rem;\n\tdisplay: inline-block;\n\twidth: 1.9rem;\n\theight: 1.35rem;\n\tline-height: 1.35rem;\n\ttext-align: right;\n\tfont-size: 0.4rem;\n\tcolor: #333333;\n}\n.select_img_all{\n\tbackground: url(" + __webpack_require__(80) + ") 0.4rem center no-repeat;\n\tbackground-size: 0.6rem 0.6rem;\n\tdisplay: inline-block;\n\twidth: 1.9rem;\n\theight: 1.35rem;\n\tline-height: 1.35rem;\n\ttext-align: right;\n\tfont-size: 0.4rem;\n\tcolor: #333333;\n}\n.total{\n\tdisplay: inline-block;\n\theight: 1.1rem;\n\tline-height: 1.1rem;\n\twidth: 5.6rem;\n\tfont-size: 0.4rem;\n\tbox-sizing: border-box;\n\tpadding-left: 0.2rem;\n}\n.settlement{\n\tdisplay: inline-block;\n\tbackground-color: #d81e06;\n\twidth: 2.5rem;\n\theight: 1.35rem;\n\tfont-size: 0.4rem;\n\tline-height: 1.35rem;\n\tcolor: #ffffff;\n\ttext-align: center;\n}\n", ""]);
 
 	// exports
 
@@ -6875,36 +6853,19 @@ webpackJsonp([2],Array(30).concat([
 
 	var _prompt2 = _interopRequireDefault(_prompt);
 
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	var _slider_delete = __webpack_require__(213);
 
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
+	var _slider_delete2 = _interopRequireDefault(_slider_delete);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = {
 		data: function data() {
 			return {
+				sliderConf: { //滑动配置
+					direction: 'direction',
+					distance: 1.4
+				},
 				commodityList: [],
 				numPrice: 0.00,
 				message: "",
@@ -7054,9 +7015,38 @@ webpackJsonp([2],Array(30).concat([
 		},
 		components: {
 			"jf-no-content": _no_content2.default,
-			"jf-prompt": _prompt2.default
+			"jf-prompt": _prompt2.default,
+			"slider_delete": _slider_delete2.default
 		}
-	};
+	}; //
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 /***/ },
 /* 82 */
@@ -7237,6 +7227,13 @@ webpackJsonp([2],Array(30).concat([
 	    }
 	  }), _vm._v(" "), _vm._l((_vm.commodityList), function(c, index) {
 	    return _c('div', {
+	      staticClass: "cart_item_div"
+	    }, [_c('slider_delete', {
+	      attrs: {
+	        "sliderConf": _vm.sliderConf,
+	        "index": index
+	      }
+	    }, [_c('div', {
 	      staticClass: "cart_item"
 	    }, [_c('div', {
 	      staticClass: "select_img",
@@ -7280,7 +7277,9 @@ webpackJsonp([2],Array(30).concat([
 	          _vm.addCommodity(index)
 	        }
 	      }
-	    }, [_vm._v("+")])])])])])
+	    }, [_vm._v("+")])])])])])]), _vm._v(" "), _c('div', {
+	      staticClass: "delete_button"
+	    })], 1)
 	  }), _vm._v(" "), _c('div', {
 	    directives: [{
 	      name: "show",
@@ -7793,6 +7792,289 @@ webpackJsonp([2],Array(30).concat([
 	  module.hot.accept()
 	  if (module.hot.data) {
 	     require("vue-hot-reload-api").rerender("data-v-3ac3946e", module.exports)
+	  }
+	}
+
+/***/ },
+/* 109 */,
+/* 110 */,
+/* 111 */,
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */,
+/* 128 */,
+/* 129 */,
+/* 130 */,
+/* 131 */,
+/* 132 */,
+/* 133 */,
+/* 134 */,
+/* 135 */,
+/* 136 */,
+/* 137 */,
+/* 138 */,
+/* 139 */,
+/* 140 */,
+/* 141 */,
+/* 142 */,
+/* 143 */,
+/* 144 */,
+/* 145 */,
+/* 146 */,
+/* 147 */,
+/* 148 */,
+/* 149 */,
+/* 150 */,
+/* 151 */,
+/* 152 */,
+/* 153 */,
+/* 154 */,
+/* 155 */,
+/* 156 */,
+/* 157 */,
+/* 158 */,
+/* 159 */,
+/* 160 */,
+/* 161 */,
+/* 162 */,
+/* 163 */,
+/* 164 */,
+/* 165 */,
+/* 166 */,
+/* 167 */,
+/* 168 */,
+/* 169 */,
+/* 170 */,
+/* 171 */,
+/* 172 */,
+/* 173 */,
+/* 174 */,
+/* 175 */,
+/* 176 */,
+/* 177 */,
+/* 178 */,
+/* 179 */,
+/* 180 */,
+/* 181 */,
+/* 182 */,
+/* 183 */,
+/* 184 */,
+/* 185 */,
+/* 186 */,
+/* 187 */,
+/* 188 */,
+/* 189 */,
+/* 190 */,
+/* 191 */,
+/* 192 */,
+/* 193 */,
+/* 194 */,
+/* 195 */,
+/* 196 */,
+/* 197 */,
+/* 198 */,
+/* 199 */,
+/* 200 */,
+/* 201 */,
+/* 202 */,
+/* 203 */,
+/* 204 */,
+/* 205 */,
+/* 206 */,
+/* 207 */,
+/* 208 */,
+/* 209 */,
+/* 210 */,
+/* 211 */,
+/* 212 */,
+/* 213 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = {}
+
+	/* styles */
+	__webpack_require__(214)
+
+	/* script */
+	__vue_exports__ = __webpack_require__(216)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(217)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/Users/lvyang/repositories/node_web/components/slider_delete.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  module.hot.accept()
+	  if (!module.hot.data) {
+	    hotAPI.createRecord("data-v-14e553fd", __vue_options__)
+	  } else {
+	    hotAPI.reload("data-v-14e553fd", __vue_options__)
+	  }
+	})()}
+	if (__vue_options__.functional) {console.error("[vue-loader] slider_delete.vue: functional components are not supported and should be defined in plain js files using render functions.")}
+
+	module.exports = __vue_exports__
+
+
+/***/ },
+/* 214 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(215);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(9)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-14e553fd!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./slider_delete.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-14e553fd!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./slider_delete.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 215 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(8)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "\n.slider_delete{\n\tposition: absolute;\n\tleft: 0;\n\tz-index: 100;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 216 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+	/* 
+	 * 滑动配置，direction:滑动方向。distance 滑动距离
+	 */
+	exports.default = {
+		data: function data() {
+			return {
+				startPos: { x: 0, y: 0 },
+				endPos: { x: 0, y: 0 }
+			};
+		},
+
+		props: ['sliderConf', 'index'],
+		methods: {
+			touchStart: function touchStart(e) {
+				this.startPos.x = e.pageX;
+				this.startPos.y = e.pageY;
+			},
+			touchMove: function touchMove(e) {
+				var x = e.pageX,
+				    y = e.pageY;
+				var distance = this.sliderConf.distance * 75;
+				var currentLeft = $("#slider_delete" + this.index).css("left");
+				currentLeft = currentLeft.substring(0, currentLeft.length - 2);
+				//				if( currentLeft < 0 && parseInt(currentLeft) < -distance){
+				//					$("#slider_delete"+this.index).css("left",-distance+"px");
+				//				}else if(currentLeft > 0){
+				//					$("#slider_delete"+this.index).css("left","0px");
+				//				}else{
+				$("#slider_delete" + this.index).css("left", x - this.startPos.x + "px");
+				//				}
+			},
+			touchEnd: function touchEnd(e) {
+				var distance = this.sliderConf.distance * 75;
+				this.endPos.x = e.pageX;
+				this.endPos.y = e.pageY;
+				if (this.endPos.x - this.startPos.x < 0) {
+					$("#slider_delete" + this.index).css("left", -distance + "px");
+				} else if (this.endPos.x - this.startPos.x > 0) {
+					$("#slider_delete" + this.index).css("left", "0px");
+				}
+			}
+		}
+	};
+
+/***/ },
+/* 217 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: "slider_delete",
+	    attrs: {
+	      "id": 'slider_delete' + _vm.index
+	    },
+	    on: {
+	      "touchstart": function($event) {
+	        _vm.touchStart($event)
+	      },
+	      "touchend": function($event) {
+	        _vm.touchEnd($event)
+	      },
+	      "touchmove": function($event) {
+	        _vm.touchMove($event)
+	      }
+	    }
+	  }, [_vm._t("default"), _vm._v(" "), _c('div', [_vm._v("\n\t\t" + _vm._s(_vm.index) + _vm._s(_vm.sliderConf.direction) + "\n\t")])], 2)
+	},staticRenderFns: []}
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-hot-reload-api").rerender("data-v-14e553fd", module.exports)
 	  }
 	}
 

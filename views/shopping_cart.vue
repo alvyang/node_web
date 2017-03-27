@@ -1,18 +1,23 @@
 <template>
 	<div class="shopping_cart_list">
 		<jf-no-content v-show="commodityList.length == 0" message="您的购物车是空的"></jf-no-content>
-		<div v-for="(c,index) in commodityList" class="cart_item">
-			<div class="select_img" :id="'select'+index" @click="selectCommodity(index)"></div>
-			<div class="commodity_message">
-				<img :src="c.image"/>
-				<div class="commodity_detail">{{c.full_name}}</div>
-				<div class="commodity_operation">
-					<a class="price"><span>¥</span>{{c.price}}</a>
-					<div class="add_reduce">
-						<a :class="['reduce',{'color_dddddd':c.quantity == 1}]" @click="reduceCommodity(index)">-</a><a class="num">{{c.quantity}}</a><a class="add" @click="addCommodity(index)">+</a>
+		<div v-for="(c,index) in commodityList" class="cart_item_div">
+			<slider_delete :sliderConf="sliderConf" :index="index">
+				<div class="cart_item">
+					<div class="select_img" :id="'select'+index" @click="selectCommodity(index)"></div>
+					<div class="commodity_message">
+						<img :src="c.image"/>
+						<div class="commodity_detail">{{c.full_name}}</div>
+						<div class="commodity_operation">
+							<a class="price"><span>¥</span>{{c.price}}</a>
+							<div class="add_reduce">
+								<a :class="['reduce',{'color_dddddd':c.quantity == 1}]" @click="reduceCommodity(index)">-</a><a class="num">{{c.quantity}}</a><a class="add" @click="addCommodity(index)">+</a>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
+			</slider_delete>
+			<div class="delete_button"></div>
 		</div>
 		<div v-show="commodityList.length > 0"  :class="['shopping_cart_num',{'bottom_135':bottomFlag,'bottom_0':!bottomFlag}]">
 			<div class="select_img_all" id="selectAll" @click="selectAll">全选</div>
@@ -25,9 +30,14 @@
 <script>
 	import NoContent from "components/no_content.vue";
 	import Prompt from "components/prompt.vue";
+	import SliderDelete from "components/slider_delete.vue";
 	export default({
 		data(){
 			return {
+				sliderConf:{//滑动配置
+					direction:'direction',
+					distance:1.4,
+				},
 				commodityList:[],
 				numPrice:0.00,
 				message:"",
@@ -169,10 +179,25 @@
 		components:{
 			"jf-no-content":NoContent,
 			"jf-prompt":Prompt,
+			"slider_delete":SliderDelete,
 		}
 	})
 </script>
 <style>
+	.cart_item_div{
+		position: relative;
+		height: 3.2rem;
+		left: 0;
+		overflow: hidden;
+	}
+	.delete_button{
+		position: absolute;
+		right: 0px;
+		height: 3.1rem;
+		width: 1.4rem;
+		background-color: #d81e06;
+		z-index: 99;
+	}
 	.shopping_cart_list{
 		height: 100%;
 		background-color: #f4f4f4;
@@ -213,7 +238,6 @@
 		padding-right: 0.5rem;
 		box-sizing: border-box;
 		font-size: 0.4rem;
-		
 		overflow:hidden; 
 		text-overflow:ellipsis;
 		display:-webkit-box; 
