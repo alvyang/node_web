@@ -1,8 +1,8 @@
 <template>
 	<div class="shopping_cart_list">
 		<jf-no-content v-show="commodityList.length == 0" message="您的购物车是空的"></jf-no-content>
-		<div v-for="(c,index) in commodityList" class="cart_item_div">
-			<slider_delete :sliderConf="sliderConf" :index="index">
+		<div v-for="(c,index) in commodityList" class="cart_item_div" :id="'cart_item_div'+index">
+			<slider_delete :sliderConf="sliderConf">
 				<div class="cart_item">
 					<div class="select_img" :id="'select'+index" @click="selectCommodity(index)"></div>
 					<div class="commodity_message">
@@ -17,7 +17,7 @@
 					</div>
 				</div>
 			</slider_delete>
-			<div class="delete_button"></div>
+			<div class="delete_button" @click="deleteCartItem(index)"></div>
 		</div>
 		<div v-show="commodityList.length > 0"  :class="['shopping_cart_num',{'bottom_135':bottomFlag,'bottom_0':!bottomFlag}]">
 			<div class="select_img_all" id="selectAll" @click="selectAll">全选</div>
@@ -38,7 +38,22 @@
 					direction:'direction',
 					distance:1.4,
 				},
-				commodityList:[],
+				commodityList:[{
+					image:"../img/address.png",
+					full_name:"12沃尔沃顺丰速递顶替",
+					price:"12.00",
+					quantity:1,
+				},{
+					image:"../img/address.png",
+					full_name:"13沃尔沃顺丰速递顶替",
+					price:"12.00",
+					quantity:1,
+				},{
+					image:"../img/address.png",
+					full_name:"14沃尔沃顺丰速递顶替",
+					price:"12.00",
+					quantity:1,
+				}],
 				numPrice:0.00,
 				message:"",
 				bottomFlag:true,
@@ -46,13 +61,13 @@
 			}
 		},
 		mounted(){
-			this.getCartItem();
+			//this.getCartItem();
 		},
 		activated(){
-			this.getCartItem();
+			//this.getCartItem();
 		},
 		methods:{
-			getCartItem(){
+			getCartItem(){//获取购物车信息
 				var _self = this;
 				$.ajax({
 					type: "post",
@@ -67,6 +82,24 @@
 				});
 				this.setCartNumdiv();
 			},
+			deleteCartItem(index){//删除购物车信息
+				var _self = this;
+				if($("#select"+index).attr("class") == "select_img_select"){//如果为选中状态
+					var num = this.commodityList[index].quantity * this.commodityList[index].price;
+					this.numPrice = this.numPrice - this.keepTwoDecimal(num);
+				}
+				_self.commodityList.splice(index,1);
+				console.log(_self.commodityList);
+//				$(".slider_delete").css("left","0px");
+//				$.ajax({
+//					type: "post",
+//					url: "/inter/cart/deleteCartItem",
+//					data:{id:_self.commodityList[index].id},
+//					success: function(res) {
+//						console.log(res);
+//					}
+//				});
+			},
 			setCartNumdiv(){//用户设置shopping_cart_num  div显示位置
 				var type = this.$route.params.type;
 				if(type == 1){//
@@ -75,7 +108,7 @@
 					this.bottomFlag = false;//
 				}
 			},
-			selectCommodity(index){
+			selectCommodity(index){//
 				if($("#select"+index).attr("class") == "select_img"){//未选中
 					this.orderCommoditys[index]=null;
 					$("#select"+index).removeClass("select_img").addClass("select_img_select");
@@ -100,7 +133,7 @@
 				}
 				this.numPrice =this.keepTwoDecimal(priceNumTemp);
 			},
-			keepTwoDecimal(num) {
+			keepTwoDecimal(num) {//保留两们小数
 				var result = parseFloat(num);
 				if (isNaN(result)) {
 					console.log('传递参数错误，请检查！');
@@ -109,7 +142,7 @@
 			  	result = Math.round(num * 100) / 100;
 			  	return result;
 			},
-			updateQuantity(id,quantity){
+			updateQuantity(id,quantity){//更新购买数量
 				$.ajax({
 					type: "post",
 					url: "/inter/cart/updateQuantity",
@@ -119,7 +152,7 @@
 					}
 				});
 			},
-			addCommodity(index){
+			addCommodity(index){//添加商品
 				var temp = this.commodityList[index];
 				temp.quantity++;
 				this.updateQuantity(temp.item_id,temp.quantity);
@@ -128,7 +161,7 @@
 					this.numPrice = this.keepTwoDecimal(t);
 				}
 			},
-			reduceCommodity(index){
+			reduceCommodity(index){//减商品
 				if(this.commodityList[index].quantity > 1){
 					var temp = this.commodityList[index];
 					temp.quantity--;
@@ -139,7 +172,7 @@
 					}
 				}
 			},
-			selectAll(){
+			selectAll(){//选择所有的商品
 				var l = this.commodityList.length;
 				var priceNumTemp = 0;
 				if($("#selectAll").attr("class") == "select_img_all_select"){//取消选中
@@ -159,7 +192,7 @@
 				
 				this.numPrice =this.keepTwoDecimal(priceNumTemp);
 			},
-			settlement(){
+			settlement(){//结算
 				var _self = this;
 				if(this.numPrice == 0){
 					this.message = "请选择结算商品";
@@ -189,11 +222,14 @@
 		height: 3.2rem;
 		left: 0;
 		overflow: hidden;
+		margin-bottom: 0.2rem;
 	}
 	.delete_button{
 		position: absolute;
+		background: url(../img/delete.png) center center no-repeat;
+		background-size: 0.6rem auto;
 		right: 0px;
-		height: 3.1rem;
+		height: 3.2rem;
 		width: 1.4rem;
 		background-color: #d81e06;
 		z-index: 99;
@@ -209,6 +245,7 @@
 		padding-bottom: 0.3rem;
 		font-size: 0;
 		margin-bottom: 0.2rem;
+		width: 10rem;
 	}
 	.cart_item > div{
 		display: inline-block;
@@ -229,6 +266,7 @@
 		position: relative;
 		box-sizing: border-box;
 		width: 8.9rem;
+		height: 2.6rem;
 		padding-right: 0.2rem;
 	}
 	.commodity_message .commodity_detail{
@@ -287,7 +325,7 @@
 		vertical-align: middle;
 	}
 	.commodity_message img{
-		float: left;
+		position: absolute;
 		width: 2.5rem;
 		height: 2.5rem;
 		border: solid 1px #dddddd;

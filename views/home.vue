@@ -63,16 +63,16 @@
 		},
 		mounted(){
 			var _self = this;
-			$.ajax({
-				type: "post",
-				url: "/inter/products/getProductsList",
-				success: function(res) {
-					console.log(res);
-					if(res.code == "000000"){
-						_self.commodityList = res.data;
-					}
-				}
-			});
+//			$.ajax({
+//				type: "post",
+//				url: "/inter/products/getProductsList",
+//				success: function(res) {
+//					console.log(res);
+//					if(res.code == "000000"){
+//						_self.commodityList = res.data;
+//					}
+//				}
+//			});
 			var mySwiper = new Swiper('.swiper-container', {
 				autoplay: 2000,//可选选项，自动滑动
 			})
