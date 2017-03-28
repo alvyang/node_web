@@ -32,10 +32,10 @@
 			<router-link to="/orders/1">查看全部订单</router-link>
 		</div>
 		<div class="order_detail">
-			<router-link to="/orders/2">待付款<span>1</span></router-link>
-			<router-link to="/orders/3">待发货<span>1</span></router-link>
-			<router-link to="/orders/4">待收货<span>1</span></router-link>
-			<router-link to="/orders/5">待评价<span>1</span></router-link>
+			<router-link to="/orders/2">待付款<span v-show="orderNum.pendPay && orderNum.pendPay>0">{{orderNum.pendPay}}</span></router-link>
+			<router-link to="/orders/3">待发货<span v-show="orderNum.pendDelivery && orderNum.pendDelivery>0">{{orderNum.pendDelivery}}</span></router-link>
+			<router-link to="/orders/4">待收货<span v-show="orderNum.pendReceive && orderNum.pendReceive>0">{{orderNum.pendReceive}}</span></router-link>
+			<router-link to="/orders/5">待评价<span v-show="false"></span></router-link>
 		</div>
 	</div>
 </template>
@@ -43,7 +43,11 @@
 	export default({
 		data(){
 			return {
-				
+				orderNum:{
+					pendPay:0,
+					pendDelivery:0,
+					pendReceive:0,
+				},
 			}
 		},
 		methods:{
@@ -56,7 +60,7 @@
 					success: function(res) {
 						console.log(res);
 						if(res.code == "000000"){
-							_self.commodityList = res.data;
+							_self.orderNum = res.data;
 						}
 					}
 				});

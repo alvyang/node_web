@@ -10,12 +10,12 @@
 		<jf-no-content v-show="orders.length == 0" message="您还没有相关订单"></jf-no-content>
 		<div v-for="o in orders" class="orders_content">
 			<router-link to="/orders_detail" tag="div" class="orders_code">
-				<span>订单号：{{o.orderCode}}</span>
-				<span v-if="o.orderState == 1" class="order_state">已完成</span>
-				<span v-if="o.orderState == 2" class="order_state">待付款</span>
-				<span v-if="o.orderState == 3" class="order_state">待发货</span>
-				<span v-if="o.orderState == 4" class="order_state">待收货</span>
-				<span v-if="o.orderState == 5" class="order_state">待评价</span>
+				<span>订单号：{{o.shipping_sn}}</span>
+				<span v-if="o.order_status == 1" class="order_state">已完成</span>
+				<span v-if="o.order_status == 2" class="order_state">待付款</span>
+				<span v-if="o.order_status == 3" class="order_state">待发货</span>
+				<span v-if="o.order_status == 4" class="order_state">待收货</span>
+				<span v-if="o.order_status == 5" class="order_state">待评价</span>
 			</router-link>
 			<router-link to="/orders_detail" tag="div" class="orders_commodity">
 				<img v-for="i in o.commodityList" :src="i.commodityUrl" />
@@ -38,35 +38,27 @@
 		methods:{
 			getOrders(){
 				var type = this.$route.params.type;
-				if(type == 1){
-					this.orders = [{
-						orderId:"",
-						orderCode:"123456798",
-						orderState:"2",
-						orderNum:"2",
-						orderPrice:"23.45",
-						commodityList:[{
-							commodityUrl:"img/logo.jpg"
-						}]
-					},{
-						orderId:"",
-						orderCode:"123456798",
-						orderState:"2",
-						orderNum:"2",
-						orderPrice:"23.45",
-						commodityList:[{
-							commodityUrl:"img/logo.jpg"
-						}]
-					}];
-				}else{
-					this.orders=[];
-				}
+				var _self = this;
+				$.ajax({
+					type: "post",
+					url: "/inter/order/getOrderList",
+					data:{open_id:_self.$store.state.openid,type:type},
+					success: function(res) {
+						console.log(res);
+						if(res.code == "000000"){
+							_self.orders = res.data;
+						}
+					}
+				});
 			}
 		},
 		watch:{
 			'$route' (to, from) {
 				this.getOrders();
 			}
+		},
+		activated(){
+			this.getOrders();
 		},
 		mounted(){
 			this.getOrders();

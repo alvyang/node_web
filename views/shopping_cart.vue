@@ -1,8 +1,8 @@
 <template>
 	<div class="shopping_cart_list">
 		<jf-no-content v-show="commodityList.length == 0" message="您的购物车是空的"></jf-no-content>
-		<div v-for="(c,index) in commodityList" class="cart_item_div" :id="'cart_item_div'+index">
-			<slider_delete :sliderConf="sliderConf">
+		<div v-for="(c,index) in commodityList" class="cart_item_div">
+			<slider_delete :sliderConf="sliderConf" ref="slider">
 				<div class="cart_item">
 					<div class="select_img" :id="'select'+index" @click="selectCommodity(index)"></div>
 					<div class="commodity_message">
@@ -38,22 +38,7 @@
 					direction:'direction',
 					distance:1.4,
 				},
-				commodityList:[{
-					image:"../img/address.png",
-					full_name:"12沃尔沃顺丰速递顶替",
-					price:"12.00",
-					quantity:1,
-				},{
-					image:"../img/address.png",
-					full_name:"13沃尔沃顺丰速递顶替",
-					price:"12.00",
-					quantity:1,
-				},{
-					image:"../img/address.png",
-					full_name:"14沃尔沃顺丰速递顶替",
-					price:"12.00",
-					quantity:1,
-				}],
+				commodityList:[],
 				numPrice:0.00,
 				message:"",
 				bottomFlag:true,
@@ -61,10 +46,10 @@
 			}
 		},
 		mounted(){
-			//this.getCartItem();
+			this.getCartItem();
 		},
 		activated(){
-			//this.getCartItem();
+			this.getCartItem();
 		},
 		methods:{
 			getCartItem(){//获取购物车信息
@@ -84,21 +69,22 @@
 			},
 			deleteCartItem(index){//删除购物车信息
 				var _self = this;
-				if($("#select"+index).attr("class") == "select_img_select"){//如果为选中状态
-					var num = this.commodityList[index].quantity * this.commodityList[index].price;
-					this.numPrice = this.numPrice - this.keepTwoDecimal(num);
-				}
-				_self.commodityList.splice(index,1);
-				console.log(_self.commodityList);
-//				$(".slider_delete").css("left","0px");
-//				$.ajax({
-//					type: "post",
-//					url: "/inter/cart/deleteCartItem",
-//					data:{id:_self.commodityList[index].id},
-//					success: function(res) {
-//						console.log(res);
-//					}
-//				});
+				$.ajax({//删除购物车接口
+					type: "post",
+					url: "/inter/cart/deleteCartItem",
+					data:{id:_self.commodityList[index].item_id},
+					success: function(res) {
+						console.log(res);
+						if(res.code == "000000"){
+							if($("#select"+index).attr("class") == "select_img_select"){//如果为选中状态
+								var num = _self.commodityList[index].quantity * _self.commodityList[index].price;
+								_self.numPrice = _self.numPrice - _self.keepTwoDecimal(num);
+							}
+							_self.$refs.slider[index].currentX = 0 ;
+							_self.commodityList.splice(index,1);
+						}
+					}
+				});
 			},
 			setCartNumdiv(){//用户设置shopping_cart_num  div显示位置
 				var type = this.$route.params.type;
