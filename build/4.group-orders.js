@@ -276,11 +276,18 @@ webpackJsonp([4],{
 				$.ajax({
 					type: "post",
 					url: "/inter/order/getOrderList",
-					data: { open_id: _self.$store.state.openid, type: type },
+					data: {
+						open_id: _self.$store.state.openid,
+						type: type,
+						currentPage: 1,
+						pageSize: 10
+					},
 					success: function success(res) {
 						console.log(res);
 						if (res.code == "000000") {
-							_self.orders = res.data;
+							_self.orders = res.data.list;
+						} else if (res.code == "110000") {
+							_self.orders = [];
 						}
 					}
 				});
@@ -363,13 +370,7 @@ webpackJsonp([4],{
 	      "replace": "",
 	      "active-class": "orders_type"
 	    }
-	  }, [_vm._v("待收货")]), _vm._v(" "), _c('router-link', {
-	    attrs: {
-	      "to": "/orders/5",
-	      "replace": "",
-	      "active-class": "orders_type"
-	    }
-	  }, [_vm._v("待评价")])], 1), _vm._v(" "), _c('jf-no-content', {
+	  }, [_vm._v("待收货")])], 1), _vm._v(" "), _c('jf-no-content', {
 	    directives: [{
 	      name: "show",
 	      rawName: "v-show",
@@ -388,13 +389,13 @@ webpackJsonp([4],{
 	        "to": "/orders_detail",
 	        "tag": "div"
 	      }
-	    }, [_c('span', [_vm._v("订单号：" + _vm._s(o.shipping_sn))]), _vm._v(" "), (o.order_status == 1) ? _c('span', {
+	    }, [_c('span', [_vm._v("订单号：" + _vm._s(o.tracking_no))]), _vm._v(" "), (o.order_status == 2) ? _c('span', {
 	      staticClass: "order_state"
-	    }, [_vm._v("已完成")]) : _vm._e(), _vm._v(" "), (o.order_status == 2) ? _c('span', {
+	    }, [_vm._v("已完成")]) : _vm._e(), _vm._v(" "), (o.payment_status == 0) ? _c('span', {
 	      staticClass: "order_state"
-	    }, [_vm._v("待付款")]) : _vm._e(), _vm._v(" "), (o.order_status == 3) ? _c('span', {
+	    }, [_vm._v("待付款")]) : _vm._e(), _vm._v(" "), (o.shipping_status == 0) ? _c('span', {
 	      staticClass: "order_state"
-	    }, [_vm._v("待发货")]) : _vm._e(), _vm._v(" "), (o.order_status == 4) ? _c('span', {
+	    }, [_vm._v("待发货")]) : _vm._e(), _vm._v(" "), (o.shipping_status == 2) ? _c('span', {
 	      staticClass: "order_state"
 	    }, [_vm._v("待收货")]) : _vm._e(), _vm._v(" "), (o.order_status == 5) ? _c('span', {
 	      staticClass: "order_state"
@@ -404,19 +405,17 @@ webpackJsonp([4],{
 	        "to": "/orders_detail",
 	        "tag": "div"
 	      }
-	    }, _vm._l((o.commodityList), function(i) {
+	    }, _vm._l((o.orderItem), function(i) {
 	      return _c('img', {
 	        attrs: {
-	          "src": i.commodityUrl
+	          "src": i.thumbnail
 	        }
 	      })
-	    })), _vm._v(" "), _vm._m(0, true)], 1)
+	    })), _vm._v(" "), (o.payment_status == 0) ? _c('div', {
+	      staticClass: "orders_operation"
+	    }, [_c('a', [_vm._v("取消订单")]), _vm._v(" "), _c('a', [_vm._v("支付订单")])]) : _vm._e()], 1)
 	  })], 2)
-	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
-	    staticClass: "orders_operation"
-	  }, [_c('a', [_vm._v("取消订单")]), _vm._v(" "), _c('a', [_vm._v("支付订单")])])
-	}]}
+	},staticRenderFns: []}
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {

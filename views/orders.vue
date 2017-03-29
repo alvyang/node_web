@@ -5,22 +5,22 @@
 			<router-link to="/orders/2" replace active-class="orders_type">待付款</router-link>
 			<router-link to="/orders/3" replace active-class="orders_type">待发货</router-link>
 			<router-link to="/orders/4" replace active-class="orders_type">待收货</router-link>
-			<router-link to="/orders/5" replace active-class="orders_type">待评价</router-link>
+			<!--<router-link to="/orders/5" replace active-class="orders_type">待评价</router-link>-->
 		</div>
 		<jf-no-content v-show="orders.length == 0" message="您还没有相关订单"></jf-no-content>
 		<div v-for="o in orders" class="orders_content">
 			<router-link to="/orders_detail" tag="div" class="orders_code">
-				<span>订单号：{{o.shipping_sn}}</span>
-				<span v-if="o.order_status == 1" class="order_state">已完成</span>
-				<span v-if="o.order_status == 2" class="order_state">待付款</span>
-				<span v-if="o.order_status == 3" class="order_state">待发货</span>
-				<span v-if="o.order_status == 4" class="order_state">待收货</span>
+				<span>订单号：{{o.tracking_no}}</span>
+				<span v-if="o.order_status == 2" class="order_state">已完成</span>
+				<span v-if="o.payment_status == 0" class="order_state">待付款</span>
+				<span v-if="o.shipping_status == 0" class="order_state">待发货</span>
+				<span v-if="o.shipping_status == 2" class="order_state">待收货</span>
 				<span v-if="o.order_status == 5" class="order_state">待评价</span>
 			</router-link>
 			<router-link to="/orders_detail" tag="div" class="orders_commodity">
-				<img v-for="i in o.commodityList" :src="i.commodityUrl" />
+				<img v-for="i in o.orderItem" :src="i.thumbnail" />
 			</router-link>
-			<div class="orders_operation">
+			<div class="orders_operation"  v-if="o.payment_status == 0">
 				<a>取消订单</a>
 				<a>支付订单</a>
 			</div>
@@ -42,11 +42,18 @@
 				$.ajax({
 					type: "post",
 					url: "/inter/order/getOrderList",
-					data:{open_id:_self.$store.state.openid,type:type},
+					data:{
+						open_id:_self.$store.state.openid,
+						type:type,
+						currentPage:1,
+						pageSize:10,
+					},
 					success: function(res) {
 						console.log(res);
 						if(res.code == "000000"){
-							_self.orders = res.data;
+							_self.orders = res.data.list;
+						}else if(res.code == "110000"){
+							_self.orders = [];
 						}
 					}
 				});
