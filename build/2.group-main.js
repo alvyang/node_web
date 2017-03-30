@@ -6685,36 +6685,57 @@ webpackJsonp([2],Array(30).concat([
 
 
 	// module
-	exports.push([module.id, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+	exports.push([module.id, "\n.category_list{\n\tfloat: left;\n\twidth: 3rem;\n\theight: 100%;\n\tborder-right: solid 1px blue;\n}\n.category_item{\n\tdisplay: block;\n\tbackground-color: red;\n\theight: 1.5rem;\n\twidth: 100%;\n\tline-height: 1.5rem;\n\ttext-align: center;\n}\n.category_div{\n\tbox-sizing: border-box;\n\twidth: 10rem;\n}\n", ""]);
 
 	// exports
 
 
 /***/ },
 /* 74 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
-	//
-	//
-	//
-	//
-	//
+
+	var _scroll = __webpack_require__(219);
+
+	var _scroll2 = _interopRequireDefault(_scroll);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	exports.default = {
 		data: function data() {
 			return {
-				category: []
+				category: [{
+					name: "test01"
+				}, {
+					name: "test01"
+				}, {
+					name: "test01"
+				}, {
+					name: "test01"
+				}]
 			};
 		},
 		mounted: function mounted() {
 			$(".category_div").height($(window).height());
+		},
+
+		components: {
+			"i-scroll": _scroll2.default
 		}
-	};
+	}; //
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 /***/ },
 /* 75 */
@@ -6723,7 +6744,13 @@ webpackJsonp([2],Array(30).concat([
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
 	    staticClass: "category_div"
-	  })
+	  }, [_c('div', {
+	    staticClass: "category_list"
+	  }, [_c('i-scroll', _vm._l((_vm.category), function(c) {
+	    return _c('a', {
+	      staticClass: "category_item"
+	    }, [_vm._v(_vm._s(c.name))])
+	  }))], 1)])
 	},staticRenderFns: []}
 	if (false) {
 	  module.hot.accept()
@@ -8051,6 +8078,282 @@ webpackJsonp([2],Array(30).concat([
 	  module.hot.accept()
 	  if (module.hot.data) {
 	     require("vue-hot-reload-api").rerender("data-v-3ac3946e", module.exports)
+	  }
+	}
+
+/***/ },
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */,
+/* 128 */,
+/* 129 */,
+/* 130 */,
+/* 131 */,
+/* 132 */,
+/* 133 */,
+/* 134 */,
+/* 135 */,
+/* 136 */,
+/* 137 */,
+/* 138 */,
+/* 139 */,
+/* 140 */,
+/* 141 */,
+/* 142 */,
+/* 143 */,
+/* 144 */,
+/* 145 */,
+/* 146 */,
+/* 147 */,
+/* 148 */,
+/* 149 */,
+/* 150 */,
+/* 151 */,
+/* 152 */,
+/* 153 */,
+/* 154 */,
+/* 155 */,
+/* 156 */,
+/* 157 */,
+/* 158 */,
+/* 159 */,
+/* 160 */,
+/* 161 */,
+/* 162 */,
+/* 163 */,
+/* 164 */,
+/* 165 */,
+/* 166 */,
+/* 167 */,
+/* 168 */,
+/* 169 */,
+/* 170 */,
+/* 171 */,
+/* 172 */,
+/* 173 */,
+/* 174 */,
+/* 175 */,
+/* 176 */,
+/* 177 */,
+/* 178 */,
+/* 179 */,
+/* 180 */,
+/* 181 */,
+/* 182 */,
+/* 183 */,
+/* 184 */,
+/* 185 */,
+/* 186 */,
+/* 187 */,
+/* 188 */,
+/* 189 */,
+/* 190 */,
+/* 191 */,
+/* 192 */,
+/* 193 */,
+/* 194 */,
+/* 195 */,
+/* 196 */,
+/* 197 */,
+/* 198 */,
+/* 199 */,
+/* 200 */,
+/* 201 */,
+/* 202 */,
+/* 203 */,
+/* 204 */,
+/* 205 */,
+/* 206 */,
+/* 207 */,
+/* 208 */,
+/* 209 */,
+/* 210 */,
+/* 211 */,
+/* 212 */,
+/* 213 */,
+/* 214 */,
+/* 215 */,
+/* 216 */,
+/* 217 */,
+/* 218 */,
+/* 219 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = {}
+
+	/* styles */
+	__webpack_require__(220)
+
+	/* script */
+	__vue_exports__ = __webpack_require__(222)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(223)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "/Users/lvyang/repositories/node_web/components/scroll.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  module.hot.accept()
+	  if (!module.hot.data) {
+	    hotAPI.createRecord("data-v-2b8dbf49", __vue_options__)
+	  } else {
+	    hotAPI.reload("data-v-2b8dbf49", __vue_options__)
+	  }
+	})()}
+	if (__vue_options__.functional) {console.error("[vue-loader] scroll.vue: functional components are not supported and should be defined in plain js files using render functions.")}
+
+	module.exports = __vue_exports__
+
+
+/***/ },
+/* 220 */
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(221);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(9)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-2b8dbf49!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./scroll.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-2b8dbf49!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./scroll.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+/* 221 */
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(8)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "\n.scroll_center{\n\twidth: 100%;  \n    height: 100%;  \n    overflow-x: hidden;  \n    overflow-y: scroll;  \n    position: relative\n}\n.scroll_message{\n\tposition: absolute; \n\twidth: 100%;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+/* 222 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+
+	exports.default = {
+		data: function data() {
+			return {
+				handleTouch: null,
+				scrollStartPosY: 0,
+				scrollStartPosX: 0
+			};
+		},
+
+		methods: {
+			touchStart: function touchStart(e) {
+				this.scrollStartPosY = e.target.scrollTop + e.pageY;
+				this.scrollStartPosX = e.target.scrollLeft + e.pageX;
+			},
+			touchMove: function touchMove(e) {
+				if (e.target.scrollTop < e.target.scrollHeight - e.target.offsetHeight && e.target.scrollTop + e.pageY < this.scrollStartPosY - 5 || e.target.scrollTop != 0 && e.target.scrollTop + e.pageY > this.scrollStartPosY + 5) e.preventDefault();
+				if (e.target.scrollLeft < e.target.scrollWidth - e.target.offsetWidth && e.target.scrollLeft + e.pageX < this.scrollStartPosX - 5 || e.target.scrollLeft != 0 && e.target.scrollLeft + e.pageX > this.scrollStartPosX + 5) e.preventDefault();
+				e.target.scrollTop = this.scrollStartPosY - e.pageY;
+				e.target.scrollLeft = this.scrollStartPosX - e.pageX;
+			}
+		},
+		activated: function activated() {
+			document.addEventListener('touchmove', this.handleTouch, false);
+		},
+		deactivated: function deactivated() {
+			document.removeEventListener('touchmove', this.handleTouch, false);
+		},
+		mounted: function mounted() {
+			this.handleTouch = function (e) {
+				e.preventDefault();
+			};
+			document.addEventListener('touchmove', this.handleTouch, false);
+		}
+	};
+
+/***/ },
+/* 223 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    staticClass: "scroll_center",
+	    attrs: {
+	      "id": "id"
+	    },
+	    on: {
+	      "touchstart": function($event) {
+	        $event.stopPropagation();
+	        _vm.touchStart($event)
+	      },
+	      "touchmove": function($event) {
+	        $event.stopPropagation();
+	        _vm.touchMove($event)
+	      }
+	    }
+	  }, [_c('div', {
+	    staticClass: "scroll_message"
+	  }, [_vm._t("default")], 2)])
+	},staticRenderFns: []}
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-hot-reload-api").rerender("data-v-2b8dbf49", module.exports)
 	  }
 	}
 
