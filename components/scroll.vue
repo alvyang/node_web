@@ -1,8 +1,8 @@
 <template>
-	<div class="scroll_center" id="id"
+	<div class="scroll_center"
 		@touchstart.stop="touchStart($event)" 
 		@touchmove.stop="touchMove($event)">
-		<div class="scroll_message">
+		<div class="scroll_message" :id="id" :style="{left:currentTop + 'px'}" >
 			<slot></slot>
 		</div>
 	</div>
@@ -12,26 +12,28 @@
 		data(){
 			return {
 				handleTouch:null,
-				scrollStartPosY:0,
-				scrollStartPosX:0,
+				startY:0,//触摸的起始位置Y
+				startX:0,//触摸的起始位置X.
+				currentTop:0,
 			}
 		},
+		props:["id"],
 		methods:{
 			touchStart(e){
-				 this.scrollStartPosY=e.target.scrollTop + e.pageY;  
-	             this.scrollStartPosX=e.target.scrollLeft + e.pageX;  
+				this.startY=e.pageY;  
+	            this.startX=e.pageX;  
 			},
 			touchMove(e){
-				if ((e.target.scrollTop < e.target.scrollHeight-e.target.offsetHeight &&  
-	                e.target.scrollTop+e.pageY < this.scrollStartPosY-5) ||  
-	                (e.target.scrollTop != 0 && e.target.scrollTop+e.pageY > this.scrollStartPosY+5))  
-	                    e.preventDefault();   
-	            if ((e.target.scrollLeft < e.target.scrollWidth-e.target.offsetWidth &&  
-	                e.target.scrollLeft+e.pageX < this.scrollStartPosX-5) ||  
-	                (e.target.scrollLeft != 0 && e.target.scrollLeft+e.pageX > this.scrollStartPosX+5))  
-	                    e.preventDefault();   
-	            e.target.scrollTop=this.scrollStartPosY-e.pageY;  
-	            e.target.scrollLeft=this.scrollStartPosX-e.pageX; 
+//				e.preventDefault();
+				//disX,disY 滑动的距离
+//				console.log(-this.currentTop);
+//				var disY = -(this.startY - e.pageY)*18/180;
+//				if(this.currentTop >= 0 && disY > 0){
+//					this.currentTop = 0;
+//				}else if(-this.currentTop >= $("#"+this.id)[0].scrollHeight && disY < 0){
+//				}else{
+//					this.currentTop = this.currentTop + disY;
+//				}
 			}
 		},
 		activated(){
@@ -47,15 +49,13 @@
 	}
 </script>
 <style>
-	.scroll_center{
-		width: 100%;  
-	    height: 100%;  
-	    overflow-x: hidden;  
-	    overflow-y: scroll;  
-	    position: relative 
-	}
 	.scroll_message{
-		position: absolute; 
+		position: absolute;
+		top: 0px;
 		width: 100%; 
 	}
+	.scroll_center{
+		position: absolute;
+	}
+	
 </style>
