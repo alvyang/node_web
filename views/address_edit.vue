@@ -57,7 +57,10 @@
 		},
 		methods:{
 			showEditAddress(){
-				var editAddress = JSON.parse(sessionStorage["address_edit"]);
+				var editAddress = null;
+				if(sessionStorage["address_edit"]){
+					editAddress = JSON.parse(sessionStorage["address_edit"]);
+				}
 				if(editAddress && editAddress.id){//有id说明是修改
 					this.address.id = editAddress.id;
 					this.address.consignee = editAddress.consignee;
