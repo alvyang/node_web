@@ -2,7 +2,7 @@
 	<div class="scroll_center"
 		@touchstart.stop="touchStart($event)" 
 		@touchmove.stop="touchMove($event)">
-		<div class="scroll_message" :id="id" :style="{left:currentTop + 'px'}" >
+		<div class="scroll_message" :id="id" :style="{top:currentTop + 'px'}" >
 			<slot></slot>
 		</div>
 	</div>
@@ -24,16 +24,16 @@
 	            this.startX=e.pageX;  
 			},
 			touchMove(e){
-//				e.preventDefault();
+				e.preventDefault();
 				//disX,disY 滑动的距离
-//				console.log(-this.currentTop);
-//				var disY = -(this.startY - e.pageY)*18/180;
-//				if(this.currentTop >= 0 && disY > 0){
-//					this.currentTop = 0;
-//				}else if(-this.currentTop >= $("#"+this.id)[0].scrollHeight && disY < 0){
-//				}else{
-//					this.currentTop = this.currentTop + disY;
-//				}
+				
+				var disY = -(this.startY - e.pageY)*18/300;
+				if(this.currentTop >= 0 && disY > 0){
+					this.currentTop = 0;
+				}else if(-this.currentTop >= ($("#"+this.id).height() - $(window).height()) && disY < 0){
+				}else{
+					this.currentTop = this.currentTop + disY;
+				}
 			}
 		},
 		activated(){
@@ -56,6 +56,8 @@
 	}
 	.scroll_center{
 		position: absolute;
+		width: 100%;
+		height: 100%;
 	}
 	
 </style>

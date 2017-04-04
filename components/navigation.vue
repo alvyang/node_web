@@ -29,7 +29,7 @@
 		background-size: 0.5rem auto !important;
 		color: #d81e06 !important;
 	}
-	.navigation a:nth-child(3){
+	/*.navigation a:nth-child(3){
 		background: url(../img/nav/selected.png) center 0.25rem no-repeat;
 		background-size: 0.5rem auto;
 	}
@@ -37,8 +37,8 @@
 		background: url(../img/nav/selected_on.png) center 0.25rem no-repeat !important;
 		background-size: 0.5rem auto !important;
 		color: #d81e06 !important;
-	}
-	.navigation a:nth-child(4){
+	}*/
+	.navigation a:nth-child(3){
 		background: url(../img/nav/shopping_card.png) center 0.25rem no-repeat;
 		background-size: 0.5rem auto;
 	}
@@ -47,7 +47,7 @@
 		background-size: 0.5rem auto !important;
 		color: #d81e06 !important;
 	}
-	.navigation a:nth-child(5){
+	.navigation a:nth-child(4){
 		background: url(../img/nav/personal_center.png) center 0.25rem no-repeat;
 		background-size: 0.5rem auto;
 	}

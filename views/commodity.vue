@@ -19,8 +19,9 @@
 		<div class="commodity_operation">
 			<a class="attend">收藏</a>
 			<router-link to="/shoppingcart/2" class="shopping_cart">购物车</router-link>
-			<a class="add_cart">加入购物车</a>
+			<a class="add_cart" @click.prevent="addToCart(commodity.id)">加入购物车</a>
 		</div>
+		<jf-prompt :message="message"></jf-prompt>
 	</div>
 </template>
 <script>
@@ -30,11 +31,33 @@
 	export default({
 		data(){
 			return {
+				message:"",
 				commodity:{},
 				commodityImage:[],
 			}
 		},
 		methods:{
+			addToCart(id){
+				var _self = this;
+				var data = {
+					openid:_self.$store.state.openid,
+					cartItem:{
+						quantity:1,
+						product_id:id
+					}
+				};
+				$.ajax({
+					type: "post",
+					url: "/inter/cart/addCart",
+					data:data,
+					success: function(res) {
+						console.log(res);
+						if(res.code == "000000"){
+							_self.message = res.message;
+						}
+					}
+				});
+			},
 			getCommodityMessage(){
 				var _self = this;
 				$.ajax({
@@ -42,6 +65,7 @@
 					url: "/inter/products/getProductMessage",
 					data:{id:_self.$route.params.id},
 					success: function(res) {
+						console.log(res);
 						if(res.code == "000000"){
 							_self.commodity = res.data[0];
 							_self.commodityImage = res.data;
@@ -49,6 +73,9 @@
 					}
 				});
 			}
+		},
+		activated(){
+			this.getCommodityMessage();
 		},
 		mounted(){
 			this.getCommodityMessage();

@@ -2,8 +2,8 @@
 	<div>
 		<jf-prompt :message="message"></jf-prompt>
 		<div class="receipt_address_div">
-			<router-link tag="div" to="/address" replace v-show="!receivers.consignee" class="no_receipt_address">您还没有设置收货地址，请设置</router-link>
-			<router-link tag="div" to="/address" replace v-show="receivers.consignee" class="receipt_address">
+			<router-link tag="div" to="/address" v-show="!receivers.consignee" class="no_receipt_address">您还没有设置收货地址，请设置</router-link>
+			<router-link tag="div" to="/address" v-show="receivers.consignee" class="receipt_address">
 				<div class="name"><span>{{receivers.consignee}}</span><span>{{receivers.phone}}</span></div>
 				<div class="address">{{receivers.area_name}}{{receivers.address}}</div>
 			</router-link>
@@ -44,6 +44,7 @@
 		methods:{
 			submitOrder(){
 				console.log(this.$store.state.openid);
+				var _self = this;
 				var reqData = {
 					price:this.orderPrice,
 					order:{
@@ -62,11 +63,10 @@
 					success: function(res) {
 						console.log(res);
 						if(res.code == "000000"){
-							
+							_self.message = "微信支付";
 						}
 					}
 				});
-				this.message = "微信支付";
 			},
 			keepTwoDecimal(num) {
 				var result = parseFloat(num);

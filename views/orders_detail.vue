@@ -1,29 +1,29 @@
 <template>
 	<div>
 		<div class="orders_detail">
-			<span>订单号：{{orderCode}}</span>
-			<span v-if="orderState == 1" class="order_state">已完成</span>
-			<span v-if="orderState == 2" class="order_state">待付款</span>
-			<span v-if="orderState == 3" class="order_state">待发货</span>
-			<span v-if="orderState == 4" class="order_state">待收货</span>
-			<span v-if="orderState == 5" class="order_state">待评价</span>
+			<span>订单号：{{orderDetail.orderCode}}</span>
+			<span v-if="orderDetail.orderState == 1" class="order_state">已完成</span>
+			<span v-if="orderDetail.orderState == 2" class="order_state">待付款</span>
+			<span v-if="orderDetail.orderState == 3" class="order_state">待发货</span>
+			<span v-if="orderDetail.orderState == 4" class="order_state">待收货</span>
+			<span v-if="orderDetail.orderState == 5" class="order_state">待评价</span>
 		</div>
 		<div class="receipt_address">
-			<div class="name"><span>{{address.name}}</span><span>{{address.phone}}</span></div>
-			<div class="address">{{address.areaAddress}}{{address.detailAddress}}</div>
+			<div class="name"><span>{{orderDetail.consignee}}</span><span>{{orderDetail.phone}}</span></div>
+			<div class="address">{{orderDetail.area_name}}{{orderDetail.address}}</div>
 		</div>
-		<div v-for="c in commodity" class="order_commodity">
-			<img :src="c.commodityUrl" />
+		<div v-for="c in orderDetail.orderItem" class="order_commodity">
+			<img :src="c.thumbnail" />
 			<div class="commodity_name">
-				<div>{{c.commodityName}}</div>
-				<div>数量：<a>{{c.commodityNum}}</a>价格：<a>¥ {{c.commodityPrice}}</a></div>
+				<div>{{c.name}}</div>
+				<div>数量：<a>{{c.quantity}}</a>价格：<a>¥ {{c.price}}</a></div>
 			</div>
 		</div>
 		<div class="orders_num_detail">
 			<div class="commodity_num_price">商品总额<a>¥ {{orderPrice}}</a></div>
 			<div class="freight">+ 运费<a>¥ 0.00</a></div>
 			<div class="payment">实付款：<a>¥ {{orderPrice}}</a></div>
-			<div class="order_time">下单时间：{{orderTime}}</div>
+			<div class="order_time">下单时间：{{orderDetail.creation_date}}</div>
 		</div>
 		<div class="re_buy">
 			<div>再次购买</div>
@@ -34,29 +34,37 @@
 	export default({
 		data(){
 			return {
-				orderCode:"123456789",
-				orderState:"2",
-				orderPrice:"100.00",
-				orderTime:"2017-02-25 19:12:56",
-				address:{
-					id:"123",
-					name:"吕扬",
-					phone:"134****3525",
-					areaAddress:"北京市海淀区",
-					detailAddress:"14号楼7单元702室14号楼7单元702室14号楼7单元702室",
-				},
-				commodity:[{
-					commodityName:"山西特产宁化府益源庆名醋山西特产宁化府益源庆名醋2400ml（31.8元）",
-					commodityUrl:"img/logo.jpg",
-					commodityNum:1,
-					commodityPrice:52.48,
-				},{
-					commodityName:"山西特产宁化府益源庆名醋山西特产宁化府益源庆名醋2400ml（31.8元）",
-					commodityUrl:"img/logo.jpg",
-					commodityNum:1,
-					commodityPrice:52.48,
-				}]
+				orderPrice:0,
+				orderDetail:{},
 			}
+		},
+		methods:{
+			calOrderPrice(){
+				var l = this.orderDetail.orderItem.length,temp = 0;
+				for(var i = 0 ; i < l ; i++){
+					var n = this.orderDetail.orderItem[i];
+					temp += this.keepTwoDecimal(n.price * n.quantity);
+				}
+				console.log(temp);
+				this.orderPrice = temp;
+			},
+			keepTwoDecimal(num) {
+				var result = parseFloat(num);
+				if (isNaN(result)) {
+					console.log('传递参数错误，请检查！');
+					return false;
+				}
+			  	result = Math.round(num * 100) / 100;
+			  	return result;
+			}
+		},
+		activated(){
+			this.orderDetail = JSON.parse(sessionStorage["order_detail_message"]);
+			this.calOrderPrice();
+		},
+		mounted(){
+			this.orderDetail = JSON.parse(sessionStorage["order_detail_message"]);
+			this.calOrderPrice();
 		}
 	})
 </script>

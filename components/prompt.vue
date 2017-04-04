@@ -40,6 +40,7 @@
 		height: 1.74rem;
 		width: 10rem;
 		text-align: center;
+		z-index: 100;
 	}
 	.error_message .error{
 		display: inline-block;

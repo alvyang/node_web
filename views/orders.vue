@@ -8,18 +8,18 @@
 			<!--<router-link to="/orders/5" replace active-class="orders_type">待评价</router-link>-->
 		</div>
 		<jf-no-content v-show="orders.length == 0" message="您还没有相关订单"></jf-no-content>
-		<div v-for="o in orders" class="orders_content">
-			<router-link to="/orders_detail" tag="div" class="orders_code">
+		<div v-for="(o,index) in orders" class="orders_content">
+			<div class="orders_code" @click="orderDetail(index)">
 				<span>订单号：{{o.tracking_no}}</span>
 				<span v-if="o.order_status == 2" class="order_state">已完成</span>
 				<span v-if="o.payment_status == 0" class="order_state">待付款</span>
 				<span v-if="o.shipping_status == 0" class="order_state">待发货</span>
 				<span v-if="o.shipping_status == 2" class="order_state">待收货</span>
 				<span v-if="o.order_status == 5" class="order_state">待评价</span>
-			</router-link>
-			<router-link to="/orders_detail" tag="div" class="orders_commodity">
+			</div>
+			<div class="orders_commodity" @click="orderDetail(index)">
 				<img v-for="i in o.orderItem" :src="i.thumbnail" />
-			</router-link>
+			</div>
 			<div class="orders_operation"  v-if="o.payment_status == 0">
 				<a>取消订单</a>
 				<a>支付订单</a>
@@ -36,6 +36,11 @@
 			}
 		},
 		methods:{
+			orderDetail(index){
+				var orderDetail = this.orders[index];
+				sessionStorage["order_detail_message"] = JSON.stringify(orderDetail);
+				this.$router.push({path:"/orders_detail"});
+			},
 			getOrders(){
 				var type = this.$route.params.type;
 				var _self = this;

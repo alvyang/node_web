@@ -1,6 +1,6 @@
 <template>
 	<div class="logo_small_01">
-		<img src="../img/logo.jpg"/><a>晋味大观</a>
+		<img src="../img/logo_01.png"/><a>晋味大观</a>
 	</div>
 </template>
 <script>
