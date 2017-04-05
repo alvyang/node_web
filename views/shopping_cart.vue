@@ -95,11 +95,11 @@
 				}
 			},
 			selectCommodity(index){//
-				if($("#select"+index).attr("class") == "select_img"){//未选中
-					this.orderCommoditys[index]=null;
-					$("#select"+index).removeClass("select_img").addClass("select_img_select");
-				}else{//选中
+				if($("#select"+index).attr("class") == "select_img"){//未选中 -> 选中
 					this.orderCommoditys[index]=this.commodityList[index];
+					$("#select"+index).removeClass("select_img").addClass("select_img_select");
+				}else{//选中 -> 未选中
+					this.orderCommoditys[index]=null;
 					$("#select"+index).removeClass("select_img_select").addClass("select_img");
 				}
 				var l = this.commodityList.length;

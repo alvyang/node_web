@@ -25,20 +25,20 @@ webpackJsonp([5],{
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/lvyang/repositories/node_web/components/prompt.vue"
+	__vue_options__.__file = "D:\\lvyang\\repositories\\node_web\\components\\prompt.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
 	/* hot reload */
 	if (false) {(function () {
-	  var hotAPI = require("vue-hot-reload-api")
+	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-64880e60", __vue_options__)
+	    hotAPI.createRecord("data-v-8186fe60", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-64880e60", __vue_options__)
+	    hotAPI.reload("data-v-8186fe60", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] prompt.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -63,8 +63,8 @@ webpackJsonp([5],{
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-64880e60!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./prompt.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-64880e60!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./prompt.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-8186fe60!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./prompt.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-8186fe60!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./prompt.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -155,7 +155,7 @@ webpackJsonp([5],{
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-64880e60", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-8186fe60", module.exports)
 	  }
 	}
 
@@ -5842,21 +5842,21 @@ webpackJsonp([5],{
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/lvyang/repositories/node_web/views/commodity.vue"
+	__vue_options__.__file = "D:\\lvyang\\repositories\\node_web\\views\\commodity.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-	__vue_options__._scopeId = "data-v-7521d7ef"
+	__vue_options__._scopeId = "data-v-7e251425"
 
 	/* hot reload */
 	if (false) {(function () {
-	  var hotAPI = require("vue-hot-reload-api")
+	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-7521d7ef", __vue_options__)
+	    hotAPI.createRecord("data-v-7e251425", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-7521d7ef", __vue_options__)
+	    hotAPI.reload("data-v-7e251425", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] commodity.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -5881,8 +5881,8 @@ webpackJsonp([5],{
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7521d7ef&scoped=true!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./commodity.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7521d7ef&scoped=true!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./commodity.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7e251425&scoped=true!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./commodity.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7e251425&scoped=true!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./commodity.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -5901,7 +5901,7 @@ webpackJsonp([5],{
 
 
 	// module
-	exports.push([module.id, "\n.commodity_description[data-v-7521d7ef]{\n\tbackground-color: #ffffff;\n\tmargin-top: 0.2rem;\n\tbox-sizing: border-box;\n\tpadding: 0.4rem;\n\tmax-height: 9999px;\n\tfont-size: 0.4rem;\n\tline-height: 0.6rem;\n}\n.commodity_operation[data-v-7521d7ef]{\n\tposition: fixed;\n\tbackground-color: #ffffff;\n\tbottom: 0;\n\twidth: 10rem;\n\theight: 1.35rem;\n}\n.commodity_operation .attend[data-v-7521d7ef],.commodity_operation .shopping_cart[data-v-7521d7ef]{\n\tdisplay: inline-block;\n\twidth: 20%;\n\theight: 100%;\n\tline-height: 2.1rem;\n\tfont-size: 0.3rem;\n\ttext-align: center;\n\tcolor: #8a8a8a;\n\ttext-decoration: none;\n}\n.commodity_operation .attend[data-v-7521d7ef]{\n\tbackground: url(" + __webpack_require__(217) + ") center 0.2rem no-repeat;\n\tbackground-size: 0.55rem auto;\n}\n.commodity_operation .shopping_cart[data-v-7521d7ef]{\n\tbackground: url(" + __webpack_require__(18) + ") center 0.25rem no-repeat;\n\tbackground-size: 0.5rem auto;\n}\n.commodity_operation .add_cart[data-v-7521d7ef]{\n\tdisplay: inline-block;\n\twidth: 5rem;\n\theight: 100%;\n\tfloat: right;\n\tline-height: 1.35rem;\n\tfont-size: 0.45rem;\n\tcolor: #ffffff;\n\tbackground-color: #d81e06;\n\ttext-align: center;\n}\n.commodity_message[data-v-7521d7ef]{\n\tbox-sizing: border-box;\n\tbackground-color: #ffffff;\n\tpadding-left: 0.3rem;\n\tpadding-right: 0.2rem;\n\tfont-size: 0.45rem;\n}\n.commodity_message .name[data-v-7521d7ef]{\n\toverflow:hidden; \n\ttext-overflow:ellipsis;\n\tdisplay:-webkit-box; \n\t-webkit-box-orient:vertical;\n\t-webkit-line-clamp:2;\n\tpadding-top: 0.2rem;\n\tpadding-bottom: 0.2rem;\n\tcolor: #333333;\n}\n.commodity_message .description[data-v-7521d7ef]{\n\tcolor: #d81e06;\n}\n.commodity_message  .price[data-v-7521d7ef]{\n\tcolor: #d81e06;\n\tfont-size: 0.45rem;\n\tmargin-top: 0.2rem;\n\tpadding-bottom: 0.3rem;\n}\n.swiper-container[data-v-7521d7ef]{\n\tmargin-top: -1px;\n\tfont-size: 0;\n}\n.swiper-slide img[data-v-7521d7ef]{\n\twidth: 10rem;\n}\n", ""]);
+	exports.push([module.id, "\n.commodity_description[data-v-7e251425]{\n\tbackground-color: #ffffff;\n\tmargin-top: 0.2rem;\n\tbox-sizing: border-box;\n\tpadding: 0.4rem;\n\tmax-height: 9999px;\n\tfont-size: 0.4rem;\n\tline-height: 0.6rem;\n}\n.commodity_operation[data-v-7e251425]{\n\tposition: fixed;\n\tbackground-color: #ffffff;\n\tbottom: 0;\n\twidth: 10rem;\n\theight: 1.35rem;\n}\n.commodity_operation .attend[data-v-7e251425],.commodity_operation .shopping_cart[data-v-7e251425]{\n\tdisplay: inline-block;\n\twidth: 20%;\n\theight: 100%;\n\tline-height: 2.1rem;\n\tfont-size: 0.3rem;\n\ttext-align: center;\n\tcolor: #8a8a8a;\n\ttext-decoration: none;\n}\n.commodity_operation .attend[data-v-7e251425]{\n\tbackground: url(" + __webpack_require__(217) + ") center 0.2rem no-repeat;\n\tbackground-size: 0.55rem auto;\n}\n.commodity_operation .shopping_cart[data-v-7e251425]{\n\tbackground: url(" + __webpack_require__(18) + ") center 0.25rem no-repeat;\n\tbackground-size: 0.5rem auto;\n}\n.commodity_operation .add_cart[data-v-7e251425]{\n\tdisplay: inline-block;\n\twidth: 5rem;\n\theight: 100%;\n\tfloat: right;\n\tline-height: 1.35rem;\n\tfont-size: 0.45rem;\n\tcolor: #ffffff;\n\tbackground-color: #d81e06;\n\ttext-align: center;\n}\n.commodity_message[data-v-7e251425]{\n\tbox-sizing: border-box;\n\tbackground-color: #ffffff;\n\tpadding-left: 0.3rem;\n\tpadding-right: 0.2rem;\n\tfont-size: 0.45rem;\n}\n.commodity_message .name[data-v-7e251425]{\n\toverflow:hidden; \n\ttext-overflow:ellipsis;\n\tdisplay:-webkit-box; \n\t-webkit-box-orient:vertical;\n\t-webkit-line-clamp:2;\n\tpadding-top: 0.2rem;\n\tpadding-bottom: 0.2rem;\n\tcolor: #333333;\n}\n.commodity_message .description[data-v-7e251425]{\n\tcolor: #d81e06;\n}\n.commodity_message  .price[data-v-7e251425]{\n\tcolor: #d81e06;\n\tfont-size: 0.45rem;\n\tmargin-top: 0.2rem;\n\tpadding-bottom: 0.3rem;\n}\n.swiper-container[data-v-7e251425]{\n\tmargin-top: -1px;\n\tfont-size: 0;\n}\n.swiper-slide img[data-v-7e251425]{\n\twidth: 10rem;\n}\n", ""]);
 
 	// exports
 
@@ -6083,7 +6083,7 @@ webpackJsonp([5],{
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-7521d7ef", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-7e251425", module.exports)
 	  }
 	}
 
