@@ -46,7 +46,7 @@
 			}
 		},
 		mounted(){
-			this.getCartItem();
+			//this.getCartItem();
 		},
 		activated(){
 			this.getCartItem();

@@ -117,7 +117,7 @@
 			this.getOrderMessage();
 		},
 		mounted(){
-			this.getOrderMessage();
+			//this.getOrderMessage();
 		},
 		components:{
 			"jf-prompt":Prompt,

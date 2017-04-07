@@ -337,7 +337,7 @@ webpackJsonp([4],{
 			this.getOrders();
 		},
 		mounted: function mounted() {
-			this.getOrders();
+			//this.getOrders();
 		},
 
 		components: {
@@ -628,8 +628,8 @@ webpackJsonp([4],{
 			this.calOrderPrice();
 		},
 		mounted: function mounted() {
-			this.orderDetail = JSON.parse(sessionStorage["order_detail_message"]);
-			this.calOrderPrice();
+			//			this.orderDetail = JSON.parse(sessionStorage["order_detail_message"]);
+			//			this.calOrderPrice();
 		}
 	};
 

@@ -78,7 +78,7 @@
 			this.getCommodityMessage();
 		},
 		mounted(){
-			this.getCommodityMessage();
+			//this.getCommodityMessage();
 			setTimeout(function(){
 				var mySwiper = new Swiper('.swiper-container', {
 					autoplay: 0,//可选选项，自动滑动

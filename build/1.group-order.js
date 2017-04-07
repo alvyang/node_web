@@ -223,7 +223,7 @@ webpackJsonp([1],{
 			this.getOrderMessage();
 		},
 		mounted: function mounted() {
-			this.getOrderMessage();
+			//this.getOrderMessage();
 		},
 
 		components: {

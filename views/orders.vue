@@ -73,7 +73,7 @@
 			this.getOrders();
 		},
 		mounted(){
-			this.getOrders();
+			//this.getOrders();
 		},
 		components:{
 			"jf-no-content":NoContent

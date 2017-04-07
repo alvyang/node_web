@@ -761,7 +761,7 @@ webpackJsonp([3],Array(32).concat([
 			this.getReceiverList();
 		},
 		mounted: function mounted() {
-			this.getReceiverList();
+			//this.getReceiverList();
 		},
 
 		methods: {

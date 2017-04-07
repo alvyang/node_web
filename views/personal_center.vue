@@ -70,7 +70,7 @@
 			this.getOrderNum();
 		},
 		mounted(){
-			this.getOrderNum();
+			//this.getOrderNum();
 		}
 	})
 </script>

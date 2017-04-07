@@ -28,7 +28,7 @@
 			this.getReceiverList();
 		},
 		mounted(){
-			this.getReceiverList();
+			//this.getReceiverList();
 		},
 		methods:{
 			getReceiverList(){

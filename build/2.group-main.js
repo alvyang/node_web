@@ -6794,8 +6794,10 @@ webpackJsonp([2],Array(28).concat([
 				});
 			}
 		},
-		mounted: function mounted() {
+		activated: function activated() {
 			this.getCategoryList();
+		},
+		mounted: function mounted() {
 			$(".category_div").height($(window).height());
 		},
 
@@ -7212,7 +7214,7 @@ webpackJsonp([2],Array(28).concat([
 			};
 		},
 		mounted: function mounted() {
-			this.getCartItem();
+			//this.getCartItem();
 		},
 		activated: function activated() {
 			this.getCartItem();
@@ -8081,7 +8083,7 @@ webpackJsonp([2],Array(28).concat([
 			this.getOrderNum();
 		},
 		mounted: function mounted() {
-			this.getOrderNum();
+			//this.getOrderNum();
 		}
 	};
 

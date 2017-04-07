@@ -6013,7 +6013,7 @@ webpackJsonp([5],{
 			this.getCommodityMessage();
 		},
 		mounted: function mounted() {
-			this.getCommodityMessage();
+			//this.getCommodityMessage();
 			setTimeout(function () {
 				var mySwiper = new _swiper2.default('.swiper-container', {
 					autoplay: 0 });

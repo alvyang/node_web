@@ -83,8 +83,10 @@
 				});
 			}
 		},
-		mounted(){
+		activated(){
 			this.getCategoryList();
+		},
+		mounted(){
 			$(".category_div").height($(window).height());
 		},
 		components:{

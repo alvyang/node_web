@@ -63,8 +63,8 @@
 			this.calOrderPrice();
 		},
 		mounted(){
-			this.orderDetail = JSON.parse(sessionStorage["order_detail_message"]);
-			this.calOrderPrice();
+//			this.orderDetail = JSON.parse(sessionStorage["order_detail_message"]);
+//			this.calOrderPrice();
 		}
 	})
 </script>
