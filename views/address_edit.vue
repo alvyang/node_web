@@ -48,13 +48,22 @@
 			sessionStorage["address_edit"]=null;
 		},
 		mounted(){
-			var address = new Address();
-			address.init({
-			    'trigger':'#address',
-			    'data':"lib/address_select/db/address.json"//'数据'
+			var _self = this;
+			$.ajax({
+				type: "post",
+				url: "/inter/area/getArea",
+				success: function(res) {
+					if(res.code == "000000"){
+						var address = new Address();
+						address.init({
+						    'trigger':'#address',
+						    'data':res.data//'数据'
+						});
+						_self.showEditAddress();
+					}
+				}
 			});
-			this.showEditAddress();
-		},
+					},
 		methods:{
 			showEditAddress(){
 				var editAddress = null;
