@@ -5958,8 +5958,6 @@ webpackJsonp([5],{
 	//
 	//
 	//
-	//
-	//
 
 	__webpack_require__(62);
 	exports.default = {
@@ -6052,8 +6050,11 @@ webpackJsonp([5],{
 	  }, [_vm._v(_vm._s(_vm.commodity.memo))]), _vm._v(" "), _c('div', {
 	    staticClass: "price"
 	  }, [_vm._v("¥ " + _vm._s(_vm.commodity.price) + " 元")])]), _vm._v(" "), _c('div', {
-	    staticClass: "commodity_description"
-	  }, [_vm._v("\n\t\t\t" + _vm._s(_vm.commodity.introduction) + "\n\t\t")]), _vm._v(" "), _c('div', {
+	    staticClass: "commodity_description",
+	    domProps: {
+	      "innerHTML": _vm._s(_vm.commodity.introduction)
+	    }
+	  }), _vm._v(" "), _c('div', {
 	    staticStyle: {
 	      "height": "1.4rem"
 	    }

@@ -12,9 +12,7 @@
 			<div class="description">{{commodity.memo}}</div>
 			<div class="price">¥ {{commodity.price}} 元</div>
 		</div>
-		<div class="commodity_description">
-			{{commodity.introduction}}
-		</div>
+		<div class="commodity_description" v-html="commodity.introduction"></div>
 		<div style="height: 1.4rem;"></div>
 		<div class="commodity_operation">
 			<a class="attend">收藏</a>
