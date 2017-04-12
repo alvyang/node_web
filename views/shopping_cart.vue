@@ -5,10 +5,10 @@
 			<slider_delete :sliderConf="sliderConf" ref="slider">
 				<div class="cart_item">
 					<div class="select_img" :id="'select'+index" @click="selectCommodity(index)"></div>
-					<div class="commodity_message">
+					<div class="commodity_message_detail">
 						<img :src="c.image"/>
 						<div class="commodity_detail">{{c.full_name}}</div>
-						<div class="commodity_operation">
+						<div class="commodity_operation_01">
 							<a class="price"><span>¥</span>{{c.price}}</a>
 							<div class="add_reduce">
 								<a :class="['reduce',{'color_dddddd':c.quantity == 1}]" @click="reduceCommodity(index)">-</a><a class="num">{{c.quantity}}</a><a class="add" @click="addCommodity(index)">+</a>
@@ -248,14 +248,14 @@
 		width: 1.1rem;
 		height: 2.5rem;
 	}
-	.cart_item .commodity_message{
+	.cart_item .commodity_message_detail{
 		position: relative;
 		box-sizing: border-box;
 		width: 8.9rem;
 		height: 2.6rem;
 		padding-right: 0.2rem;
 	}
-	.commodity_message .commodity_detail{
+	.commodity_message_detail .commodity_detail{
 		position: absolute;
 		left: 2.8rem;
 		top:0.2rem;
@@ -268,22 +268,22 @@
 		-webkit-box-orient:vertical;
 		-webkit-line-clamp:2;
 	}
-	.commodity_message .commodity_operation{
+	.commodity_message_detail .commodity_operation_01{
 		position: absolute;
 		left: 2.8rem;
 		bottom: 0.1rem;
 		width: 5.6rem;
 	}
-	.commodity_operation .price{
+	.commodity_message_detail .commodity_operation_01 .price{
 		font-size: 0.4rem;
 		color: #d81e06;
 		line-height: 0.73rem;
 	} 
-	.commodity_operation .price span{
+	.commodity_message_detail .commodity_operation_01 .price span{
 		font-size: 0.3rem;
 		padding-right: 0.1rem;
 	} 
-	.commodity_operation .add_reduce{
+	.commodity_message_detail .commodity_operation_01 .add_reduce{
 		float: right;
 	}
 	.color_dddddd{
@@ -310,7 +310,7 @@
 		border: solid 1px #dddddd;
 		vertical-align: middle;
 	}
-	.commodity_message img{
+	.commodity_message_detail img{
 		position: absolute;
 		width: 2.5rem;
 		height: 2.5rem;

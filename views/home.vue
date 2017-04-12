@@ -93,6 +93,7 @@
 		margin-left: 0.1rem;
 		margin-right: 0.05rem;
 		margin-bottom: 0.15rem;
+		vertical-align: middle;
 	}
 	.commodity_item .commodity_cart{
 		margin-top: 0.3rem;

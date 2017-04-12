@@ -89,7 +89,7 @@
 		}
 	})
 </script>
-<style scoped="scoped">
+<style>
 	.commodity_description{
 		background-color: #ffffff;
 		margin-top: 0.2rem;
@@ -98,6 +98,9 @@
 		max-height: 9999px;
 		font-size: 0.4rem;
 		line-height: 0.6rem;
+	}
+	.commodity_description img{
+		width: 100% !important;
 	}
 	.commodity_operation{
 		position: fixed;
