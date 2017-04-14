@@ -5824,7 +5824,7 @@ webpackJsonp([5],{
 	var __vue_styles__ = {}
 
 	/* styles */
-	__webpack_require__(222)
+	__webpack_require__(215)
 
 	/* script */
 	__vue_exports__ = __webpack_require__(218)
@@ -5861,6 +5861,48 @@ webpackJsonp([5],{
 	if (__vue_options__.functional) {console.error("[vue-loader] commodity.vue: functional components are not supported and should be defined in plain js files using render functions.")}
 
 	module.exports = __vue_exports__
+
+
+/***/ },
+
+/***/ 215:
+/***/ function(module, exports, __webpack_require__) {
+
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(216);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(9)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7e251425!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./commodity.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7e251425!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./commodity.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+
+/***/ 216:
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(8)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "\n.commodity_description{\n\tbackground-color: #ffffff;\n\tmargin-top: 0.2rem;\n\tbox-sizing: border-box;\n\tpadding: 0.4rem;\n\tmax-height: 9999px;\n\tfont-size: 0.4rem;\n\tline-height: 0.6rem;\n}\n.commodity_description img{\n\twidth: 100% !important;\n}\n.commodity_operation{\n\tposition: fixed;\n\tbackground-color: #ffffff;\n\tbottom: 0;\n\twidth: 10rem;\n\theight: 1.35rem;\n}\n.commodity_operation .attend,.commodity_operation .shopping_cart{\n\tdisplay: inline-block;\n\twidth: 20%;\n\theight: 100%;\n\tline-height: 2.1rem;\n\tfont-size: 0.3rem;\n\ttext-align: center;\n\tcolor: #8a8a8a;\n\ttext-decoration: none;\n}\n.commodity_operation .attend{\n\tbackground: url(" + __webpack_require__(217) + ") center 0.2rem no-repeat;\n\tbackground-size: 0.55rem auto;\n}\n.commodity_operation .shopping_cart{\n\tbackground: url(" + __webpack_require__(18) + ") center 0.25rem no-repeat;\n\tbackground-size: 0.5rem auto;\n}\n.commodity_operation .add_cart{\n\tdisplay: inline-block;\n\twidth: 5rem;\n\theight: 100%;\n\tfloat: right;\n\tline-height: 1.35rem;\n\tfont-size: 0.45rem;\n\tcolor: #ffffff;\n\tbackground-color: #d81e06;\n\ttext-align: center;\n}\n.commodity_message{\n\tbox-sizing: border-box;\n\tbackground-color: #ffffff;\n\tpadding-left: 0.3rem;\n\tpadding-right: 0.2rem;\n\tfont-size: 0.45rem;\n}\n.commodity_message .name{\n\toverflow:hidden; \n\ttext-overflow:ellipsis;\n\tdisplay:-webkit-box; \n\t-webkit-box-orient:vertical;\n\t-webkit-line-clamp:2;\n\tpadding-top: 0.2rem;\n\tpadding-bottom: 0.2rem;\n\tcolor: #333333;\n}\n.commodity_message .description{\n\tcolor: #d81e06;\n}\n.commodity_message  .price{\n\tcolor: #d81e06;\n\tfont-size: 0.45rem;\n\tmargin-top: 0.2rem;\n\tpadding-bottom: 0.3rem;\n}\n.swiper-container{\n\tmargin-top: -1px;\n\tfont-size: 0;\n}\n.swiper-slide img{\n\twidth: 10rem;\n}\n", ""]);
+
+	// exports
 
 
 /***/ },
@@ -6044,48 +6086,6 @@ webpackJsonp([5],{
 	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-7e251425", module.exports)
 	  }
 	}
-
-/***/ },
-
-/***/ 222:
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(223);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(9)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7e251425!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./commodity.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7e251425!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./commodity.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-
-/***/ 223:
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(8)();
-	// imports
-
-
-	// module
-	exports.push([module.id, "\n.commodity_description{\n\tbackground-color: #ffffff;\n\tmargin-top: 0.2rem;\n\tbox-sizing: border-box;\n\tpadding: 0.4rem;\n\tmax-height: 9999px;\n\tfont-size: 0.4rem;\n\tline-height: 0.6rem;\n}\n.commodity_description img{\n\twidth: 100% !important;\n}\n.commodity_operation{\n\tposition: fixed;\n\tbackground-color: #ffffff;\n\tbottom: 0;\n\twidth: 10rem;\n\theight: 1.35rem;\n}\n.commodity_operation .attend,.commodity_operation .shopping_cart{\n\tdisplay: inline-block;\n\twidth: 20%;\n\theight: 100%;\n\tline-height: 2.1rem;\n\tfont-size: 0.3rem;\n\ttext-align: center;\n\tcolor: #8a8a8a;\n\ttext-decoration: none;\n}\n.commodity_operation .attend{\n\tbackground: url(" + __webpack_require__(217) + ") center 0.2rem no-repeat;\n\tbackground-size: 0.55rem auto;\n}\n.commodity_operation .shopping_cart{\n\tbackground: url(" + __webpack_require__(18) + ") center 0.25rem no-repeat;\n\tbackground-size: 0.5rem auto;\n}\n.commodity_operation .add_cart{\n\tdisplay: inline-block;\n\twidth: 5rem;\n\theight: 100%;\n\tfloat: right;\n\tline-height: 1.35rem;\n\tfont-size: 0.45rem;\n\tcolor: #ffffff;\n\tbackground-color: #d81e06;\n\ttext-align: center;\n}\n.commodity_message{\n\tbox-sizing: border-box;\n\tbackground-color: #ffffff;\n\tpadding-left: 0.3rem;\n\tpadding-right: 0.2rem;\n\tfont-size: 0.45rem;\n}\n.commodity_message .name{\n\toverflow:hidden; \n\ttext-overflow:ellipsis;\n\tdisplay:-webkit-box; \n\t-webkit-box-orient:vertical;\n\t-webkit-line-clamp:2;\n\tpadding-top: 0.2rem;\n\tpadding-bottom: 0.2rem;\n\tcolor: #333333;\n}\n.commodity_message .description{\n\tcolor: #d81e06;\n}\n.commodity_message  .price{\n\tcolor: #d81e06;\n\tfont-size: 0.45rem;\n\tmargin-top: 0.2rem;\n\tpadding-bottom: 0.3rem;\n}\n.swiper-container{\n\tmargin-top: -1px;\n\tfont-size: 0;\n}\n.swiper-slide img{\n\twidth: 10rem;\n}\n", ""]);
-
-	// exports
-
 
 /***/ }
 

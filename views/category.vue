@@ -84,9 +84,10 @@
 			}
 		},
 		activated(){
-			this.getCategoryList();
+			//this.getCategoryList();
 		},
 		mounted(){
+			this.getCategoryList();
 			$(".category_div").height($(window).height());
 		},
 		components:{

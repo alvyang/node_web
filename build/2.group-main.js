@@ -6595,13 +6595,13 @@ webpackJsonp([2],Array(28).concat([
 /* 67 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "e444cdb147007470337453f483584936.jpg";
+	module.exports = __webpack_require__.p + "32822a689f19e5207b02bc2cedd5a3fa.jpg";
 
 /***/ },
 /* 68 */
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__.p + "97eafdd4eac0fcec35c0221c7fab49e6.jpg";
+	module.exports = __webpack_require__.p + "e444cdb147007470337453f483584936.jpg";
 
 /***/ },
 /* 69 */
@@ -6795,9 +6795,10 @@ webpackJsonp([2],Array(28).concat([
 			}
 		},
 		activated: function activated() {
-			this.getCategoryList();
+			//this.getCategoryList();
 		},
 		mounted: function mounted() {
+			this.getCategoryList();
 			$(".category_div").height($(window).height());
 		},
 
