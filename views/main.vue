@@ -36,7 +36,8 @@
 					data:{code:args.code},
 					success: function(res) {
 						if(res.code == "000000"){
-							_self.$store.state.openid = res.openid
+							_self.$store.state.openid = res.openid;
+							sessionStorage["open_id"] = res.openid;
 						}
 					}
 				});

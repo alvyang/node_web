@@ -5972,7 +5972,7 @@ webpackJsonp([5],{
 			addToCart: function addToCart(id) {
 				var _self = this;
 				var data = {
-					openid: _self.$store.state.openid,
+					openid: sessionStorage["open_id"],
 					cartItem: {
 						quantity: 1,
 						product_id: id

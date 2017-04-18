@@ -770,7 +770,7 @@ webpackJsonp([3],Array(32).concat([
 				$.ajax({
 					type: "post",
 					url: "/inter/receiver/getReceiverList",
-					data: { openId: _self.$store.state.openid },
+					data: { openId: sessionStorage["open_id"] },
 					success: function success(res) {
 						console.log(res);
 						if (res.code == "000000" && res.receivers) {
@@ -1086,7 +1086,7 @@ webpackJsonp([3],Array(32).concat([
 
 				var _self = this;
 				var params = {
-					openId: _self.$store.state.openid,
+					openId: sessionStorage["open_id"],
 					receiver: _self.address
 				};
 				$.ajax({

@@ -1,13 +1,14 @@
 <template>
 	<div>
 		<div class="orders_detail">
-			<span>订单号：{{orderDetail.orderCode}}</span>
-			<span v-if="orderDetail.orderState == 1" class="order_state">已完成</span>
-			<span v-if="orderDetail.orderState == 2" class="order_state">待付款</span>
-			<span v-if="orderDetail.orderState == 3" class="order_state">待发货</span>
-			<span v-if="orderDetail.orderState == 4" class="order_state">待收货</span>
-			<span v-if="orderDetail.orderState == 5" class="order_state">待评价</span>
+			<div v-for="tn in trackingNo">订单号：{{tn}}</div>
+			<span v-if="orderDetail.order_status == 2" class="order_state">已完成</span>
+			<span v-else-if="orderDetail.payment_status == 0" class="order_state">待付款</span>
+			<span v-else-if="orderDetail.shipping_status == 0" class="order_state">待发货</span>
+			<span v-else-if="orderDetail.shipping_status == 2" class="order_state">待收货</span>
+			<span v-else-if="orderDetail.order_status == 5" class="order_state">待评价</span>
 		</div>
+		<!--<div v-if="trackingNo.length > 1" class="order_code_mutl">预防挤压，分开发货</div>-->
 		<div class="receipt_address">
 			<div class="name"><span>{{orderDetail.consignee}}</span><span>{{orderDetail.phone}}</span></div>
 			<div class="address">{{orderDetail.area_name}}{{orderDetail.address}}</div>
@@ -26,7 +27,8 @@
 			<div class="order_time">下单时间：{{orderDetail.creation_date}}</div>
 		</div>
 		<div class="re_buy">
-			<div>再次购买</div>
+			<div v-if="orderDetail.payment_status == 0">取消订单</div>
+			<div v-if="orderDetail.payment_status == 0">支付订单</div>
 		</div>
 	</div>
 </template>
@@ -36,6 +38,7 @@
 			return {
 				orderPrice:0,
 				orderDetail:{},
+				trackingNo:[],
 			}
 		},
 		methods:{
@@ -60,6 +63,10 @@
 		},
 		activated(){
 			this.orderDetail = JSON.parse(sessionStorage["order_detail_message"]);
+			//由于产家直销，同一订单不同商品，有多个订单号，用","号分开
+			if(this.trackingNo){
+				this.trackingNo = this.orderDetail.tracking_no.split(',');
+			}
 			this.calOrderPrice();
 		},
 		mounted(){
@@ -196,20 +203,34 @@
 		-webkit-box-orient:vertical;
 		-webkit-line-clamp:2;
 	}
-	
-	.orders_detail{
+	.order_code_mutl{
 		background-color: #ffffff;
 		height: 1rem;
 		line-height: 1rem;
 		box-sizing: border-box;
 		padding-left: 0.4rem;
-		padding-right: 0.4rem;
+		font-size: 0.35rem;
+		color: #d81e06;
+	}
+	.orders_detail{
+		position: relative;
+		background-color: #ffffff;
+		box-sizing: border-box;
+		padding:0.2rem 0.4rem;
 		font-size: 0.35rem;
 		border-bottom: solid 1px #dddddd;
+		min-height: 1rem;
+	}
+	.orders_detail > div{
+		height: 0.8rem;
+		line-height: 0.8rem;
+		display: block;
 	}
 	.orders_detail .order_state{
 		display: inline-block;
-		float: right;
+		position: absolute;
+		right: 0.4rem;
+		top: 0.2rem;
 		color: #d81e06;
 	}
 </style>

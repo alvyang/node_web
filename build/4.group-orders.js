@@ -312,7 +312,7 @@ webpackJsonp([4],{
 					type: "post",
 					url: "/inter/order/getOrderList",
 					data: {
-						open_id: _self.$store.state.openid,
+						open_id: sessionStorage["open_id"],
 						type: type,
 						currentPage: 1,
 						pageSize: 10
@@ -427,13 +427,13 @@ webpackJsonp([4],{
 	      }
 	    }, [_c('span', [_vm._v("订单号：" + _vm._s(o.tracking_no))]), _vm._v(" "), (o.order_status == 2) ? _c('span', {
 	      staticClass: "order_state"
-	    }, [_vm._v("已完成")]) : _vm._e(), _vm._v(" "), (o.payment_status == 0) ? _c('span', {
+	    }, [_vm._v("已完成")]) : (o.payment_status == 0) ? _c('span', {
 	      staticClass: "order_state"
-	    }, [_vm._v("待付款")]) : _vm._e(), _vm._v(" "), (o.shipping_status == 0) ? _c('span', {
+	    }, [_vm._v("待付款")]) : (o.shipping_status == 0) ? _c('span', {
 	      staticClass: "order_state"
-	    }, [_vm._v("待发货")]) : _vm._e(), _vm._v(" "), (o.shipping_status == 2) ? _c('span', {
+	    }, [_vm._v("待发货")]) : (o.shipping_status == 2) ? _c('span', {
 	      staticClass: "order_state"
-	    }, [_vm._v("待收货")]) : _vm._e(), _vm._v(" "), (o.order_status == 5) ? _c('span', {
+	    }, [_vm._v("待收货")]) : (o.order_status == 5) ? _c('span', {
 	      staticClass: "order_state"
 	    }, [_vm._v("待评价")]) : _vm._e()]), _vm._v(" "), _c('div', {
 	      staticClass: "orders_commodity",
@@ -448,9 +448,9 @@ webpackJsonp([4],{
 	          "src": i.thumbnail
 	        }
 	      })
-	    })), _vm._v(" "), (o.payment_status == 0) ? _c('div', {
+	    })), _vm._v(" "), _c('div', {
 	      staticClass: "orders_operation"
-	    }, [_c('a', [_vm._v("取消订单")]), _vm._v(" "), _c('a', [_vm._v("支付订单")])]) : _vm._e()])
+	    }, [(o.payment_status == 0) ? _c('a', [_vm._v("取消订单")]) : _vm._e(), _vm._v(" "), (o.payment_status == 0) ? _c('a', [_vm._v("支付订单")]) : _vm._e()])])
 	  })], 2)
 	},staticRenderFns: []}
 	if (false) {
@@ -546,7 +546,7 @@ webpackJsonp([4],{
 
 
 	// module
-	exports.push([module.id, "\n.re_buy[data-v-7565d63a]{\n\tposition: fixed;\n\tbottom: 0;\n\theight: 1.35rem;\n\twidth: 10rem;\n\tbackground-color: #ffffff;\n}\n.re_buy > div[data-v-7565d63a]{\n\tfloat: right;\n\tmargin-top: 0.3rem;\n\tmargin-right: 0.4rem;\n\twidth: 2rem;\n\theight: 0.8rem;\n\tline-height: 0.8rem;\n\ttext-align: center;\n\tborder:solid 1px #d81e06;\n\tcolor: #d81e06 ;\n\tborder-radius: 5px;\n}\n.orders_num_detail[data-v-7565d63a]{\n\tbackground-color: #ffffff;\n\tmargin-top: 0.2rem;\n\tbox-sizing: border-box;\n\tpadding:0.2rem 0.4rem;\n\tcolor: #333333;\n}\n.orders_num_detail .commodity_num_price[data-v-7565d63a]{\n\tfont-size: 0.4rem;\n\theight: 0.8rem;\n\tline-height: 0.8rem;\n}\n.orders_num_detail .freight[data-v-7565d63a]{\n\theight: 0.7rem;\n\tborder-bottom: solid 1px #dddddd;\n}\n.commodity_num_price a[data-v-7565d63a],.orders_num_detail .freight a[data-v-7565d63a]{\n\tdisplay: inline-block;\n\tfloat: right;\n\tcolor: #d81e06;\n}\n.orders_num_detail .payment[data-v-7565d63a],.orders_num_detail .order_time[data-v-7565d63a]{\n\ttext-align: right;\n}\n.orders_num_detail .payment[data-v-7565d63a]{\n\tfont-size: 0.4rem;\n\theight: 0.8rem;\n\tline-height: 0.8rem;\n}\n.orders_num_detail .payment a[data-v-7565d63a]{\n\tfont-size: 0.45rem;\n\tcolor: #d81e06;\n}\n.orders_num_detail .order_time[data-v-7565d63a]{\n\tfont-size: 0.3rem;\n\tcolor: #c5c5c5;\n\theight: 0.6rem;\n\tline-height: 0.6rem;\n}\n.order_commodity[data-v-7565d63a]{\n\tbackground-color: #ffffff;\n\tborder-bottom: solid 1px #dddddd;\n\theight: 2.5rem;\n\tcolor: #333333;\n\tfont-size: 0.35rem;\n}\n.order_commodity img[data-v-7565d63a]{\n\twidth: 2.3rem;\n\theight: 2.3rem;\n\tmargin-top: 0.1rem;\n\tvertical-align: middle;\n}\n.order_commodity .commodity_name[data-v-7565d63a]{\n\twidth: 7.5rem;\n\tdisplay: inline-block;\n\tbox-sizing: border-box;\n\tpadding-left: 0.2rem;\n\tpadding-right: 0.2rem;\n\tvertical-align: middle;\n\tcolor: #333333;\n}\n.commodity_name > div[data-v-7565d63a]:nth-child(1){\n\toverflow:hidden; \n\ttext-overflow:ellipsis;\n\t-webkit-box-orient:vertical;\n\t-webkit-line-clamp:2;\n}\n.commodity_name > div[data-v-7565d63a]:nth-child(2){\n\tmargin-top: 0.2rem;\n}\n.commodity_name a[data-v-7565d63a]{\n\tcolor: #d81e06;\n\tpadding-right: 0.2rem;\n\tpadding-left: 0.1rem;\n}\n.receipt_address[data-v-7565d63a]{\n\tbackground:#ffffff;\n\tpadding-bottom: 0.35rem;\n\twidth: 10rem;\n\tfont-size: 0.35rem;\n\tmargin-top: 0.2rem;\n\tmargin-bottom: 0.2rem;\n}\n.receipt_address .name[data-v-7565d63a]{\n\theight: 1rem;\n\tline-height: 1rem;\n\tbox-sizing: border-box;\n\tpadding-left: 1rem;\n\tcolor: #333333;\n}\n.receipt_address .name span[data-v-7565d63a]:nth-child(1){\n\tpadding-right: 1rem;\n}\n.receipt_address .address[data-v-7565d63a]{\n\tbackground: url(" + __webpack_require__(30) + ") 0.4rem center no-repeat;\n\tbackground-size: 0.45rem auto;\n\tbox-sizing: border-box;\n\tpadding-left: 1rem;\n\tcolor: #999999;\n\tpadding-right: 0.5rem;\n\t\n\toverflow:hidden; \n\ttext-overflow:ellipsis;\n\tdisplay:-webkit-box; \n\t-webkit-box-orient:vertical;\n\t-webkit-line-clamp:2;\n}\n.orders_detail[data-v-7565d63a]{\n\tbackground-color: #ffffff;\n\theight: 1rem;\n\tline-height: 1rem;\n\tbox-sizing: border-box;\n\tpadding-left: 0.4rem;\n\tpadding-right: 0.4rem;\n\tfont-size: 0.35rem;\n\tborder-bottom: solid 1px #dddddd;\n}\n.orders_detail .order_state[data-v-7565d63a]{\n\tdisplay: inline-block;\n\tfloat: right;\n\tcolor: #d81e06;\n}\n", ""]);
+	exports.push([module.id, "\n.re_buy[data-v-7565d63a]{\n\tposition: fixed;\n\tbottom: 0;\n\theight: 1.35rem;\n\twidth: 10rem;\n\tbackground-color: #ffffff;\n}\n.re_buy > div[data-v-7565d63a]{\n\tfloat: right;\n\tmargin-top: 0.3rem;\n\tmargin-right: 0.4rem;\n\twidth: 2rem;\n\theight: 0.8rem;\n\tline-height: 0.8rem;\n\ttext-align: center;\n\tborder:solid 1px #d81e06;\n\tcolor: #d81e06 ;\n\tborder-radius: 5px;\n}\n.orders_num_detail[data-v-7565d63a]{\n\tbackground-color: #ffffff;\n\tmargin-top: 0.2rem;\n\tbox-sizing: border-box;\n\tpadding:0.2rem 0.4rem;\n\tcolor: #333333;\n}\n.orders_num_detail .commodity_num_price[data-v-7565d63a]{\n\tfont-size: 0.4rem;\n\theight: 0.8rem;\n\tline-height: 0.8rem;\n}\n.orders_num_detail .freight[data-v-7565d63a]{\n\theight: 0.7rem;\n\tborder-bottom: solid 1px #dddddd;\n}\n.commodity_num_price a[data-v-7565d63a],.orders_num_detail .freight a[data-v-7565d63a]{\n\tdisplay: inline-block;\n\tfloat: right;\n\tcolor: #d81e06;\n}\n.orders_num_detail .payment[data-v-7565d63a],.orders_num_detail .order_time[data-v-7565d63a]{\n\ttext-align: right;\n}\n.orders_num_detail .payment[data-v-7565d63a]{\n\tfont-size: 0.4rem;\n\theight: 0.8rem;\n\tline-height: 0.8rem;\n}\n.orders_num_detail .payment a[data-v-7565d63a]{\n\tfont-size: 0.45rem;\n\tcolor: #d81e06;\n}\n.orders_num_detail .order_time[data-v-7565d63a]{\n\tfont-size: 0.3rem;\n\tcolor: #c5c5c5;\n\theight: 0.6rem;\n\tline-height: 0.6rem;\n}\n.order_commodity[data-v-7565d63a]{\n\tbackground-color: #ffffff;\n\tborder-bottom: solid 1px #dddddd;\n\theight: 2.5rem;\n\tcolor: #333333;\n\tfont-size: 0.35rem;\n}\n.order_commodity img[data-v-7565d63a]{\n\twidth: 2.3rem;\n\theight: 2.3rem;\n\tmargin-top: 0.1rem;\n\tvertical-align: middle;\n}\n.order_commodity .commodity_name[data-v-7565d63a]{\n\twidth: 7.5rem;\n\tdisplay: inline-block;\n\tbox-sizing: border-box;\n\tpadding-left: 0.2rem;\n\tpadding-right: 0.2rem;\n\tvertical-align: middle;\n\tcolor: #333333;\n}\n.commodity_name > div[data-v-7565d63a]:nth-child(1){\n\toverflow:hidden; \n\ttext-overflow:ellipsis;\n\t-webkit-box-orient:vertical;\n\t-webkit-line-clamp:2;\n}\n.commodity_name > div[data-v-7565d63a]:nth-child(2){\n\tmargin-top: 0.2rem;\n}\n.commodity_name a[data-v-7565d63a]{\n\tcolor: #d81e06;\n\tpadding-right: 0.2rem;\n\tpadding-left: 0.1rem;\n}\n.receipt_address[data-v-7565d63a]{\n\tbackground:#ffffff;\n\tpadding-bottom: 0.35rem;\n\twidth: 10rem;\n\tfont-size: 0.35rem;\n\tmargin-top: 0.2rem;\n\tmargin-bottom: 0.2rem;\n}\n.receipt_address .name[data-v-7565d63a]{\n\theight: 1rem;\n\tline-height: 1rem;\n\tbox-sizing: border-box;\n\tpadding-left: 1rem;\n\tcolor: #333333;\n}\n.receipt_address .name span[data-v-7565d63a]:nth-child(1){\n\tpadding-right: 1rem;\n}\n.receipt_address .address[data-v-7565d63a]{\n\tbackground: url(" + __webpack_require__(30) + ") 0.4rem center no-repeat;\n\tbackground-size: 0.45rem auto;\n\tbox-sizing: border-box;\n\tpadding-left: 1rem;\n\tcolor: #999999;\n\tpadding-right: 0.5rem;\n\t\n\toverflow:hidden; \n\ttext-overflow:ellipsis;\n\tdisplay:-webkit-box; \n\t-webkit-box-orient:vertical;\n\t-webkit-line-clamp:2;\n}\n.order_code_mutl[data-v-7565d63a]{\n\tbackground-color: #ffffff;\n\theight: 1rem;\n\tline-height: 1rem;\n\tbox-sizing: border-box;\n\tpadding-left: 0.4rem;\n\tfont-size: 0.35rem;\n\tcolor: #d81e06;\n}\n.orders_detail[data-v-7565d63a]{\n\tposition: relative;\n\tbackground-color: #ffffff;\n\tbox-sizing: border-box;\n\tpadding:0.2rem 0.4rem;\n\tfont-size: 0.35rem;\n\tborder-bottom: solid 1px #dddddd;\n\tmin-height: 1rem;\n}\n.orders_detail > div[data-v-7565d63a]{\n\theight: 0.8rem;\n\tline-height: 0.8rem;\n\tdisplay: block;\n}\n.orders_detail .order_state[data-v-7565d63a]{\n\tdisplay: inline-block;\n\tposition: absolute;\n\tright: 0.4rem;\n\ttop: 0.2rem;\n\tcolor: #d81e06;\n}\n", ""]);
 
 	// exports
 
@@ -556,11 +556,13 @@ webpackJsonp([4],{
 /***/ 212:
 /***/ function(module, exports) {
 
-	"use strict";
+	'use strict';
 
 	Object.defineProperty(exports, "__esModule", {
 		value: true
 	});
+	//
+	//
 	//
 	//
 	//
@@ -598,7 +600,8 @@ webpackJsonp([4],{
 		data: function data() {
 			return {
 				orderPrice: 0,
-				orderDetail: {}
+				orderDetail: {},
+				trackingNo: []
 			};
 		},
 
@@ -625,6 +628,10 @@ webpackJsonp([4],{
 		},
 		activated: function activated() {
 			this.orderDetail = JSON.parse(sessionStorage["order_detail_message"]);
+			//由于产家直销，同一订单不同商品，有多个订单号，用","号分开
+			if (this.trackingNo) {
+				this.trackingNo = this.orderDetail.tracking_no.split(',');
+			}
 			this.calOrderPrice();
 		},
 		mounted: function mounted() {
@@ -641,17 +648,19 @@ webpackJsonp([4],{
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', [_c('div', {
 	    staticClass: "orders_detail"
-	  }, [_c('span', [_vm._v("订单号：" + _vm._s(_vm.orderDetail.orderCode))]), _vm._v(" "), (_vm.orderDetail.orderState == 1) ? _c('span', {
+	  }, [_vm._l((_vm.trackingNo), function(tn) {
+	    return _c('div', [_vm._v("订单号：" + _vm._s(tn))])
+	  }), _vm._v(" "), (_vm.orderDetail.order_status == 2) ? _c('span', {
 	    staticClass: "order_state"
-	  }, [_vm._v("已完成")]) : _vm._e(), _vm._v(" "), (_vm.orderDetail.orderState == 2) ? _c('span', {
+	  }, [_vm._v("已完成")]) : (_vm.orderDetail.payment_status == 0) ? _c('span', {
 	    staticClass: "order_state"
-	  }, [_vm._v("待付款")]) : _vm._e(), _vm._v(" "), (_vm.orderDetail.orderState == 3) ? _c('span', {
+	  }, [_vm._v("待付款")]) : (_vm.orderDetail.shipping_status == 0) ? _c('span', {
 	    staticClass: "order_state"
-	  }, [_vm._v("待发货")]) : _vm._e(), _vm._v(" "), (_vm.orderDetail.orderState == 4) ? _c('span', {
+	  }, [_vm._v("待发货")]) : (_vm.orderDetail.shipping_status == 2) ? _c('span', {
 	    staticClass: "order_state"
-	  }, [_vm._v("待收货")]) : _vm._e(), _vm._v(" "), (_vm.orderDetail.orderState == 5) ? _c('span', {
+	  }, [_vm._v("待收货")]) : (_vm.orderDetail.order_status == 5) ? _c('span', {
 	    staticClass: "order_state"
-	  }, [_vm._v("待评价")]) : _vm._e()]), _vm._v(" "), _c('div', {
+	  }, [_vm._v("待评价")]) : _vm._e()], 2), _vm._v(" "), _c('div', {
 	    staticClass: "receipt_address"
 	  }, [_c('div', {
 	    staticClass: "name"
@@ -675,15 +684,13 @@ webpackJsonp([4],{
 	    staticClass: "payment"
 	  }, [_vm._v("实付款："), _c('a', [_vm._v("¥ " + _vm._s(_vm.orderPrice))])]), _vm._v(" "), _c('div', {
 	    staticClass: "order_time"
-	  }, [_vm._v("下单时间：" + _vm._s(_vm.orderDetail.creation_date))])]), _vm._v(" "), _vm._m(1)], 2)
+	  }, [_vm._v("下单时间：" + _vm._s(_vm.orderDetail.creation_date))])]), _vm._v(" "), _c('div', {
+	    staticClass: "re_buy"
+	  }, [(_vm.orderDetail.payment_status == 0) ? _c('div', [_vm._v("取消订单")]) : _vm._e(), _vm._v(" "), (_vm.orderDetail.payment_status == 0) ? _c('div', [_vm._v("支付订单")]) : _vm._e()])], 2)
 	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
 	    staticClass: "freight"
 	  }, [_vm._v("+ 运费"), _c('a', [_vm._v("¥ 0.00")])])
-	},function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
-	    staticClass: "re_buy"
-	  }, [_c('div', [_vm._v("再次购买")])])
 	}]}
 	if (false) {
 	  module.hot.accept()

@@ -116,7 +116,7 @@
 				
 				var _self = this;
 				var params = {
-					openId:_self.$store.state.openid,
+					openId:sessionStorage["open_id"],
 					receiver:_self.address,
 				}
 				$.ajax({

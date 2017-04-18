@@ -12,17 +12,17 @@
 			<div class="orders_code" @click="orderDetail(index)">
 				<span>订单号：{{o.tracking_no}}</span>
 				<span v-if="o.order_status == 2" class="order_state">已完成</span>
-				<span v-if="o.payment_status == 0" class="order_state">待付款</span>
-				<span v-if="o.shipping_status == 0" class="order_state">待发货</span>
-				<span v-if="o.shipping_status == 2" class="order_state">待收货</span>
-				<span v-if="o.order_status == 5" class="order_state">待评价</span>
+				<span v-else-if="o.payment_status == 0" class="order_state">待付款</span>
+				<span v-else-if="o.shipping_status == 0" class="order_state">待发货</span>
+				<span v-else-if="o.shipping_status == 2" class="order_state">待收货</span>
+				<span v-else-if="o.order_status == 5" class="order_state">待评价</span>
 			</div>
 			<div class="orders_commodity" @click="orderDetail(index)">
 				<img v-for="i in o.orderItem" :src="i.thumbnail" />
 			</div>
-			<div class="orders_operation"  v-if="o.payment_status == 0">
-				<a>取消订单</a>
-				<a>支付订单</a>
+			<div class="orders_operation">
+				<a v-if="o.payment_status == 0">取消订单</a>
+				<a v-if="o.payment_status == 0">支付订单</a>
 			</div>
 		</div>
 	</div>
@@ -48,7 +48,7 @@
 					type: "post",
 					url: "/inter/order/getOrderList",
 					data:{
-						open_id:_self.$store.state.openid,
+						open_id:sessionStorage["open_id"],
 						type:type,
 						currentPage:1,
 						pageSize:10,

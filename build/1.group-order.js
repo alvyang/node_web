@@ -154,7 +154,7 @@ webpackJsonp([1],{
 						consignee: this.receivers.consignee,
 						phone: this.receivers.phone,
 						address: this.receivers.address,
-						open_id: this.$store.state.openid
+						open_id: sessionStorage["open_id"]
 					},
 					orderItem: this.commodity
 				};
@@ -189,7 +189,7 @@ webpackJsonp([1],{
 					$.ajax({ //没有选择地址时，显示数据默认地址
 						type: "post",
 						url: "/inter/receiver/getDefaultReceiver",
-						data: { openId: _self.$store.state.openid },
+						data: { openId: sessionStorage["open_id"] },
 						success: function success(res) {
 							console.log(res);
 							if (res.code == "000000" && res.receivers) {

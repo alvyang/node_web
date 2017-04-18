@@ -56,7 +56,7 @@
 				$.ajax({
 					type: "post",
 					url: "/inter/order/getOrderNum",
-					data:{open_id:_self.$store.state.openid},
+					data:{open_id:sessionStorage["open_id"]},
 					success: function(res) {
 						console.log(res);
 						if(res.code == "000000"){

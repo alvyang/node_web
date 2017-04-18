@@ -36,7 +36,7 @@
 				$.ajax({
 					type: "post",
 					url: "/inter/receiver/getReceiverList",
-					data:{openId:_self.$store.state.openid},
+					data:{openId:sessionStorage["open_id"]},
 					success: function(res) {
 						console.log(res);
 						if(res.code == "000000" && res.receivers){

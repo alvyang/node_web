@@ -321,7 +321,7 @@ webpackJsonp([2],Array(28).concat([
 			addToCart: function addToCart(id) {
 				var _self = this;
 				var data = {
-					openid: _self.$store.state.openid,
+					openid: sessionStorage["open_id"],
 					cartItem: {
 						quantity: 1,
 						product_id: id
@@ -6775,7 +6775,7 @@ webpackJsonp([2],Array(28).concat([
 			addToCart: function addToCart(id) {
 				var _self = this;
 				var data = {
-					openid: _self.$store.state.openid,
+					openid: sessionStorage["open_id"],
 					cartItem: {
 						quantity: 1,
 						product_id: id
@@ -7228,7 +7228,7 @@ webpackJsonp([2],Array(28).concat([
 				$.ajax({
 					type: "post",
 					url: "/inter/cart/getCartItem",
-					data: { open_id: _self.$store.state.openid },
+					data: { open_id: sessionStorage["open_id"] },
 					success: function success(res) {
 						console.log(res);
 						if (res.code == "000000") {
@@ -8070,7 +8070,7 @@ webpackJsonp([2],Array(28).concat([
 				$.ajax({
 					type: "post",
 					url: "/inter/order/getOrderNum",
-					data: { open_id: _self.$store.state.openid },
+					data: { open_id: sessionStorage["open_id"] },
 					success: function success(res) {
 						console.log(res);
 						if (res.code == "000000") {

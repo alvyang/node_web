@@ -12325,6 +12325,7 @@
 					success: function success(res) {
 						if (res.code == "000000") {
 							_self.$store.state.openid = res.openid;
+							sessionStorage["open_id"] = res.openid;
 						}
 					}
 				});
