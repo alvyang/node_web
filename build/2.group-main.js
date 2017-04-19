@@ -252,7 +252,7 @@ webpackJsonp([2],Array(28).concat([
 
 
 	// module
-	exports.push([module.id, "\n.commodity_item{\n\tdisplay: inline-block;\n\tbox-sizing: border-box;\n\tbackground-color: #ffffff;\n\twidth: 4.85rem;\n\theight: 7.3rem;\n\tmargin-left: 0.1rem;\n\tmargin-right: 0.05rem;\n\tmargin-bottom: 0.15rem;\n\tvertical-align: middle;\n}\n.commodity_item .commodity_cart{\n\tmargin-top: 0.3rem;\n}\n.commodity_item .commodity_cart img{\n\tfloat: right;\n\twidth: 0.7rem;\n\theight: 0.7rem;\n\tmargin-right: 0.3rem;\n}\n.commodity_item .commodity_price{\n\tbox-sizing: border-box;\n\tcolor: #d81e06;\n\tfont-size: 0.4rem;\n\tpadding-left: 0.15rem;\n\tpadding-right: 0.15rem;\n}\n.commodity_item .commodity_name{\n\tbox-sizing: border-box;\n\tpadding-left: 0.15rem;\n\tpadding-right: 0.15rem;\n\tfont-size: 0.4rem;\n\toverflow:hidden; \n\ttext-overflow:ellipsis;\n\tdisplay:-webkit-box; \n\t-webkit-box-orient:vertical;\n\t-webkit-line-clamp:2;\n}\n.commodity_item img{\n\twidth: 100%;\n}\n.commodity_list{\n\tbackground-color: #f4f4f4;\n\tfont-size: 0;\n\tpadding-top: 0.2rem;\n\tpadding-bottom: 0.2rem;\n}\n.home_page{\n\theight: 100%;\n}\n.swiper-container{\n\tmargin-top: -1px;\n\tfont-size: 0;\n}\n.swiper-slide img{\n\twidth: 10rem;\n}\n", ""]);
+	exports.push([module.id, "\n.commodity_home_item{\n\tbackground-color: #ffffff;\n\tposition: relative;\n\twidth: 10rem;\n\theight: 3rem;\n\tbox-sizing: border-box;\n\tpadding: 0.2rem;\n\tmargin-top: 0.2rem;\n}\n.commodity_home_item .commodity_home_img{\n\theight: 100%;\n}\n.commodity_home_item .commodity_home_name{\n\tposition: absolute;\n\tleft: 3rem;\n\ttop: 0.4rem;\n\twidth: 7rem;\n\tbox-sizing: border-box;\n\tpadding-left: 0.15rem;\n\tpadding-right: 0.15rem;\n\tfont-size: 0.4rem;\n\theight: 1.2rem;\n\toverflow:hidden; \n\ttext-overflow:ellipsis;\n\tdisplay:-webkit-box; \n\t-webkit-box-orient:vertical;\n\t-webkit-line-clamp:2;\n}\n.commodity_home_item .commodity_home_cart{\n\tposition: absolute;\n\tleft: 3rem;\n\ttop: 2rem;\n\twidth: 7rem;\n}\n.commodity_home_item .commodity_home_cart .commodity_home_price{\n\tbox-sizing: border-box;\n\tcolor: #d81e06;\n\tfont-size: 0.4rem;\n\tpadding-left: 0.15rem;\n\tpadding-right: 0.15rem;\n}\n.commodity_home_item .commodity_home_cart img{\n\tfloat: right;\n\twidth: 0.7rem;\n\theight: 0.7rem;\n\tmargin-right: 0.3rem;\n}\n.home_page{\n\theight: 100%;\n}\n.swiper-container{\n\tmargin-top: -1px;\n\tfont-size: 0;\n}\n.swiper-slide img{\n\twidth: 10rem;\n}\n", ""]);
 
 	// exports
 
@@ -282,7 +282,6 @@ webpackJsonp([2],Array(28).concat([
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 	__webpack_require__(62); //
-	//
 	//
 	//
 	//
@@ -352,8 +351,10 @@ webpackJsonp([2],Array(28).concat([
 					}
 				}
 			});
-			var mySwiper = new Swiper('.swiper-container', {
-				autoplay: 2000 });
+			var mySwiper = new Swiper('#home_swiper', {
+				autoplay: 2000, //可选选项，自动滑动
+				pagination: '.swiper-pagination'
+			});
 		},
 
 		components: {
@@ -6508,17 +6509,9 @@ webpackJsonp([2],Array(28).concat([
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
 	    staticClass: "home_page"
-	  }, [_c('jf-top'), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('div', {
-	    staticClass: "commodity_list"
-	  }, _vm._l((_vm.commodityList), function(c) {
+	  }, [_c('jf-top'), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._l((_vm.commodityList), function(c) {
 	    return _c('router-link', {
-	      directives: [{
-	        name: "show",
-	        rawName: "v-show",
-	        value: (c.is_list.data[0] == 1),
-	        expression: "c.is_list.data[0] == 1"
-	      }],
-	      staticClass: "commodity_item",
+	      staticClass: "commodity_home_item",
 	      attrs: {
 	        "to": {
 	          path: '/commodity',
@@ -6530,15 +6523,16 @@ webpackJsonp([2],Array(28).concat([
 	        "tag": "div"
 	      }
 	    }, [_c('img', {
+	      staticClass: "commodity_home_img",
 	      attrs: {
 	        "src": c.image
 	      }
 	    }), _vm._v(" "), _c('div', {
-	      staticClass: "commodity_name"
+	      staticClass: "commodity_home_name"
 	    }, [_vm._v(_vm._s(c.full_name))]), _vm._v(" "), _c('div', {
-	      staticClass: "commodity_cart"
+	      staticClass: "commodity_home_cart"
 	    }, [_c('span', {
-	      staticClass: "commodity_price"
+	      staticClass: "commodity_home_price"
 	    }, [_vm._v("¥" + _vm._s(c.price))]), _vm._v(" "), _c('img', {
 	      attrs: {
 	        "src": __webpack_require__(66)
@@ -6550,7 +6544,7 @@ webpackJsonp([2],Array(28).concat([
 	        }
 	      }
 	    })])])
-	  })), _vm._v(" "), _c('jf-prompt', {
+	  }), _vm._v(" "), _c('jf-prompt', {
 	    attrs: {
 	      "message": _vm.message
 	    }
@@ -6558,10 +6552,13 @@ webpackJsonp([2],Array(28).concat([
 	    staticStyle: {
 	      "height": "1.35rem"
 	    }
-	  })], 1)
+	  })], 2)
 	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
-	    staticClass: "swiper-container"
+	    staticClass: "swiper-container",
+	    attrs: {
+	      "id": "home_swiper"
+	    }
 	  }, [_c('div', {
 	    staticClass: "swiper-wrapper"
 	  }, [_c('div', {
@@ -6576,7 +6573,9 @@ webpackJsonp([2],Array(28).concat([
 	    attrs: {
 	      "src": __webpack_require__(68)
 	    }
-	  })])])])
+	  })])]), _vm._v(" "), _c('div', {
+	    staticClass: "swiper-pagination"
+	  })])
 	}]}
 	if (false) {
 	  module.hot.accept()
@@ -6685,7 +6684,7 @@ webpackJsonp([2],Array(28).concat([
 
 
 	// module
-	exports.push([module.id, "\n.category_product_list{\n\tbackground: #ffffff;\n\twidth: 100%;\n\theight: 3.2rem;\n\tposition: relative;\n\tmargin-bottom: 0.25rem;\n}\n.category_product_list .product_img{\n\tmargin-top: 0.1rem;\n\twidth: 3rem;\n\theight: 3rem;\n}\n.category_product_list .add_cart{\n\tposition: absolute;\n\tleft: 5.5rem;\n\ttop: 1.9rem;\n\twidth: 0.7rem;\n\theight: 0.7rem;\n\tmargin-right: 0.3rem;\n}\n.product_name{\n\tposition: absolute;\n\tleft: 3rem;\n\twidth: 3.5rem;\n\tpadding-top: 0.5rem;\n\ttop: 0px;\n\tbox-sizing: border-box;\n\toverflow:hidden; \n\ttext-overflow:ellipsis;\n\tdisplay:-webkit-box; \n\t-webkit-box-orient:vertical;\n\t-webkit-line-clamp:2;\n}\n.product_price{\n\tposition: absolute;\n\tleft: 3rem;\n\ttop: 2rem;\n\tfont-size: 0.4rem;\n\twidth: 3.5rem;\n\tcolor: #d81e06;\n}\n.product_list{\n\tposition: relative;\n\tleft: 3rem;\n\ttop: 0;\n\twidth: 7rem;\n\theight: 100%;\n\tbox-sizing: border-box;\n\tpadding-bottom: 1.35rem;\n\tpadding-left: 0.25rem;\n\tpadding-right: 0.25rem;\n\tpadding-top: 0.25rem;\n}\n.category_list{\n\tposition: absolute;\n\tleft: 0;\n\twidth: 3rem;\n\theight: 100%;\n\tbox-sizing: border-box;\n\tpadding-bottom: 1.35rem;\n\tborder-right: solid 1px #cccccc;\n}\n.category_item{\n\tbackground-color: #ffffff;\n\tborder-right: solid 1px #cccccc;\n\tborder-bottom: solid 1px #cccccc;\n\tdisplay: block;\n\theight: 1.5rem;\n\twidth: 100%;\n\tline-height: 1.5rem;\n\ttext-align: center;\n\ttext-decoration: none;\n}\n.category_item_current{\n\t color: #d81e06;\n}\n.category_div{\n\tposition: relative;\n\tbox-sizing: border-box;\n\twidth: 10rem;\n}\n", ""]);
+	exports.push([module.id, "\n.category_item_current{\n\theight: 100%;\n\tbox-sizing: border-box;\n\tborder-bottom: solid 2px #d81e06;\n}\n.category_list{\n\tbackground-color: #ffffff;\n\tposition: fixed;\n\ttop: 0px;\n\twidth: 10rem;\n\theight: 1.2rem;\n\tline-height: 1.2rem;\n\tfont-size: 0.4rem;\n\tborder-bottom: solid 1px #dddddd;\n}\n.category_list > a{\n\tdisplay: inline-block;\n\tbox-sizing: border-box;\n\tpadding-left: 0.25rem;\n\tpadding-right: 0.25rem;\n\tmin-width: 3rem;\n\ttext-align: center;\n}\n.commodity_item{\n\tdisplay: inline-block;\n\tbox-sizing: border-box;\n\tbackground-color: #ffffff;\n\twidth: 4.85rem;\n\theight: 7.3rem;\n\tmargin-left: 0.1rem;\n\tmargin-right: 0.05rem;\n\tmargin-bottom: 0.15rem;\n\tvertical-align: middle;\n}\n.commodity_item .commodity_cart{\n\tmargin-top: 0.3rem;\n}\n.commodity_item .commodity_cart img{\n\tfloat: right;\n\twidth: 0.7rem;\n\theight: 0.7rem;\n\tmargin-top: -0.1rem;\n\tmargin-right: 0.3rem;\n}\n.commodity_item .commodity_price{\n\tbox-sizing: border-box;\n\tcolor: #d81e06;\n\tfont-size: 0.4rem;\n\tpadding-left: 0.15rem;\n\tpadding-right: 0.15rem;\n}\n.commodity_item .commodity_name{\n\tbox-sizing: border-box;\n\tpadding-left: 0.15rem;\n\tpadding-right: 0.15rem;\n\tfont-size: 0.4rem;\n\theight: 1.2rem;\n\toverflow:hidden; \n\ttext-overflow:ellipsis;\n\tdisplay:-webkit-box; \n\t-webkit-box-orient:vertical;\n\t-webkit-line-clamp:2;\n}\n.commodity_item img{\n\twidth: 4.45rem;\n\tmargin: 0.2rem;\n}\n.commodity_list{\n\tbackground-color: #f4f4f4;\n\tfont-size: 0;\n\tpadding-top: 0.2rem;\n\tpadding-bottom: 0.2rem;\n}\n", ""]);
 
 	// exports
 
@@ -6700,36 +6699,11 @@ webpackJsonp([2],Array(28).concat([
 		value: true
 	});
 
-	var _scroll = __webpack_require__(73);
-
-	var _scroll2 = _interopRequireDefault(_scroll);
-
 	var _prompt = __webpack_require__(32);
 
 	var _prompt2 = _interopRequireDefault(_prompt);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
 
 	exports.default = {
 		data: function data() {
@@ -6799,198 +6773,37 @@ webpackJsonp([2],Array(28).concat([
 		},
 		mounted: function mounted() {
 			this.getCategoryList();
-			$(".category_div").height($(window).height());
 		},
 
 		components: {
-			"i-scroll": _scroll2.default,
 			"jf-prompt": _prompt2.default
 		}
-	};
+	}; //
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 /***/ },
-/* 73 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __vue_exports__, __vue_options__
-	var __vue_styles__ = {}
-
-	/* styles */
-	__webpack_require__(74)
-
-	/* script */
-	__vue_exports__ = __webpack_require__(76)
-
-	/* template */
-	var __vue_template__ = __webpack_require__(77)
-	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-	if (
-	  typeof __vue_exports__.default === "object" ||
-	  typeof __vue_exports__.default === "function"
-	) {
-	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-	__vue_options__ = __vue_exports__ = __vue_exports__.default
-	}
-	if (typeof __vue_options__ === "function") {
-	  __vue_options__ = __vue_options__.options
-	}
-	__vue_options__.__file = "D:\\lvyang\\repositories\\node_web\\components\\scroll.vue"
-	__vue_options__.render = __vue_template__.render
-	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-
-	/* hot reload */
-	if (false) {(function () {
-	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
-	  hotAPI.install(require("vue"), false)
-	  if (!hotAPI.compatible) return
-	  module.hot.accept()
-	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-f37b9c8e", __vue_options__)
-	  } else {
-	    hotAPI.reload("data-v-f37b9c8e", __vue_options__)
-	  }
-	})()}
-	if (__vue_options__.functional) {console.error("[vue-loader] scroll.vue: functional components are not supported and should be defined in plain js files using render functions.")}
-
-	module.exports = __vue_exports__
-
-
-/***/ },
-/* 74 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(75);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(9)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-f37b9c8e!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./scroll.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-f37b9c8e!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./scroll.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 75 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(8)();
-	// imports
-
-
-	// module
-	exports.push([module.id, "\n.scroll_message{\n\tposition: absolute;\n\ttop: 0px;\n\twidth: 100%;\n}\n.scroll_center{\n\tposition: absolute;\n\twidth: 100%;\n\theight: 100%;\n}\n\n", ""]);
-
-	// exports
-
-
-/***/ },
-/* 76 */
-/***/ function(module, exports) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-
-	exports.default = {
-		data: function data() {
-			return {
-				handleTouch: null,
-				startY: 0, //触摸的起始位置Y
-				startX: 0, //触摸的起始位置X.
-				currentTop: 0
-			};
-		},
-
-		props: ["id"],
-		methods: {
-			touchStart: function touchStart(e) {
-				this.startY = e.pageY;
-				this.startX = e.pageX;
-			},
-			touchMove: function touchMove(e) {
-				e.preventDefault();
-				//disX,disY 滑动的距离
-
-				var disY = -(this.startY - e.pageY) * 18 / 300;
-				if (this.currentTop >= 0 && disY > 0) {
-					this.currentTop = 0;
-				} else if (-this.currentTop >= $("#" + this.id).height() - $(window).height() && disY < 0) {} else {
-					this.currentTop = this.currentTop + disY;
-				}
-			}
-		},
-		activated: function activated() {
-			document.addEventListener('touchmove', this.handleTouch, false);
-		},
-		deactivated: function deactivated() {
-			document.removeEventListener('touchmove', this.handleTouch, false);
-		},
-		mounted: function mounted() {
-			this.handleTouch = function (e) {
-				e.preventDefault();
-			};
-			document.addEventListener('touchmove', this.handleTouch, false);
-		}
-	};
-
-/***/ },
-/* 77 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
-	    staticClass: "scroll_center",
-	    on: {
-	      "touchstart": function($event) {
-	        $event.stopPropagation();
-	        _vm.touchStart($event)
-	      },
-	      "touchmove": function($event) {
-	        $event.stopPropagation();
-	        _vm.touchMove($event)
-	      }
-	    }
-	  }, [_c('div', {
-	    staticClass: "scroll_message",
-	    style: ({
-	      top: _vm.currentTop + 'px'
-	    }),
-	    attrs: {
-	      "id": _vm.id
-	    }
-	  }, [_vm._t("default")], 2)])
-	},staticRenderFns: []}
-	if (false) {
-	  module.hot.accept()
-	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-f37b9c8e", module.exports)
-	  }
-	}
-
-/***/ },
+/* 73 */,
+/* 74 */,
+/* 75 */,
+/* 76 */,
+/* 77 */,
 /* 78 */
 /***/ function(module, exports, __webpack_require__) {
 
@@ -7002,11 +6815,11 @@ webpackJsonp([2],Array(28).concat([
 	      "message": _vm.message
 	    }
 	  }), _vm._v(" "), _c('div', {
-	    staticClass: "category_list"
-	  }, [_c('i-scroll', {
-	    attrs: {
-	      "id": "category_list"
+	    staticStyle: {
+	      "height": "1.2rem"
 	    }
+	  }), _vm._v(" "), _c('div', {
+	    staticClass: "category_list"
 	  }, _vm._l((_vm.category), function(c) {
 	    return _c('a', {
 	      class: ['category_item', {
@@ -7018,15 +6831,11 @@ webpackJsonp([2],Array(28).concat([
 	        }
 	      }
 	    }, [_vm._v(_vm._s(c.name))])
-	  }))], 1), _vm._v(" "), _c('div', {
-	    staticClass: "product_list"
-	  }, [_c('i-scroll', {
-	    attrs: {
-	      "id": "product_list"
-	    }
+	  })), _vm._v(" "), _c('div', {
+	    staticClass: "commodity_list"
 	  }, _vm._l((_vm.product), function(p) {
 	    return _c('router-link', {
-	      staticClass: "category_product_list",
+	      staticClass: "commodity_item",
 	      attrs: {
 	        "to": {
 	          path: '/commodity',
@@ -7038,16 +6847,16 @@ webpackJsonp([2],Array(28).concat([
 	        "tag": "div"
 	      }
 	    }, [_c('img', {
-	      staticClass: "product_img",
 	      attrs: {
 	        "src": p.image
 	      }
-	    }), _vm._v(" "), _c('span', {
-	      staticClass: "product_name"
-	    }, [_vm._v(_vm._s(p.name))]), _vm._v(" "), _c('span', {
-	      staticClass: "product_price"
-	    }, [_vm._v("¥ " + _vm._s(p.price))]), _vm._v(" "), _c('img', {
-	      staticClass: "add_cart",
+	    }), _vm._v(" "), _c('div', {
+	      staticClass: "commodity_name"
+	    }, [_vm._v(_vm._s(p.full_name))]), _vm._v(" "), _c('div', {
+	      staticClass: "commodity_cart"
+	    }, [_c('span', {
+	      staticClass: "commodity_price"
+	    }, [_vm._v("¥" + _vm._s(p.price))]), _vm._v(" "), _c('img', {
 	      attrs: {
 	        "src": __webpack_require__(66)
 	      },
@@ -7057,8 +6866,8 @@ webpackJsonp([2],Array(28).concat([
 	          _vm.addToCart(p.id)
 	        }
 	      }
-	    })])
-	  }))], 1)], 1)
+	    })])])
+	  }))], 1)
 	},staticRenderFns: []}
 	if (false) {
 	  module.hot.accept()
@@ -7961,7 +7770,7 @@ webpackJsonp([2],Array(28).concat([
 
 
 	// module
-	exports.push([module.id, "\n.personal_message{\n\tbackground: -webkit-gradient(linear,left top, right bottom, from(#2b9bd3), to(#2acbf6));\n\theight: 4rem;\n\tbox-sizing: border-box;\n\tpadding-top: 0.6rem;\n}\n.personal_message .personal_detail{\n\ttext-align: center;\n\tcolor: #ffffff;\n\tmargin-top: 0.3rem;\n\tfont-size: 0.4rem;\n}\n.personal_detail .integer{\n\tbackground: url(" + __webpack_require__(104) + ") left center no-repeat;\n\tbackground-size: 0.4rem auto;\n\tpadding-left: 0.45rem;\n\tpadding-right: 0.3rem;\n}\n.personal_detail .rmb{\n\tbackground: url(" + __webpack_require__(105) + ") left center no-repeat;\n\tbackground-size: 0.35rem auto;\n\tpadding-left: 0.45rem;\n\tpadding-right: 0.2rem;\n}\n.personal_message .personal_head{\n\tbackground:#ffffff;\n\tborder-radius: 50%;\n\twidth: 2.1rem;\n\theight: 2.1rem;\n\tmargin-left: auto;\n\tmargin-right: auto;\n}\n.personal_message .personal_head img{\n\tborder-radius: 50%;\n\tmargin-left: 0.1rem;\n\tmargin-top: 0.1rem;\n\twidth: 1.9rem;\n\theight: 1.9rem;\n}\n.order_detail{\n\tbackground: #ffffff;\n\tfont-size: 0;\n\tborder-bottom: solid 1px #dddddd;\n}\n.order_detail a{\n\tposition: relative;\n\twidth: 25%;\n\theight: 2.5rem;\n\tline-height: 3.6rem;\n\tfont-size: 0.35rem;\n\tcolor: #666666;\n\ttext-align: center;\n\tdisplay: inline-block;\n\ttext-decoration: none;\n}\n.order_detail a:nth-child(1){\n\tbackground: url(" + __webpack_require__(106) + ") center 0.2rem no-repeat;\n\tbackground-size: 1.3rem auto;\n}\n.order_detail a:nth-child(2){\n\tbackground: url(" + __webpack_require__(107) + ") center 0.3rem no-repeat;\n\tbackground-size: 1.1rem auto;\n}\n.order_detail a:nth-child(3){\n\tbackground: url(" + __webpack_require__(108) + ") center 0.3rem no-repeat;\n\tbackground-size: 1.2rem auto;\n}\n.order_detail a:nth-child(4){\n\tbackground: url(" + __webpack_require__(109) + ") center 0.3rem no-repeat;\n\tbackground-size: 1.2rem auto;\n}\n.order_detail a span{\n\tbackground-color: #d81e06;\n\tdisplay: inline-block;\n\tposition: absolute;\n\ttop: 0.3rem;\n\tright: 0.6rem;\n\twidth: 0.35rem;\n\theight: 0.35rem;\n\tline-height: 0.35rem;\n\ttext-align: center;\n\tfont-size: 0.2rem;\n\tborder-radius: 50%;\n\tcolor: #ffffff;\n}\n.order{\n\tposition: relative;\n\tbackground: #ffffff;\n\tmargin-top: 0.2rem;\n\theight: 1.2rem;\n\tline-height: 1.2rem;\n\tborder-bottom: solid 1px #dddddd;\n}\n.order a:nth-child(1){\n\tbackground: url(" + __webpack_require__(28) + ") 0.25rem center no-repeat;\n\tbackground-size: 0.5rem auto;\n\tpadding-left: 1rem;\n}\n.order a:nth-child(2){\n\tbackground: url(" + __webpack_require__(29) + ") right center no-repeat;\n\tbackground-size: 0.5rem auto;\n\tposition: absolute;\n\tright: 0.25rem;\n\theight: 100%;\n\tcolor: #bfbfbf;\n\tpadding-right: 0.5rem;\t\n\tdisplay: inline-block;\n\twidth: 6rem;\n\ttext-align: right;\n}\n.order a{\n\tdisplay: inline-block;\n\ttext-decoration: none;\n\tfont-size: 0.34rem;\n\tcolor: #333333;\n}\n.personal_cart{\n\tbox-sizing: border-box;\n\tborder: solid 1px #f4f4f4;\n\tbackground-color: #f4f4f4;\n\theight: 100%;\n}\n.personal_01{\n\tbackground-color: #ffffff;\n\tbox-sizing: border-box;\n\tfont-size: 0;\n\tmargin-top: 0.2rem;\n}\n.personal_01 .num{\n\tmargin-top: 0.4rem;\n}\n.personal_01 .name{\n\tpadding-top: 0.3rem;\n}\n.personal_01 > div{\n\tdisplay: inline-block;\n\twidth: 25%;\n\theight: 2rem;\n\tfont-size: 0.35rem;\n\tcolor: #666666;\n\tbox-sizing: border-box;\n\ttext-align: center;\n}\n", ""]);
+	exports.push([module.id, "\n.personal_message{\n\tbackground: -webkit-gradient(linear,left top, right bottom, from(#2b9bd3), to(#2acbf6));\n\theight: 4rem;\n\tbox-sizing: border-box;\n\tpadding-top: 0.6rem;\n}\n.personal_message .personal_detail{\n\ttext-align: center;\n\tcolor: #ffffff;\n\tmargin-top: 0.3rem;\n\tfont-size: 0.4rem;\n}\n.personal_message .nickname{\n\tbackground: url(" + __webpack_require__(222) + ") left center no-repeat;\n\tbackground-size: 0.4rem auto;\n\tpadding-left: 0.45rem;\n\tpadding-right: 0.3rem;\n}\n.personal_detail .integer{\n\tbackground: url(" + __webpack_require__(104) + ") left center no-repeat;\n\tbackground-size: 0.4rem auto;\n\tpadding-left: 0.45rem;\n\tpadding-right: 0.3rem;\n}\n.personal_detail .rmb{\n\tbackground: url(" + __webpack_require__(105) + ") left center no-repeat;\n\tbackground-size: 0.35rem auto;\n\tpadding-left: 0.45rem;\n\tpadding-right: 0.2rem;\n}\n.personal_message .personal_head{\n\tbackground:#ffffff;\n\tborder-radius: 50%;\n\twidth: 2.1rem;\n\theight: 2.1rem;\n\tmargin-left: auto;\n\tmargin-right: auto;\n}\n.personal_message .personal_head img{\n\tborder-radius: 50%;\n\tmargin-left: 0.1rem;\n\tmargin-top: 0.1rem;\n\twidth: 1.9rem;\n\theight: 1.9rem;\n}\n.order_detail{\n\tbackground: #ffffff;\n\tfont-size: 0;\n\tborder-bottom: solid 1px #dddddd;\n}\n.order_detail a{\n\tposition: relative;\n\twidth: 25%;\n\theight: 2.5rem;\n\tline-height: 3.6rem;\n\tfont-size: 0.35rem;\n\tcolor: #666666;\n\ttext-align: center;\n\tdisplay: inline-block;\n\ttext-decoration: none;\n}\n.order_detail a:nth-child(1){\n\tbackground: url(" + __webpack_require__(106) + ") center 0.2rem no-repeat;\n\tbackground-size: 1.3rem auto;\n}\n.order_detail a:nth-child(2){\n\tbackground: url(" + __webpack_require__(107) + ") center 0.3rem no-repeat;\n\tbackground-size: 1.1rem auto;\n}\n.order_detail a:nth-child(3){\n\tbackground: url(" + __webpack_require__(108) + ") center 0.3rem no-repeat;\n\tbackground-size: 1.2rem auto;\n}\n.order_detail a:nth-child(4){\n\tbackground: url(" + __webpack_require__(109) + ") center 0.3rem no-repeat;\n\tbackground-size: 1.2rem auto;\n}\n.order_detail a span{\n\tbackground-color: #d81e06;\n\tdisplay: inline-block;\n\tposition: absolute;\n\ttop: 0.3rem;\n\tright: 0.6rem;\n\twidth: 0.35rem;\n\theight: 0.35rem;\n\tline-height: 0.35rem;\n\ttext-align: center;\n\tfont-size: 0.2rem;\n\tborder-radius: 50%;\n\tcolor: #ffffff;\n}\n.order{\n\tposition: relative;\n\tbackground: #ffffff;\n\tmargin-top: 0.2rem;\n\theight: 1.2rem;\n\tline-height: 1.2rem;\n\tborder-bottom: solid 1px #dddddd;\n}\n.order a:nth-child(1){\n\tbackground: url(" + __webpack_require__(28) + ") 0.25rem center no-repeat;\n\tbackground-size: 0.5rem auto;\n\tpadding-left: 1rem;\n}\n.order a:nth-child(2){\n\tbackground: url(" + __webpack_require__(29) + ") right center no-repeat;\n\tbackground-size: 0.5rem auto;\n\tposition: absolute;\n\tright: 0.25rem;\n\theight: 100%;\n\tcolor: #bfbfbf;\n\tpadding-right: 0.5rem;\t\n\tdisplay: inline-block;\n\twidth: 6rem;\n\ttext-align: right;\n}\n.order a{\n\tdisplay: inline-block;\n\ttext-decoration: none;\n\tfont-size: 0.34rem;\n\tcolor: #333333;\n}\n.personal_cart{\n\tbox-sizing: border-box;\n\tborder: solid 1px #f4f4f4;\n\tbackground-color: #f4f4f4;\n\theight: 100%;\n}\n.personal_01{\n\tbackground-color: #ffffff;\n\tbox-sizing: border-box;\n\tfont-size: 0;\n\tmargin-top: 0.2rem;\n}\n.personal_01 .num{\n\tmargin-top: 0.4rem;\n}\n.personal_01 .name{\n\tpadding-top: 0.3rem;\n}\n.personal_01 > div{\n\tdisplay: inline-block;\n\twidth: 25%;\n\theight: 2rem;\n\tfont-size: 0.35rem;\n\tcolor: #666666;\n\tbox-sizing: border-box;\n\ttext-align: center;\n}\n", ""]);
 
 	// exports
 
@@ -8052,6 +7861,7 @@ webpackJsonp([2],Array(28).concat([
 	//
 	//
 	//
+	//
 
 	exports.default = {
 		data: function data() {
@@ -8060,7 +7870,8 @@ webpackJsonp([2],Array(28).concat([
 					pendPay: 0,
 					pendDelivery: 0,
 					pendReceive: 0
-				}
+				},
+				user: {}
 			};
 		},
 
@@ -8084,6 +7895,18 @@ webpackJsonp([2],Array(28).concat([
 			this.getOrderNum();
 		},
 		mounted: function mounted() {
+			var _self = this;
+			$.ajax({
+				type: "post",
+				url: "/inter/wechat/getUserMesage",
+				data: { openId: sessionStorage["open_id"] },
+				success: function success(res) {
+					console.log(res);
+					if (res.code == "000000") {
+						_self.user = JSON.parse(res.data);
+					}
+				}
+			});
 			//this.getOrderNum();
 		}
 	};
@@ -8095,7 +7918,21 @@ webpackJsonp([2],Array(28).concat([
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
 	    staticClass: "personal_cart"
-	  }, [_vm._m(0), _vm._v(" "), _c('div', {
+	  }, [_c('div', {
+	    staticClass: "personal_message"
+	  }, [_c('div', {
+	    staticClass: "personal_head"
+	  }, [_c('img', {
+	    attrs: {
+	      "src": _vm.user.headimgurl
+	    }
+	  })]), _vm._v(" "), _c('div', {
+	    staticClass: "personal_detail"
+	  }, [_c('a', {
+	    staticClass: "nickname"
+	  }, [_vm._v(_vm._s(_vm.user.nickname))]), _vm._v(" "), _c('a', {
+	    staticClass: "integer"
+	  }, [_vm._v("0 积分")])])]), _vm._v(" "), _c('div', {
 	    staticClass: "order"
 	  }, [_c('a', [_vm._v("我的订单")]), _vm._v(" "), _c('router-link', {
 	    attrs: {
@@ -8148,23 +7985,7 @@ webpackJsonp([2],Array(28).concat([
 	      expression: "false"
 	    }]
 	  })])], 1)])
-	},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', {
-	    staticClass: "personal_message"
-	  }, [_c('div', {
-	    staticClass: "personal_head"
-	  }, [_c('img', {
-	    attrs: {
-	      "src": __webpack_require__(112)
-	    }
-	  })]), _vm._v(" "), _c('div', {
-	    staticClass: "personal_detail"
-	  }, [_c('a', {
-	    staticClass: "integer"
-	  }, [_vm._v("1000 积分")]), _vm._v(" "), _c('a', {
-	    staticClass: "rmb"
-	  }, [_vm._v("¥0.00")])])])
-	}]}
+	},staticRenderFns: []}
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
@@ -8173,221 +7994,120 @@ webpackJsonp([2],Array(28).concat([
 	}
 
 /***/ },
-/* 112 */
+/* 112 */,
+/* 113 */,
+/* 114 */,
+/* 115 */,
+/* 116 */,
+/* 117 */,
+/* 118 */,
+/* 119 */,
+/* 120 */,
+/* 121 */,
+/* 122 */,
+/* 123 */,
+/* 124 */,
+/* 125 */,
+/* 126 */,
+/* 127 */,
+/* 128 */,
+/* 129 */,
+/* 130 */,
+/* 131 */,
+/* 132 */,
+/* 133 */,
+/* 134 */,
+/* 135 */,
+/* 136 */,
+/* 137 */,
+/* 138 */,
+/* 139 */,
+/* 140 */,
+/* 141 */,
+/* 142 */,
+/* 143 */,
+/* 144 */,
+/* 145 */,
+/* 146 */,
+/* 147 */,
+/* 148 */,
+/* 149 */,
+/* 150 */,
+/* 151 */,
+/* 152 */,
+/* 153 */,
+/* 154 */,
+/* 155 */,
+/* 156 */,
+/* 157 */,
+/* 158 */,
+/* 159 */,
+/* 160 */,
+/* 161 */,
+/* 162 */,
+/* 163 */,
+/* 164 */,
+/* 165 */,
+/* 166 */,
+/* 167 */,
+/* 168 */,
+/* 169 */,
+/* 170 */,
+/* 171 */,
+/* 172 */,
+/* 173 */,
+/* 174 */,
+/* 175 */,
+/* 176 */,
+/* 177 */,
+/* 178 */,
+/* 179 */,
+/* 180 */,
+/* 181 */,
+/* 182 */,
+/* 183 */,
+/* 184 */,
+/* 185 */,
+/* 186 */,
+/* 187 */,
+/* 188 */,
+/* 189 */,
+/* 190 */,
+/* 191 */,
+/* 192 */,
+/* 193 */,
+/* 194 */,
+/* 195 */,
+/* 196 */,
+/* 197 */,
+/* 198 */,
+/* 199 */,
+/* 200 */,
+/* 201 */,
+/* 202 */,
+/* 203 */,
+/* 204 */,
+/* 205 */,
+/* 206 */,
+/* 207 */,
+/* 208 */,
+/* 209 */,
+/* 210 */,
+/* 211 */,
+/* 212 */,
+/* 213 */,
+/* 214 */,
+/* 215 */,
+/* 216 */,
+/* 217 */,
+/* 218 */,
+/* 219 */,
+/* 220 */,
+/* 221 */,
+/* 222 */
 /***/ function(module, exports) {
 
-	module.exports = "data:image/png;base64,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"
-
-/***/ },
-/* 113 */
-/***/ function(module, exports, __webpack_require__) {
-
-	var __vue_exports__, __vue_options__
-	var __vue_styles__ = {}
-
-	/* styles */
-	__webpack_require__(114)
-
-	/* script */
-	__vue_exports__ = __webpack_require__(116)
-
-	/* template */
-	var __vue_template__ = __webpack_require__(117)
-	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
-	if (
-	  typeof __vue_exports__.default === "object" ||
-	  typeof __vue_exports__.default === "function"
-	) {
-	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
-	__vue_options__ = __vue_exports__ = __vue_exports__.default
-	}
-	if (typeof __vue_options__ === "function") {
-	  __vue_options__ = __vue_options__.options
-	}
-	__vue_options__.__file = "D:\\lvyang\\repositories\\node_web\\views\\selected.vue"
-	__vue_options__.render = __vue_template__.render
-	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-
-	/* hot reload */
-	if (false) {(function () {
-	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
-	  hotAPI.install(require("vue"), false)
-	  if (!hotAPI.compatible) return
-	  module.hot.accept()
-	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-5ec79ad3", __vue_options__)
-	  } else {
-	    hotAPI.reload("data-v-5ec79ad3", __vue_options__)
-	  }
-	})()}
-	if (__vue_options__.functional) {console.error("[vue-loader] selected.vue: functional components are not supported and should be defined in plain js files using render functions.")}
-
-	module.exports = __vue_exports__
-
-
-/***/ },
-/* 114 */
-/***/ function(module, exports, __webpack_require__) {
-
-	// style-loader: Adds some css to the DOM by adding a <style> tag
-
-	// load the styles
-	var content = __webpack_require__(115);
-	if(typeof content === 'string') content = [[module.id, content, '']];
-	// add the styles to the DOM
-	var update = __webpack_require__(9)(content, {});
-	if(content.locals) module.exports = content.locals;
-	// Hot Module Replacement
-	if(false) {
-		// When the styles change, update the <style> tags
-		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-5ec79ad3!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./selected.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-5ec79ad3!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./selected.vue");
-				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-				update(newContent);
-			});
-		}
-		// When the module is disposed, remove the <style> tags
-		module.hot.dispose(function() { update(); });
-	}
-
-/***/ },
-/* 115 */
-/***/ function(module, exports, __webpack_require__) {
-
-	exports = module.exports = __webpack_require__(8)();
-	// imports
-
-
-	// module
-	exports.push([module.id, "\n.commodity_item{\n\tdisplay: inline-block;\n\tbox-sizing: border-box;\n\tbackground-color: #ffffff;\n\twidth: 4.85rem;\n\theight: 7.3rem;\n\tmargin-left: 0.1rem;\n\tmargin-right: 0.05rem;\n\tmargin-bottom: 0.15rem;\n}\n.commodity_item .commodity_cart{\n\tmargin-top: 0.3rem;\n}\n.commodity_item .commodity_cart img{\n\tfloat: right;\n\twidth: 0.7rem;\n\theight: 0.7rem;\n\tmargin-right: 0.3rem;\n}\n.commodity_item .commodity_price{\n\tbox-sizing: border-box;\n\tcolor: #d81e06;\n\tfont-size: 0.4rem;\n\tpadding-left: 0.15rem;\n\tpadding-right: 0.15rem;\n}\n.commodity_item .commodity_name{\n\tbox-sizing: border-box;\n\tpadding-left: 0.15rem;\n\tpadding-right: 0.15rem;\n\tfont-size: 0.4rem;\n\toverflow:hidden; \n\ttext-overflow:ellipsis;\n\tdisplay:-webkit-box; \n\t-webkit-box-orient:vertical;\n\t-webkit-line-clamp:2;\n}\n.commodity_item img{\n\twidth: 100%;\n}\n.commodity_list{\n\tbackground-color: #f4f4f4;\n\tfont-size: 0;\n\tpadding-top: 0.2rem;\n\tpadding-bottom: 0.2rem;\n}\n", ""]);
-
-	// exports
-
-
-/***/ },
-/* 116 */
-/***/ function(module, exports, __webpack_require__) {
-
-	"use strict";
-
-	Object.defineProperty(exports, "__esModule", {
-		value: true
-	});
-
-	var _prompt = __webpack_require__(32);
-
-	var _prompt2 = _interopRequireDefault(_prompt);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-	exports.default = {
-		data: function data() {
-			return {
-				message: "",
-				commodityList: [{
-					commodityName: "山西特产宁化府益源庆名醋山西特产宁化府益源庆名醋2400ml（31.8元）",
-					commodityPrice: 52.48,
-					commodityUrl: "img/logo.jpg",
-					commodityDesc: "宁化府益源庆名醋纯粮酿造，甜、绵、酸、香浓、高质量，誉满全国，经久不衰。"
-				}, {
-					commodityName: "山西特产宁化府益源庆名醋山西特产宁化府益源庆名醋2400ml（31.8元）",
-					commodityPrice: 52.48,
-					commodityUrl: "img/logo.jpg",
-					commodityDesc: "宁化府益源庆名醋纯粮酿造，甜、绵、酸、香浓、高质量，誉满全国，经久不衰。"
-				}, {
-					commodityName: "山西特产宁化府益源庆名醋山西特产宁化府益源庆名醋2400ml（31.8元）",
-					commodityPrice: 52.48,
-					commodityNum: 1,
-					commodityUrl: "img/logo.jpg",
-					commodityDesc: "宁化府益源庆名醋纯粮酿造，甜、绵、酸、香浓、高质量，誉满全国，经久不衰。"
-				}, {
-					commodityName: "山西特产宁化府益源庆名醋山西特产宁化府益源庆名醋2400ml（31.8元）",
-					commodityPrice: 52.48,
-					commodityNum: 1,
-					commodityUrl: "img/logo.jpg",
-					commodityDesc: "宁化府益源庆名醋纯粮酿造，甜、绵、酸、香浓、高质量，誉满全国，经久不衰。"
-				}]
-			};
-		},
-
-		methods: {
-			addToCart: function addToCart() {
-				var _self = this;
-				this.message = "该商品已添加到购物车";
-			}
-		},
-		components: {
-			"jf-prompt": _prompt2.default
-		}
-	}; //
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-
-/***/ },
-/* 117 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-	  return _c('div', [_c('div', {
-	    staticClass: "commodity_list"
-	  }, _vm._l((_vm.commodityList), function(c) {
-	    return _c('router-link', {
-	      staticClass: "commodity_item",
-	      attrs: {
-	        "to": "/commodity",
-	        "tag": "div"
-	      }
-	    }, [_c('img', {
-	      attrs: {
-	        "src": c.commodityUrl
-	      }
-	    }), _vm._v(" "), _c('div', {
-	      staticClass: "commodity_name"
-	    }, [_vm._v(_vm._s(c.commodityName))]), _vm._v(" "), _c('div', {
-	      staticClass: "commodity_cart"
-	    }, [_c('span', {
-	      staticClass: "commodity_price"
-	    }, [_vm._v("¥" + _vm._s(c.commodityPrice))]), _vm._v(" "), _c('img', {
-	      attrs: {
-	        "src": __webpack_require__(66)
-	      },
-	      on: {
-	        "click": function($event) {
-	          $event.preventDefault();
-	          _vm.addToCart($event)
-	        }
-	      }
-	    })])])
-	  })), _vm._v(" "), _c('jf-prompt', {
-	    attrs: {
-	      "message": _vm.message
-	    }
-	  }), _vm._v(" "), _c('div', {
-	    staticStyle: {
-	      "height": "1.35rem"
-	    }
-	  })], 1)
-	},staticRenderFns: []}
-	if (false) {
-	  module.hot.accept()
-	  if (module.hot.data) {
-	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-5ec79ad3", module.exports)
-	  }
-	}
+	module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAADNUlEQVRYR8WXjU1VQRCFz1SgHQgVKBWoFYgVKBWIFYgVCBUIFQgVCBUIFQgVKBWM+W5mbnb37v150cRNNi95e3fmzJnfNf3nZbvod/c9SW8kvZL0NDYifse+lnRlZvdb5W4C4O6Hkj5JerFR8K2kUzO7WPt+EYC7o/BLWIysO0lYeSnpPi11d9jgW/Z7Sc9DMUA+mhl3umsWgLsjCOUIv5F00goKl6il3N1x0Ymkl6H1yMzOewi6ANz9OJRzp7ocSnEHbgFcLljB2tH/YcSppCeSzs3sqAUxARCXvkp6hHozg8ZhNaxwnmdQj5IeYM5wAecTJioA4fPvYdnrkvI4+xFKsBTLxhWsQTuK3poZjCTwEkQltwUAUvzWU5Bns/4M32MAAbrfACSmYPbWzA7ybARQXL4zsyrdCutvzIwAm13uTrC9k1RZGi6cGFECwJ+kT+9iBuVnM4PmJQBp6eTbwsiRhQFA5PEvSQ9mRrWrlrujlMjfAgCGcEP3W3dPQ/fJmASQqM/MDGtbACm0e974OsFO4iiMTTaH8wRARH/o0d8wNAmuDljqwDNJg4ULxtAzDhNABsfE/0UqJchuQQmg+c2FmcHqZBXuHgK6AmBmS6WZqgdQApVfms1VKMZFMEh1pEDtmRkdsrvc3TNVNwMoXJEgesIfaEhLykMOAIZ038UFMEAmlEGKtViKz3NRBwiwLgNzLsjI7cZAXCK1KFBYyfeXqSTOoZ//AUOqIWsCoqgFVRCupWEGKQPG8Yp1BCKVsCq5RTB30xB6KUS9Gp41YFKiF4Jstm90C1EEBt2Lea/tgqsp2sl1qunPloVev+k1o5GFImA2W19QncDHguTu880oWKjacYF4tQR3WEhfD7NBMehUHbU3kOT0MrgiQBBQs4VlIRaYqJBB9uQwc1BOWb2RjHT6FvkN+tmJdk5x05xQnlPW8khW+C/Tkr9Iu7MtyjpuKOV02/NS7YcJqhoz3up831hN6lI1c3rabSwvmIA+CkvO97RX0pX9mL4MHwMU0OwcanhPwOA4WbcsbX2atQ+NNY/wguIhM07Gcxc2ASgYoWJiYT7DSrlYyb7+54/TNXP/5vwPPtrtMIj739MAAAAASUVORK5CYII="
 
 /***/ }
 ]));

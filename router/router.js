@@ -11,7 +11,7 @@ const Home= resolve => require.ensure([], () => resolve(require('views/home.vue'
 const Category= resolve => require.ensure([], () => resolve(require('views/category.vue')), 'group-main');
 const ShoppingCart= resolve => require.ensure([], () => resolve(require('views/shopping_cart.vue')), 'group-main');
 const PersonalCenter= resolve => require.ensure([], () => resolve(require('views/personal_center.vue')), 'group-main');
-const Selected= resolve => require.ensure([], () => resolve(require('views/selected.vue')), 'group-main');
+//const Selected= resolve => require.ensure([], () => resolve(require('views/selected.vue')), 'group-main');
 //添加地址页面
 const Address= resolve => require.ensure([], () => resolve(require('views/address.vue')), 'group-address');
 const AddressEdit= resolve => require.ensure([], () => resolve(require('views/address_edit.vue')), 'group-address');

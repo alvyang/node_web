@@ -1,11 +1,12 @@
 <template>
 	<div>
-		<div class="swiper-container">
+		<div class="swiper-container" id="commodity_swiper">
 		  	<div class="swiper-wrapper">
   				<div class="swiper-slide" v-for="c in commodityImage">
 			    		<img :src="c.source" />
 		  		</div>
 		  	</div>
+		  	<div class="swiper-pagination" id="commodity_swiper_page"></div>
 		</div>
 		<div class="commodity_message">
 			<div class="name">{{commodity.full_name}}</div>
@@ -23,7 +24,7 @@
 	</div>
 </template>
 <script>
-	import Swiper from "swiper";
+	import Swiper from "swiper/dist/js/swiper.min.js";
 	import Prompt from "components/prompt.vue";
 	require("swiper/dist/css/swiper.min.css");
 	export default({
@@ -32,6 +33,7 @@
 				message:"",
 				commodity:{},
 				commodityImage:[],
+				mySwiper:null,
 			}
 		},
 		methods:{
@@ -62,6 +64,7 @@
 					type: "post",
 					url: "/inter/products/getProductMessage",
 					data:{id:_self.$route.params.id},
+					async:false,
 					success: function(res) {
 						console.log(res);
 						if(res.code == "000000"){
@@ -74,15 +77,18 @@
 		},
 		activated(){
 			this.getCommodityMessage();
+			this.mySwiper.updateSlidesSize();
+			this.mySwiper.updatePagination();
 		},
 		mounted(){
-			//this.getCommodityMessage();
+			var _self = this;
 			setTimeout(function(){
-				var mySwiper = new Swiper('.swiper-container', {
+				_self.mySwiper = new Swiper('#commodity_swiper', {
 					autoplay: 0,//可选选项，自动滑动
-				})	
+					pagination : '#commodity_swiper_page',
+				})
 			},1000);
-			
+			//this.getCommodityMessage();
 		},
 		components:{
 			"jf-prompt":Prompt,

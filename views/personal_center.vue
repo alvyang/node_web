@@ -2,11 +2,12 @@
 	<div class="personal_cart">
 		<div class="personal_message">
 			<div class="personal_head">
-				<img src="../img/default_head.png"/>
+				<img :src="user.headimgurl"/>
 			</div>
 			<div class="personal_detail">
-				<a class="integer">1000 积分</a>
-				<a class="rmb">¥0.00</a>
+				<a class="nickname">{{user.nickname}}</a>
+				<a class="integer">0 积分</a>
+				<!--<a class="rmb">¥0.00</a>-->
 			</div>
 		</div>
 		<!--<div class="personal_01">
@@ -48,6 +49,7 @@
 					pendDelivery:0,
 					pendReceive:0,
 				},
+				user:{}
 			}
 		},
 		methods:{
@@ -70,6 +72,18 @@
 			this.getOrderNum();
 		},
 		mounted(){
+			var _self = this;
+			$.ajax({
+				type: "post",
+				url: "/inter/wechat/getUserMesage",
+				data:{openId:sessionStorage["open_id"]},
+				success: function(res) {
+					console.log(res);
+					if(res.code == "000000"){
+						_self.user = JSON.parse(res.data);
+					}
+				}
+			});
 			//this.getOrderNum();
 		}
 	})
@@ -86,6 +100,12 @@
 		color: #ffffff;
 		margin-top: 0.3rem;
 		font-size: 0.4rem;
+	}
+	.personal_message .nickname{
+		background: url(../img/nickname.png) left center no-repeat;
+		background-size: 0.4rem auto;
+		padding-left: 0.45rem;
+		padding-right: 0.3rem;
 	}
 	.personal_detail .integer{
 		background: url(../img/integral.png) left center no-repeat;

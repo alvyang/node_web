@@ -1,7 +1,7 @@
 <template>
 	<div class="home_page">
 		<jf-top></jf-top>
-		<div class="swiper-container">
+		<div class="swiper-container" id="home_swiper">
 		  	<div class="swiper-wrapper">
 		    	<div class="swiper-slide">
 		    		<img src="../img/swiper01.jpg" />
@@ -10,17 +10,16 @@
 		    		<img src="../img/swiper02.jpg" />
 		    	</div>
 		  	</div>
+		  	<div class="swiper-pagination"></div>
 		</div>
-		<div class="commodity_list">
-			<router-link :to="{path:'/commodity',name:'commodity',params:{id:c.id}}" v-show="c.is_list.data[0] == 1" tag="div" v-for="c in commodityList" class="commodity_item">
-				<img :src="c.image" />
-				<div class="commodity_name">{{c.full_name}}</div>
-				<div class="commodity_cart">
-					<span class="commodity_price">¥{{c.price}}</span>
-					<img src="../img/shopping_cart.png" @click.prevent="addToCart(c.id)"/>
-				</div>
-			</router-link>
-		</div>
+		<router-link :to="{path:'/commodity',name:'commodity',params:{id:c.id}}" tag="div" v-for="c in commodityList" class="commodity_home_item">
+			<img :src="c.image" class="commodity_home_img"/>
+			<div class="commodity_home_name">{{c.full_name}}</div>
+			<div class="commodity_home_cart">
+				<span class="commodity_home_price">¥{{c.price}}</span>
+				<img src="../img/shopping_cart.png" @click.prevent="addToCart(c.id)"/>
+			</div>
+		</router-link>
 		<jf-prompt :message="message"></jf-prompt>
 		<div style="height: 1.35rem;"></div>
 	</div>
@@ -73,8 +72,9 @@
 					}
 				}
 			});
-			var mySwiper = new Swiper('.swiper-container', {
+			var mySwiper = new Swiper('#home_swiper', {
 				autoplay: 2000,//可选选项，自动滑动
+				pagination : '.swiper-pagination',
 			})
 		},
 		components:{
@@ -84,52 +84,52 @@
 	})
 </script>
 <style>
-	.commodity_item{
-		display: inline-block;
-		box-sizing: border-box;
+	.commodity_home_item{
 		background-color: #ffffff;
-		width: 4.85rem;
-		height: 7.3rem;
-		margin-left: 0.1rem;
-		margin-right: 0.05rem;
-		margin-bottom: 0.15rem;
-		vertical-align: middle;
-	}
-	.commodity_item .commodity_cart{
-		margin-top: 0.3rem;
-	}
-	.commodity_item .commodity_cart img{
-		float: right;
-		width: 0.7rem;
-		height: 0.7rem;
-		margin-right: 0.3rem;
-	}
-	.commodity_item .commodity_price{
+		position: relative;
+		width: 10rem;
+		height: 3rem;
 		box-sizing: border-box;
-		color: #d81e06;
-		font-size: 0.4rem;
-		padding-left: 0.15rem;
-		padding-right: 0.15rem;
+		padding: 0.2rem;
+		margin-top: 0.2rem;
 	}
-	.commodity_item .commodity_name{
+	.commodity_home_item .commodity_home_img{
+		height: 100%;
+	}
+	.commodity_home_item .commodity_home_name{
+		position: absolute;
+		left: 3rem;
+		top: 0.4rem;
+		width: 7rem;
 		box-sizing: border-box;
 		padding-left: 0.15rem;
 		padding-right: 0.15rem;
 		font-size: 0.4rem;
+		height: 1.2rem;
 		overflow:hidden; 
 		text-overflow:ellipsis;
 		display:-webkit-box; 
 		-webkit-box-orient:vertical;
 		-webkit-line-clamp:2;
 	}
-	.commodity_item img{
-		width: 100%;
+	.commodity_home_item .commodity_home_cart{
+		position: absolute;
+		left: 3rem;
+		top: 2rem;
+		width: 7rem;
 	}
-	.commodity_list{
-		background-color: #f4f4f4;
-		font-size: 0;
-		padding-top: 0.2rem;
-		padding-bottom: 0.2rem;
+	.commodity_home_item .commodity_home_cart .commodity_home_price{
+		box-sizing: border-box;
+		color: #d81e06;
+		font-size: 0.4rem;
+		padding-left: 0.15rem;
+		padding-right: 0.15rem;
+	}
+	.commodity_home_item .commodity_home_cart img{
+		float: right;
+		width: 0.7rem;
+		height: 0.7rem;
+		margin-right: 0.3rem;
 	}
 	.home_page{
 		height: 100%;

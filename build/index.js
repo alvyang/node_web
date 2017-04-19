@@ -9358,11 +9358,7 @@
 			return resolve(__webpack_require__(101));
 		});
 	};
-	var Selected = function Selected(resolve) {
-		return __webpack_require__.e/* nsure */(2, function () {
-			return resolve(__webpack_require__(113));
-		});
-	};
+	//const Selected= resolve => require.ensure([], () => resolve(require('views/selected.vue')), 'group-main');
 	//添加地址页面
 	var Address = function Address(resolve) {
 		return __webpack_require__.e/* nsure */(3, function () {
