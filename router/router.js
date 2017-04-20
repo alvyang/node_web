@@ -33,9 +33,6 @@ const router = new VueRouter({
 			path:"home",
 			component:Home
 		},{
-			path:"selected",
-			component:Selected
-		},{
 			path:"category",
 			component:Category
 		},{

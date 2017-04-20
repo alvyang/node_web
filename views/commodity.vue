@@ -75,19 +75,19 @@
 				});
 			}
 		},
-		activated(){
-			this.getCommodityMessage();
+		updated(){
 			this.mySwiper.updateSlidesSize();
 			this.mySwiper.updatePagination();
 		},
+		activated(){
+			this.mySwiper.removeAllSlides();
+			this.getCommodityMessage();
+		},
 		mounted(){
-			var _self = this;
-			setTimeout(function(){
-				_self.mySwiper = new Swiper('#commodity_swiper', {
-					autoplay: 0,//可选选项，自动滑动
-					pagination : '#commodity_swiper_page',
-				})
-			},1000);
+			this.mySwiper = new Swiper('#commodity_swiper', {
+				autoplay: 0,//可选选项，自动滑动
+				pagination : '#commodity_swiper_page',
+			})
 			//this.getCommodityMessage();
 		},
 		components:{

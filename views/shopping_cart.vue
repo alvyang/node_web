@@ -49,6 +49,12 @@
 			//this.getCartItem();
 		},
 		activated(){
+			this.orderCommoditys=[];
+			$("#selectAll").removeClass("select_img_all_select").addClass("select_img_all");
+			var l = this.commodityList.length;
+			for(var i = 0 ; i < l ;i++){
+				$("#select"+i).removeClass("select_img_select").addClass("select_img");
+			}
 			this.getCartItem();
 		},
 		methods:{
@@ -94,7 +100,7 @@
 					this.bottomFlag = false;//
 				}
 			},
-			selectCommodity(index){//
+			selectCommodity(index){
 				if($("#select"+index).attr("class") == "select_img"){//未选中 -> 选中
 					this.orderCommoditys[index]=this.commodityList[index];
 					$("#select"+index).removeClass("select_img").addClass("select_img_select");
@@ -112,6 +118,7 @@
 						priceNumTemp+= this.commodityList[i].quantity * this.commodityList[i].price;
 					}
 				}
+				console.log(noSelectNum,selectNum);
 				if(noSelectNum <= l && selectNum != l){
 					$("#selectAll").removeClass("select_img_all_select").addClass("select_img_all");
 				}else if(selectNum == l){
@@ -168,7 +175,8 @@
 						$("#select"+i).removeClass("select_img_select").addClass("select_img");
 					}
 				}else{//选中
-					this.orderCommoditys=this.commodityList;
+					var t = JSON.stringify(this.commodityList);
+					this.orderCommoditys=JSON.parse(t);
 					$("#selectAll").removeClass("select_img_all").addClass("select_img_all_select");
 					for(var i = 0 ; i < l ;i++){
 						$("#select"+i).removeClass("select_img").addClass("select_img_select");
@@ -321,7 +329,7 @@
 		position: fixed;
 		height: 1.35rem;
 		font-size: 0;
-	    z-index: 2;
+	    z-index: 100;
 	}
 	.bottom_135{
 		bottom: 1.35rem;
