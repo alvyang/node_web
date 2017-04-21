@@ -26,7 +26,7 @@
 </template>
 <script>
 	import Top from "components/top.vue";
-	import swiper from "swiper";
+	import swiper from "swiper/dist/js/swiper.min.js";
 	import Prompt from "components/prompt.vue";
 	require("swiper/dist/css/swiper.min.css");
 	
