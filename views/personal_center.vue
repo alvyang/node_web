@@ -80,7 +80,7 @@
 				success: function(res) {
 					console.log(res);
 					if(res.code == "000000"){
-						_self.user = JSON.parse(res.data);
+						_self.user = res.data;
 					}
 				}
 			});
