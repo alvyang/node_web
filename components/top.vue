@@ -2,13 +2,13 @@
 	<div>
 		<div class="top_01">
 			<jf-logo></jf-logo>
-			<div class="search_div" @click="searchShow">
+			<!--<div class="search_div" @click="searchShow">
 				<img src="../img/search.png" class="search_img" />
-			</div>
+			</div>-->
 			<a class="top_button">
-				<span class="follow" @click="followWechat">关注</span>
+				<!--<span class="follow" @click="followWechat">关注</span>
 				<span class="gap">|</span>
-				<span class="record">我的记录</span>
+				<span class="record">我的记录</span>-->
 			</a>
 		</div>
 		<jf-mask v-show="follow.mask" :mask = "follow"></jf-mask>

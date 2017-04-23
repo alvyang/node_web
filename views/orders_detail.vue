@@ -64,7 +64,7 @@
 		activated(){
 			this.orderDetail = JSON.parse(sessionStorage["order_detail_message"]);
 			//由于产家直销，同一订单不同商品，有多个订单号，用","号分开
-			if(this.trackingNo){
+			if(this.orderDetail.tracking_no){
 				this.trackingNo = this.orderDetail.tracking_no.split(',');
 			}
 			this.calOrderPrice();

@@ -52,7 +52,7 @@ const router = new VueRouter({
 		path:"/address_edit",
 		component:AddressEdit,
 	},{
-		path:"/orders/:type",
+		path:"/orders/:ordertype",
 		component:Orders,
 	},{
 		path:"/orders_detail",

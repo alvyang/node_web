@@ -21,28 +21,46 @@
 				<img v-for="i in o.orderItem" :src="i.thumbnail" />
 			</div>
 			<div class="orders_operation">
-				<a v-if="o.payment_status == 0">取消订单</a>
+				<a v-if="o.payment_status == 0" @click="cancelOrder(o.id,index);">取消订单</a>
 				<a v-if="o.payment_status == 0">支付订单</a>
 			</div>
 		</div>
+		<jf-prompt :message="message"></jf-prompt>
 	</div>
 </template>
 <script>
 	import NoContent from "components/no_content.vue";
+	import Prompt from "components/prompt.vue";
 	export default({
 		data(){
 			return {
-				orders:[]
+				orders:[],
+				message:"",
 			}
 		},
 		methods:{
+			cancelOrder(id,index){
+				var _self = this;
+				$.ajax({
+					type: "post",
+					url: "/inter/order/cancelOrder",
+					data:{id:id},
+					success: function(res) {
+						console.log(res);
+						if(res.code == "000000"){
+							_self.message = "订单取消成功！";
+							_self.getOrders();
+						}
+					}
+				});
+			},
 			orderDetail(index){
 				var orderDetail = this.orders[index];
 				sessionStorage["order_detail_message"] = JSON.stringify(orderDetail);
 				this.$router.push({path:"/orders_detail"});
 			},
 			getOrders(){
-				var type = this.$route.params.type;
+				var type = this.$route.params.ordertype;
 				var _self = this;
 				$.ajax({
 					type: "post",
@@ -65,8 +83,11 @@
 			}
 		},
 		watch:{
-			'$route' (to, from) {
-				this.getOrders();
+			'$route.params.ordertype' (to, from) {
+				var t = this.$route.params.ordertype;
+				if(t != undefined){
+					this.getOrders();
+				}
 			}
 		},
 		activated(){
@@ -76,7 +97,8 @@
 			//this.getOrders();
 		},
 		components:{
-			"jf-no-content":NoContent
+			"jf-no-content":NoContent,
+			"jf-prompt":Prompt,
 		}
 	})
 </script>

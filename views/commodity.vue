@@ -76,11 +76,13 @@
 			}
 		},
 		updated(){
-			this.mySwiper.updateSlidesSize();
-			this.mySwiper.updatePagination();
+			this.mySwiper.update();
+			this.mySwiper.slideTo(0, 100, false);
+		},
+		deactivated(){
+			this.commodityImage = [];
 		},
 		activated(){
-			this.mySwiper.removeAllSlides();
 			this.getCommodityMessage();
 		},
 		mounted(){

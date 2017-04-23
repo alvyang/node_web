@@ -14,17 +14,178 @@ webpackJsonp([4],{
 
 /***/ },
 
-/***/ 77:
+/***/ 32:
 /***/ function(module, exports, __webpack_require__) {
 
-	module.exports = { "default": __webpack_require__(78), __esModule: true };
+	var __vue_exports__, __vue_options__
+	var __vue_styles__ = {}
+
+	/* styles */
+	__webpack_require__(33)
+
+	/* script */
+	__vue_exports__ = __webpack_require__(35)
+
+	/* template */
+	var __vue_template__ = __webpack_require__(36)
+	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
+	if (
+	  typeof __vue_exports__.default === "object" ||
+	  typeof __vue_exports__.default === "function"
+	) {
+	if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
+	__vue_options__ = __vue_exports__ = __vue_exports__.default
+	}
+	if (typeof __vue_options__ === "function") {
+	  __vue_options__ = __vue_options__.options
+	}
+	__vue_options__.__file = "D:\\lvyang\\repositories\\node_web\\components\\prompt.vue"
+	__vue_options__.render = __vue_template__.render
+	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
+
+	/* hot reload */
+	if (false) {(function () {
+	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
+	  hotAPI.install(require("vue"), false)
+	  if (!hotAPI.compatible) return
+	  module.hot.accept()
+	  if (!module.hot.data) {
+	    hotAPI.createRecord("data-v-8186fe60", __vue_options__)
+	  } else {
+	    hotAPI.reload("data-v-8186fe60", __vue_options__)
+	  }
+	})()}
+	if (__vue_options__.functional) {console.error("[vue-loader] prompt.vue: functional components are not supported and should be defined in plain js files using render functions.")}
+
+	module.exports = __vue_exports__
+
 
 /***/ },
 
-/***/ 78:
+/***/ 33:
 /***/ function(module, exports, __webpack_require__) {
 
-	var core  = __webpack_require__(79)
+	// style-loader: Adds some css to the DOM by adding a <style> tag
+
+	// load the styles
+	var content = __webpack_require__(34);
+	if(typeof content === 'string') content = [[module.id, content, '']];
+	// add the styles to the DOM
+	var update = __webpack_require__(9)(content, {});
+	if(content.locals) module.exports = content.locals;
+	// Hot Module Replacement
+	if(false) {
+		// When the styles change, update the <style> tags
+		if(!content.locals) {
+			module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-8186fe60!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./prompt.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-8186fe60!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./prompt.vue");
+				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+				update(newContent);
+			});
+		}
+		// When the module is disposed, remove the <style> tags
+		module.hot.dispose(function() { update(); });
+	}
+
+/***/ },
+
+/***/ 34:
+/***/ function(module, exports, __webpack_require__) {
+
+	exports = module.exports = __webpack_require__(8)();
+	// imports
+
+
+	// module
+	exports.push([module.id, "\n.error_message{\n\tposition: absolute;\n\tmargin-top: -0.87rem;\n\ttop: 50%;\n\theight: 1.74rem;\n\twidth: 10rem;\n\ttext-align: center;\n\tz-index: 100;\n}\n.error_message .error{\n\tdisplay: inline-block;\n\tbackground-color: rgba(0,0,0,0.8);\n\tborder-radius: 5px;\n\tline-height: 0.5rem;\n\ttext-align: center;\n\tcolor: #ffffff;\n\tfont-size: 0.389rem;\n\tpadding-top: 0.4rem;\n\tpadding-bottom: 0.4rem;\n\tpadding-left: 0.4rem;\n\tpadding-right: 0.4rem;\n}\n", ""]);
+
+	// exports
+
+
+/***/ },
+
+/***/ 35:
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+		value: true
+	});
+	//
+	//
+	//
+
+	exports.default = {
+		data: function data() {
+			return {
+				initTop: 0
+			};
+		},
+
+		watch: {
+			message: {
+				handler: function handler(val, oldVal) {
+					if (val) {
+						var _self = this;
+						setTimeout(function () {
+							_self.$parent.$data.message = "";
+						}, 1500);
+					}
+				}
+			}
+		},
+		mounted: function mounted() {
+			var mTop = $(".error_message").css("margin-top");
+			this.initTop = parseFloat(mTop.substring(0, mTop.length - 2));
+			var _self = this;
+			$(window).scroll(function () {
+				var scrollTop = $(this).scrollTop();
+				$(".error_message").css("margin-top", _self.initTop + scrollTop + "px");
+			});
+		},
+
+		props: ['message']
+	};
+
+/***/ },
+
+/***/ 36:
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+	  return _c('div', {
+	    directives: [{
+	      name: "show",
+	      rawName: "v-show",
+	      value: (_vm.message),
+	      expression: "message"
+	    }],
+	    staticClass: "error_message"
+	  }, [_c('div', {
+	    staticClass: "error"
+	  }, [_vm._v(_vm._s(_vm.message))])])
+	},staticRenderFns: []}
+	if (false) {
+	  module.hot.accept()
+	  if (module.hot.data) {
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-8186fe60", module.exports)
+	  }
+	}
+
+/***/ },
+
+/***/ 81:
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = { "default": __webpack_require__(82), __esModule: true };
+
+/***/ },
+
+/***/ 82:
+/***/ function(module, exports, __webpack_require__) {
+
+	var core  = __webpack_require__(83)
 	  , $JSON = core.JSON || (core.JSON = {stringify: JSON.stringify});
 	module.exports = function stringify(it){ // eslint-disable-line no-unused-vars
 	  return $JSON.stringify.apply($JSON, arguments);
@@ -32,7 +193,7 @@ webpackJsonp([4],{
 
 /***/ },
 
-/***/ 79:
+/***/ 83:
 /***/ function(module, exports) {
 
 	var core = module.exports = {version: '2.4.0'};
@@ -40,20 +201,20 @@ webpackJsonp([4],{
 
 /***/ },
 
-/***/ 80:
+/***/ 84:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 
 	/* styles */
-	__webpack_require__(81)
+	__webpack_require__(85)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(83)
+	__vue_exports__ = __webpack_require__(87)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(84)
+	var __vue_template__ = __webpack_require__(88)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -88,13 +249,13 @@ webpackJsonp([4],{
 
 /***/ },
 
-/***/ 81:
+/***/ 85:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(82);
+	var content = __webpack_require__(86);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(9)(content, {});
@@ -115,7 +276,7 @@ webpackJsonp([4],{
 
 /***/ },
 
-/***/ 82:
+/***/ 86:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(8)();
@@ -130,7 +291,7 @@ webpackJsonp([4],{
 
 /***/ },
 
-/***/ 83:
+/***/ 87:
 /***/ function(module, exports) {
 
 	"use strict";
@@ -155,7 +316,7 @@ webpackJsonp([4],{
 
 /***/ },
 
-/***/ 84:
+/***/ 88:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -163,7 +324,7 @@ webpackJsonp([4],{
 	    staticClass: "no_content"
 	  }, [_c('img', {
 	    attrs: {
-	      "src": __webpack_require__(85)
+	      "src": __webpack_require__(89)
 	    }
 	  }), _vm._v(" "), _c('div', [_vm._v(_vm._s(_vm.message))])])
 	},staticRenderFns: []}
@@ -176,27 +337,27 @@ webpackJsonp([4],{
 
 /***/ },
 
-/***/ 85:
+/***/ 89:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports = __webpack_require__.p + "b795755fbb3c417ded3f4ac591fdcfd9.png";
 
 /***/ },
 
-/***/ 191:
+/***/ 194:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 
 	/* styles */
-	__webpack_require__(192)
+	__webpack_require__(195)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(194)
+	__vue_exports__ = __webpack_require__(197)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(195)
+	var __vue_template__ = __webpack_require__(198)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -231,13 +392,13 @@ webpackJsonp([4],{
 
 /***/ },
 
-/***/ 192:
+/***/ 195:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(193);
+	var content = __webpack_require__(196);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(9)(content, {});
@@ -258,7 +419,7 @@ webpackJsonp([4],{
 
 /***/ },
 
-/***/ 193:
+/***/ 196:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(8)();
@@ -273,7 +434,7 @@ webpackJsonp([4],{
 
 /***/ },
 
-/***/ 194:
+/***/ 197:
 /***/ function(module, exports, __webpack_require__) {
 
 	"use strict";
@@ -282,31 +443,82 @@ webpackJsonp([4],{
 		value: true
 	});
 
-	var _stringify = __webpack_require__(77);
+	var _stringify = __webpack_require__(81);
 
 	var _stringify2 = _interopRequireDefault(_stringify);
 
-	var _no_content = __webpack_require__(80);
+	var _no_content = __webpack_require__(84);
 
 	var _no_content2 = _interopRequireDefault(_no_content);
 
+	var _prompt = __webpack_require__(32);
+
+	var _prompt2 = _interopRequireDefault(_prompt);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
+	//
 
 	exports.default = {
 		data: function data() {
 			return {
-				orders: []
+				orders: [],
+				message: ""
 			};
 		},
 
 		methods: {
+			cancelOrder: function cancelOrder(id, index) {
+				var _self = this;
+				$.ajax({
+					type: "post",
+					url: "/inter/order/cancelOrder",
+					data: { id: id },
+					success: function success(res) {
+						console.log(res);
+						if (res.code == "000000") {
+							_self.message = "订单取消成功！";
+							_self.getOrders();
+						}
+					}
+				});
+			},
 			orderDetail: function orderDetail(index) {
 				var orderDetail = this.orders[index];
 				sessionStorage["order_detail_message"] = (0, _stringify2.default)(orderDetail);
 				this.$router.push({ path: "/orders_detail" });
 			},
 			getOrders: function getOrders() {
-				var type = this.$route.params.type;
+				var type = this.$route.params.ordertype;
 				var _self = this;
 				$.ajax({
 					type: "post",
@@ -329,8 +541,11 @@ webpackJsonp([4],{
 			}
 		},
 		watch: {
-			'$route': function $route(to, from) {
-				this.getOrders();
+			'$route.params.ordertype': function $routeParamsOrdertype(to, from) {
+				var t = this.$route.params.ordertype;
+				if (t != undefined) {
+					this.getOrders();
+				}
 			}
 		},
 		activated: function activated() {
@@ -341,41 +556,14 @@ webpackJsonp([4],{
 		},
 
 		components: {
-			"jf-no-content": _no_content2.default
+			"jf-no-content": _no_content2.default,
+			"jf-prompt": _prompt2.default
 		}
-	}; //
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
-	//
+	};
 
 /***/ },
 
-/***/ 195:
+/***/ 198:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
@@ -450,7 +638,17 @@ webpackJsonp([4],{
 	      })
 	    })), _vm._v(" "), _c('div', {
 	      staticClass: "orders_operation"
-	    }, [(o.payment_status == 0) ? _c('a', [_vm._v("取消订单")]) : _vm._e(), _vm._v(" "), (o.payment_status == 0) ? _c('a', [_vm._v("支付订单")]) : _vm._e()])])
+	    }, [(o.payment_status == 0) ? _c('a', {
+	      on: {
+	        "click": function($event) {
+	          _vm.cancelOrder(o.id, index);
+	        }
+	      }
+	    }, [_vm._v("取消订单")]) : _vm._e(), _vm._v(" "), (o.payment_status == 0) ? _c('a', [_vm._v("支付订单")]) : _vm._e()])])
+	  }), _vm._v(" "), _c('jf-prompt', {
+	    attrs: {
+	      "message": _vm.message
+	    }
 	  })], 2)
 	},staticRenderFns: []}
 	if (false) {
@@ -462,20 +660,20 @@ webpackJsonp([4],{
 
 /***/ },
 
-/***/ 196:
+/***/ 199:
 /***/ function(module, exports, __webpack_require__) {
 
 	var __vue_exports__, __vue_options__
 	var __vue_styles__ = {}
 
 	/* styles */
-	__webpack_require__(197)
+	__webpack_require__(200)
 
 	/* script */
-	__vue_exports__ = __webpack_require__(199)
+	__vue_exports__ = __webpack_require__(202)
 
 	/* template */
-	var __vue_template__ = __webpack_require__(200)
+	var __vue_template__ = __webpack_require__(203)
 	__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 	if (
 	  typeof __vue_exports__.default === "object" ||
@@ -511,13 +709,13 @@ webpackJsonp([4],{
 
 /***/ },
 
-/***/ 197:
+/***/ 200:
 /***/ function(module, exports, __webpack_require__) {
 
 	// style-loader: Adds some css to the DOM by adding a <style> tag
 
 	// load the styles
-	var content = __webpack_require__(198);
+	var content = __webpack_require__(201);
 	if(typeof content === 'string') content = [[module.id, content, '']];
 	// add the styles to the DOM
 	var update = __webpack_require__(9)(content, {});
@@ -538,7 +736,7 @@ webpackJsonp([4],{
 
 /***/ },
 
-/***/ 198:
+/***/ 201:
 /***/ function(module, exports, __webpack_require__) {
 
 	exports = module.exports = __webpack_require__(8)();
@@ -553,7 +751,7 @@ webpackJsonp([4],{
 
 /***/ },
 
-/***/ 199:
+/***/ 202:
 /***/ function(module, exports) {
 
 	'use strict';
@@ -629,7 +827,7 @@ webpackJsonp([4],{
 		activated: function activated() {
 			this.orderDetail = JSON.parse(sessionStorage["order_detail_message"]);
 			//由于产家直销，同一订单不同商品，有多个订单号，用","号分开
-			if (this.trackingNo) {
+			if (this.orderDetail.tracking_no) {
 				this.trackingNo = this.orderDetail.tracking_no.split(',');
 			}
 			this.calOrderPrice();
@@ -642,7 +840,7 @@ webpackJsonp([4],{
 
 /***/ },
 
-/***/ 200:
+/***/ 203:
 /***/ function(module, exports, __webpack_require__) {
 
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
