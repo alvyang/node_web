@@ -25,20 +25,20 @@ webpackJsonp([5],{
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/lvyang/repositories/node_web/components/prompt.vue"
+	__vue_options__.__file = "D:\\lvyang\\repositories\\node_web\\components\\prompt.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
 	/* hot reload */
 	if (false) {(function () {
-	  var hotAPI = require("vue-hot-reload-api")
+	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-64880e60", __vue_options__)
+	    hotAPI.createRecord("data-v-8186fe60", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-64880e60", __vue_options__)
+	    hotAPI.reload("data-v-8186fe60", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] prompt.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -63,8 +63,8 @@ webpackJsonp([5],{
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-64880e60!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./prompt.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-64880e60!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./prompt.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-8186fe60!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./prompt.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-8186fe60!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./prompt.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -155,7 +155,7 @@ webpackJsonp([5],{
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-64880e60", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-8186fe60", module.exports)
 	  }
 	}
 
@@ -507,20 +507,20 @@ webpackJsonp([5],{
 	if (typeof __vue_options__ === "function") {
 	  __vue_options__ = __vue_options__.options
 	}
-	__vue_options__.__file = "/Users/lvyang/repositories/node_web/views/commodity.vue"
+	__vue_options__.__file = "D:\\lvyang\\repositories\\node_web\\views\\commodity.vue"
 	__vue_options__.render = __vue_template__.render
 	__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 
 	/* hot reload */
 	if (false) {(function () {
-	  var hotAPI = require("vue-hot-reload-api")
+	  var hotAPI = require("vue-loader/node_modules/vue-hot-reload-api")
 	  hotAPI.install(require("vue"), false)
 	  if (!hotAPI.compatible) return
 	  module.hot.accept()
 	  if (!module.hot.data) {
-	    hotAPI.createRecord("data-v-7521d7ef", __vue_options__)
+	    hotAPI.createRecord("data-v-7e251425", __vue_options__)
 	  } else {
-	    hotAPI.reload("data-v-7521d7ef", __vue_options__)
+	    hotAPI.reload("data-v-7e251425", __vue_options__)
 	  }
 	})()}
 	if (__vue_options__.functional) {console.error("[vue-loader] commodity.vue: functional components are not supported and should be defined in plain js files using render functions.")}
@@ -545,8 +545,8 @@ webpackJsonp([5],{
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7521d7ef!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./commodity.vue", function() {
-				var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7521d7ef!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./commodity.vue");
+			module.hot.accept("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7e251425!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./commodity.vue", function() {
+				var newContent = require("!!../node_modules/css-loader/index.js!../node_modules/vue-loader/lib/style-rewriter.js?id=data-v-7e251425!../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./commodity.vue");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -766,7 +766,7 @@ webpackJsonp([5],{
 	if (false) {
 	  module.hot.accept()
 	  if (module.hot.data) {
-	     require("vue-hot-reload-api").rerender("data-v-7521d7ef", module.exports)
+	     require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-7e251425", module.exports)
 	  }
 	}
 

@@ -15,6 +15,7 @@
 				</div>
 			</router-link>
 		</div>
+		<div style="height: 1.35rem;"></div>
 	</div>
 </template>
 <script>
