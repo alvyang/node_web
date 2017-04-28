@@ -2125,7 +2125,7 @@ webpackJsonp([2],Array(28).concat([
 /* 92 */
 /***/ function(module, exports) {
 
-	'use strict';
+	"use strict";
 
 	Object.defineProperty(exports, "__esModule", {
 		value: true
@@ -2149,14 +2149,13 @@ webpackJsonp([2],Array(28).concat([
 				endPos: { x: 0, y: 0 },
 				transformX: 0,
 				transformStartX: 0
-
 			};
 		},
 
 		props: ['sliderConf'],
 		methods: {
 			touchStart: function touchStart(e) {
-				e.preventDefault();
+				console.log("----------");
 				this.startPos.x = e.targetTouches[0].screenX;
 				this.transformStartX = this.transformX;
 			},
@@ -2171,7 +2170,6 @@ webpackJsonp([2],Array(28).concat([
 				}
 			},
 			touchEnd: function touchEnd(e) {
-				e.preventDefault();
 				if (this.transformX > 0) {
 					this.transformX = 0;
 				}
@@ -2194,15 +2192,12 @@ webpackJsonp([2],Array(28).concat([
 	    }),
 	    on: {
 	      "touchstart": function($event) {
-	        $event.stopPropagation();
 	        _vm.touchStart($event)
 	      },
 	      "touchend": function($event) {
-	        $event.stopPropagation();
 	        _vm.touchEnd($event)
 	      },
 	      "touchmove": function($event) {
-	        $event.stopPropagation();
 	        _vm.touchMove($event)
 	      }
 	    }

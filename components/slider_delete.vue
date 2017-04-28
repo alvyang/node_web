@@ -1,8 +1,8 @@
 <template>
 	<div class="slider_delete" :style="{webkitTransform:'translate3d('+transformX+'rem,0,0)'}" 
-		@touchstart.stop="touchStart($event)" 
-		@touchend.stop="touchEnd($event)"
-		@touchmove.stop="touchMove($event)">
+		@touchstart="touchStart($event)" 
+		@touchend="touchEnd($event)"
+		@touchmove="touchMove($event)">
 		<slot></slot>
 	</div>
 </template>
@@ -17,13 +17,12 @@
 				endPos:{x:0,y:0},
 				transformX:0,
 				transformStartX:0,
-				
 			}
 		},
 		props:['sliderConf'],
 		methods:{
 			touchStart(e){
-				e.preventDefault();
+				console.log("----------");
 				this.startPos.x = e.targetTouches[0].screenX;
 				this.transformStartX = this.transformX;
 			},
@@ -38,7 +37,6 @@
 				}
 			},
 			touchEnd(e){
-				e.preventDefault();
 				if(this.transformX > 0){
 					this.transformX = 0;
 				}
