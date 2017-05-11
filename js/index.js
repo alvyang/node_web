@@ -1,6 +1,9 @@
 import Vue from "vue/dist/vue.js";
 import router from "router/router.js";
 import store from "store/store.js";
+//import {Prompt} from "mo-ui";
+//console.log(Prompt);
+
 
 new Vue({
 	el:"#app",

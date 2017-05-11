@@ -1,6 +1,7 @@
 <template>
 	<div class="home_page">
-		<jf-top></jf-top>
+		<jf-top ></jf-top>
+		<div style="height: 1rem;background-color: red;" @click.prevent="addToCart()"></div>
 		<div class="swiper-container" id="home_swiper">
 		  	<div class="swiper-wrapper">
 		    	<div class="swiper-slide">
