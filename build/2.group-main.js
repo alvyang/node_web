@@ -307,7 +307,6 @@ webpackJsonp([2],Array(28).concat([
 	//
 	//
 	//
-	//
 
 	exports.default = {
 		data: function data() {
@@ -319,26 +318,25 @@ webpackJsonp([2],Array(28).concat([
 
 		methods: {
 			addToCart: function addToCart(id) {
-				this.message = ".....";
-				//				var _self = this;
-				//				var data = {
-				//					openid:sessionStorage["open_id"],
-				//					cartItem:{
-				//						quantity:1,
-				//						product_id:id
-				//					}
-				//				};
-				//				$.ajax({
-				//					type: "post",
-				//					url: "/inter/cart/addCart",
-				//					data:data,
-				//					success: function(res) {
-				//						console.log(res);
-				//						if(res.code == "000000"){
-				//							_self.message = res.message;
-				//						}
-				//					}
-				//				});
+				var _self = this;
+				var data = {
+					openid: sessionStorage["open_id"],
+					cartItem: {
+						quantity: 1,
+						product_id: id
+					}
+				};
+				$.ajax({
+					type: "post",
+					url: "/inter/cart/addCart",
+					data: data,
+					success: function success(res) {
+						console.log(res);
+						if (res.code == "000000") {
+							_self.message = res.message;
+						}
+					}
+				});
 			}
 		},
 		mounted: function mounted() {
@@ -1151,18 +1149,7 @@ webpackJsonp([2],Array(28).concat([
 	module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 	  return _c('div', {
 	    staticClass: "home_page"
-	  }, [_c('jf-top'), _vm._v(" "), _c('div', {
-	    staticStyle: {
-	      "height": "1rem",
-	      "background-color": "red"
-	    },
-	    on: {
-	      "click": function($event) {
-	        $event.preventDefault();
-	        _vm.addToCart()
-	      }
-	    }
-	  }), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._l((_vm.commodityList), function(c) {
+	  }, [_c('jf-top'), _vm._v(" "), _vm._m(0), _vm._v(" "), _vm._l((_vm.commodityList), function(c) {
 	    return _c('router-link', {
 	      staticClass: "commodity_home_item",
 	      attrs: {
@@ -1197,7 +1184,7 @@ webpackJsonp([2],Array(28).concat([
 	        }
 	      }
 	    })])])
-	  }), _vm._v(" "), _c('mo-prompt', {
+	  }), _vm._v(" "), _c('jf-prompt', {
 	    attrs: {
 	      "message": _vm.message
 	    }

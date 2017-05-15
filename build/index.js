@@ -110,14 +110,13 @@
 
 	var _store2 = _interopRequireDefault(_store);
 
-	var _moUi = __webpack_require__(211);
+	var _index = __webpack_require__(211);
 
-	var _moUi2 = _interopRequireDefault(_moUi);
+	var _index2 = _interopRequireDefault(_index);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	console.log(_moUi2.default);
-	_vue2.default.use(_moUi2.default);
+	_vue2.default.use(_index2.default, "123");
 
 	new _vue2.default({
 		el: "#app",
@@ -13420,8 +13419,9 @@
 /***/ },
 
 /***/ 211:
-/***/ function(module, exports, __webpack_require__) {
+/***/ function(module, exports) {
 
+	module.exports =
 	/******/ (function(modules) { // webpackBootstrap
 	/******/ 	// The module cache
 	/******/ 	var installedModules = {};
@@ -13484,32 +13484,19 @@
 
 		function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-		var install = function install(vue, options) {
-			consle.log(".............");
+		var mmm={};
+		mmm.install = function install(vue, options) {
+			console.log(".............");
 			console.log(vue);
 		};
-		console.log(1);
-		if (typeof exports == "object") {
-		    console.log(2);
-		} else if (true) {
-		    console.log("3");
-		} else if (window.Vue) {
-			console.log(4);
-		    Vue.use(install)
-		}
-		module.exports = {
-			AddressSelect: _index2.default,
-			Prompt: _index4.default,
-			install: install,
-			SliderDelete: _index6.default
-		};
+		module.exports = mmm;
 
 	/***/ }),
 	/* 1 */
 	/***/ (function(module, exports, __webpack_require__) {
 
 		'use strict';
-
+		
 		Object.defineProperty(exports, "__esModule", {
 		  value: true
 		});

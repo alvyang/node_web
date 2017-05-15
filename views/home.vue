@@ -1,7 +1,6 @@
 <template>
 	<div class="home_page">
-		<jf-top ></jf-top>
-		<div style="height: 1rem;background-color: red;" @click.prevent="addToCart()"></div>
+		<jf-top></jf-top>
 		<div class="swiper-container" id="home_swiper">
 		  	<div class="swiper-wrapper">
 		    	<div class="swiper-slide">
@@ -21,7 +20,7 @@
 				<img src="../img/shopping_cart.png" @click.prevent="addToCart(c.id)"/>
 			</div>
 		</router-link>
-		<mo-prompt :message="message"></mo-prompt>
+		<jf-prompt :message="message"></jf-prompt>
 		<div style="height: 1.35rem;"></div>
 	</div>
 </template>
@@ -40,26 +39,25 @@
 		},
 		methods:{
 			addToCart(id){
-				this.message = ".....";
-//				var _self = this;
-//				var data = {
-//					openid:sessionStorage["open_id"],
-//					cartItem:{
-//						quantity:1,
-//						product_id:id
-//					}
-//				};
-//				$.ajax({
-//					type: "post",
-//					url: "/inter/cart/addCart",
-//					data:data,
-//					success: function(res) {
-//						console.log(res);
-//						if(res.code == "000000"){
-//							_self.message = res.message;
-//						}
-//					}
-//				});
+				var _self = this;
+				var data = {
+					openid:sessionStorage["open_id"],
+					cartItem:{
+						quantity:1,
+						product_id:id
+					}
+				};
+				$.ajax({
+					type: "post",
+					url: "/inter/cart/addCart",
+					data:data,
+					success: function(res) {
+						console.log(res);
+						if(res.code == "000000"){
+							_self.message = res.message;
+						}
+					}
+				});
 			}
 		},
 		mounted(){
