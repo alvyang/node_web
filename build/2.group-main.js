@@ -319,7 +319,6 @@ webpackJsonp([2],Array(28).concat([
 
 		methods: {
 			addToCart: function addToCart(id) {
-				console.log("......");
 				this.message = ".....";
 				//				var _self = this;
 				//				var data = {

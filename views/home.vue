@@ -21,7 +21,7 @@
 				<img src="../img/shopping_cart.png" @click.prevent="addToCart(c.id)"/>
 			</div>
 		</router-link>
-		<jf-prompt :message="message"></jf-prompt>
+		<mo-prompt :message="message"></mo-prompt>
 		<div style="height: 1.35rem;"></div>
 	</div>
 </template>
@@ -40,25 +40,26 @@
 		},
 		methods:{
 			addToCart(id){
-				var _self = this;
-				var data = {
-					openid:sessionStorage["open_id"],
-					cartItem:{
-						quantity:1,
-						product_id:id
-					}
-				};
-				$.ajax({
-					type: "post",
-					url: "/inter/cart/addCart",
-					data:data,
-					success: function(res) {
-						console.log(res);
-						if(res.code == "000000"){
-							_self.message = res.message;
-						}
-					}
-				});
+				this.message = ".....";
+//				var _self = this;
+//				var data = {
+//					openid:sessionStorage["open_id"],
+//					cartItem:{
+//						quantity:1,
+//						product_id:id
+//					}
+//				};
+//				$.ajax({
+//					type: "post",
+//					url: "/inter/cart/addCart",
+//					data:data,
+//					success: function(res) {
+//						console.log(res);
+//						if(res.code == "000000"){
+//							_self.message = res.message;
+//						}
+//					}
+//				});
 			}
 		},
 		mounted(){

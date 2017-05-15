@@ -112,9 +112,12 @@
 
 	var _moUi = __webpack_require__(211);
 
+	var _moUi2 = _interopRequireDefault(_moUi);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	console.log(_moUi.Prompt);
+	console.log(_moUi2.default);
+	_vue2.default.use(_moUi2.default);
 
 	new _vue2.default({
 		el: "#app",
@@ -13417,7 +13420,7 @@
 /***/ },
 
 /***/ 211:
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	/******/ (function(modules) { // webpackBootstrap
 	/******/ 	// The module cache
@@ -13481,27 +13484,24 @@
 
 		function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-		var components = [_index2.default, _index4.default, _index6.default];
-
-		var install = function install(Vue) {
-		  var opts = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
-
-		  /* istanbul ignore if */
-		  if (install.installed) return;
-		  components.map(function (component) {
-		    Vue.component(component.name, component);
-		  });
+		var install = function install(vue, options) {
+			consle.log(".............");
+			console.log(vue);
 		};
-
-		/* istanbul ignore if */
-		if (typeof window !== 'undefined' && window.Vue) {
-		  install(window.Vue);
-		};
-
+		console.log(1);
+		if (typeof exports == "object") {
+		    console.log(2);
+		} else if (true) {
+		    console.log("3");
+		} else if (window.Vue) {
+			console.log(4);
+		    Vue.use(install)
+		}
 		module.exports = {
-		  AddressSelect: _index2.default,
-		  Prompt: _index4.default,
-		  SliderDelete: _index6.default
+			AddressSelect: _index2.default,
+			Prompt: _index4.default,
+			install: install,
+			SliderDelete: _index6.default
 		};
 
 	/***/ }),
