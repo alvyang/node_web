@@ -13458,7 +13458,7 @@
 	/******/ 	__webpack_require__.c = installedModules;
 
 	/******/ 	// __webpack_public_path__
-	/******/ 	__webpack_require__.p = "./lib/";
+	/******/ 	__webpack_require__.p = "/dist/";
 
 	/******/ 	// Load entry module and return exports
 	/******/ 	return __webpack_require__(0);
@@ -13468,40 +13468,59 @@
 	/* 0 */
 	/***/ (function(module, exports, __webpack_require__) {
 
-		'use strict';
+		module.exports = __webpack_require__(1);
 
-		var _index = __webpack_require__(1);
-
-		var _index2 = _interopRequireDefault(_index);
-
-		var _index3 = __webpack_require__(9);
-
-		var _index4 = _interopRequireDefault(_index3);
-
-		var _index5 = __webpack_require__(15);
-
-		var _index6 = _interopRequireDefault(_index5);
-
-		function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-		var mmm={};
-		mmm.install = function install(vue, options) {
-			console.log(".............");
-			console.log(vue);
-		};
-		module.exports = mmm;
 
 	/***/ }),
 	/* 1 */
 	/***/ (function(module, exports, __webpack_require__) {
 
 		'use strict';
-		
-		Object.defineProperty(exports, "__esModule", {
-		  value: true
-		});
 
-		var _addressSelect = __webpack_require__(2);
+		var _index = __webpack_require__(2);
+
+		var _index2 = _interopRequireDefault(_index);
+
+		var _index3 = __webpack_require__(10);
+
+		var _index4 = _interopRequireDefault(_index3);
+
+		var _index5 = __webpack_require__(16);
+
+		var _index6 = _interopRequireDefault(_index5);
+
+		function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+		var components = [_index2.default, _index4.default, _index6.default];
+
+		var install = function install(Vue, options) {
+			if (install.installed) return;
+			components.map(function (component) {
+				Vue.component(component.name, component);
+			});
+		};
+
+		/* istanbul ignore if */
+		if (typeof window !== 'undefined' && window.Vue) {
+			install(window.Vue);
+		};
+
+		module.exports = {
+			install: install,
+			AddressSelect: _index2.default,
+			Prompt: _index4.default,
+			SliderDelete: _index6.default
+		};
+
+	/***/ }),
+	/* 2 */
+	/***/ (function(module, exports, __webpack_require__) {
+
+		'use strict';
+
+		exports.__esModule = true;
+
+		var _addressSelect = __webpack_require__(3);
 
 		var _addressSelect2 = _interopRequireDefault(_addressSelect);
 
@@ -13515,64 +13534,49 @@
 		exports.default = _addressSelect2.default;
 
 	/***/ }),
-	/* 2 */
+	/* 3 */
 	/***/ (function(module, exports, __webpack_require__) {
 
 		var __vue_exports__, __vue_options__
 		var __vue_styles__ = {}
 
 		/* styles */
-		__webpack_require__(3)
+		__webpack_require__(4)
 
 		/* script */
-		__vue_exports__ = __webpack_require__(7)
+		__vue_exports__ = __webpack_require__(8)
 
 		/* template */
-		var __vue_template__ = __webpack_require__(8)
+		var __vue_template__ = __webpack_require__(9)
 		__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 		if (
 		  typeof __vue_exports__.default === "object" ||
 		  typeof __vue_exports__.default === "function"
 		) {
-		if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
 		__vue_options__ = __vue_exports__ = __vue_exports__.default
 		}
 		if (typeof __vue_options__ === "function") {
 		  __vue_options__ = __vue_options__.options
 		}
-		__vue_options__.__file = "D:\\lvyang\\repositories\\mobile-ui\\packages\\address-select\\src\\address-select.vue"
+
 		__vue_options__.render = __vue_template__.render
 		__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
 		__vue_options__._scopeId = "data-v-09ee4a0d"
-
-		/* hot reload */
-		if (false) {(function () {
-		  var hotAPI = require("vue-hot-reload-api")
-		  hotAPI.install(require("vue"), false)
-		  if (!hotAPI.compatible) return
-		  module.hot.accept()
-		  if (!module.hot.data) {
-		    hotAPI.createRecord("data-v-09ee4a0d", __vue_options__)
-		  } else {
-		    hotAPI.reload("data-v-09ee4a0d", __vue_options__)
-		  }
-		})()}
-		if (__vue_options__.functional) {console.error("[vue-loader] address-select.vue: functional components are not supported and should be defined in plain js files using render functions.")}
 
 		module.exports = __vue_exports__
 
 
 	/***/ }),
-	/* 3 */
+	/* 4 */
 	/***/ (function(module, exports, __webpack_require__) {
 
 		// style-loader: Adds some css to the DOM by adding a <style> tag
 
 		// load the styles
-		var content = __webpack_require__(4);
+		var content = __webpack_require__(5);
 		if(typeof content === 'string') content = [[module.id, content, '']];
 		// add the styles to the DOM
-		var update = __webpack_require__(6)(content, {});
+		var update = __webpack_require__(7)(content, {});
 		if(content.locals) module.exports = content.locals;
 		// Hot Module Replacement
 		if(false) {
@@ -13589,10 +13593,10 @@
 		}
 
 	/***/ }),
-	/* 4 */
+	/* 5 */
 	/***/ (function(module, exports, __webpack_require__) {
 
-		exports = module.exports = __webpack_require__(5)();
+		exports = module.exports = __webpack_require__(6)();
 		// imports
 
 
@@ -13603,7 +13607,7 @@
 
 
 	/***/ }),
-	/* 5 */
+	/* 6 */
 	/***/ (function(module, exports) {
 
 		/*
@@ -13659,7 +13663,7 @@
 
 
 	/***/ }),
-	/* 6 */
+	/* 7 */
 	/***/ (function(module, exports, __webpack_require__) {
 
 		/*
@@ -13881,14 +13885,12 @@
 
 
 	/***/ }),
-	/* 7 */
+	/* 8 */
 	/***/ (function(module, exports) {
 
 		"use strict";
 
-		Object.defineProperty(exports, "__esModule", {
-			value: true
-		});
+		exports.__esModule = true;
 		//
 		//
 		//
@@ -14057,8 +14059,8 @@
 		};
 
 	/***/ }),
-	/* 8 */
-	/***/ (function(module, exports, __webpack_require__) {
+	/* 9 */
+	/***/ (function(module, exports) {
 
 		module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 		  return _c('div', {
@@ -14069,11 +14071,11 @@
 		    on: {
 		      "click": _vm.cancelAddress
 		    }
-		  }, [_vm._v("取消")]), _vm._v(" "), _c('button', {
+		  }, [_vm._v("取消")]), _c('button', {
 		    on: {
 		      "click": _vm.selectAddress
 		    }
-		  }, [_vm._v("确定")])]), _vm._v(" "), _c('div', {
+		  }, [_vm._v("确定")])]), _c('div', {
 		    staticClass: "address_roll"
 		  }, [_c('div', [_c('div', {
 		    staticClass: "gear address_province",
@@ -14094,9 +14096,9 @@
 		      refInFor: true,
 		      staticClass: "tooth"
 		    }, [_vm._v(_vm._s(p.name))])
-		  })), _vm._v(" "), _c('div', {
+		  })), _c('div', {
 		    staticClass: "select_area"
-		  })]), _vm._v(" "), _c('div', [_c('div', {
+		  })]), _c('div', [_c('div', {
 		    staticClass: "gear address_city",
 		    on: {
 		      "touchstart": function($event) {
@@ -14115,9 +14117,9 @@
 		      refInFor: true,
 		      staticClass: "tooth"
 		    }, [_vm._v(_vm._s(c.name))])
-		  })), _vm._v(" "), _c('div', {
+		  })), _c('div', {
 		    staticClass: "select_area"
-		  })]), _vm._v(" "), _c('div', [_c('div', {
+		  })]), _c('div', [_c('div', {
 		    staticClass: "gear address_county",
 		    on: {
 		      "touchstart": function($event) {
@@ -14136,28 +14138,20 @@
 		      refInFor: true,
 		      staticClass: "tooth"
 		    }, [_vm._v(_vm._s(c.name))])
-		  })), _vm._v(" "), _c('div', {
+		  })), _c('div', {
 		    staticClass: "select_area"
 		  })])])])
 		},staticRenderFns: []}
-		if (false) {
-		  module.hot.accept()
-		  if (module.hot.data) {
-		     require("vue-hot-reload-api").rerender("data-v-09ee4a0d", module.exports)
-		  }
-		}
 
 	/***/ }),
-	/* 9 */
+	/* 10 */
 	/***/ (function(module, exports, __webpack_require__) {
 
 		'use strict';
 
-		Object.defineProperty(exports, "__esModule", {
-		  value: true
-		});
+		exports.__esModule = true;
 
-		var _prompt = __webpack_require__(10);
+		var _prompt = __webpack_require__(11);
 
 		var _prompt2 = _interopRequireDefault(_prompt);
 
@@ -14171,63 +14165,48 @@
 		exports.default = _prompt2.default;
 
 	/***/ }),
-	/* 10 */
+	/* 11 */
 	/***/ (function(module, exports, __webpack_require__) {
 
 		var __vue_exports__, __vue_options__
 		var __vue_styles__ = {}
 
 		/* styles */
-		__webpack_require__(11)
+		__webpack_require__(12)
 
 		/* script */
-		__vue_exports__ = __webpack_require__(13)
+		__vue_exports__ = __webpack_require__(14)
 
 		/* template */
-		var __vue_template__ = __webpack_require__(14)
+		var __vue_template__ = __webpack_require__(15)
 		__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 		if (
 		  typeof __vue_exports__.default === "object" ||
 		  typeof __vue_exports__.default === "function"
 		) {
-		if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
 		__vue_options__ = __vue_exports__ = __vue_exports__.default
 		}
 		if (typeof __vue_options__ === "function") {
 		  __vue_options__ = __vue_options__.options
 		}
-		__vue_options__.__file = "D:\\lvyang\\repositories\\mobile-ui\\packages\\prompt\\src\\prompt.vue"
+
 		__vue_options__.render = __vue_template__.render
 		__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-
-		/* hot reload */
-		if (false) {(function () {
-		  var hotAPI = require("vue-hot-reload-api")
-		  hotAPI.install(require("vue"), false)
-		  if (!hotAPI.compatible) return
-		  module.hot.accept()
-		  if (!module.hot.data) {
-		    hotAPI.createRecord("data-v-e14100a6", __vue_options__)
-		  } else {
-		    hotAPI.reload("data-v-e14100a6", __vue_options__)
-		  }
-		})()}
-		if (__vue_options__.functional) {console.error("[vue-loader] prompt.vue: functional components are not supported and should be defined in plain js files using render functions.")}
 
 		module.exports = __vue_exports__
 
 
 	/***/ }),
-	/* 11 */
+	/* 12 */
 	/***/ (function(module, exports, __webpack_require__) {
 
 		// style-loader: Adds some css to the DOM by adding a <style> tag
 
 		// load the styles
-		var content = __webpack_require__(12);
+		var content = __webpack_require__(13);
 		if(typeof content === 'string') content = [[module.id, content, '']];
 		// add the styles to the DOM
-		var update = __webpack_require__(6)(content, {});
+		var update = __webpack_require__(7)(content, {});
 		if(content.locals) module.exports = content.locals;
 		// Hot Module Replacement
 		if(false) {
@@ -14244,10 +14223,10 @@
 		}
 
 	/***/ }),
-	/* 12 */
+	/* 13 */
 	/***/ (function(module, exports, __webpack_require__) {
 
-		exports = module.exports = __webpack_require__(5)();
+		exports = module.exports = __webpack_require__(6)();
 		// imports
 
 
@@ -14258,14 +14237,12 @@
 
 
 	/***/ }),
-	/* 13 */
+	/* 14 */
 	/***/ (function(module, exports) {
 
 		"use strict";
 
-		Object.defineProperty(exports, "__esModule", {
-			value: true
-		});
+		exports.__esModule = true;
 		//
 		//
 		//
@@ -14304,8 +14281,8 @@
 		};
 
 	/***/ }),
-	/* 14 */
-	/***/ (function(module, exports, __webpack_require__) {
+	/* 15 */
+	/***/ (function(module, exports) {
 
 		module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 		  return _c('div', {
@@ -14320,24 +14297,16 @@
 		    staticClass: "error"
 		  }, [_vm._v(_vm._s(_vm.message))])])
 		},staticRenderFns: []}
-		if (false) {
-		  module.hot.accept()
-		  if (module.hot.data) {
-		     require("vue-hot-reload-api").rerender("data-v-e14100a6", module.exports)
-		  }
-		}
 
 	/***/ }),
-	/* 15 */
+	/* 16 */
 	/***/ (function(module, exports, __webpack_require__) {
 
 		'use strict';
 
-		Object.defineProperty(exports, "__esModule", {
-		  value: true
-		});
+		exports.__esModule = true;
 
-		var _sliderDelete = __webpack_require__(16);
+		var _sliderDelete = __webpack_require__(17);
 
 		var _sliderDelete2 = _interopRequireDefault(_sliderDelete);
 
@@ -14351,63 +14320,48 @@
 		exports.default = _sliderDelete2.default;
 
 	/***/ }),
-	/* 16 */
+	/* 17 */
 	/***/ (function(module, exports, __webpack_require__) {
 
 		var __vue_exports__, __vue_options__
 		var __vue_styles__ = {}
 
 		/* styles */
-		__webpack_require__(17)
+		__webpack_require__(18)
 
 		/* script */
-		__vue_exports__ = __webpack_require__(19)
+		__vue_exports__ = __webpack_require__(20)
 
 		/* template */
-		var __vue_template__ = __webpack_require__(20)
+		var __vue_template__ = __webpack_require__(21)
 		__vue_options__ = __vue_exports__ = __vue_exports__ || {}
 		if (
 		  typeof __vue_exports__.default === "object" ||
 		  typeof __vue_exports__.default === "function"
 		) {
-		if (Object.keys(__vue_exports__).some(function (key) { return key !== "default" && key !== "__esModule" })) {console.error("named exports are not supported in *.vue files.")}
 		__vue_options__ = __vue_exports__ = __vue_exports__.default
 		}
 		if (typeof __vue_options__ === "function") {
 		  __vue_options__ = __vue_options__.options
 		}
-		__vue_options__.__file = "D:\\lvyang\\repositories\\mobile-ui\\packages\\slider-delete\\src\\slider-delete.vue"
+
 		__vue_options__.render = __vue_template__.render
 		__vue_options__.staticRenderFns = __vue_template__.staticRenderFns
-
-		/* hot reload */
-		if (false) {(function () {
-		  var hotAPI = require("vue-hot-reload-api")
-		  hotAPI.install(require("vue"), false)
-		  if (!hotAPI.compatible) return
-		  module.hot.accept()
-		  if (!module.hot.data) {
-		    hotAPI.createRecord("data-v-5f7ebab3", __vue_options__)
-		  } else {
-		    hotAPI.reload("data-v-5f7ebab3", __vue_options__)
-		  }
-		})()}
-		if (__vue_options__.functional) {console.error("[vue-loader] slider-delete.vue: functional components are not supported and should be defined in plain js files using render functions.")}
 
 		module.exports = __vue_exports__
 
 
 	/***/ }),
-	/* 17 */
+	/* 18 */
 	/***/ (function(module, exports, __webpack_require__) {
 
 		// style-loader: Adds some css to the DOM by adding a <style> tag
 
 		// load the styles
-		var content = __webpack_require__(18);
+		var content = __webpack_require__(19);
 		if(typeof content === 'string') content = [[module.id, content, '']];
 		// add the styles to the DOM
-		var update = __webpack_require__(6)(content, {});
+		var update = __webpack_require__(7)(content, {});
 		if(content.locals) module.exports = content.locals;
 		// Hot Module Replacement
 		if(false) {
@@ -14424,10 +14378,10 @@
 		}
 
 	/***/ }),
-	/* 18 */
+	/* 19 */
 	/***/ (function(module, exports, __webpack_require__) {
 
-		exports = module.exports = __webpack_require__(5)();
+		exports = module.exports = __webpack_require__(6)();
 		// imports
 
 
@@ -14438,14 +14392,12 @@
 
 
 	/***/ }),
-	/* 19 */
+	/* 20 */
 	/***/ (function(module, exports) {
 
 		'use strict';
 
-		Object.defineProperty(exports, "__esModule", {
-			value: true
-		});
+		exports.__esModule = true;
 		//
 		//
 		//
@@ -14499,8 +14451,8 @@
 		};
 
 	/***/ }),
-	/* 20 */
-	/***/ (function(module, exports, __webpack_require__) {
+	/* 21 */
+	/***/ (function(module, exports) {
 
 		module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
 		  return _c('div', {
@@ -14521,12 +14473,6 @@
 		    }
 		  }, [_vm._t("default")], 2)
 		},staticRenderFns: []}
-		if (false) {
-		  module.hot.accept()
-		  if (module.hot.data) {
-		     require("vue-hot-reload-api").rerender("data-v-5f7ebab3", module.exports)
-		  }
-		}
 
 	/***/ })
 	/******/ ]);

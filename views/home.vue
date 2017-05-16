@@ -20,14 +20,13 @@
 				<img src="../img/shopping_cart.png" @click.prevent="addToCart(c.id)"/>
 			</div>
 		</router-link>
-		<jf-prompt :message="message"></jf-prompt>
+		<mo-prompt :message="message"></mo-prompt>
 		<div style="height: 1.35rem;"></div>
 	</div>
 </template>
 <script>
 	import Top from "components/top.vue";
 	import swiper from "swiper/dist/js/swiper.min.js";
-	import Prompt from "components/prompt.vue";
 	require("swiper/dist/css/swiper.min.css");
 	
 	export default({
@@ -79,7 +78,6 @@
 		},
 		components:{
 			"jf-top":Top,
-			"jf-prompt":Prompt,
 		}
 	})
 </script>

@@ -275,13 +275,8 @@ webpackJsonp([2],Array(28).concat([
 
 	var _swiperMin2 = _interopRequireDefault(_swiperMin);
 
-	var _prompt = __webpack_require__(32);
-
-	var _prompt2 = _interopRequireDefault(_prompt);
-
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	__webpack_require__(61); //
 	//
 	//
 	//
@@ -307,6 +302,9 @@ webpackJsonp([2],Array(28).concat([
 	//
 	//
 	//
+	//
+
+	__webpack_require__(61);
 
 	exports.default = {
 		data: function data() {
@@ -358,8 +356,7 @@ webpackJsonp([2],Array(28).concat([
 		},
 
 		components: {
-			"jf-top": _top2.default,
-			"jf-prompt": _prompt2.default
+			"jf-top": _top2.default
 		}
 	};
 
@@ -1184,7 +1181,7 @@ webpackJsonp([2],Array(28).concat([
 	        }
 	      }
 	    })])])
-	  }), _vm._v(" "), _c('jf-prompt', {
+	  }), _vm._v(" "), _c('mo-prompt', {
 	    attrs: {
 	      "message": _vm.message
 	    }
